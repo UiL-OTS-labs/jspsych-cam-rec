@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    
+    <title>Auditory Lexical Decision Experiment</title>
+
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-button-response.js"></script>
+    
+    <!-- Audio playback &response libraries (audio) -->
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-button-response.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-keyboard-response.js"></script>
+    
+    <!-- Generic check/ask libraries (instructions & surveys) -->
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-select.js"></script>
+    
+    <!-- Generic jspsych style sheet -->
+    <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
+
+    <!-- UU fonts -->
+    <link href=https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/fonts.css rel="stylesheet" type="text/css"/>
+
+    <!-- Uil OTS libraries -->
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/jspsych-uil-utils.js"></script>
+
+     <!-- Uil OTS organised  -->
+    <script src="globals.js"></script>
+    <script src="instructions.js"></script>
+    <script src="soundtest.js"></script>
+    <script src="consent.js"></script>
+    <script src="survey.js"></script>
+
+    <style>
+
+    .instruction {
+        text-align: left;
+        margin: 5% 10% 5% 10%;
+    }
+
+
+    kbd {
+        border-radius: 2px;
+        padding: 2px;
+        border: 1px solid black;
+    }
+
+        /* UU-like Link styles */
+    a {
+        color: rgb(33, 37, 41);
+        text-decoration: underline;
+        transition: 0.2s ease color;
+    }
+
+    a:hover {
+        transition: 0.2s ease color;
+        color: rgb(85, 85, 95);
+    }
+
+    span::after {
+        padding-left: 1%;
+    }
+
+    /* survey layout text-align */
+
+    .survey {
+        text-align: left !important;
+    }
+
+    .jspsych-survey-html-form {
+        text-align: left !important;
+    }
+
+    .jspsych-survey-multi-choice-question {
+        text-align: left !important;
+    }
+
+    .jspsych-survey-multi-choice-horizontal {
+        text-align: left !important;
+    }
+
+    .jspsych-survey-multi-choice-text {
+        text-align: left !important;
+    }
+
+    .jspsych-survey-multi-choice-option {
+        text-align: left !important;
+    }
+
+    /* valid input feedback (survey) */ 
+
+    input:invalid + span::after {
+        content: '✖';
+    }
+
+    input:valid+span::after {
+        content: '✓';
+    }
+
+    </style>
+    </head>
+    <body></body>
+    <script>
+    
+    // Wait until the browser has loaded all files, then execute the
+    // contents of this method
+    window.addEventListener('load', function() {
+
+        // load stimuli        
+        ////////////////////////// media preloading ///////////////////////////////////////
+        
+        var test_audio = ['./sounds/testtune.mp3'];
+        
+
+        function getCorrectKey()
+        {
+            let handed = getLeftOrRightHanded().toLowerCase();
+            return KEYBOARD_DEFAULTS[chosen_keyboard][handed + '_key'];
+        }
+
+
+
+        // Data one would like to add to __all__ trials, according to:
+        // https://www.jspsych.org/overview/data/
+        
+        let subject_id = jsPsych.randomization.randomID(8);
+
+        jsPsych.data.addProperties({
+            subject: subject_id
+        });
+
+        // screens/(sub-)(trial-)phases...////////////////////////////////////////////////////
+
+        let start_screen = {
+            type: 'html-button-response',
+            stimulus: function(){
+                return "<div class='instruction' >" +
+                       "<p>" + GENERIC_CHECK + "</p></div>";
+            },
+            choices: [OK_BUTTON_TEXT],
+            response_ends_trial: true
+        };
+
+        let instruction_screen_rec = {
+            type: 'html-button-response',
+            stimulus: function(){
+                let text = PRE_REC_MESSAGE;
+                return "<div class='instruction' >" +
+                       "<p>" + text + "</p></div>";
+            },
+            choices: [OK_BUTTON_TEXT],
+            response_ends_trial: true,
+        };
+
+
+        let well_done_screen = {
+            type: 'html-button-response',
+            stimulus: function(){
+                return "<div class='instruction' >" +
+                    '<p>' + POST_REC_MESSAGE + '</p></div>';
+            },
+            choices: [OK_BUTTON_TEXT],
+            response_ends_trial: true,
+            data: { useful_data_flag: false }
+        };
+
+        let end_screen = {
+            type: 'html-button-response',
+            stimulus: DEBRIEF_MESSAGE,
+            choices: [],
+            trial_duration: DEBRIEF_MESSAGE_DURATION
+        };
+
+        // (timeline) procedures //////////////////////////////////////////////////////////        
+
+
+        //////////////// timeline /////////////////////////////////
+
+        let timeline = [];
+
+        // it's best practice to have *mouse click* user I/O first
+        timeline.push(start_screen);
+
+        // Informed consent (consent.js)
+        timeline.push(consent_procedure);
+        
+        // survey
+        timeline.push(survey_procedure);
+
+        // test/set audio level (soundtest.js)
+        timeline.push(test_audio_looped);
+        
+        // task instruction (instructions.js)
+        timeline.push(instruction_screen_rec);
+
+        // get ready (practice)
+        timeline.push(well_done_screen);
+        
+        timeline.push(end_screen);
+
+        // Start jsPsych when running on a Desktop or Laptop style pc.
+        if (! uil.isMobileOrTablet()) {
+            jsPsych.init({
+                timeline: timeline,
+                preload_audio: [
+                    test_audio,
+                    ],
+                exclusions: {
+                    min_width: MIN_WIDTH,
+                    min_height: MIN_HEIGHT
+                },
+                on_finish: function() {
+                    uil.saveData(ACCESS_KEY);
+                }
+            });
+        }
+        else { // or bail out.
+            let paragraph = document.createElement("p")
+            paragraph.innerHTML = BAIL_OUT_MOBILE_TEXT;
+            document.body.appendChild(paragraph);
+        }
+    })
+    </script>
+</html>
