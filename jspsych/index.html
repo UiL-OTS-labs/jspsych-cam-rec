@@ -12,6 +12,9 @@
     <!-- Audio playback &response libraries (audio) -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-button-response.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-keyboard-response.js"></script>
+
+    <!-- External HTML for Maaike's (osweb) file -->
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-external-html.js"></script>
     
     <!-- Generic check/ask libraries (instructions & surveys) -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
@@ -115,15 +118,6 @@
         
         var test_audio = ['./sounds/testtune.mp3'];
         
-
-        function getCorrectKey()
-        {
-            let handed = getLeftOrRightHanded().toLowerCase();
-            return KEYBOARD_DEFAULTS[chosen_keyboard][handed + '_key'];
-        }
-
-
-
         // Data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
         
@@ -157,6 +151,29 @@
         };
 
 
+
+        // sample function that might be used to check if a subject has given
+        // consent to participate.
+        var osweb_done = function(elem) {
+            if (document.getElementById('consent_checkbox').checked) {
+                return true;
+            } else {
+                alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+                return false;
+            }
+            return false;
+        };
+
+
+        // declare the block.
+        let osweb_experiment = {
+            type:'external-html',
+            url: "../osweb/osweb_exp.html",
+            cont_btn: null,
+            execute_script: true,
+            force_refresh: true
+        };
+
         let well_done_screen = {
             type: 'html-button-response',
             stimulus: function(){
@@ -186,16 +203,19 @@
         timeline.push(start_screen);
 
         // Informed consent (consent.js)
-        timeline.push(consent_procedure);
+        //timeline.push(consent_procedure);
         
         // survey
-        timeline.push(survey_procedure);
+        //timeline.push(survey_procedure);
 
         // test/set audio level (soundtest.js)
         timeline.push(test_audio_looped);
         
         // task instruction (instructions.js)
         timeline.push(instruction_screen_rec);
+
+        // osweb experiment
+        timeline.push(osweb_experiment);
 
         // get ready (practice)
         timeline.push(well_done_screen);
