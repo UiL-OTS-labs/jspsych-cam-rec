@@ -113,10 +113,29 @@
     // contents of this method
     window.addEventListener('load', function() {
 
-        // load stimuli        
+        // load stimuli
+        let stimuli = pickRandomList();
+        console.log("The selected list is %s", stimuli.list_name);
+        
         ////////////////////////// media preloading ///////////////////////////////////////
         
-        var test_audio = ['./sounds/testtune.mp3'];
+        let baseline_items = getBaselineItems().table;
+        
+        var baseline_audio = [];
+        for (var i=0; i< practice_items.length; i++) {
+            baseline_audio.push(baseline_items[i].filename);
+            console.log('loaded baseline audio as "baseline_audio"');
+        };
+        
+        let paired_items = stimuli.table;
+        
+        var paired_audio = [];
+        for (var i=0; i< paired_items.length; i++) {
+            paired_audio.push(paired_items[i].filename);
+            console.log('loaded paired succesion audio as "paired_audio"');
+        };
+        
+        var check_audio = ['./sounds/testtune.mp3'];
         
         // Data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
@@ -154,25 +173,45 @@
 
         // sample function that might be used to check if a subject has given
         // consent to participate.
-        var osweb_done = function(elem) {
-            if (document.getElementById('consent_checkbox').checked) {
-                return true;
-            } else {
-                alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
-                return false;
+        // var osweb_done = function(elem) {
+        //     if (document.getElementById('consent_checkbox').checked) {
+        //         return true;
+        //     } else {
+        //         alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+        //         return false;
+        //     }
+        //     return false;
+        // };
+
+
+        // // declare the block.
+        // let osweb_experiment = {
+        //     type:'external-html',
+        //     url: "../osweb/osweb_exp.html",
+        //     cont_btn: null,
+        //     execute_script: true,
+        //     force_refresh: true
+        // };
+
+        let baseline_screen = {
+            type: 'jspsych-audio-keyboard-response',
+            stimulus: jsPsych.timelineVariable('basline_audio'),
+            choices: jspsych.NO_KEYS,
+            response_ends_trial: false,
+            choices: jsPsych.NO_KEYS,
+            prompt: function() {
+                return '<img src = "'+ jsPsych.timelineVariable('baseline_image_a', true) +'" >'},
+            trial_ends_after_audio: false,
+            trial_duration: 1950,
+            data: {
+                target_audio: jsPsych.timelineVariable('baseline_audio'),
+                target_image_a: jsPsych.timelineVariable('baseline_image_a'),
+                target_image_b: jsPsych.timelineVariable('baseline_image_b'),
+                condition: jsPsych.timelineVariable('condition'),
+                trial_part: 'todo',
+                task_part: jsPsych.timelineVariable('task_part')
             }
-            return false;
-        };
-
-
-        // declare the block.
-        let osweb_experiment = {
-            type:'external-html',
-            url: "../osweb/osweb_exp.html",
-            cont_btn: null,
-            execute_script: true,
-            force_refresh: true
-        };
+        } 
 
         let well_done_screen = {
             type: 'html-button-response',
@@ -214,8 +253,11 @@
         // task instruction (instructions.js)
         timeline.push(instruction_screen_rec);
 
-        // osweb experiment
-        timeline.push(osweb_experiment);
+        // baseline
+        timeline.push(baseline_screen);
+
+        // // osweb experiment
+        // timeline.push(osweb_experiment);
 
         // get ready (practice)
         timeline.push(well_done_screen);
