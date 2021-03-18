@@ -3,7 +3,7 @@
     <head>
     <meta charset="UTF-8">
     
-    <title>Auditory Lexical Decision Experiment</title>
+    <title>Babies Online (hmmm...)</title>
 
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
@@ -28,10 +28,14 @@
     <!-- UU fonts -->
     <link href=https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/fonts.css rel="stylesheet" type="text/css"/>
 
+    <!-- experimental extra button css -->
+    <!-- <link rel="stylesheet" href="css/image-button.css"></link> -->
+
     <!-- Uil OTS libraries -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/jspsych-uil-utils.js"></script>
 
      <!-- Uil OTS organised  -->
+    <script src="stimuli.js"></script>
     <script src="globals.js"></script>
     <script src="instructions.js"></script>
     <script src="soundtest.js"></script>
@@ -114,26 +118,42 @@
     window.addEventListener('load', function() {
 
         // load stimuli
-        let stimuli = pickRandomList();
-        console.log("The selected list is %s", stimuli.list_name);
+
+        let baseline_items = getBaselineItems().table;
+        //console.log(baseline_items);
         
+        let paired_items = getPairedItems().table;
+        //console.log(paired_items);
+
+            
         ////////////////////////// media preloading ///////////////////////////////////////
         
-        let baseline_items = getBaselineItems().table;
+
         
         var baseline_audio = [];
-        for (var i=0; i< practice_items.length; i++) {
-            baseline_audio.push(baseline_items[i].filename);
+        for (var i=0; i< baseline_items.length; i++) {
+            baseline_audio.push(baseline_items[i].sound_fn);
             console.log('loaded baseline audio as "baseline_audio"');
         };
         
-        let paired_items = stimuli.table;
+        console.log(baseline_audio);
+
+        var baseline_images = [];
+        for (var i=0; i< baseline_items.length; i++) {
+            baseline_images.push(baseline_items[i].image_fn_left);
+            baseline_images.push(baseline_items[i].image_fn_right);
+            console.log('loaded baseline images as "baseline_images"');
+        };
+        
+        //console.log(baseline_images);
         
         var paired_audio = [];
         for (var i=0; i< paired_items.length; i++) {
-            paired_audio.push(paired_items[i].filename);
+            paired_audio.push(paired_items[i].sound_fn);
             console.log('loaded paired succesion audio as "paired_audio"');
         };
+        
+        // console.log(paired_audio);
         
         var check_audio = ['./sounds/testtune.mp3'];
         
@@ -169,49 +189,31 @@
             response_ends_trial: true,
         };
 
-
-
-        // sample function that might be used to check if a subject has given
-        // consent to participate.
-        // var osweb_done = function(elem) {
-        //     if (document.getElementById('consent_checkbox').checked) {
-        //         return true;
-        //     } else {
-        //         alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
-        //         return false;
-        //     }
-        //     return false;
-        // };
-
-
-        // // declare the block.
-        // let osweb_experiment = {
-        //     type:'external-html',
-        //     url: "../osweb/osweb_exp.html",
-        //     cont_btn: null,
-        //     execute_script: true,
-        //     force_refresh: true
-        // };
-
         let baseline_screen = {
-            type: 'jspsych-audio-keyboard-response',
-            stimulus: jsPsych.timelineVariable('basline_audio'),
-            choices: jspsych.NO_KEYS,
+            type: 'audio-button-response',
+            stimulus: jsPsych.timelineVariable('sound_fn'),
+            choices: [
+                jsPsych.timelineVariable('image_fn_left'),
+                jsPsych.timelineVariable('image_fn_right')
+                ],
+            button_html:'<img src=%choice%></button>',
             response_ends_trial: false,
-            choices: jsPsych.NO_KEYS,
-            prompt: function() {
-                return '<img src = "'+ jsPsych.timelineVariable('baseline_image_a', true) +'" >'},
             trial_ends_after_audio: false,
             trial_duration: 1950,
             data: {
-                target_audio: jsPsych.timelineVariable('baseline_audio'),
-                target_image_a: jsPsych.timelineVariable('baseline_image_a'),
-                target_image_b: jsPsych.timelineVariable('baseline_image_b'),
-                condition: jsPsych.timelineVariable('condition'),
-                trial_part: 'todo',
-                task_part: jsPsych.timelineVariable('task_part')
+                target_audio: jsPsych.timelineVariable('sound_fn'),
+                target_image_a: jsPsych.timelineVariable('image_fn_left'),
+                target_image_b: jsPsych.timelineVariable('image_fn_right'),
             }
-        } 
+        };
+
+        let baseline_procedure = {
+            timeline:[
+                baseline_screen
+                ],
+            timeline_variables: baseline_items,
+            randomize_order: false,
+        };
 
         let well_done_screen = {
             type: 'html-button-response',
@@ -254,7 +256,7 @@
         timeline.push(instruction_screen_rec);
 
         // baseline
-        timeline.push(baseline_screen);
+        timeline.push(baseline_procedure);
 
         // // osweb experiment
         // timeline.push(osweb_experiment);
@@ -269,7 +271,9 @@
             jsPsych.init({
                 timeline: timeline,
                 preload_audio: [
-                    test_audio,
+                    check_audio,
+                    baseline_audio,
+                    paired_audio
                     ],
                 exclusions: {
                     min_width: MIN_WIDTH,
