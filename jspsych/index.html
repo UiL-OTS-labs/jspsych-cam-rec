@@ -345,29 +345,47 @@
         };
 
         // vsl grid example
+        var image_size = [200,200] // pixels
 
-        var pattern = [
+        var pattern_simple = [
             [0,0,0,0,0],
             ["./images/circle_simple_movement.gif", 0,0,0, "./images/circle_simple_movement.gif"],
             [0,0,0,0,0]
         ];
 
+        var grid_stimulus_simple = jsPsych.plugins['vsl-grid-scene'].generate_stimulus(pattern_simple, image_size);
+        console.log(grid_stimulus_simple);
+
+
+        var pattern_complex = [
+            [0,0,0,0,0],
+            ["./images/circle_complex_movement.gif", 0,0,0, "./images/circle_complex_movement.gif"],
+            [0,0,0,0,0]
+        ];
+
+        var grid_stimulus_complex = jsPsych.plugins['vsl-grid-scene'].generate_stimulus(pattern_complex, image_size);
+        console.log(grid_stimulus_complex);
+
         // var pattern = [
         //     [jsPsych.timelineVariable('image_fn_left'), 0, jsPsych.timelineVariable('image_fn_right')],
         // ];
 
-        var image_size = [200,200] // pixels
-
-        var grid_stimulus = jsPsych.plugins['vsl-grid-scene'].generate_stimulus(pattern, image_size);
-        console.log(grid_stimulus);
-
-
-        let grid_trial = {
-            type: 'html-keyboard-response',
-            stimulus: grid_stimulus,
+        let grid_trial_simple = {
+            type: 'audio-button-response',
+            stimulus: "./sounds/testtune.mp3", //jsPsych.timelineVariable('sound_fn'),
+            prompt: grid_stimulus_simple,
             trial_duration: 19500,
-            choices: jsPsych.NO_KEYS,
-            css_classes: ['whitetable']
+            choices: []
+            //css_classes: ['whitetable']
+        };
+
+        let grid_trial_complex = {
+            type: 'audio-button-response',
+            stimulus: "./sounds/testtune.mp3", //jsPsych.timelineVariable('sound_fn'),
+            prompt: grid_stimulus_complex,
+            trial_duration: 19500,
+            choices: []
+            //css_classes: ['whitetable']
         };
 
 
@@ -415,7 +433,8 @@
         //timeline.push(baseline_procedure);
 
         //grid version
-        timeline.push(grid_trial);
+        timeline.push(grid_trial_simple);
+        timeline.push(grid_trial_complex);
 
         // // osweb experiment
         // timeline.push(osweb_experiment);
