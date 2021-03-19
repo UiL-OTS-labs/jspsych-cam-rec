@@ -15,7 +15,8 @@
 
     <!-- External HTML for Maaike's (osweb) file -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-external-html.js"></script>
-    
+
+
     <!-- Generic check/ask libraries (instructions & surveys) -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
@@ -30,6 +31,10 @@
 
     <!-- experimental extra button css -->
     <!-- <link rel="stylesheet" href="css/image-button.css"></link> -->
+
+    <!-- VSL-grid plugin (copied a version with white table layout for testing)-->
+    <script src="plugin/jspsych-vsl-grid-scene.js"></script>
+    
 
     <!-- Uil OTS libraries -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/jspsych-uil-utils.js"></script>
@@ -72,6 +77,62 @@
         padding-left: 1%;
     }
 
+
+    /* layout for left right images */
+
+/*    #holder {
+        margin :0 auto;
+        display:inline-block;
+        width: 10px;
+    }
+
+    .left {
+        float:left;
+    }
+    .right {
+        float:right;
+    }
+
+    #logo {
+        align:middle;
+        text-align:center
+    }
+
+    #wrapper {
+        height:200px;
+        position: relative;
+        padding: 0em 0em 0em 0em;
+        background: #fff;
+        border: 1px solid blue;
+    }*/
+
+
+    #holder {
+        margin :0 auto;
+        display:inline-block;
+        width: 600px;
+        min-width: 150px;
+    }
+
+    #holder div {
+        display:inline-block;
+    }
+
+    #wrapper {
+        height:200px;
+        position: relative;
+        padding: 0em 0em 0em 0em;
+        background: #fff;
+        border: 1px solid blue;
+        width:400px;
+    }
+
+
+/*    #hp  {
+        float: right;    
+        margin: 0 0 0 15px;
+    }*/
+
     /* survey layout text-align */
 
     .survey {
@@ -97,6 +158,19 @@
     .jspsych-survey-multi-choice-option {
         text-align: left !important;
     }
+
+/*    .jspsych-vsl-grid-scene-table table, th, td {
+        border: 1px solid white;
+    }
+*/
+
+/*    .whitetable table, th, td{
+        border: 1px solid white;
+    }*/
+
+/*    table, th, td {
+        border: 1px solid white;
+    }*/
 
     /* valid input feedback (survey) */ 
 
@@ -156,7 +230,38 @@
         // console.log(paired_audio);
         
         var check_audio = ['./sounds/testtune.mp3'];
-        
+
+        // const LRHTML = `
+        //     <div id="holder">
+        //         <div id="logo" class='left'>
+        //             <button class="jspsych-btn"><img src="%choice% /></button>
+        //         </div>
+        //         <div class='right'>
+        //             <button class="jspsych-btn"><img src="%choice%" /></button>
+        //         </div>
+        //         <div style='clear:both;'></div>
+        //         <div id="wrapper"></div>
+        //     </div>
+        //     `
+        const LRHTML = `
+            <div id="holder">
+                <div class='left'>
+                    <button class="jspsych-btn"><img src="%choice% /></button>
+                </div>
+                <div class='right'>
+                    <button class="jspsych-btn"><img src="%choice%" /></button>
+                </div>
+                <div id="wrapper"></div>
+            </div>
+            `
+        const LRHTML2 =    `
+            <div id="holder">
+                <button class="jspsych-btn"><img src="%choice% /></button>
+            <div id="wrapper"></div>
+                <button class="jspsych-btn"><img src="%choice%" /></button>
+            </div>
+            `
+
         // Data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
         
@@ -189,6 +294,27 @@
             response_ends_trial: true,
         };
 
+        // let baseline_screen = {
+        //     type: 'audio-button-response',
+        //     stimulus: jsPsych.timelineVariable('sound_fn'),
+        //     choices: [
+        //         jsPsych.timelineVariable('image_fn_left'),
+        //         jsPsych.timelineVariable('image_fn_right')
+        //         ],
+        //     button_html: [
+        //         '<button class="jspsych-btn"><img src="%choice%" align="left" /></button>',
+        //         '<button class="jspsych-btn"><img src="%choice%" align="right" /></button>'
+        //         ],
+        //     response_ends_trial: false,
+        //     trial_ends_after_audio: false,
+        //     trial_duration: 1950,
+        //     data: {
+        //         target_audio: jsPsych.timelineVariable('sound_fn'),
+        //         target_image_a: jsPsych.timelineVariable('image_fn_left'),
+        //         target_image_b: jsPsych.timelineVariable('image_fn_right'),
+        //     }
+        // };
+
         let baseline_screen = {
             type: 'audio-button-response',
             stimulus: jsPsych.timelineVariable('sound_fn'),
@@ -196,10 +322,13 @@
                 jsPsych.timelineVariable('image_fn_left'),
                 jsPsych.timelineVariable('image_fn_right')
                 ],
-            button_html:'<img src=%choice%></button>',
+            button_html: function(){
+                let text = LRHTML2;
+                return text
+            },
             response_ends_trial: false,
             trial_ends_after_audio: false,
-            trial_duration: 1950,
+            trial_duration: 19500,
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image_a: jsPsych.timelineVariable('image_fn_left'),
@@ -214,6 +343,33 @@
             timeline_variables: baseline_items,
             randomize_order: false,
         };
+
+        // vsl grid example
+
+        var pattern = [
+            [0,0,0,0,0],
+            ["./images/circle_simple_movement.gif", 0,0,0, "./images/circle_simple_movement.gif"],
+            [0,0,0,0,0]
+        ];
+
+        // var pattern = [
+        //     [jsPsych.timelineVariable('image_fn_left'), 0, jsPsych.timelineVariable('image_fn_right')],
+        // ];
+
+        var image_size = [200,200] // pixels
+
+        var grid_stimulus = jsPsych.plugins['vsl-grid-scene'].generate_stimulus(pattern, image_size);
+        console.log(grid_stimulus);
+
+
+        let grid_trial = {
+            type: 'html-keyboard-response',
+            stimulus: grid_stimulus,
+            trial_duration: 19500,
+            choices: jsPsych.NO_KEYS,
+            css_classes: ['whitetable']
+        };
+
 
         let well_done_screen = {
             type: 'html-button-response',
@@ -256,7 +412,10 @@
         timeline.push(instruction_screen_rec);
 
         // baseline
-        timeline.push(baseline_procedure);
+        //timeline.push(baseline_procedure);
+
+        //grid version
+        timeline.push(grid_trial);
 
         // // osweb experiment
         // timeline.push(osweb_experiment);

@@ -17,20 +17,37 @@ const SOUND_2 = "SOUND_2";
 
 
 // Baseline items 1
+// const BASELINE_1 = [
+//     {
+//         id: 1, 
+//         item_type: BASELINE, 
+//         sound_fn: "./sounds/testtune.mp3",
+//         image_fn_left: "./images/simple1.png",
+//         image_fn_right: "./images/simple2.png"
+//     },
+//     {
+//         id: 2, 
+//         item_type: BASELINE, 
+//         sound_fn: "./sounds/testtune.mp3",
+//         image_fn_left: "./images/complex1.png",
+//         image_fn_right: "./images/complex2.png"
+//     }
+// ];
+
 const BASELINE_1 = [
     {
         id: 1, 
         item_type: BASELINE, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn_left: "./images/simple1.png",
-        image_fn_right: "./images/simple2.png"
+        image_fn_left: "./images/circle_complex_movement.gif",
+        image_fn_right: "./images/circle_complex_movement.gif"
     },
     {
         id: 2, 
         item_type: BASELINE, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn_left: "./images/complex1.png",
-        image_fn_right: "./images/complex2.png"
+        image_fn_left: "./images/circle_simple_movement.gif",
+        image_fn_right: "./images/circle_simple_movement.gif"
     }
 ];
 
