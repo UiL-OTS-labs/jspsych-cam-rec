@@ -19,12 +19,16 @@
     <!-- preload media (new plugin since 6.3?) -->
 <!--     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-preload.js"></script>
  -->
+
     <!-- Generic check/ask libraries (instructions & surveys) -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-select.js"></script>
     
+    <!--this was originally used (with a hack to get white table) borders (now in GRID_HTML) -->
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-vsl-grid-scene.js"></script>
+
     <!-- Generic jspsych style sheet -->
     <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
 
@@ -35,8 +39,8 @@
     <!-- <link rel="stylesheet" href="css/image-button.css"></link> -->
 
     <!-- VSL-grid plugin (copied a version with white table layout for testing)-->
-    <script src="plugin/jspsych-vsl-grid-scene.js"></script>
-    
+<!--     <script src="plugin/jspsych-vsl-grid-scene-white.js"></script>
+ -->    
     <!-- Uil OTS libraries -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/jspsych-uil-utils.js"></script>
 
@@ -249,23 +253,6 @@
 
         //regular functions
 
-        function createGrid(left, right) {
-            console.log('grid-making...:\n')
-            console.log(left);
-            console.log(right);
-            let size = 200;//timelinevar?
-            let image_size_array = [size, size];
-
-            let pattern = [
-                [0,0,0,0,0],
-                [left,0,0,0,right],
-                [0,0,0,0,0]
-                ];
-
-            let grid_stimulus = jsPsych.plugins['vsl-grid-scene'].generate_stimulus(pattern, image_size_array);
-            console.log(grid_stimulus);
-            return grid_stimulus;
-        };
 
         const LRHTML = `
             <div id="holder">
@@ -367,7 +354,7 @@
             response_ends_trial: false,
             trial_ends_after_audio: false,
             trial_duration: 195000,
-            choices: [], //[jsPsych.timelineVariable('image_fn_left', true),jsPsych.timelineVariable('image_fn_right', true)],
+            choices: [],
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image_a: jsPsych.timelineVariable('image_fn_left'),

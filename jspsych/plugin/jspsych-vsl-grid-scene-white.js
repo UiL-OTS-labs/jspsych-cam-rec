@@ -11,11 +11,11 @@
  *
  */
 
-jsPsych.plugins['vsl-grid-scene'] = (function() {
+jsPsych.plugins['vsl-grid-scene-white'] = (function() {
 
   var plugin = {};
 
-  jsPsych.pluginAPI.registerPreload('vsl-grid-scene', 'stimuli', 'image');
+  jsPsych.pluginAPI.registerPreload('vsl-grid-scene-white', 'stimuli', 'image');
 
   plugin.info = {
     name: 'vsl-grid-scene',
