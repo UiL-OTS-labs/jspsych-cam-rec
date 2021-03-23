@@ -82,62 +82,6 @@
         padding-left: 1%;
     }
 
-
-    /* layout for left right images */
-
-/*    #holder {
-        margin :0 auto;
-        display:inline-block;
-        width: 10px;
-    }
-
-    .left {
-        float:left;
-    }
-    .right {
-        float:right;
-    }
-
-    #logo {
-        align:middle;
-        text-align:center
-    }
-
-    #wrapper {
-        height:200px;
-        position: relative;
-        padding: 0em 0em 0em 0em;
-        background: #fff;
-        border: 1px solid blue;
-    }*/
-
-
-    #holder {
-        margin :0 auto;
-        display:inline-block;
-        width: 600px;
-        min-width: 150px;
-    }
-
-    #holder div {
-        display:inline-block;
-    }
-
-    #wrapper {
-        height:200px;
-        position: relative;
-        padding: 0em 0em 0em 0em;
-        background: #fff;
-        border: 1px solid blue;
-        width:400px;
-    }
-
-
-/*    #hp  {
-        float: right;    
-        margin: 0 0 0 15px;
-    }*/
-
     /* survey layout text-align */
 
     .survey {
@@ -163,19 +107,6 @@
     .jspsych-survey-multi-choice-option {
         text-align: left !important;
     }
-
-/*    .jspsych-vsl-grid-scene-table table, th, td {
-        border: 1px solid white;
-    }
-*/
-
-/*    .whitetable table, th, td{
-        border: 1px solid white;
-    }*/
-
-/*    table, th, td {
-        border: 1px solid white;
-    }*/
 
     /* valid input feedback (survey) */ 
 
@@ -305,44 +236,9 @@
             response_ends_trial: true,
         };
 
-        // let baseline_screen = {
-        //     type: 'audio-button-response',
-        //     stimulus: jsPsych.timelineVariable('sound_fn'),
-        //     choices: [
-        //         jsPsych.timelineVariable('image_fn_left'),
-        //         jsPsych.timelineVariable('image_fn_right')
-        //         ],
-        //     button_html: [
-        //         '<button class="jspsych-btn"><img src="%choice%" align="left" /></button>',
-        //         '<button class="jspsych-btn"><img src="%choice%" align="right" /></button>'
-        //         ],
-        //     response_ends_trial: false,
-        //     trial_ends_after_audio: false,
-        //     trial_duration: 1950,
-        //     data: {
-        //         target_audio: jsPsych.timelineVariable('sound_fn'),
-        //         target_image_a: jsPsych.timelineVariable('image_fn_left'),
-        //         target_image_b: jsPsych.timelineVariable('image_fn_right'),
-        //     }
-        // };
-
-
-
-        //////////////////// vsl grid.... should go to stimuli?  ////////////////
-
-
-        // let grid_trial = {
-        //     type: 'audio-button-response',
-        //     stimulus: "./sounds/testtune.mp3", //jsPsych.timelineVariable('sound_fn'),
-        //     prompt: grid_stimulus,
-        //     trial_duration: 19500,
-        //     choices: []
-        // };
-
-
         /////////////////////////////////////// 
 
-        let baseline_screen = {
+        let left_right_screen = {
             type: 'audio-button-response',
             stimulus: jsPsych.timelineVariable('sound_fn'),
             prompt: function() {
@@ -353,7 +249,7 @@
             },
             response_ends_trial: false,
             trial_ends_after_audio: false,
-            trial_duration: 195000,
+            trial_duration: 1950,
             choices: [],
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
@@ -364,11 +260,12 @@
 
         let baseline_procedure = {
             timeline:[
-                baseline_screen
+                left_right_screen
                 ],
             timeline_variables: baseline_items,
-            randomize_order: false,
+            randomize_order: true,
         };
+
         /////////////////////////////////////////////
 
 
@@ -414,10 +311,6 @@
 
         // baseline
         timeline.push(baseline_procedure);
-
-        //grid version
-        //timeline.push(grid_trial_simple);
-        //timeline.push(grid_trial_complex);
 
         // // osweb experiment
         // timeline.push(osweb_experiment);

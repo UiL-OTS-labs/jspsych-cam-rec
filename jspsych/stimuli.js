@@ -65,6 +65,8 @@ const PAIRED_1 = [
 //     [0,0,0,0,0]
 // ];
 
+
+// table layout
 GRID_HTML = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
     <table id="jspsych-vsl-grid-scene table" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
     <tr id="jspsych-vsl-grid-scene-table-row-0" css="height: 200px;">
