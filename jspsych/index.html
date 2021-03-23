@@ -266,6 +266,15 @@
             randomize_order: true,
         };
 
+        let paired_procedure = {
+            timeline:[
+                left_right_screen
+                ],
+            timeline_variables: paired_items,
+            randomize_order: true,
+        };
+
+
         /////////////////////////////////////////////
 
 
@@ -312,6 +321,8 @@
         // baseline
         timeline.push(baseline_procedure);
 
+        // paired
+        timeline.push(paired_procedure);
         // // osweb experiment
         // timeline.push(osweb_experiment);
 
