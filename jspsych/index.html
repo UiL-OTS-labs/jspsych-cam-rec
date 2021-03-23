@@ -15,8 +15,10 @@
 
     <!-- External HTML for Maaike's (osweb) file -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-external-html.js"></script>
-
-
+    
+    <!-- preload media (new plugin since 6.3?) -->
+<!--     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-preload.js"></script>
+ -->
     <!-- Generic check/ask libraries (instructions & surveys) -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
@@ -35,7 +37,6 @@
     <!-- VSL-grid plugin (copied a version with white table layout for testing)-->
     <script src="plugin/jspsych-vsl-grid-scene.js"></script>
     
-
     <!-- Uil OTS libraries -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/jspsych-uil-utils.js"></script>
 
@@ -191,6 +192,8 @@
     // contents of this method
     window.addEventListener('load', function() {
 
+
+
         // load stimuli
 
         let baseline_items = getBaselineItems().table;
@@ -219,7 +222,7 @@
             console.log('loaded baseline images as "baseline_images"');
         };
         
-        //console.log(baseline_images);
+        console.log(baseline_images);
         
         var paired_audio = [];
         for (var i=0; i< paired_items.length; i++) {
@@ -243,6 +246,27 @@
         //         <div id="wrapper"></div>
         //     </div>
         //     `
+
+        //regular functions
+
+        function createGrid(left, right) {
+            console.log('grid-making...:\n')
+            console.log(left);
+            console.log(right);
+            let size = 200;//timelinevar?
+            let image_size_array = [size, size];
+
+            let pattern = [
+                [0,0,0,0,0],
+                [left,0,0,0,right],
+                [0,0,0,0,0]
+                ];
+
+            let grid_stimulus = jsPsych.plugins['vsl-grid-scene'].generate_stimulus(pattern, image_size_array);
+            console.log(grid_stimulus);
+            return grid_stimulus;
+        };
+
         const LRHTML = `
             <div id="holder">
                 <div class='left'>
@@ -315,24 +339,39 @@
         //     }
         // };
 
+
+
+        //////////////////// vsl grid.... should go to stimuli?  ////////////////
+
+
+        // let grid_trial = {
+        //     type: 'audio-button-response',
+        //     stimulus: "./sounds/testtune.mp3", //jsPsych.timelineVariable('sound_fn'),
+        //     prompt: grid_stimulus,
+        //     trial_duration: 19500,
+        //     choices: []
+        // };
+
+
+        /////////////////////////////////////// 
+
         let baseline_screen = {
             type: 'audio-button-response',
             stimulus: jsPsych.timelineVariable('sound_fn'),
-            choices: [
-                jsPsych.timelineVariable('image_fn_left'),
-                jsPsych.timelineVariable('image_fn_right')
-                ],
-            button_html: function(){
-                let text = LRHTML2;
-                return text
+            prompt: function() {
+                var grid = GRID_HTML
+                var leftgrid = grid.replace("./images/left.png",jsPsych.timelineVariable('image_fn_left'));
+                var rightgrid = leftgrid.replace("./images/right.png",jsPsych.timelineVariable('image_fn_right'));
+                return rightgrid;
             },
             response_ends_trial: false,
             trial_ends_after_audio: false,
-            trial_duration: 19500,
+            trial_duration: 195000,
+            choices: [], //[jsPsych.timelineVariable('image_fn_left', true),jsPsych.timelineVariable('image_fn_right', true)],
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image_a: jsPsych.timelineVariable('image_fn_left'),
-                target_image_b: jsPsych.timelineVariable('image_fn_right'),
+                target_image_b: jsPsych.timelineVariable('image_fn_right')
             }
         };
 
@@ -343,50 +382,7 @@
             timeline_variables: baseline_items,
             randomize_order: false,
         };
-
-        // vsl grid example
-        var image_size = [200,200] // pixels
-
-        var pattern_simple = [
-            [0,0,0,0,0],
-            ["./images/circle_simple_movement.gif", 0,0,0, "./images/circle_simple_movement.gif"],
-            [0,0,0,0,0]
-        ];
-
-        var grid_stimulus_simple = jsPsych.plugins['vsl-grid-scene'].generate_stimulus(pattern_simple, image_size);
-        console.log(grid_stimulus_simple);
-
-
-        var pattern_complex = [
-            [0,0,0,0,0],
-            ["./images/circle_complex_movement.gif", 0,0,0, "./images/circle_complex_movement.gif"],
-            [0,0,0,0,0]
-        ];
-
-        var grid_stimulus_complex = jsPsych.plugins['vsl-grid-scene'].generate_stimulus(pattern_complex, image_size);
-        console.log(grid_stimulus_complex);
-
-        // var pattern = [
-        //     [jsPsych.timelineVariable('image_fn_left'), 0, jsPsych.timelineVariable('image_fn_right')],
-        // ];
-
-        let grid_trial_simple = {
-            type: 'audio-button-response',
-            stimulus: "./sounds/testtune.mp3", //jsPsych.timelineVariable('sound_fn'),
-            prompt: grid_stimulus_simple,
-            trial_duration: 19500,
-            choices: []
-            //css_classes: ['whitetable']
-        };
-
-        let grid_trial_complex = {
-            type: 'audio-button-response',
-            stimulus: "./sounds/testtune.mp3", //jsPsych.timelineVariable('sound_fn'),
-            prompt: grid_stimulus_complex,
-            trial_duration: 19500,
-            choices: []
-            //css_classes: ['whitetable']
-        };
+        /////////////////////////////////////////////
 
 
         let well_done_screen = {
@@ -430,11 +426,11 @@
         timeline.push(instruction_screen_rec);
 
         // baseline
-        //timeline.push(baseline_procedure);
+        timeline.push(baseline_procedure);
 
         //grid version
-        timeline.push(grid_trial_simple);
-        timeline.push(grid_trial_complex);
+        //timeline.push(grid_trial_simple);
+        //timeline.push(grid_trial_complex);
 
         // // osweb experiment
         // timeline.push(osweb_experiment);
