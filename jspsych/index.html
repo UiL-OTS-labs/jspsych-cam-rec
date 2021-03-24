@@ -137,8 +137,11 @@
         let paired_items = getPairedItems().table;
         console.log(paired_items);
 
-        let grabber_items = getGrabberItems().table;
-        console.log(grabber_items);
+        let grabber_items_one = getGrabberOneItems().table;
+        console.log(grabber_items_one);
+
+        let grabber_items_two = getGrabberTwoItems().table;
+        console.log(grabber_items_two);
 
         ////////////////////////// media preloading ///////////////////////////////////////
         
@@ -171,16 +174,28 @@
         };
         
         // GRABBER
-        var grabber_audio = [];
-        for (var i=0; i< grabber_items.length; i++) {
-            grabber_audio.push(grabber_items[i].sound_fn);
-            console.log('loaded grabber audio as "grabber_audio"');
+        var grabber_audio_one = [];
+        for (var i=0; i< grabber_items_one.length; i++) {
+            grabber_audio_one.push(grabber_items_one[i].sound_fn);
+            console.log('loaded grabber one audio as "grabber_audio_one"');
         };
 
-        var grabber_images = [];
-        for (var i=0; i< grabber_items.length; i++) {
-            grabber_images.push(grabber_items[i].image_fn);
-            console.log('loaded grabber images as "grabber_images"');
+        var grabber_images_one = [];
+        for (var i=0; i< grabber_items_one.length; i++) {
+            grabber_images_one.push(grabber_items_one[i].image_fn);
+            console.log('loaded grabber one images as "grabber_images_one"');
+        };
+
+        var grabber_audio_two = [];
+        for (var i=0; i< grabber_items_two.length; i++) {
+            grabber_audio_two.push(grabber_items_two[i].sound_fn);
+            console.log('loaded grabber two audio as "grabber_audio_two"');
+        };
+
+        var grabber_images_two = [];
+        for (var i=0; i< grabber_items_two.length; i++) {
+            grabber_images_two.push(grabber_items_two[i].image_fn);
+            console.log('loaded grabber two images as "grabber_images_two"');
         };
         
         // TEST SOUND
@@ -301,7 +316,7 @@
             },
             response_ends_trial: false,
             trial_ends_after_audio: false,
-            trial_duration: 2450000,
+            trial_duration: 2450,
             choices: [],
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
@@ -327,11 +342,19 @@
             randomize_order: false,
         };
 
-        let grabber_procedure = {
+        let grabber_procedure_one = {
             timeline:[
                 center_screen
                 ],
-            timeline_variables: grabber_items,
+            timeline_variables: grabber_items_one,
+            randomize_order: false,
+        };
+
+        let grabber_procedure_two = {
+            timeline:[
+                center_screen
+                ],
+            timeline_variables: grabber_items_two,
             randomize_order: false,
         };
 
@@ -372,26 +395,31 @@
         // survey
         //timeline.push(survey_procedure);
 
-        // test/set audio level (soundtest.js)
-        //timeline.push(test_audio_looped);
+        //test/set audio level (soundtest.js)
+        timeline.push(test_audio_looped);
         
         timeline.push(instruction_screen_layout);
 
         timeline.push(check_screen_layout);
-        
+
         // task instruction (instructions.js)
         timeline.push(instruction_screen_rec);
 
+        // grabber one
+        timeline.push(grabber_procedure_one);
+
         // baseline
-        //timeline.push(baseline_procedure);
+        timeline.push(baseline_procedure);
+
+        // grabber one (again)
+        timeline.push(grabber_procedure_one);
 
         // paired
         timeline.push(paired_procedure);
 
-        // grabber
-        timeline.push(grabber_procedure);
+        // grabber two
+        timeline.push(grabber_procedure_two);
 
-        // get ready (practice)
         timeline.push(well_done_screen);
         
         timeline.push(end_screen);
