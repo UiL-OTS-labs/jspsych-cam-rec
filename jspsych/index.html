@@ -132,77 +132,59 @@
         // load stimuli
 
         let baseline_items = getBaselineItems().table;
-        //console.log(baseline_items);
+        console.log(baseline_items);
         
         let paired_items = getPairedItems().table;
-        //console.log(paired_items);
+        console.log(paired_items);
 
-            
+        let grabber_items = getGrabberItems().table;
+        console.log(grabber_items);
+
         ////////////////////////// media preloading ///////////////////////////////////////
         
 
-        
+        // BASELINE
         var baseline_audio = [];
         for (var i=0; i< baseline_items.length; i++) {
             baseline_audio.push(baseline_items[i].sound_fn);
             console.log('loaded baseline audio as "baseline_audio"');
         };
         
-        console.log(baseline_audio);
-
         var baseline_images = [];
         for (var i=0; i< baseline_items.length; i++) {
             baseline_images.push(baseline_items[i].image_fn_left);
             baseline_images.push(baseline_items[i].image_fn_right);
             console.log('loaded baseline images as "baseline_images"');
         };
-        
-        console.log(baseline_images);
-        
+                
+        // PAIRED
         var paired_audio = [];
         for (var i=0; i< paired_items.length; i++) {
             paired_audio.push(paired_items[i].sound_fn);
             console.log('loaded paired succesion audio as "paired_audio"');
         };
+
+        var paired_images = [];
+        for (var i=0; i< paired_items.length; i++) {
+            paired_images.push(paired_items[i].image_fn);
+            console.log('loaded baseline images as "baseline_images"');
+        };
         
-        // console.log(paired_audio);
+        // GRABBER
+        var grabber_audio = [];
+        for (var i=0; i< grabber_items.length; i++) {
+            grabber_audio.push(grabber_items[i].sound_fn);
+            console.log('loaded grabber audio as "grabber_audio"');
+        };
+
+        var grabber_images = [];
+        for (var i=0; i< grabber_items.length; i++) {
+            grabber_images.push(grabber_items[i].image_fn);
+            console.log('loaded grabber images as "grabber_images"');
+        };
         
+        // TEST SOUND
         var check_audio = ['./sounds/testtune.mp3'];
-
-        // const LRHTML = `
-        //     <div id="holder">
-        //         <div id="logo" class='left'>
-        //             <button class="jspsych-btn"><img src="%choice% /></button>
-        //         </div>
-        //         <div class='right'>
-        //             <button class="jspsych-btn"><img src="%choice%" /></button>
-        //         </div>
-        //         <div style='clear:both;'></div>
-        //         <div id="wrapper"></div>
-        //     </div>
-        //     `
-
-        //regular functions
-
-
-        const LRHTML = `
-            <div id="holder">
-                <div class='left'>
-                    <button class="jspsych-btn"><img src="%choice% /></button>
-                </div>
-                <div class='right'>
-                    <button class="jspsych-btn"><img src="%choice%" /></button>
-                </div>
-                <div id="wrapper"></div>
-            </div>
-            `
-        const LRHTML2 =    `
-            <div id="holder">
-                <button class="jspsych-btn"><img src="%choice% /></button>
-            <div id="wrapper"></div>
-                <button class="jspsych-btn"><img src="%choice%" /></button>
-            </div>
-            `
 
         // Data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
@@ -236,8 +218,6 @@
             response_ends_trial: true,
         };
 
-        /////////////////////////////////////// 
-
         let left_and_right_screen = {
             type: 'audio-button-response',
             stimulus: jsPsych.timelineVariable('sound_fn'),
@@ -257,7 +237,6 @@
                 target_image_b: jsPsych.timelineVariable('image_fn_right')
             }
         };
-
 
         let left_or_right_screen = {
             type: 'audio-button-response',
@@ -290,12 +269,33 @@
             }
         };
 
+        let center_screen = {
+            type: 'audio-button-response',
+            stimulus: jsPsych.timelineVariable('sound_fn'),
+            prompt: function() {
+
+                var grid = GRID_HTML_CENTER
+                var newgrid = grid.replace("./images/center.png",jsPsych.timelineVariable('image_fn'));
+                return newgrid;
+            },
+            response_ends_trial: false,
+            trial_ends_after_audio: false,
+            trial_duration: 2450000,
+            choices: [],
+            data: {
+                target_audio: jsPsych.timelineVariable('sound_fn'),
+                target_image_a: jsPsych.timelineVariable('image_fn'),
+            }
+        };
+
+        // PROCEDURES ////////////////////////////////
+
         let baseline_procedure = {
             timeline:[
                 left_and_right_screen
                 ],
             timeline_variables: baseline_items,
-            randomize_order: true,
+            randomize_order: false,
         };
 
         let paired_procedure = {
@@ -303,7 +303,15 @@
                 left_or_right_screen
                 ],
             timeline_variables: paired_items,
-            randomize_order: true,
+            randomize_order: false,
+        };
+
+        let grabber_procedure = {
+            timeline:[
+                center_screen
+                ],
+            timeline_variables: grabber_items,
+            randomize_order: false,
         };
 
         /////////////////////////////////////////////
@@ -344,16 +352,19 @@
         //timeline.push(survey_procedure);
 
         // test/set audio level (soundtest.js)
-        timeline.push(test_audio_looped);
+        //timeline.push(test_audio_looped);
         
         // task instruction (instructions.js)
-        timeline.push(instruction_screen_rec);
+        //timeline.push(instruction_screen_rec);
 
         // baseline
-        timeline.push(baseline_procedure);
+        //timeline.push(baseline_procedure);
 
         // paired
         timeline.push(paired_procedure);
+
+        // grabber
+        timeline.push(grabber_procedure);
 
         // get ready (practice)
         timeline.push(well_done_screen);
