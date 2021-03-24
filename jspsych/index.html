@@ -207,6 +207,27 @@
             response_ends_trial: true
         };
 
+        let instruction_screen_layout = {
+            type: 'html-button-response',
+            stimulus: function(){
+                let text = PRE_LAYOUT_MESSAGE;
+                return "<div class='instruction' >" +
+                       "<p>" + text + "</p></div>";
+            },
+            choices: [OK_BUTTON_TEXT],
+            response_ends_trial: true,
+        };
+
+        let check_screen_layout = {
+            type: 'html-button-response',
+            stimulus: function(){
+                let table = GRID_HTML_LAYOUT;
+                return table;
+            },
+            choices: ["Continue"],
+            response_ends_trial: true,
+        };
+
         let instruction_screen_rec = {
             type: 'html-button-response',
             stimulus: function(){
@@ -354,8 +375,12 @@
         // test/set audio level (soundtest.js)
         //timeline.push(test_audio_looped);
         
+        timeline.push(instruction_screen_layout);
+
+        timeline.push(check_screen_layout);
+        
         // task instruction (instructions.js)
-        //timeline.push(instruction_screen_rec);
+        timeline.push(instruction_screen_rec);
 
         // baseline
         //timeline.push(baseline_procedure);
