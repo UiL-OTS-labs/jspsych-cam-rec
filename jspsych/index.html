@@ -238,11 +238,11 @@
 
         /////////////////////////////////////// 
 
-        let left_right_screen = {
+        let left_and_right_screen = {
             type: 'audio-button-response',
             stimulus: jsPsych.timelineVariable('sound_fn'),
             prompt: function() {
-                var grid = GRID_HTML
+                var grid = GRID_HTML_LEFT_RIGHT
                 var leftgrid = grid.replace("./images/left.png",jsPsych.timelineVariable('image_fn_left'));
                 var rightgrid = leftgrid.replace("./images/right.png",jsPsych.timelineVariable('image_fn_right'));
                 return rightgrid;
@@ -258,9 +258,41 @@
             }
         };
 
+
+        let left_or_right_screen = {
+            type: 'audio-button-response',
+            stimulus: jsPsych.timelineVariable('sound_fn'),
+            prompt: function() {
+                
+                var side = jsPsych.timelineVariable('side', true);
+                
+                console.log('side: ' + side);
+
+                var grid = GRID_HTML_LEFT_RIGHT
+                
+                if ( side === 0 ){
+                    var newgrid = grid.replace("./images/left.png",jsPsych.timelineVariable('image_fn'));
+                } else if (side === 1 ) {
+                    var newgrid = grid.replace("./images/right.png",jsPsych.timelineVariable('image_fn'));
+                } else {
+                    console.error("Stimulus side is unknown or undefined...");
+                    var newgrid = 'undefinded';
+                }
+                return newgrid;
+            },
+            response_ends_trial: false,
+            trial_ends_after_audio: false,
+            trial_duration: 1950,
+            choices: [],
+            data: {
+                target_audio: jsPsych.timelineVariable('sound_fn'),
+                target_image_a: jsPsych.timelineVariable('image_fn'),
+            }
+        };
+
         let baseline_procedure = {
             timeline:[
-                left_right_screen
+                left_and_right_screen
                 ],
             timeline_variables: baseline_items,
             randomize_order: true,
@@ -268,12 +300,11 @@
 
         let paired_procedure = {
             timeline:[
-                left_right_screen
+                left_or_right_screen
                 ],
             timeline_variables: paired_items,
             randomize_order: true,
         };
-
 
         /////////////////////////////////////////////
 
@@ -323,8 +354,6 @@
 
         // paired
         timeline.push(paired_procedure);
-        // // osweb experiment
-        // timeline.push(osweb_experiment);
 
         // get ready (practice)
         timeline.push(well_done_screen);
