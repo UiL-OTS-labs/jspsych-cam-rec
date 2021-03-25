@@ -130,7 +130,7 @@ GRID_HTML_LEFT_RIGHT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: non
     </tr><tr id="jspsych-vsl-grid-scene-table-row-1" css="height: 200px;">
     <td id="jspsych-vsl-grid-scene-table-1-0" style="padding: 20px 20px; border: 0px solid "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-0" style="width: 200px; height: 200px;">
-    <img src="./images/left.png" style="width: 200px; height: 200"></img></div>
+    <img src="./images/left-grey.png" style="width: 200px; height: 200"></img></div>
     </td><td id="jspsych-vsl-grid-scene-table-1-1" style="padding: 20px 20px; border: 0px solid "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-1" style="width: 200px; height: 200px;"></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-2" style="padding: 20px 20px; border: 0px solid "#a09c99";">
@@ -139,7 +139,7 @@ GRID_HTML_LEFT_RIGHT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: non
     <div id="jspsych-vsl-grid-scene-table-cell-1-3" style="width: 200px; height: 200px;"></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-4" style="padding: 20px 20px; border: 0px solid "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-4" style="width: 200px; height: 200px;">
-    <img src="./images/right.png" style="width: 200px; height: 200"></img></div>
+    <img src="./images/right-grey.png" style="width: 200px; height: 200"></img></div>
     </td></tr><tr id="jspsych-vsl-grid-scene-table-row-2" css="height: 200px;">
     <td id="jspsych-vsl-grid-scene-table-2-0" style="padding: 20px 20px; border: 0px solid "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-2-0" style="width: 200px; height: 200px;"></div>
@@ -174,7 +174,7 @@ GRID_HTML_CENTER = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
     <div id="jspsych-vsl-grid-scene-table-cell-1-1" style="width: 200px; height: 200px;"></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-2" style="padding: 20px 20px; border: 0px "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-2" style="width: 200px; height: 200px;">
-    <img src="./images/center.png" style="width: 200px; height: 200"></img></div></td>
+    <img src="./images/center-grey.png" style="width: 200px; height: 200"></img></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-3" style="padding: 20px 20px; border: 0px "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-3" style="width: 200px; height: 200px;"></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-4" style="padding: 20px 20px; border: 0px "#a09c99";">
