@@ -29,6 +29,8 @@
         <button id="record" disabled>Start Recording</button>
         <button id="play" disabled>Play</button>
         <button id="download" disabled>Download</button>
+        <button id="upload">Upload</button>
+        <input id="upload_token" type="text" value="token"/>
     </div>
 
 
@@ -40,6 +42,9 @@
 <!-- include adapter for srcObject shim -->
 <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
 <script src="camflow.js" async></script>
+
+<!-- include uploading script -->
+<script src="upload.js" async></script>
 
 </body>
 </html>
