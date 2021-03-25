@@ -3,7 +3,7 @@
     <head>
     <meta charset="UTF-8">
     
-    <title>Babies Online (hmmm...)</title>
+    <title>Babies Online (not in the basement) </title>
 
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
@@ -270,8 +270,8 @@
             stimulus: jsPsych.timelineVariable('sound_fn'),
             prompt: function() {
                 var grid = GRID_HTML_LEFT_RIGHT
-                var leftgrid = grid.replace("./images/left.png",jsPsych.timelineVariable('image_fn_left'));
-                var rightgrid = leftgrid.replace("./images/right.png",jsPsych.timelineVariable('image_fn_right'));
+                var leftgrid = grid.replace("./images/left-grey.png",jsPsych.timelineVariable('image_fn_left'));
+                var rightgrid = leftgrid.replace("./images/right-grey.png",jsPsych.timelineVariable('image_fn_right'));
                 return rightgrid;
             },
             response_ends_trial: false,
@@ -299,9 +299,9 @@
                 var grid = GRID_HTML_LEFT_RIGHT;
                 
                 if ( side === 0 ){
-                    var newgrid = grid.replace("./images/left.png",jsPsych.timelineVariable('image_fn'));
+                    var newgrid = grid.replace("./images/left-grey.png",jsPsych.timelineVariable('image_fn'));
                 } else if (side === 1 ) {
-                    var newgrid = grid.replace("./images/right.png",jsPsych.timelineVariable('image_fn'));
+                    var newgrid = grid.replace("./images/right-grey.png",jsPsych.timelineVariable('image_fn'));
                 } else {
                     console.error("Stimulus side is unknown or undefined...");
                     var newgrid = 'undefinded';
@@ -326,7 +326,7 @@
             prompt: function() {
 
                 var grid = GRID_HTML_CENTER;
-                var newgrid = grid.replace("./images/center.png",jsPsych.timelineVariable('image_fn'));
+                var newgrid = grid.replace("./images/center-grey.png",jsPsych.timelineVariable('image_fn'));
                 return newgrid;
             },
             response_ends_trial: false,
