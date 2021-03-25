@@ -140,7 +140,8 @@ const CONSENT_HTML_STYLE_UU = `<style>
         </style>
         `
 const CONSENT_HTML = `
-    <p>Insert your information letter here; for more information, see the <a href="https://fetc-gw.wp.hum.uu.nl/en/" target="_blank">FEtC-H website</a></p>
+    <p>Insert your information letter here; for more information, 
+    see the <a href="https://fetc-gw.wp.hum.uu.nl/en/" target="_blank">FEtC-H website</a></p>
     `;
     
 const DEBRIEF_MESSAGE_NO_CONSENT = `

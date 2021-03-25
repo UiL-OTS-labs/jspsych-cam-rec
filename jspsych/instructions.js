@@ -14,6 +14,7 @@ const GENERIC_CHECK = `
     <li>Run this on a Laptop or Desktop computer, <b>not</b> on a phone or a tablet!</li>
     <li>Have a <b>real keyboard</b> working.</li><li>Have a <b>mouse</b> and/or 
     <b>trackpad</b> that works.</li>
+    <li>Have a webcam (internal or external/USB) connected to your PC/laptop. You will need to give permission to access the camera + audio when prompted.</li>
     <li>Have your browser's audio enabled and your volume on.</li>
     </ul>
     <h3>Please <i>maximize</i> your browser window before you continue!</h3>
@@ -28,7 +29,9 @@ const PRE_LAYOUT_MESSAGE =`
     <p> Next, we'll check if the entire layout for the experiment will fit on your screen. 
     After clicking OK, you'll see a (3 rows by 5 column) table. 
     This table should be entirely visible in your browser window without scrolling. 
-    If this is not possible, please visit this experiment using a different device (with a larger screen).</p>
+    If this is not possible, please visit this experiment using a different device (with a larger screen). 
+    Note that in most browsers, you can use the key combinations <kbd>CTRL</kbd> + <kbd>-</kbd> and/or <kbd>CTRL</kbd>
+    <kbd>+</kbd> to make elements smaller (-) or larger(+), so don't give up too fast!</p>
     <br>
     <br>
     Click okay to proceed!</p>

@@ -15,6 +15,8 @@ const COMPLEX = "COMPLEX";
 const SOUND_1 = "SOUND_1";
 const SOUND_2 = "SOUND_2";
 
+const GREY_HEX = "#a09c99";
+const GREY_RGB = "rgba(160,156,153,255)"
 
 // Baseline items 1
 

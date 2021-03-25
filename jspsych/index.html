@@ -36,7 +36,7 @@
     <link href=https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/fonts.css rel="stylesheet" type="text/css"/>
 
     <!-- experimental extra button css -->
-    <!-- <link rel="stylesheet" href="css/image-button.css"></link> -->
+    <link rel="stylesheet" href="css/experiment.css"></link>
 
     <!-- VSL-grid plugin (copied a version with white table layout for testing)-->
 <!--     <script src="plugin/jspsych-vsl-grid-scene-white.js"></script>
@@ -106,6 +106,21 @@
 
     .jspsych-survey-multi-choice-option {
         text-align: left !important;
+    }
+
+    body {
+        background-color: "#a09c99" !important;
+    }
+
+/*    .jspych-content {
+        background-color: "#a09c99" !important;
+    }*/
+
+    #jspsych-html-keyboard-response-stimulus {
+        color: white;
+        background-color: blue;
+        width: 100px;
+        border: 4px solid black;
     }
 
     /* valid input feedback (survey) */ 
@@ -198,6 +213,27 @@
             console.log('loaded grabber two images as "grabber_images_two"');
         };
         
+        // change background styles
+
+
+        function set_html_to_grey() {
+            document.body.style.backgroundColor = GREY_HEX; // background color
+            document.body.style.color = 'black' // font color
+        }
+
+        function set_html_to_white() {
+            document.body.style.backgroundColor = 'white'
+            document.body.style.color = 'black'
+        }
+
+        // var your_block = {
+        //     type: 'html-keyboard-response',
+        //     on_start: set_html_style_1,
+        //     stimulus: 'Welcome',
+        //     choices: [' '],
+        //     on_finish: set_html_style_2
+        // }
+
         // TEST SOUND
         var check_audio = ['./sounds/testtune.mp3'];
 
@@ -256,6 +292,7 @@
 
         let left_and_right_screen = {
             type: 'audio-button-response',
+            on_start: set_html_to_grey,
             stimulus: jsPsych.timelineVariable('sound_fn'),
             prompt: function() {
                 var grid = GRID_HTML_LEFT_RIGHT
@@ -267,6 +304,7 @@
             trial_ends_after_audio: false,
             trial_duration: 1950,
             choices: [],
+            on_finish: set_html_to_white,
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image_a: jsPsych.timelineVariable('image_fn_left'),
@@ -276,6 +314,7 @@
 
         let left_or_right_screen = {
             type: 'audio-button-response',
+            on_start: set_html_to_grey,
             stimulus: jsPsych.timelineVariable('sound_fn'),
             prompt: function() {
                 
@@ -299,6 +338,7 @@
             trial_ends_after_audio: false,
             trial_duration: 1950,
             choices: [],
+            on_finish: set_html_to_white,
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image_a: jsPsych.timelineVariable('image_fn'),
@@ -307,6 +347,7 @@
 
         let center_screen = {
             type: 'audio-button-response',
+            on_start: set_html_to_grey,
             stimulus: jsPsych.timelineVariable('sound_fn'),
             prompt: function() {
 
@@ -318,6 +359,7 @@
             trial_ends_after_audio: false,
             trial_duration: 2450,
             choices: [],
+            on_finish: set_html_to_white,
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image_a: jsPsych.timelineVariable('image_fn'),
