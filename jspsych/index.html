@@ -315,10 +315,10 @@
                 var grid = GRID_HTML_LEFT_RIGHT;
                 
                 if ( side === 0 ){
-                    var newgrid = grid.replace("./video/circle-simple-move.mp4",
+                    var newgrid = grid.replace("./video/circle-simple-move",
                         jsPsych.timelineVariable('image_fn'));
                 } else if (side === 1 ) {
-                    var newgrid = grid.replace("./video/circle-complex-move.mp4",
+                    var newgrid = grid.replace("./video/circle-complex-move",
                         jsPsych.timelineVariable('image_fn'));
                 } else {
                     console.error("Stimulus side is unknown or undefined...");

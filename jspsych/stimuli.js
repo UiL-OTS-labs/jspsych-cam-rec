@@ -27,7 +27,7 @@ const BASELINE_1 = [
         item_type: BASELINE, 
         sound_fn: "./sounds/testtune.mp3",
         image_fn_left: "./video/circle_complex_move.webm",
-        image_fn_right: "./video/circle_simple_move.webm"
+        image_fn_right: "./video/circle_simple_move.webm",
     },
     {
         id: 2, 
@@ -45,14 +45,14 @@ const PAIRED_1 = [
         id: 1, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_simple_move.webm",
+        image_fn: "./video/circle_simple_move",
         side: 0 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_complex_move.webm",
+        image_fn: "./video/circle_complex_move",
         side: 1
     }
 ];
@@ -63,14 +63,14 @@ const PAIRED_2 = [
         id: 1, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_complex_move.webm",
+        image_fn: "./video/circle_complex_move",
         side: 0 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_simple_move.webm",
+        image_fn: "./video/circle_simple_move",
         side: 1
     }
 ];
@@ -172,10 +172,11 @@ GRID_HTML_LEFT_RIGHT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: non
     </tr><tr id="jspsych-vsl-grid-scene-table-row-1" css="height: 200px;">
     <td id="jspsych-vsl-grid-scene-table-1-0" style="padding: 20px 20px; border: 0px solid "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-0" style="width: 200px; height: 200px;">
-    <video autoplay="true" loop="true" width="195"><source src="./video/circle_complex_move.mp4"
-            type="video/webm">
-
-        Sorry, your browser doesn't support embedded videos.
+    <video autoplay="true" loop="true" width="195">
+        <source src="./video/circle_complex_move.webm" type="video/webm">
+        <source src="./video/circle_complex_move.mp4" type="video/mp4">
+    
+    Sorry, your browser doesn't support embedded videos.
     </video></div>
     </td><td id="jspsych-vsl-grid-scene-table-1-1" style="padding: 20px 20px; border: 0px solid "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-1" style="width: 200px; height: 200px;"></div></td>
@@ -185,10 +186,11 @@ GRID_HTML_LEFT_RIGHT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: non
     <div id="jspsych-vsl-grid-scene-table-cell-1-3" style="width: 200px; height: 200px;"></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-4" style="padding: 20px 20px; border: 0px solid "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-4" style="width: 200px; height: 200px;">
-    <video autoplay="true" loop="true" width="195"><source src="./video/circle_simple_move.mp4"
-            type="video/webm">
+    <video autoplay="true" loop="true" width="195">
+        <source src="./video/circle_simple_move.webm" type="video/webm">
+        <source src="./video/circle_simple_move.mp4" type="video/mp4">
 
-        Sorry, your browser doesn't support embedded videos.
+    Sorry, your browser doesn't support embedded videos.
     </video></div></div>
     </td></tr><tr id="jspsych-vsl-grid-scene-table-row-2" css="height: 200px;">
     <td id="jspsych-vsl-grid-scene-table-2-0" style="padding: 20px 20px; border: 0px solid "#a09c99";">
