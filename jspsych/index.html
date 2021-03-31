@@ -159,8 +159,10 @@
 
         var baseline_videos = [];
         for (var i=0; i< baseline_items.length; i++) {
-            baseline_videos.push(baseline_items[i].image_fn_left);
-            baseline_videos.push(baseline_items[i].image_fn_right);
+            baseline_videos.push(baseline_items[i].image_fn_left[0]);
+            baseline_videos.push(baseline_items[i].image_fn_left[1]);
+            baseline_videos.push(baseline_items[i].image_fn_left[0]);
+            baseline_videos.push(baseline_items[i].image_fn_left[1]);
             console.log('loaded baseline video as "baseline_videos"');
         };
                 
@@ -179,7 +181,9 @@
 
         var paired_videos = [];
         for (var i=0; i< paired_items.length; i++) {
-            paired_videos.push(paired_items[i].image_fn);
+            paired_videos.push(paired_items[i].image_fn[0]);
+            paired_videos.push(paired_items[i].image_fn[1]);
+
             console.log('loaded baseline video as "baseline_videos"');
         };
         
@@ -196,6 +200,13 @@
             console.log('loaded grabber one images as "grabber_images_one"');
         };
 
+        var grabber_video_one = [];
+        for (var i=0; i< grabber_items_one.length; i++) {
+            grabber_video_one.push(grabber_items_one[i].image_fn[0]);
+            grabber_video_one.push(grabber_items_one[i].image_fn[1]);
+            console.log('loaded grabber one images as "grabber_video_one"');
+        };
+
         var grabber_audio_two = [];
         for (var i=0; i< grabber_items_two.length; i++) {
             grabber_audio_two.push(grabber_items_two[i].sound_fn);
@@ -207,9 +218,28 @@
             grabber_images_two.push(grabber_items_two[i].image_fn);
             console.log('loaded grabber two images as "grabber_images_two"');
         };
-        
-        // change background styles
 
+        var grabber_video_two= [];
+        for (var i=0; i< grabber_items_one.length; i++) {
+            grabber_video_two.push(grabber_items_two[i].image_fn[0]);
+            grabber_video_two.push(grabber_items_two[i].image_fn[1]);
+            console.log('loaded grabber one images as "grabber_video_two"');
+        };
+        
+        console.log('_________________');
+        console.log(grabber_video_one);
+        console.log(grabber_video_one);
+
+        // add scources to videos:
+        //https://stackoverflow.com/questions/9923573/replacing-html5-video-src-strings-in-javascript-does-not-replace-video
+
+        function add_source(element, src, type) {
+            var source = document.createElement("source");
+            source.src = src;
+            source.type = type;
+            element.appendChild(source);
+        }
+        // change background styles
 
         function set_html_to_grey() {
             document.body.style.backgroundColor = GREY_HEX; // background color
@@ -223,6 +253,17 @@
 
         // TEST SOUND
         var check_audio = ['./sounds/testtune.mp3'];
+        var check_qrvideo = ['./video/qrcodes/qrspeed.mp4','./video/qrcodes/qrspeed.webm'];
+        var bgvideo = [
+            './video/01_left.mp4',
+            './video/01_left.webm',
+            './video/02_center.mp4',
+            './video/02_center.webm',
+            './video/03_right.mp4',
+            './video/03_right.webm'
+        ];
+        console.log(bgvideo);
+
 
         // Data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
@@ -283,11 +324,17 @@
             stimulus: jsPsych.timelineVariable('sound_fn'),
             prompt: function() {
                 var grid = GRID_HTML_LEFT_RIGHT
-                var leftgrid = grid.replace("./video/circle-simple-move.mp4",
-                        jsPsych.timelineVariable('image_fn_left'));
-                var rightgrid = leftgrid.replace("./video/circle-complex-move.mp4",
-                        jsPsych.timelineVariable('image_fn_right'));
-                return rightgrid;
+                var leftgrida = grid.replace("./video/01_left.mp4",
+                        jsPsych.timelineVariable('image_fn_left')[0]);
+                var leftgridb = leftgrida.replace("./video/01_left.webm",
+                        jsPsych.timelineVariable('image_fn_left')[1]);
+                var rightgrida = leftgridb.replace("./video/03_right.mp4",
+                        jsPsych.timelineVariable('image_fn_right')[0]);
+                var rightgridb = rightgrida.replace("./video/03_right.webm",
+                        jsPsych.timelineVariable('image_fn_right')[1]);
+                console.log(rightgridb);
+                return rightgridb;
+
                 //return grid;
             },
             response_ends_trial: false,
@@ -312,17 +359,40 @@
                 
                 console.log('side: ' + side);
 
+                //https://stackoverflow.com/questions/15604140/replace-multiple-strings-with-multiple-other-strings
+
+
                 var grid = GRID_HTML_LEFT_RIGHT;
+
+                // var str = "I have a cat, a dog, and a goat.";
+                // var mapObj = {
+                //    mp4:"dog",
+                //    dog:"goat",
+                //    goat:"cat"
+                // };
+                // str = str.replace(/cat|dog|goat/gi, function(matched){
+                //   return mapObj[matched];
+                // });
                 
                 if ( side === 0 ){
-                    var newgrid = grid.replace("./video/circle-simple-move",
-                        jsPsych.timelineVariable('image_fn'));
+                    var grida = grid.replace("./video/01_left.mp4",
+                        jsPsych.timelineVariable('image_fn')[0]);
+                    console.log("left a: ", grida)
+                    var gridb = grida.replace("./video/01_left.webm",
+                        jsPsych.timelineVariable('image_fn')[1]);
+                    console.log("left b: ", gridb)
+                    var newgrid = gridb
                 } else if (side === 1 ) {
-                    var newgrid = grid.replace("./video/circle-complex-move",
-                        jsPsych.timelineVariable('image_fn'));
+                    var grida = grid.replace("./video/03_right.mp4",
+                        jsPsych.timelineVariable('image_fn')[0]);
+                    console.log("right a: ", grida)
+                    var gridb = grida.replace("./video/03_right.webm",
+                        jsPsych.timelineVariable('image_fn')[1]);
+                    console.log("right b: ", gridb)
+                    var newgrid = gridb
                 } else {
                     console.error("Stimulus side is unknown or undefined...");
-                    var newgrid = 'undefinded';
+                    var newgrid = 'error';
                 }
                 return newgrid;
             },
@@ -333,9 +403,36 @@
             on_finish: set_html_to_white,
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
-                target_image_a: jsPsych.timelineVariable('image_fn'),
+                target_image: jsPsych.timelineVariable('image_fn'),
             }
         };
+
+        // let center_screen = {
+        //     type: 'audio-button-response',
+        //     on_start: set_html_to_grey,
+        //     stimulus: jsPsych.timelineVariable('sound_fn'),
+        //     prompt: function() {
+
+        //         var grid = GRID_HTML_CENTER;
+        //             var grida = grid.replace("./video/02_center.mp4",
+        //                 jsPsych.timelineVariable('image_fn')[0]);
+        //             console.log("CENTER a: ", grida)
+        //             var gridb = grida.replace("./video/02_center.webm",
+        //                 jsPsych.timelineVariable('image_fn')[1]);
+        //             console.log("CENTER b: ", gridb)
+        //             var newgrid = gridb
+        //         return newgrid;
+        //     },
+        //     response_ends_trial: false,
+        //     trial_ends_after_audio: false,
+        //     trial_duration: 2450,
+        //     choices: [],
+        //     on_finish: set_html_to_white,
+        //     data: {
+        //         target_audio: jsPsych.timelineVariable('sound_fn'),
+        //         target_image_a: jsPsych.timelineVariable('image_fn'),
+        //     }
+        // };
 
         let center_screen = {
             type: 'audio-button-response',
@@ -344,7 +441,12 @@
             prompt: function() {
 
                 var grid = GRID_HTML_CENTER;
-                var newgrid = grid.replace("./images/center-grey.png",jsPsych.timelineVariable('image_fn'));
+                    var grida = grid.replaceAll("./video/02_center",
+                        jsPsych.timelineVariable('image_fn')
+                        );
+                    
+                    console.log("CENTER a: ", grida);
+                    var newgrid = grida;
                 return newgrid;
             },
             response_ends_trial: false,
@@ -430,14 +532,14 @@
         //timeline.push(survey_procedure);
 
         //test/set audio level (soundtest.js)
-        timeline.push(test_audio_looped);
+        //timeline.push(test_audio_looped);
         
-        timeline.push(instruction_screen_layout);
+        //timeline.push(instruction_screen_layout);
 
-        timeline.push(check_screen_layout);
+        //timeline.push(check_screen_layout);
 
         // task instruction (instructions.js)
-        timeline.push(instruction_screen_rec);
+        //timeline.push(instruction_screen_rec);
 
         // grabber one
         timeline.push(grabber_procedure_one);
@@ -468,8 +570,12 @@
                     paired_audio
                     ],
                 preload_video: [
+                    check_qrvideo,
+                    bgvideo,
                     baseline_videos,
                     paired_videos,
+                    grabber_video_one,
+                    grabber_video_two
                     ],
                 exclusions: {
                     min_width: MIN_WIDTH,

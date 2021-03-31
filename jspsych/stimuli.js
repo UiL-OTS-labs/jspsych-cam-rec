@@ -26,15 +26,27 @@ const BASELINE_1 = [
         id: 1, 
         item_type: BASELINE, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn_left: "./video/circle_complex_move.webm",
-        image_fn_right: "./video/circle_simple_move.webm",
+        image_fn_left: [
+            "./video/circle_complex_move.mp4",
+            "./video/circle_complex_move.webm"
+            ],
+        image_fn_right: [
+            "./video/circle_simple_move.mp4",
+            "./video/circle_simple_move.webm"
+            ]
     },
     {
         id: 2, 
         item_type: BASELINE, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn_left: "./video/circle_simple_move.webm",
-        image_fn_right: "./video/circle_complex_move.webm",
+        image_fn_left: [
+            "./video/circle_simple_move.mp4",
+            "./video/circle_simple_move.webm"
+            ],
+        image_fn_right: [
+            "./video/circle_complex_move.mp4",
+            "./video/circle_complex_move.webm"
+            ]
     }
 ];
 
@@ -45,14 +57,20 @@ const PAIRED_1 = [
         id: 1, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_simple_move",
+        image_fn: [
+            "./video/circle_simple_move.mp4",
+            "./video/circle_simple_move.webm"
+            ],
         side: 0 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_complex_move",
+        image_fn: [
+            "./video/circle_complex_move.mp4",
+            "./video/circle_complex_move.webm"
+            ],
         side: 1
     }
 ];
@@ -63,17 +81,48 @@ const PAIRED_2 = [
         id: 1, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_complex_move",
+        image_fn: [
+            "./video/circle_complex_move.mp4",
+            "./video/circle_complex_move.webm"
+            ],
         side: 0 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_simple_move",
+        image_fn: [
+            "./video/circle_simple_move.mp4",
+            "./video/circle_simple_move.webm"
+            ],
         side: 1
     }
 ];
+
+// // center HTML (images)
+// const GRABBER_1 = [
+//     {
+//         id: 1, 
+//         item_type: GRABBER, 
+//         sound_fn: "./sounds/testtune.mp3",
+//         image_fn: [
+//             "./video/circle_complex_move.mp4",
+//             "./video/circle_complex_move.webm"
+//         ]
+//     }
+// ];
+
+// const GRABBER_2 = [
+//     {
+//         id: 1, 
+//         item_type: GRABBER, 
+//         sound_fn: "./sounds/testtune.mp3",
+//         image_fn: [
+//             "./video/circle_complex_move.mp4",
+//             "./video/circle_complex_move.webm"
+//         ]
+//     }
+// ];
 
 // center HTML (images)
 const GRABBER_1 = [
@@ -81,7 +130,7 @@ const GRABBER_1 = [
         id: 1, 
         item_type: GRABBER, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./images/circle_complex_movement.gif", //todo
+        image_fn: "./video/circle_complex_move"
     }
 ];
 
@@ -90,7 +139,7 @@ const GRABBER_2 = [
         id: 1, 
         item_type: GRABBER, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./images/circle_simple_movement.gif", //todo
+        image_fn: "./video/circle_simple_move"
     }
 ];
 
@@ -172,11 +221,11 @@ GRID_HTML_LEFT_RIGHT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: non
     </tr><tr id="jspsych-vsl-grid-scene-table-row-1" css="height: 200px;">
     <td id="jspsych-vsl-grid-scene-table-1-0" style="padding: 20px 20px; border: 0px solid "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-0" style="width: 200px; height: 200px;">
-    <video autoplay="true" loop="true" width="195">
-        <source src="./video/circle_complex_move.webm" type="video/webm">
-        <source src="./video/circle_complex_move.mp4" type="video/mp4">
+    <video autoplay="true" loop="true" width="200">
+        <source src="./video/01_left.mp4" type="video/mp4">
+        <source src="./video/01_left.webm" type="video/webm">
     
-    Sorry, your browser doesn't support embedded videos.
+    ERROR!
     </video></div>
     </td><td id="jspsych-vsl-grid-scene-table-1-1" style="padding: 20px 20px; border: 0px solid "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-1" style="width: 200px; height: 200px;"></div></td>
@@ -186,11 +235,11 @@ GRID_HTML_LEFT_RIGHT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: non
     <div id="jspsych-vsl-grid-scene-table-cell-1-3" style="width: 200px; height: 200px;"></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-4" style="padding: 20px 20px; border: 0px solid "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-4" style="width: 200px; height: 200px;">
-    <video autoplay="true" loop="true" width="195">
-        <source src="./video/circle_simple_move.webm" type="video/webm">
-        <source src="./video/circle_simple_move.mp4" type="video/mp4">
-
-    Sorry, your browser doesn't support embedded videos.
+    <video autoplay="true" loop="true" width="200">
+        <source src="./video/03_right.mp4" type="video/mp4">
+        <source src="./video/03_right.webm" type="video/webm">
+    
+    ERROR!
     </video></div></div>
     </td></tr><tr id="jspsych-vsl-grid-scene-table-row-2" css="height: 200px;">
     <td id="jspsych-vsl-grid-scene-table-2-0" style="padding: 20px 20px; border: 0px solid "#a09c99";">
@@ -226,7 +275,13 @@ GRID_HTML_CENTER = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
     <div id="jspsych-vsl-grid-scene-table-cell-1-1" style="width: 200px; height: 200px;"></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-2" style="padding: 20px 20px; border: 0px "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-2" style="width: 200px; height: 200px;">
-    <img src="./images/center-grey.png" style="width: 200px; height: 200"></img></div></td>
+        <video autoplay="true" loop="true" width="200">
+        <source src="./video/02_center.mp4" type="video/mp4">
+        <source src="./video/02_center.webm" type="video/webm">
+
+
+    Sorry, your browser doesn't support embedded videos.
+    </video></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-3" style="padding: 20px 20px; border: 0px "#a09c99";">
     <div id="jspsych-vsl-grid-scene-table-cell-1-3" style="width: 200px; height: 200px;"></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-4" style="padding: 20px 20px; border: 0px "#a09c99";">
