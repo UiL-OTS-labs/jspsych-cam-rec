@@ -20,50 +20,20 @@ const GREY_RGB = "rgba(160,156,153,255)"
 
 // Baseline items 1
 
-
-// const BASELINE_1 = [
-//     {
-//         id: 1, 
-//         item_type: BASELINE, 
-//         sound_fn: "./sounds/testtune.mp3",
-//         image_fn_left: [
-//             "./video/circle_complex_move.mp4",
-//             "./video/circle_complex_move.webm"
-//             ],
-//         image_fn_right: [
-//             "./video/circle_simple_move.mp4",
-//             "./video/circle_simple_move.webm"
-//             ]
-//     },
-//     {
-//         id: 2, 
-//         item_type: BASELINE, 
-//         sound_fn: "./sounds/testtune.mp3",
-//         image_fn_left: [
-//             "./video/circle_simple_move.mp4",
-//             "./video/circle_simple_move.webm"
-//             ],
-//         image_fn_right: [
-//             "./video/circle_complex_move.mp4",
-//             "./video/circle_complex_move.webm"
-//             ]
-//     }
-// ];
-
 const BASELINE_1 = [
     {
         id: 1, 
         item_type: BASELINE, 
         sound_fn: "./sounds/testtune.mp3",
         image_fn_left: "./video/circle_complex_move", 
-        image_fn_right: "./video/circle_simple_move"
+        image_fn_right: "./video/circle_simple_static_small"
     },
     {
         id: 2, 
         item_type: BASELINE, 
         sound_fn: "./sounds/testtune.mp3",
         image_fn_left: "./video/circle_simple_move", 
-        image_fn_right: "./video/circle_complex_move"
+        image_fn_right: "./video/circle_complex_static_small"
     }
 ];
 
@@ -97,14 +67,14 @@ const PAIRED_1 = [
         id: 1, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_simple_move",
+        image_fn: "./video/circle_simple_static_small",
         side: 0 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_complex_move",
+        image_fn: "./video/circle_simple_move",
         side: 1
     }
 ];
@@ -114,7 +84,7 @@ const PAIRED_2 = [
         id: 1, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_complex_move",
+        image_fn: "./video/circle_complex_static_small",
         side: 0 
     },
     {
@@ -126,54 +96,7 @@ const PAIRED_2 = [
     }
 ];
 
-// const PAIRED_2 = [
-//     {
-//         id: 1, 
-//         item_type: PAIRED_SUCCESION, 
-//         sound_fn: "./sounds/testtune.mp3",
-//         image_fn: [
-//             "./video/circle_simple_move.mp4",
-//             "./video/circle_simple_move.webm"
-//             ],
-//         side: 0 
-//     },
-//     {
-//         id: 2, 
-//         item_type: PAIRED_SUCCESION, 
-//         sound_fn: "./sounds/testtune.mp3",
-//         image_fn: [
-//             "./video/circle_complex_move.mp4",
-//             "./video/circle_complex_move.webm"
-//             ],
-//         side: 1
-//     }
-// ];
 
-
-// // center HTML (images)
-// const GRABBER_1 = [
-//     {
-//         id: 1, 
-//         item_type: GRABBER, 
-//         sound_fn: "./sounds/testtune.mp3",
-//         image_fn: [
-//             "./video/circle_complex_move.mp4",
-//             "./video/circle_complex_move.webm"
-//         ]
-//     }
-// ];
-
-// const GRABBER_2 = [
-//     {
-//         id: 1, 
-//         item_type: GRABBER, 
-//         sound_fn: "./sounds/testtune.mp3",
-//         image_fn: [
-//             "./video/circle_complex_move.mp4",
-//             "./video/circle_complex_move.webm"
-//         ]
-//     }
-// ];
 
 // center HTML (images)
 const GRABBER_1 = [
