@@ -21,83 +21,134 @@ const GREY_RGB = "rgba(160,156,153,255)"
 // Baseline items 1
 
 
+// const BASELINE_1 = [
+//     {
+//         id: 1, 
+//         item_type: BASELINE, 
+//         sound_fn: "./sounds/testtune.mp3",
+//         image_fn_left: [
+//             "./video/circle_complex_move.mp4",
+//             "./video/circle_complex_move.webm"
+//             ],
+//         image_fn_right: [
+//             "./video/circle_simple_move.mp4",
+//             "./video/circle_simple_move.webm"
+//             ]
+//     },
+//     {
+//         id: 2, 
+//         item_type: BASELINE, 
+//         sound_fn: "./sounds/testtune.mp3",
+//         image_fn_left: [
+//             "./video/circle_simple_move.mp4",
+//             "./video/circle_simple_move.webm"
+//             ],
+//         image_fn_right: [
+//             "./video/circle_complex_move.mp4",
+//             "./video/circle_complex_move.webm"
+//             ]
+//     }
+// ];
+
 const BASELINE_1 = [
     {
         id: 1, 
         item_type: BASELINE, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn_left: [
-            "./video/circle_complex_move.mp4",
-            "./video/circle_complex_move.webm"
-            ],
-        image_fn_right: [
-            "./video/circle_simple_move.mp4",
-            "./video/circle_simple_move.webm"
-            ]
+        image_fn_left: "./video/circle_complex_move", 
+        image_fn_right: "./video/circle_simple_move"
     },
     {
         id: 2, 
         item_type: BASELINE, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn_left: [
-            "./video/circle_simple_move.mp4",
-            "./video/circle_simple_move.webm"
-            ],
-        image_fn_right: [
-            "./video/circle_complex_move.mp4",
-            "./video/circle_complex_move.webm"
-            ]
+        image_fn_left: "./video/circle_simple_move", 
+        image_fn_right: "./video/circle_complex_move"
     }
 ];
 
 // Paired succesion items
 //side can be 0 or 1 (0: left, 1: right)
+// const PAIRED_1 = [
+//     {
+//         id: 1, 
+//         item_type: PAIRED_SUCCESION, 
+//         sound_fn: "./sounds/testtune.mp3",
+//         image_fn: [
+//             "./video/circle_simple_move.mp4",
+//             "./video/circle_simple_move.webm"
+//             ],
+//         side: 0 
+//     },
+//     {
+//         id: 2, 
+//         item_type: PAIRED_SUCCESION, 
+//         sound_fn: "./sounds/testtune.mp3",
+//         image_fn: [
+//             "./video/circle_complex_move.mp4",
+//             "./video/circle_complex_move.webm"
+//             ],
+//         side: 1
+//     }
+// ];
+
 const PAIRED_1 = [
     {
         id: 1, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: [
-            "./video/circle_simple_move.mp4",
-            "./video/circle_simple_move.webm"
-            ],
+        image_fn: "./video/circle_simple_move",
         side: 0 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: [
-            "./video/circle_complex_move.mp4",
-            "./video/circle_complex_move.webm"
-            ],
+        image_fn: "./video/circle_complex_move.mp4",
         side: 1
     }
 ];
-
 
 const PAIRED_2 = [
     {
         id: 1, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: [
-            "./video/circle_complex_move.mp4",
-            "./video/circle_complex_move.webm"
-            ],
+        image_fn: "./video/circle_complex_move",
         side: 0 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: [
-            "./video/circle_simple_move.mp4",
-            "./video/circle_simple_move.webm"
-            ],
+        image_fn: "./video/circle_simple_move.mp4",
         side: 1
     }
 ];
+
+// const PAIRED_2 = [
+//     {
+//         id: 1, 
+//         item_type: PAIRED_SUCCESION, 
+//         sound_fn: "./sounds/testtune.mp3",
+//         image_fn: [
+//             "./video/circle_simple_move.mp4",
+//             "./video/circle_simple_move.webm"
+//             ],
+//         side: 0 
+//     },
+//     {
+//         id: 2, 
+//         item_type: PAIRED_SUCCESION, 
+//         sound_fn: "./sounds/testtune.mp3",
+//         image_fn: [
+//             "./video/circle_complex_move.mp4",
+//             "./video/circle_complex_move.webm"
+//             ],
+//         side: 1
+//     }
+// ];
+
 
 // // center HTML (images)
 // const GRABBER_1 = [

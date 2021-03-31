@@ -318,24 +318,53 @@
             response_ends_trial: true,
         };
 
+        // let left_and_right_screen = {
+        //     type: 'audio-button-response',
+        //     on_start: set_html_to_grey,
+        //     stimulus: jsPsych.timelineVariable('sound_fn'),
+        //     prompt: function() {
+        //         var grid = GRID_HTML_LEFT_RIGHT
+        //         var leftgrida = grid.replace("./video/01_left.mp4",
+        //                 jsPsych.timelineVariable('image_fn_left')[0]);
+        //         var leftgridb = leftgrida.replace("./video/01_left.webm",
+        //                 jsPsych.timelineVariable('image_fn_left')[1]);
+        //         var rightgrida = leftgridb.replace("./video/03_right.mp4",
+        //                 jsPsych.timelineVariable('image_fn_right')[0]);
+        //         var rightgridb = rightgrida.replace("./video/03_right.webm",
+        //                 jsPsych.timelineVariable('image_fn_right')[1]);
+        //         console.log(rightgridb);
+        //         return rightgridb;
+
+        //         //return grid;
+        //     },
+        //     response_ends_trial: false,
+        //     trial_ends_after_audio: false,
+        //     trial_duration: 2950,
+        //     choices: [],
+        //     on_finish: set_html_to_white,
+        //     data: {
+        //         target_audio: jsPsych.timelineVariable('sound_fn'),
+        //         target_image_a: jsPsych.timelineVariable('image_fn_left'),
+        //         target_image_b: jsPsych.timelineVariable('image_fn_right')
+        //     }
+        // };
+
         let left_and_right_screen = {
             type: 'audio-button-response',
             on_start: set_html_to_grey,
             stimulus: jsPsych.timelineVariable('sound_fn'),
             prompt: function() {
+                
                 var grid = GRID_HTML_LEFT_RIGHT
-                var leftgrida = grid.replace("./video/01_left.mp4",
-                        jsPsych.timelineVariable('image_fn_left')[0]);
-                var leftgridb = leftgrida.replace("./video/01_left.webm",
-                        jsPsych.timelineVariable('image_fn_left')[1]);
-                var rightgrida = leftgridb.replace("./video/03_right.mp4",
-                        jsPsych.timelineVariable('image_fn_right')[0]);
-                var rightgridb = rightgrida.replace("./video/03_right.webm",
-                        jsPsych.timelineVariable('image_fn_right')[1]);
-                console.log(rightgridb);
-                return rightgridb;
 
-                //return grid;
+                var gridleft = grid.replaceAll("./video/01_left",
+                        jsPsych.timelineVariable('image_fn_left'));
+
+                var gridright = gridleft.replaceAll("./video/03_right",
+                        jsPsych.timelineVariable('image_fn_right'));
+
+                console.log(gridright);
+                return gridright;
             },
             response_ends_trial: false,
             trial_ends_after_audio: false,
@@ -349,6 +378,53 @@
             }
         };
 
+        // let left_or_right_screen = {
+        //     type: 'audio-button-response',
+        //     on_start: set_html_to_grey,
+        //     stimulus: jsPsych.timelineVariable('sound_fn'),
+        //     prompt: function() {
+                
+        //         var side = jsPsych.timelineVariable('side', true);
+                
+        //         console.log('side: ' + side);
+
+        //         //https://stackoverflow.com/questions/15604140/replace-multiple-strings-with-multiple-other-strings
+
+        //         var grid = GRID_HTML_LEFT_RIGHT;
+                
+        //         if ( side === 0 ){
+        //             var grida = grid.replace("./video/01_left.mp4",
+        //                 jsPsych.timelineVariable('image_fn')[0]);
+        //             console.log("left a: ", grida)
+        //             var gridb = grida.replace("./video/01_left.webm",
+        //                 jsPsych.timelineVariable('image_fn')[1]);
+        //             console.log("left b: ", gridb)
+        //             var newgrid = gridb
+        //         } else if (side === 1 ) {
+        //             var grida = grid.replace("./video/03_right.mp4",
+        //                 jsPsych.timelineVariable('image_fn')[0]);
+        //             console.log("right a: ", grida)
+        //             var gridb = grida.replace("./video/03_right.webm",
+        //                 jsPsych.timelineVariable('image_fn')[1]);
+        //             console.log("right b: ", gridb)
+        //             var newgrid = gridb
+        //         } else {
+        //             console.error("Stimulus side is unknown or undefined...");
+        //             var newgrid = 'error';
+        //         }
+        //         return newgrid;
+        //     },
+        //     response_ends_trial: false,
+        //     trial_ends_after_audio: false,
+        //     trial_duration: 19500,
+        //     choices: [],
+        //     on_finish: set_html_to_white,
+        //     data: {
+        //         target_audio: jsPsych.timelineVariable('sound_fn'),
+        //         target_image: jsPsych.timelineVariable('image_fn'),
+        //     }
+        // };
+
         let left_or_right_screen = {
             type: 'audio-button-response',
             on_start: set_html_to_grey,
@@ -361,35 +437,15 @@
 
                 //https://stackoverflow.com/questions/15604140/replace-multiple-strings-with-multiple-other-strings
 
-
                 var grid = GRID_HTML_LEFT_RIGHT;
-
-                // var str = "I have a cat, a dog, and a goat.";
-                // var mapObj = {
-                //    mp4:"dog",
-                //    dog:"goat",
-                //    goat:"cat"
-                // };
-                // str = str.replace(/cat|dog|goat/gi, function(matched){
-                //   return mapObj[matched];
-                // });
-                
                 if ( side === 0 ){
-                    var grida = grid.replace("./video/01_left.mp4",
-                        jsPsych.timelineVariable('image_fn')[0]);
-                    console.log("left a: ", grida)
-                    var gridb = grida.replace("./video/01_left.webm",
-                        jsPsych.timelineVariable('image_fn')[1]);
-                    console.log("left b: ", gridb)
-                    var newgrid = gridb
+                    var newgrid = grid.replaceAll("./video/01_left",
+                        jsPsych.timelineVariable('image_fn'));
+                    console.log("OR screen gridleft: ", newgrid)
                 } else if (side === 1 ) {
-                    var grida = grid.replace("./video/03_right.mp4",
-                        jsPsych.timelineVariable('image_fn')[0]);
-                    console.log("right a: ", grida)
-                    var gridb = grida.replace("./video/03_right.webm",
-                        jsPsych.timelineVariable('image_fn')[1]);
-                    console.log("right b: ", gridb)
-                    var newgrid = gridb
+                    var newgrid = grid.replaceAll("./video/03_right",
+                        jsPsych.timelineVariable('image_fn'));
+                    console.log("OR screen gridright: ", newgrid)
                 } else {
                     console.error("Stimulus side is unknown or undefined...");
                     var newgrid = 'error';
@@ -444,7 +500,7 @@
                     var grida = grid.replaceAll("./video/02_center",
                         jsPsych.timelineVariable('image_fn')
                         );
-                    
+
                     console.log("CENTER a: ", grida);
                     var newgrid = grida;
                 return newgrid;
