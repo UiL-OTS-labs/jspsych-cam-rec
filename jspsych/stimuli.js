@@ -104,7 +104,7 @@ const PAIRED_1 = [
         id: 2, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_complex_move.mp4",
+        image_fn: "./video/circle_complex_move",
         side: 1
     }
 ];
@@ -121,7 +121,7 @@ const PAIRED_2 = [
         id: 2, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_simple_move.mp4",
+        image_fn: "./video/circle_simple_move",
         side: 1
     }
 ];

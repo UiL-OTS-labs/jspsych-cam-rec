@@ -149,20 +149,13 @@
             baseline_audio.push(baseline_items[i].sound_fn);
             console.log('loaded baseline audio as "baseline_audio"');
         };
-        
-        var baseline_images = [];
-        for (var i=0; i< baseline_items.length; i++) {
-            baseline_images.push(baseline_items[i].image_fn_left);
-            baseline_images.push(baseline_items[i].image_fn_right);
-            console.log('loaded baseline images as "baseline_images"');
-        };
 
         var baseline_videos = [];
         for (var i=0; i< baseline_items.length; i++) {
-            baseline_videos.push(baseline_items[i].image_fn_left[0]);
-            baseline_videos.push(baseline_items[i].image_fn_left[1]);
-            baseline_videos.push(baseline_items[i].image_fn_left[0]);
-            baseline_videos.push(baseline_items[i].image_fn_left[1]);
+            baseline_videos.push(baseline_items[i].image_fn_left + ".mp4");
+            baseline_videos.push(baseline_items[i].image_fn_left + ".webm");
+            baseline_videos.push(baseline_items[i].image_fn_left + ".mp4");
+            baseline_videos.push(baseline_items[i].image_fn_left + ".webm");
             console.log('loaded baseline video as "baseline_videos"');
         };
                 
@@ -171,12 +164,6 @@
         for (var i=0; i< paired_items.length; i++) {
             paired_audio.push(paired_items[i].sound_fn);
             console.log('loaded paired succesion audio as "paired_audio"');
-        };
-
-        var paired_images = [];
-        for (var i=0; i< paired_items.length; i++) {
-            paired_images.push(paired_items[i].image_fn);
-            console.log('loaded baseline images as "baseline_images"');
         };
 
         var paired_videos = [];
@@ -194,17 +181,17 @@
             console.log('loaded grabber one audio as "grabber_audio_one"');
         };
 
-        var grabber_images_one = [];
-        for (var i=0; i< grabber_items_one.length; i++) {
-            grabber_images_one.push(grabber_items_one[i].image_fn);
-            console.log('loaded grabber one images as "grabber_images_one"');
-        };
+        // var grabber_images_one = [];
+        // for (var i=0; i< grabber_items_one.length; i++) {
+        //     grabber_images_one.push(grabber_items_one[i].image_fn);
+        //     console.log('loaded grabber one images as "grabber_images_one"');
+        // };
 
         var grabber_video_one = [];
         for (var i=0; i< grabber_items_one.length; i++) {
-            grabber_video_one.push(grabber_items_one[i].image_fn[0]);
-            grabber_video_one.push(grabber_items_one[i].image_fn[1]);
-            console.log('loaded grabber one images as "grabber_video_one"');
+            grabber_video_one.push(grabber_items_one[i].image_fn + ".mp4");
+            grabber_video_one.push(grabber_items_one[i].image_fn + ".webm");
+            console.log('loaded grabber one video as "grabber_video_one"');
         };
 
         var grabber_audio_two = [];
@@ -213,22 +200,16 @@
             console.log('loaded grabber two audio as "grabber_audio_two"');
         };
 
-        var grabber_images_two = [];
-        for (var i=0; i< grabber_items_two.length; i++) {
-            grabber_images_two.push(grabber_items_two[i].image_fn);
-            console.log('loaded grabber two images as "grabber_images_two"');
-        };
-
         var grabber_video_two= [];
-        for (var i=0; i< grabber_items_one.length; i++) {
-            grabber_video_two.push(grabber_items_two[i].image_fn[0]);
-            grabber_video_two.push(grabber_items_two[i].image_fn[1]);
-            console.log('loaded grabber one images as "grabber_video_two"');
+        for (var i=0; i< grabber_items_two.length; i++) {
+            grabber_video_two.push(grabber_items_two[i].image_fn + ".mp4");
+            grabber_video_two.push(grabber_items_two[i].image_fn + ".webm");
+            console.log('loaded grabber two video as "grabber_video_two"');
         };
         
         console.log('_________________');
         console.log(grabber_video_one);
-        console.log(grabber_video_one);
+        console.log(grabber_video_two);
 
         // add scources to videos:
         //https://stackoverflow.com/questions/9923573/replacing-html5-video-src-strings-in-javascript-does-not-replace-video
@@ -454,7 +435,7 @@
             },
             response_ends_trial: false,
             trial_ends_after_audio: false,
-            trial_duration: 19500,
+            trial_duration: 1950,
             choices: [],
             on_finish: set_html_to_white,
             data: {
