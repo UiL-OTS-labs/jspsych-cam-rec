@@ -221,8 +221,8 @@
         };
         
         console.log('_________________');
-        console.log(grabber_video_one);
-        console.log(grabber_video_two);
+        console.log(grabber_audio_one);
+        console.log(grabber_audio_two);
 
         // add scources to videos:
         //https://stackoverflow.com/questions/9923573/replacing-html5-video-src-strings-in-javascript-does-not-replace-video
@@ -242,6 +242,11 @@
 
         function set_html_to_white() {
             document.body.style.backgroundColor = 'white'
+            document.body.style.color = 'black'
+        }
+
+        function set_html_to_orange() {
+            document.body.style.backgroundColor = 'orange'
             document.body.style.color = 'black'
         }
 
@@ -379,7 +384,7 @@
 
         let center_screen = {
             type: 'audio-button-response',
-            on_start: set_html_to_grey,
+            on_start: set_html_to_orange,
             stimulus: jsPsych.timelineVariable('sound_fn'),
             prompt: function() {
 
@@ -396,7 +401,7 @@
             trial_ends_after_audio: false,
             trial_duration: 2450,
             choices: [],
-            on_finish: set_html_to_white,
+            on_finish: set_html_to_grey,
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image_a: jsPsych.timelineVariable('image_fn'),
@@ -647,7 +652,9 @@
                 preload_audio: [
                     check_audio,
                     baseline_audio,
-                    paired_audio
+                    paired_audio,
+                    grabber_audio_one,
+                    grabber_audio_two
                     ],
                 preload_video: [
                     check_qrvideo,
