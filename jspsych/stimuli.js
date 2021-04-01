@@ -24,43 +24,34 @@ const BASELINE_1 = [
     {
         id: 1, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/testtune.mp3",
-        image_fn_left: "./video/circle_complex_move", 
-        image_fn_right: "./video/circle_simple_static_small"
+        sound_fn: "./sounds/1.wav",
+        image_fn: "./video/circle_complex_static_small", 
+        side: 1
     },
     {
         id: 2, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/testtune.mp3",
-        image_fn_left: "./video/circle_simple_move", 
-        image_fn_right: "./video/circle_complex_static_small"
-    }
+        sound_fn: "./sounds/1.wav",
+        image_fn: "./video/circle_simple_static_small",
+        side: 0
+    },
+    {
+        id: 3, 
+        item_type: BASELINE, 
+        sound_fn: "./sounds/2.wav",
+        image_fn: "./video/circle_simple_static_small", 
+        side: 1
+    },
+    {
+        id: 4, 
+        item_type: BASELINE, 
+        sound_fn: "./sounds/2.wav",
+        image_fn: "./video/circle_complex_static_small",
+        side: 0
+    },
+
 ];
 
-// Paired succesion items
-//side can be 0 or 1 (0: left, 1: right)
-// const PAIRED_1 = [
-//     {
-//         id: 1, 
-//         item_type: PAIRED_SUCCESION, 
-//         sound_fn: "./sounds/testtune.mp3",
-//         image_fn: [
-//             "./video/circle_simple_move.mp4",
-//             "./video/circle_simple_move.webm"
-//             ],
-//         side: 0 
-//     },
-//     {
-//         id: 2, 
-//         item_type: PAIRED_SUCCESION, 
-//         sound_fn: "./sounds/testtune.mp3",
-//         image_fn: [
-//             "./video/circle_complex_move.mp4",
-//             "./video/circle_complex_move.webm"
-//             ],
-//         side: 1
-//     }
-// ];
 
 const PAIRED_1 = [
     {

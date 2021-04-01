@@ -154,10 +154,8 @@
 
         var baseline_videos = [];
         for (var i=0; i< baseline_items.length; i++) {
-            baseline_videos.push(baseline_items[i].image_fn_left + ".mp4");
-            baseline_videos.push(baseline_items[i].image_fn_left + ".webm");
-            baseline_videos.push(baseline_items[i].image_fn_left + ".mp4");
-            baseline_videos.push(baseline_items[i].image_fn_left + ".webm");
+            baseline_videos.push(baseline_items[i].image_fn + ".mp4");
+            baseline_videos.push(baseline_items[i].image_fn + ".webm");
             console.log('loaded baseline video as "baseline_videos"');
         };
                 
@@ -182,12 +180,6 @@
             grabber_audio_one.push(grabber_items_one[i].sound_fn);
             console.log('loaded grabber one audio as "grabber_audio_one"');
         };
-
-        // var grabber_images_one = [];
-        // for (var i=0; i< grabber_items_one.length; i++) {
-        //     grabber_images_one.push(grabber_items_one[i].image_fn);
-        //     console.log('loaded grabber one images as "grabber_images_one"');
-        // };
 
         var grabber_video_one = [];
         for (var i=0; i< grabber_items_one.length; i++) {
@@ -432,11 +424,23 @@
             autoplay: true
         };
 
+        let sync_screen = {
+            type: 'audio-keyboard-response',
+            on_start: set_html_to_white,
+            stimulus: "./sounds/3.wav",
+            prompt: "",
+            response_ends_trial: false,
+            trial_ends_after_audio: false,
+            trial_duration: 450,
+            choices: jsPsych.NO_KEYS,
+            on_finish: set_html_to_grey
+        };
+
         // PROCEDURES ////////////////////////////////
 
         let baseline_procedure = {
             timeline:[
-                left_and_right_screen
+                left_or_right_screen
                 ],
             timeline_variables: baseline_items,
             randomize_order: false,
@@ -497,8 +501,8 @@
         // it's best practice to have *mouse click* user I/O first
         timeline.push(start_screen);
         
-        timeline.push(qr_screen);
-        timeline.push(binary_screen);
+        //timeline.push(qr_screen);
+        //timeline.push(binary_screen);
 
         // Informed consent (consent.js)
         //timeline.push(consent_procedure);
@@ -507,29 +511,28 @@
         //timeline.push(survey_procedure);
 
         //test/set audio level (soundtest.js)
-        //timeline.push(test_audio_looped);
+        timeline.push(test_audio_looped);
         
         //timeline.push(instruction_screen_layout);
 
-        //timeline.push(check_screen_layout);
+        timeline.push(check_screen_layout);
 
         // task instruction (instructions.js)
-        //timeline.push(instruction_screen_rec);
-
-        // grabber one
-        timeline.push(grabber_procedure_one);
+        timeline.push(instruction_screen_rec);
 
         // baseline
         timeline.push(baseline_procedure);
+
+        timeline.push(sync_screen);
 
         // grabber one (again)
         timeline.push(grabber_procedure_one);
 
         // paired
-        timeline.push(paired_procedure);
+        //timeline.push(paired_procedure);
 
         // grabber two
-        timeline.push(grabber_procedure_two);
+        //timeline.push(grabber_procedure_two);
 
         timeline.push(well_done_screen);
         
