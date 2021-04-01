@@ -156,10 +156,13 @@
         console.log(paired_h);
 
         let grabber_items_one = getGrabberOneItems().table;
-        console.log(grabber_items_one);
+        //console.log(grabber_items_one);
 
         let grabber_items_two = getGrabberTwoItems().table;
-        console.log(grabber_items_two);
+        //console.log(grabber_items_two);
+
+        let pref_items = getAllPrefItems().table;
+        console.log(pref_items);
 
         ////////////////////////// media preloading ///////////////////////////////////////
         
@@ -261,7 +264,7 @@
             './video/03_right.mp4',
             './video/03_right.webm'
         ];
-        console.log(bgvideo);
+        //console.log(bgvideo);
 
 
         // Data one would like to add to __all__ trials, according to:
@@ -534,6 +537,14 @@
             randomize_order: false,
         };
 
+        let pref_procedure = {
+            timeline:[
+                left_and_right_screen
+                ],
+            timeline_variables: pref_items,
+            randomize_order: false,
+        };        
+
         let grabber_procedure_one = {
             timeline:[
                 center_screen
@@ -582,16 +593,16 @@
         timeline.push(start_screen);
         
         //timeline.push(qr_screen);
-        //timeline.push(binary_screen);
+        timeline.push(binary_screen);
 
         // Informed consent (consent.js)
-        //timeline.push(consent_procedure);
+        timeline.push(consent_procedure);
         
         // survey
         //timeline.push(survey_procedure);
 
         //test/set audio level (soundtest.js)
-        timeline.push(test_audio_looped);
+        //timeline.push(test_audio_looped);
         
         //timeline.push(instruction_screen_layout);
 
@@ -640,7 +651,11 @@
         
         timeline.push(paired_procedure_h);
 
-        timeline.push(grabber_procedure_one);       
+        timeline.push(pref_procedure);
+
+        timeline.push(grabber_procedure_one); 
+
+
         timeline.push(well_done_screen);
         
         timeline.push(end_screen);

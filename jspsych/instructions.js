@@ -30,7 +30,7 @@ const PRE_LAYOUT_MESSAGE =`
     After clicking OK, you'll see a (3 rows by 5 column) table. 
     This table should be entirely visible in your browser window without scrolling. 
     If this is not possible, please visit this experiment using a different device (with a larger screen). 
-    Note that in most browsers, you can use the key combinations <kbd>CTRL</kbd> + <kbd>-</kbd> and/or <kbd>CTRL</kbd>
+    Note that in most browsers, you can use the key combinations <kbd>CTRL</kbd> + <kbd>-</kbd> and/or <kbd>CTRL</kbd>+
     <kbd>+</kbd> to make elements smaller (-) or larger(+), so don't give up too fast!</p>
     <br>
     <br>
@@ -79,7 +79,7 @@ const PRE_REC_MESSAGE =`
     <h3> Thank you for having your child participating in this study!</h3>
     <br>
     <br>
-    <p> Please click <a href="../webrtc/index.html" target="_blank"> this link</a> in a new tab 
+    <p> Please click <a href="../../webrtc/index.html" target="_blank"> this link</a> in a new tab 
         and follow the instructions there. When you are done, please switch back to this tab and
         click okay to proceed!</p>
     `

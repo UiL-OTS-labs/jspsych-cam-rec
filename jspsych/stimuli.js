@@ -7,6 +7,7 @@ const GRABBER = "GRABBER";
 
 const BASELINE = "BASELINE";
 const PAIRED_SUCCESION = "PAIRED_SUCCESION";
+const PREFERENTIAL_LOOK = "PREFERENTIAL_LOOK";
 
 // Subtypes Image /Sound
 const SIMPLER = "SIMPLER";
@@ -80,14 +81,14 @@ const PAIRED_ALL = [
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/5.wav",
         image_fn: "./video/circle_simple_static_small",
-        side: 1
+        side: 0
     },
     {
         id: 5, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/5.wav",
         image_fn: "./video/circle_complex_static_small",
-        side: 0 
+        side: 1 
     },
     {
         id: 6, 
@@ -100,57 +101,57 @@ const PAIRED_ALL = [
         id: 7, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/5.wav",
-        image_fn: "./video/circle_complex_static_small",
+        image_fn: "./video/circle_complex_move",
         side: 1 
     },
     {
         id: 8, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/5.wav",
-        image_fn: "./video/circle_complex_move",
+        image_fn: "./video/circle_complex_static_small",
         side: 0
     },
     {
         id: 9, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/5.wav",
-        image_fn: "./video/circle_simple_move",
-        side: 0 
+        image_fn: "./video/circle_simple_static_small",
+        side: 1 
     },
     {
         id: 10, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/5.wav",
-        image_fn: "./video/circle_simple_static_small",
-        side: 1
+        image_fn: "./video/circle_simple_move",
+        side: 0
     },
     {
         id: 11, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/5.wav",
         image_fn: "./video/circle_complex_move",
-        side: 0 
+        side: 1 
     },
     {
         id: 12, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/5.wav",
         image_fn: "./video/circle_complex_static_small",
-        side: 1
+        side: 0
     },
     {
         id: 13, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/5.wav",
-        image_fn: "./video/circle_simple_move",
-        side: 0 
+        image_fn: "./video/circle_simple_static_small",
+        side: 1 
     },
     {
         id: 14, 
         item_type: PAIRED_SUCCESION, 
         sound_fn: "./sounds/5.wav",
-        image_fn: "./video/circle_complex_static_small",
-        side: 1
+        image_fn: "./video/circle_complex_move",
+        side: 0
     },
     {
         id: 15, 
@@ -168,8 +169,22 @@ const PAIRED_ALL = [
     }
 ];
 
-
-
+const PREF_ALL = [
+    {
+        id: 1, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn_left: "./video/circle_simple_move",
+        image_fn_right: "./video/circle_simple_static_small"
+    },
+    {
+        id: 2, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn_left: "./video/circle_simple_static_small",
+        image_fn_right: "./video/circle_simple_move"
+    }
+];
 
 
 // center HTML (images)
@@ -367,6 +382,10 @@ function getBaselineItems() {
 
 function getAllPairedItems() {
     return {list_name : "paired one", table : PAIRED_ALL};
+}
+
+function getAllPrefItems() {
+    return {list_name : "pref one", table : PREF_ALL};
 }
 
 function getGrabberOneItems() {
