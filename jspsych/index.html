@@ -133,8 +133,27 @@
         let baseline_items = getBaselineItems().table;
         console.log(baseline_items);
         
-        let paired_items = getPairedItems().table;
-        console.log(paired_items);
+        let paired_items_all = getAllPairedItems().table;
+        console.log(paired_items_all);
+
+        let paired_a = [paired_items_all[0], paired_items_all[1]];
+        let paired_b = [paired_items_all[2], paired_items_all[3]];
+        let paired_c = [paired_items_all[4], paired_items_all[5]];
+        let paired_d = [paired_items_all[6], paired_items_all[7]];
+
+        let paired_e = [paired_items_all[8], paired_items_all[9]];
+        let paired_f = [paired_items_all[10],paired_items_all[11]];
+        let paired_g = [paired_items_all[12], paired_items_all[13]];
+        let paired_h = [paired_items_all[14], paired_items_all[15]];
+
+        console.log(paired_a);
+        console.log(paired_b);
+        console.log(paired_c);
+        console.log(paired_d);
+        console.log(paired_e);
+        console.log(paired_f);
+        console.log(paired_g);
+        console.log(paired_h);
 
         let grabber_items_one = getGrabberOneItems().table;
         console.log(grabber_items_one);
@@ -161,15 +180,15 @@
                 
         // PAIRED
         var paired_audio = [];
-        for (var i=0; i< paired_items.length; i++) {
-            paired_audio.push(paired_items[i].sound_fn);
+        for (var i=0; i< paired_items_all.length; i++) {
+            paired_audio.push(paired_items_all[i].sound_fn);
             console.log('loaded paired succesion audio as "paired_audio"');
         };
 
         var paired_videos = [];
-        for (var i=0; i< paired_items.length; i++) {
-            paired_videos.push(paired_items[i].image_fn[0]);
-            paired_videos.push(paired_items[i].image_fn[1]);
+        for (var i=0; i< paired_items_all.length; i++) {
+            paired_videos.push(paired_items_all[i].image_fn + ".mp4");
+            paired_videos.push(paired_items_all[i].image_fn + ".webm");
 
             console.log('loaded baseline video as "baseline_videos"');
         };
@@ -427,7 +446,7 @@
         let sync_screen = {
             type: 'audio-keyboard-response',
             on_start: set_html_to_white,
-            stimulus: "./sounds/3.wav",
+            stimulus: "./sounds/beep.mp3",
             prompt: "",
             response_ends_trial: false,
             trial_ends_after_audio: false,
@@ -446,11 +465,67 @@
             randomize_order: false,
         };
 
-        let paired_procedure = {
+        let paired_procedure_a = {
             timeline:[
                 left_or_right_screen
                 ],
-            timeline_variables: paired_items,
+            timeline_variables: paired_a,
+            randomize_order: false,
+        };
+
+        let paired_procedure_b = {
+            timeline:[
+                left_or_right_screen
+                ],
+            timeline_variables: paired_b,
+            randomize_order: false,
+        };
+
+        let paired_procedure_c = {
+            timeline:[
+                left_or_right_screen
+                ],
+            timeline_variables: paired_c,
+            randomize_order: false,
+        };
+
+        let paired_procedure_d = {
+            timeline:[
+                left_or_right_screen
+                ],
+            timeline_variables: paired_d,
+            randomize_order: false,
+        };
+
+        let paired_procedure_e = {
+            timeline:[
+                left_or_right_screen
+                ],
+            timeline_variables: paired_e,
+            randomize_order: false,
+        };
+
+        let paired_procedure_f = {
+            timeline:[
+                left_or_right_screen
+                ],
+            timeline_variables: paired_f,
+            randomize_order: false,
+        };
+
+        let paired_procedure_g = {
+            timeline:[
+                left_or_right_screen
+                ],
+            timeline_variables: paired_g,
+            randomize_order: false,
+        };
+
+        let paired_procedure_h = {
+            timeline:[
+                left_or_right_screen
+                ],
+            timeline_variables: paired_h,
             randomize_order: false,
         };
 
@@ -529,11 +604,38 @@
         timeline.push(grabber_procedure_one);
 
         // paired
-        //timeline.push(paired_procedure);
+        timeline.push(paired_procedure_a);
 
-        // grabber two
-        //timeline.push(grabber_procedure_two);
+        timeline.push(grabber_procedure_one);
+       
+        timeline.push(paired_procedure_b);
 
+        timeline.push(grabber_procedure_one);
+
+        timeline.push(paired_procedure_c);
+
+        timeline.push(grabber_procedure_one);
+
+        timeline.push(paired_procedure_d);
+
+        timeline.push(grabber_procedure_one);
+
+
+        timeline.push(paired_procedure_e);
+
+        timeline.push(grabber_procedure_one); 
+
+        timeline.push(paired_procedure_f);
+
+        timeline.push(grabber_procedure_one);
+
+        timeline.push(paired_procedure_g);
+
+        timeline.push(grabber_procedure_one); 
+        
+        timeline.push(paired_procedure_h);
+
+        timeline.push(grabber_procedure_one);       
         timeline.push(well_done_screen);
         
         timeline.push(end_screen);

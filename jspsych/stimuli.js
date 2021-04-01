@@ -53,39 +53,122 @@ const BASELINE_1 = [
 ];
 
 
-const PAIRED_1 = [
+const PAIRED_ALL = [
     {
         id: 1, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/5.wav",
         image_fn: "./video/circle_simple_static_small",
-        side: 0 
+        side: 1 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/5.wav",
         image_fn: "./video/circle_simple_move",
-        side: 1
-    }
-];
-
-const PAIRED_2 = [
+        side: 0
+    },
     {
-        id: 1, 
+        id: 3, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_simple_move",
+        side: 1 
+    },
+    {
+        id: 4, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_simple_static_small",
+        side: 1
+    },
+    {
+        id: 5, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
         image_fn: "./video/circle_complex_static_small",
         side: 0 
     },
     {
-        id: 2, 
+        id: 6, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_complex_move",
+        side: 0
+    },
+    {
+        id: 7, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_complex_static_small",
+        side: 1 
+    },
+    {
+        id: 8, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_complex_move",
+        side: 0
+    },
+    {
+        id: 9, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
         image_fn: "./video/circle_simple_move",
+        side: 0 
+    },
+    {
+        id: 10, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_simple_static_small",
         side: 1
+    },
+    {
+        id: 11, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_complex_move",
+        side: 0 
+    },
+    {
+        id: 12, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_complex_static_small",
+        side: 1
+    },
+    {
+        id: 13, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_simple_move",
+        side: 0 
+    },
+    {
+        id: 14, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_complex_static_small",
+        side: 1
+    },
+    {
+        id: 15, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_complex_move",
+        side: 1 
+    },
+    {
+        id: 16, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/5.wav",
+        image_fn: "./video/circle_complex_static_small",
+        side: 0
     }
 ];
+
+
 
 
 
@@ -94,8 +177,8 @@ const GRABBER_1 = [
     {
         id: 1, 
         item_type: GRABBER, 
-        sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_complex_move"
+        sound_fn: "./sounds/4.wav",
+        image_fn: "./video/circle_simple_move"//grabber todo
     }
 ];
 
@@ -103,8 +186,8 @@ const GRABBER_2 = [
     {
         id: 1, 
         item_type: GRABBER, 
-        sound_fn: "./sounds/testtune.mp3",
-        image_fn: "./video/circle_simple_move"
+        sound_fn: "./sounds/7.wav",
+        image_fn: "./video/circle_complex_move"//grabber image todo
     }
 ];
 
@@ -282,8 +365,8 @@ function getBaselineItems() {
     return {list_name : "baseline one", table : BASELINE_1};
 }
 
-function getPairedItems() {
-    return {list_name : "paired one", table : PAIRED_1};
+function getAllPairedItems() {
+    return {list_name : "paired one", table : PAIRED_ALL};
 }
 
 function getGrabberOneItems() {
