@@ -1,5 +1,4 @@
-const uploadButton = document.querySelector('button#download');
-const tokenInput = document.querySelector('input#upload_token');
+const uploadButton = document.querySelector('button#upload');
 
 // Django streamupload app URL goes here
 const upload_url = 'http://localhost:8000/ingest/file/'
@@ -9,12 +8,16 @@ const upload_url = 'http://localhost:8000/ingest/file/'
 // - Michael
 uploadButton.addEventListener('click', () => {
     const blob = new Blob(recordedBlobs, {type: 'video/webm'});
-    var fd = new FormData();
+    var tokenInput = document.querySelector('input#upload_token');
+    console.log(tokenInput.value);
+    var formdata = new FormData();
     formdata.append('token', tokenInput.value);
     formdata.append('blob', blob, 'video.webm' );
-    var request = XMLHttpRequest.open(
+    console.log(formdata);
+    var request = new XMLHttpRequest();
+    request.open(
         "POST",
         upload_url,
     )
-    request.send()
+    request.send(formdata)
 });
