@@ -387,7 +387,7 @@
 
         let center_screen = {
             type: 'audio-button-response',
-            on_start: set_html_to_orange,
+            on_start: set_html_to_grey,
             stimulus: jsPsych.timelineVariable('sound_fn'),
             prompt: function() {
 
@@ -446,7 +446,7 @@
             rate: 1,
             trial_duration: 2450,
             choices: jsPsych.ALL_KEYS,
-            on_finish: set_html_to_grey,
+            on_finish: set_html_to_white,
             response_allowed_while_playing: true,
             autoplay: true
         };
@@ -593,16 +593,16 @@
         timeline.push(start_screen);
         
         //timeline.push(qr_screen);
-        timeline.push(binary_screen);
+        //timeline.push(binary_screen);
 
         // Informed consent (consent.js)
-        timeline.push(consent_procedure);
+        //timeline.push(consent_procedure);
         
         // survey
         //timeline.push(survey_procedure);
 
         //test/set audio level (soundtest.js)
-        //timeline.push(test_audio_looped);
+        timeline.push(test_audio_looped);
         
         //timeline.push(instruction_screen_layout);
 
@@ -639,21 +639,21 @@
 
         timeline.push(paired_procedure_e);
 
-        timeline.push(grabber_procedure_one); 
+        timeline.push(grabber_procedure_two); 
 
         timeline.push(paired_procedure_f);
 
-        timeline.push(grabber_procedure_one);
+        timeline.push(grabber_procedure_two);
 
         timeline.push(paired_procedure_g);
 
-        timeline.push(grabber_procedure_one); 
+        timeline.push(grabber_procedure_two); 
         
         timeline.push(paired_procedure_h);
 
         timeline.push(pref_procedure);
 
-        timeline.push(grabber_procedure_one); 
+        timeline.push(grabber_procedure_two); 
 
 
         timeline.push(well_done_screen);

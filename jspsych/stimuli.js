@@ -192,7 +192,7 @@ const GRABBER_1 = [
     {
         id: 1, 
         item_type: GRABBER, 
-        sound_fn: "./sounds/4.wav",
+        sound_fn: "./sounds/AT3-audio.mp3",
         image_fn: "./video/clock-grabber"//grabber todo
     }
 ];
@@ -201,8 +201,8 @@ const GRABBER_2 = [
     {
         id: 1, 
         item_type: GRABBER, 
-        sound_fn: "./sounds/7.wav",
-        image_fn: "./video/clock-grabber"//grabber image todo
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/egg-grabber"//grabber image todo
     }
 ];
 
