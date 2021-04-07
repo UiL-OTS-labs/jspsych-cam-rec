@@ -25,28 +25,28 @@ const BASELINE_1 = [
     {
         id: 1, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/1.wav",
+        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
         image_fn: "./video/circle_complex_static_small", 
         side: 1
     },
     {
         id: 2, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/1.wav",
+        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
         image_fn: "./video/circle_simple_static_small",
         side: 0
     },
     {
         id: 3, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/2.wav",
+        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
         image_fn: "./video/circle_simple_static_small", 
         side: 1
     },
     {
         id: 4, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/2.wav",
+        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
         image_fn: "./video/circle_complex_static_small",
         side: 0
     },
@@ -173,14 +173,56 @@ const PREF_ALL = [
     {
         id: 1, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/testtune.mp3",
-        image_fn_left: "./video/circle_simple_move",
-        image_fn_right: "./video/circle_simple_static_small"
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_simple_static_small",
+        image_fn_right: "./video/circle_simple_move"
     },
     {
         id: 2, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_simple_move",
+        image_fn_right: "./video/circle_simple_static_small"
+    },
+    {
+        id: 3, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_complex_static_small",
+        image_fn_right: "./video/circle_complex_move"
+    },
+    {
+        id: 4, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_complex_move",
+        image_fn_right: "./video/circle_complex_static_small"
+    },
+    {
+        id: 5, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_simple_move",
+        image_fn_right: "./video/circle_simple_static_small"
+    },
+    {
+        id: 6, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_complex_static_small",
+        image_fn_right: "./video/circle_complex_move"
+    },
+    {
+        id: 7, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_complex_move",
+        image_fn_right: "./video/circle_complex_static_small"
+    },
+    {
+        id: 8, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn_left: "./video/circle_simple_static_small",
         image_fn_right: "./video/circle_simple_move"
     }
@@ -201,71 +243,10 @@ const GRABBER_2 = [
     {
         id: 1, 
         item_type: GRABBER, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/AT3-audio.mp3",
         image_fn: "./video/egg-grabber"//grabber image todo
     }
 ];
-
-// safekeeping this for new grids...
-
-// var image_size = [200,200] // pixels
-
-// let pattern_LR = [
-//     [0,0,0,0,0],
-//     ['./images/left.png', 0,0,0, './images/left.png'],
-//     [0,0,0,0,0]
-// ];
-
-// let pattern_C = [
-//     [0,0,0,0,0],
-//     [0,0,'./images/center.png',0,0],
-//     [0,0,0,0,0]
-// ];
-
-// var grid_stimulus = jsPsych.plugins['vsl-grid-scene'].generate_stimulus(pattern_C, image_size);
-// console.log(grid_stimulus);
-
-
-// // table layout
-// GRID_HTML_LEFT_RIGHT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
-//     <table id="jspsych-vsl-grid-scene table" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
-//     <tr id="jspsych-vsl-grid-scene-table-row-0" css="height: 200px;">
-//     <td id="jspsych-vsl-grid-scene-table-0-0" style="padding: 20px 20px; border: 0px solid "#a0l;">
-//     <div id="jspsych-vsl-grid-scene-table-cell-0-0" style="width: 200px; height: 200px;"></div></td>
-//     <td id="jspsych-vsl-grid-scene-table-0-1" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-0-1" style="width: 200px; height: 200px;"></div>
-//     </td><td id="jspsych-vsl-grid-scene-table-0-2" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-0-2" style="width: 200px; height: 200px;">
-//     </div></td><td id="jspsych-vsl-grid-scene-table-0-3" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-0-3" style="width: 200px; height: 200px;"></div></td>
-//     <td id="jspsych-vsl-grid-scene-table-0-4" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-0-4" style="width: 200px; height: 200px;"></div></td>
-//     </tr><tr id="jspsych-vsl-grid-scene-table-row-1" css="height: 200px;">
-//     <td id="jspsych-vsl-grid-scene-table-1-0" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-1-0" style="width: 200px; height: 200px;">
-//     <img src="./images/left-grey.png" style="width: 200px; height: 200"></img></div>
-//     </td><td id="jspsych-vsl-grid-scene-table-1-1" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-1-1" style="width: 200px; height: 200px;"></div></td>
-//     <td id="jspsych-vsl-grid-scene-table-1-2" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-1-2" style="width: 200px; height: 200px;"></div></td>
-//     <td id="jspsych-vsl-grid-scene-table-1-3" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-1-3" style="width: 200px; height: 200px;"></div></td>
-//     <td id="jspsych-vsl-grid-scene-table-1-4" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-1-4" style="width: 200px; height: 200px;">
-//     <img src="./images/right-grey.png" style="width: 200px; height: 200"></img></div>
-//     </td></tr><tr id="jspsych-vsl-grid-scene-table-row-2" css="height: 200px;">
-//     <td id="jspsych-vsl-grid-scene-table-2-0" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-2-0" style="width: 200px; height: 200px;"></div>
-//     </td><td id="jspsych-vsl-grid-scene-table-2-1" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-2-1" style="width: 200px; height: 200px;"></div>
-//     </td><td id="jspsych-vsl-grid-scene-table-2-2" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-2-2" style="width: 200px; height: 200px;"></div></td>
-//     <td id="jspsych-vsl-grid-scene-table-2-3" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-2-3" style="width: 200px; height: 200px;"></div></td>
-//     <td id="jspsych-vsl-grid-scene-table-2-4" style="padding: 20px 20px; border: 0px solid "#a09c99";">
-//     <div id="jspsych-vsl-grid-scene-table-cell-2-4" style="width: 200px; height: 200px;"></div>
-//     </td></tr></table></div>`
-
 
 // table layout
 GRID_HTML_LEFT_RIGHT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">

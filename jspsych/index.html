@@ -136,24 +136,24 @@
         let paired_items_all = getAllPairedItems().table;
         console.log(paired_items_all);
 
-        let paired_a = [paired_items_all[0], paired_items_all[1]];
-        let paired_b = [paired_items_all[2], paired_items_all[3]];
-        let paired_c = [paired_items_all[4], paired_items_all[5]];
-        let paired_d = [paired_items_all[6], paired_items_all[7]];
+        // let paired_a = [paired_items_all[0], paired_items_all[1]];
+        // let paired_b = [paired_items_all[2], paired_items_all[3]];
+        // let paired_c = [paired_items_all[4], paired_items_all[5]];
+        // let paired_d = [paired_items_all[6], paired_items_all[7]];
 
-        let paired_e = [paired_items_all[8], paired_items_all[9]];
-        let paired_f = [paired_items_all[10],paired_items_all[11]];
-        let paired_g = [paired_items_all[12], paired_items_all[13]];
-        let paired_h = [paired_items_all[14], paired_items_all[15]];
+        // let paired_e = [paired_items_all[8], paired_items_all[9]];
+        // let paired_f = [paired_items_all[10],paired_items_all[11]];
+        // let paired_g = [paired_items_all[12], paired_items_all[13]];
+        // let paired_h = [paired_items_all[14], paired_items_all[15]];
 
-        console.log(paired_a);
-        console.log(paired_b);
-        console.log(paired_c);
-        console.log(paired_d);
-        console.log(paired_e);
-        console.log(paired_f);
-        console.log(paired_g);
-        console.log(paired_h);
+        // console.log(paired_a);
+        // console.log(paired_b);
+        // console.log(paired_c);
+        // console.log(paired_d);
+        // console.log(paired_e);
+        // console.log(paired_f);
+        // console.log(paired_g);
+        // console.log(paired_h);
 
         let grabber_items_one = getGrabberOneItems().table;
         //console.log(grabber_items_one);
@@ -193,7 +193,22 @@
             paired_videos.push(paired_items_all[i].image_fn + ".mp4");
             paired_videos.push(paired_items_all[i].image_fn + ".webm");
 
-            console.log('loaded baseline video as "baseline_videos"');
+            console.log('loaded baseline video as "paired_videos"');
+        };
+
+        // PREFERENTIAL
+                // PAIRED
+        var pref_audio = [];
+        for (var i=0; i< pref_items.length; i++) {
+            pref_audio.push(pref_items[i].sound_fn);
+            console.log('loaded preferential looking audio as "pref_audio"');
+        };
+
+        var pref_videos = [];
+        for (var i=0; i< pref_items.length; i++) {
+            pref_videos.push(pref_items[i].image_fn + ".mp4");
+            pref_videos.push(pref_items[i].image_fn + ".webm");
+            console.log('loaded preferential looking video as "pref_videos"');
         };
         
         // GRABBER
@@ -250,6 +265,11 @@
 
         function set_html_to_orange() {
             document.body.style.backgroundColor = 'orange'
+            document.body.style.color = 'black'
+        }
+
+        function set_html_to_green() {
+            document.body.style.backgroundColor = 'green'
             document.body.style.color = 'black'
         }
 
@@ -426,7 +446,7 @@
             rate: 1,
             trial_duration: 2450,
             choices: jsPsych.ALL_KEYS,
-            on_finish: set_html_to_grey,
+            on_finish: set_html_to_white,
             response_allowed_while_playing: true,
             autoplay: true
         };
@@ -460,7 +480,32 @@
             trial_ends_after_audio: false,
             trial_duration: 450,
             choices: jsPsych.NO_KEYS,
-            on_finish: set_html_to_grey
+            on_finish: set_html_to_white
+        };
+
+        let sync_screen_orange = {
+            type: 'audio-keyboard-response',
+            on_start: set_html_to_orange,
+            stimulus: "./sounds/beep.mp3",
+            prompt: "orange!",
+            response_ends_trial: false,
+            trial_ends_after_audio: false,
+            trial_duration: 450,
+            choices: jsPsych.NO_KEYS,
+            on_finish: set_html_to_white
+        };
+
+
+        let sync_screen_green = {
+            type: 'audio-keyboard-response',
+            on_start: set_html_to_green,
+            stimulus: "./sounds/beep.mp3",
+            prompt: "green!",
+            response_ends_trial: false,
+            trial_ends_after_audio: false,
+            trial_duration: 450,
+            choices: jsPsych.NO_KEYS,
+            on_finish: set_html_to_white
         };
 
         // PROCEDURES ////////////////////////////////
@@ -473,80 +518,8 @@
             randomize_order: false,
         };
 
-        let paired_procedure_a = {
-            timeline:[
-                left_or_right_screen
-                ],
-            timeline_variables: paired_a,
-            randomize_order: false,
-        };
-
-        let paired_procedure_b = {
-            timeline:[
-                left_or_right_screen
-                ],
-            timeline_variables: paired_b,
-            randomize_order: false,
-        };
-
-        let paired_procedure_c = {
-            timeline:[
-                left_or_right_screen
-                ],
-            timeline_variables: paired_c,
-            randomize_order: false,
-        };
-
-        let paired_procedure_d = {
-            timeline:[
-                left_or_right_screen
-                ],
-            timeline_variables: paired_d,
-            randomize_order: false,
-        };
-
-        let paired_procedure_e = {
-            timeline:[
-                left_or_right_screen
-                ],
-            timeline_variables: paired_e,
-            randomize_order: false,
-        };
-
-        let paired_procedure_f = {
-            timeline:[
-                left_or_right_screen
-                ],
-            timeline_variables: paired_f,
-            randomize_order: false,
-        };
-
-        let paired_procedure_g = {
-            timeline:[
-                left_or_right_screen
-                ],
-            timeline_variables: paired_g,
-            randomize_order: false,
-        };
-
-        let paired_procedure_h = {
-            timeline:[
-                left_or_right_screen
-                ],
-            timeline_variables: paired_h,
-            randomize_order: false,
-        };
-
-        let pref_procedure = {
-            timeline:[
-                left_and_right_screen
-                ],
-            timeline_variables: pref_items,
-            randomize_order: false,
-        };        
-
         let grabber_procedure_one = {
-            timeline:[
+            timeline:[ 
                 center_screen
                 ],
             timeline_variables: grabber_items_one,
@@ -560,6 +533,24 @@
             timeline_variables: grabber_items_two,
             randomize_order: false,
         };
+
+        let paired_procedure = {
+            timeline:[
+                grabber_procedure_one,
+                left_or_right_screen
+                ],
+            timeline_variables: paired_items_all,
+            randomize_order: false,
+        }; 
+
+        let pref_procedure = {
+            timeline:[
+                grabber_procedure_two,
+                left_and_right_screen
+                ],
+            timeline_variables: pref_items,
+            randomize_order: false,
+        };        
 
         /////////////////////////////////////////////
 
@@ -593,10 +584,10 @@
         timeline.push(start_screen);
         
         //timeline.push(qr_screen);
-        //timeline.push(binary_screen);
+        timeline.push(binary_screen);
 
         // Informed consent (consent.js)
-        //timeline.push(consent_procedure);
+        timeline.push(consent_procedure);
         
         // survey
         //timeline.push(survey_procedure);
@@ -611,50 +602,17 @@
         // task instruction (instructions.js)
         timeline.push(instruction_screen_rec);
 
-        // baseline
+        // BASELINE //////////////////////////////////////
         timeline.push(baseline_procedure);
-
         timeline.push(sync_screen);
 
-        // grabber one (again)
-        timeline.push(grabber_procedure_one);
+        // PAIREWISE /////////////////////////////////////
+        timeline.push(paired_procedure);
+        timeline.push(sync_screen_orange)
 
-        // paired
-        timeline.push(paired_procedure_a);
-
-        timeline.push(grabber_procedure_one);
-       
-        timeline.push(paired_procedure_b);
-
-        timeline.push(grabber_procedure_one);
-
-        timeline.push(paired_procedure_c);
-
-        timeline.push(grabber_procedure_one);
-
-        timeline.push(paired_procedure_d);
-
-        timeline.push(grabber_procedure_one);
-
-
-        timeline.push(paired_procedure_e);
-
-        timeline.push(grabber_procedure_two); 
-
-        timeline.push(paired_procedure_f);
-
-        timeline.push(grabber_procedure_two);
-
-        timeline.push(paired_procedure_g);
-
-        timeline.push(grabber_procedure_two); 
-        
-        timeline.push(paired_procedure_h);
-
+        // PREFERENTIAL LOOKING //////////////////////////
         timeline.push(pref_procedure);
-
-        timeline.push(grabber_procedure_two); 
-
+        timeline.push(sync_screen_green)
 
         timeline.push(well_done_screen);
         
@@ -668,6 +626,7 @@
                     check_audio,
                     baseline_audio,
                     paired_audio,
+                    pref_audio,
                     grabber_audio_one,
                     grabber_audio_two
                     ],
