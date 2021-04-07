@@ -193,7 +193,7 @@ const GRABBER_1 = [
         id: 1, 
         item_type: GRABBER, 
         sound_fn: "./sounds/4.wav",
-        image_fn: "./video/circle_simple_move"//grabber todo
+        image_fn: "./video/clock-grabber"//grabber todo
     }
 ];
 
@@ -202,7 +202,7 @@ const GRABBER_2 = [
         id: 1, 
         item_type: GRABBER, 
         sound_fn: "./sounds/7.wav",
-        image_fn: "./video/circle_complex_move"//grabber image todo
+        image_fn: "./video/clock-grabber"//grabber image todo
     }
 ];
 
