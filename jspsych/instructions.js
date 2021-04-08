@@ -75,18 +75,35 @@ GRID_HTML_LAYOUT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
     <div id="jspsych-vsl-grid-scene-table-cell-2-4" style="width: 200px; height: 200px;">
     </div></td></tr></table></div>`
   
-const PRE_REC_MESSAGE =`
+const PRE_REC_MESSAGE = `
     <h3> Thank you for having your child participating in this study!</h3>
     <br>
     <br>
     <p> Please click <a href="../../webrtc/index.html" target="_blank"> this link</a> in a new tab 
         and follow the instructions there. When you are done, please switch back to this tab and
         click okay to proceed!</p>
-    `
+    `;
 
+const PRE_REC_MESSAGE_CHECKBOX = `
+    <h3> Thank you for having your child participating in this study!</h3>
+    <br>
+    <br>
+    <p> Please click <a href="../../webrtc/index.html" target="_blank"> this link</a> in a new tab 
+        and follow the instructions there. When you are done, please switch back to this tab. 
+    </p>
+    `;
 
-const POST_REC_MESSAGE =
-    "Thank you!"
+const REC_STARTED_STATEMENT = `
+    Yes, I have started the recording in the other tab.
+    `;
+
+const REC_REFERENCE_NAME = "recording";
+
+const IF_REQUIRED_FEEDBACK_MESSAGE_REC = `
+    You must check the box next to ' ${ REC_STARTED_STATEMENT } ' in order to proceed with the experiment.
+    `;
+
+const POST_REC_MESSAGE = "Thank you!"
 
 const DEBRIEF_MESSAGE = `
     <h1>End of the experiment</h1>

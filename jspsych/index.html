@@ -54,8 +54,8 @@
     <style>
 
     .instruction {
-        text-align: left;
-        margin: 5% 10% 5% 10%;
+        text-align: left !important;
+/*        margin: 5% 10% 5% 10%;*/
     }
 
 
@@ -85,6 +85,7 @@
 
     .survey {
         text-align: left !important;
+        margin: 5% 10% 5% 10% !important;
     }
 
     .jspsych-survey-html-form {
@@ -127,134 +128,84 @@
     window.addEventListener('load', function() {
 
 
-
         // load stimuli
-
         let baseline_items = getBaselineItems().table;
-        console.log(baseline_items);
         
         let paired_items_all = getAllPairedItems().table;
-        console.log(paired_items_all);
-
-        // let paired_a = [paired_items_all[0], paired_items_all[1]];
-        // let paired_b = [paired_items_all[2], paired_items_all[3]];
-        // let paired_c = [paired_items_all[4], paired_items_all[5]];
-        // let paired_d = [paired_items_all[6], paired_items_all[7]];
-
-        // let paired_e = [paired_items_all[8], paired_items_all[9]];
-        // let paired_f = [paired_items_all[10],paired_items_all[11]];
-        // let paired_g = [paired_items_all[12], paired_items_all[13]];
-        // let paired_h = [paired_items_all[14], paired_items_all[15]];
-
-        // console.log(paired_a);
-        // console.log(paired_b);
-        // console.log(paired_c);
-        // console.log(paired_d);
-        // console.log(paired_e);
-        // console.log(paired_f);
-        // console.log(paired_g);
-        // console.log(paired_h);
 
         let grabber_items_one = getGrabberOneItems().table;
-        //console.log(grabber_items_one);
 
         let grabber_items_two = getGrabberTwoItems().table;
-        //console.log(grabber_items_two);
 
         let pref_items = getAllPrefItems().table;
-        console.log(pref_items);
 
-        ////////////////////////// media preloading ///////////////////////////////////////
+        ////////////////////////// MEDIA PRELOADING /////////////////////////////
         
-
-        // BASELINE
+        // BASELINE /////////////////////////////////////////////////////////////
         var baseline_audio = [];
         for (var i=0; i< baseline_items.length; i++) {
             baseline_audio.push(baseline_items[i].sound_fn);
-            console.log('loaded baseline audio as "baseline_audio"');
         };
 
         var baseline_videos = [];
         for (var i=0; i< baseline_items.length; i++) {
             baseline_videos.push(baseline_items[i].image_fn + ".mp4");
             baseline_videos.push(baseline_items[i].image_fn + ".webm");
-            console.log('loaded baseline video as "baseline_videos"');
         };
                 
         // PAIRED
         var paired_audio = [];
         for (var i=0; i< paired_items_all.length; i++) {
             paired_audio.push(paired_items_all[i].sound_fn);
-            console.log('loaded paired succesion audio as "paired_audio"');
         };
 
         var paired_videos = [];
         for (var i=0; i< paired_items_all.length; i++) {
             paired_videos.push(paired_items_all[i].image_fn + ".mp4");
             paired_videos.push(paired_items_all[i].image_fn + ".webm");
-
-            console.log('loaded baseline video as "paired_videos"');
         };
 
-        // PREFERENTIAL
-                // PAIRED
+        // PREFERENTIAL //////////////////////////////////////////////////////////
         var pref_audio = [];
         for (var i=0; i< pref_items.length; i++) {
             pref_audio.push(pref_items[i].sound_fn);
-            console.log('loaded preferential looking audio as "pref_audio"');
         };
 
         var pref_videos = [];
         for (var i=0; i< pref_items.length; i++) {
             pref_videos.push(pref_items[i].image_fn + ".mp4");
             pref_videos.push(pref_items[i].image_fn + ".webm");
-            console.log('loaded preferential looking video as "pref_videos"');
         };
         
-        // GRABBER
+        // GRABBER ////////////////////////////////////////////////////////////////
         var grabber_audio_one = [];
         for (var i=0; i< grabber_items_one.length; i++) {
             grabber_audio_one.push(grabber_items_one[i].sound_fn);
-            console.log('loaded grabber one audio as "grabber_audio_one"');
         };
 
         var grabber_video_one = [];
         for (var i=0; i< grabber_items_one.length; i++) {
             grabber_video_one.push(grabber_items_one[i].image_fn + ".mp4");
             grabber_video_one.push(grabber_items_one[i].image_fn + ".webm");
-            console.log('loaded grabber one video as "grabber_video_one"');
         };
 
         var grabber_audio_two = [];
         for (var i=0; i< grabber_items_two.length; i++) {
             grabber_audio_two.push(grabber_items_two[i].sound_fn);
-            console.log('loaded grabber two audio as "grabber_audio_two"');
         };
 
         var grabber_video_two= [];
         for (var i=0; i< grabber_items_two.length; i++) {
             grabber_video_two.push(grabber_items_two[i].image_fn + ".mp4");
             grabber_video_two.push(grabber_items_two[i].image_fn + ".webm");
-            console.log('loaded grabber two video as "grabber_video_two"');
         };
-        
-        console.log('_________________');
-        console.log(grabber_audio_one);
-        console.log(grabber_audio_two);
+     
+        // REGULAR FUNCTIONS
 
-        // add scources to videos:
-        //https://stackoverflow.com/questions/9923573/replacing-html5-video-src-strings-in-javascript-does-not-replace-video
-
-        function add_source(element, src, type) {
-            var source = document.createElement("source");
-            source.src = src;
-            source.type = type;
-            element.appendChild(source);
-        }
-        // change background styles
+        // to change background styles
 
         function set_html_to_grey() {
-            document.body.style.backgroundColor = GREY_HEX; // background color
+            document.body.style.backgroundColor = GREY_HEX; // background color RGBA-mode
             document.body.style.color = 'black' // font color
         }
 
@@ -317,6 +268,28 @@
             },
             choices: [OK_BUTTON_TEXT],
             response_ends_trial: true,
+        };
+
+        // globals for this are in instruction.js
+        let instruction_screen_rec_checkbox = {
+            type: 'survey-multi-select',
+            preamble: "<div class= 'instruction' >" + "<h2>" + CONSENT_HTML_STYLE_UU + "</h2>" +
+                PRE_REC_MESSAGE_CHECKBOX,
+            required_message: IF_REQUIRED_FEEDBACK_MESSAGE_REC,
+            questions: [
+                {
+                    prompt: "", 
+                    options: [REC_STARTED_STATEMENT], 
+                    horizontal: true,
+                    required: true,
+                    button_label: PROCEED_BUTTON_TEXT,
+                    name: REC_REFERENCE_NAME
+                }
+            ],
+            on_finish: function(data){
+                let rec_started_choice = data.responses;   
+                data.rec__started_choice_response = rec_started_choice;
+            }
         };
 
         let check_screen_layout = {
@@ -583,7 +556,8 @@
         // it's best practice to have *mouse click* user I/O first
         timeline.push(start_screen);
         
-        //timeline.push(qr_screen);
+        timeline.push(qr_screen);
+        
         timeline.push(binary_screen);
 
         // Informed consent (consent.js)
@@ -600,7 +574,7 @@
         timeline.push(check_screen_layout);
 
         // task instruction (instructions.js)
-        timeline.push(instruction_screen_rec);
+        timeline.push(instruction_screen_rec_checkbox);
 
         // BASELINE //////////////////////////////////////
         timeline.push(baseline_procedure);
