@@ -132,12 +132,81 @@
         let baseline_items = getBaselineItems().table;
         
         let paired_items_all = getAllPairedItems().table;
+        console.log(paired_items_all)
 
         let grabber_items_one = getGrabberOneItems().table;
 
         let grabber_items_two = getGrabberTwoItems().table;
 
         let pref_items = getAllPrefItems().table;
+
+        // cutting the original paired timeline in pairs...ugly, but as of yet
+        // unsure of what's best otherwise
+        let paired_a = [
+            paired_items_all[0],
+            paired_items_all[1]
+            ];
+
+        let paired_b = [
+            paired_items_all[2],
+            paired_items_all[3]
+            ];
+
+        let paired_c = [
+            paired_items_all[4],
+            paired_items_all[5]
+            ];
+
+        let paired_d = [
+            paired_items_all[6],
+            paired_items_all[7]
+            ];
+        
+        let paired_e = [
+            paired_items_all[8],
+            paired_items_all[9]
+            ];
+
+        let paired_f = [
+            paired_items_all[10],
+            paired_items_all[11]
+            ];
+
+        let paired_g = [
+            paired_items_all[12],
+            paired_items_all[13]
+            ];
+
+        let paired_h = [
+            paired_items_all[14],
+            paired_items_all[15]
+            ];
+
+        let paired_one = [
+                paired_items_all[0],
+                paired_items_all[2],        
+                paired_items_all[4],
+                paired_items_all[6],
+                paired_items_all[8],
+                paired_items_all[10],
+                paired_items_all[12],
+                paired_items_all[14]
+                ];
+
+        let paired_two = [
+                paired_items_all[1],
+                paired_items_all[3],        
+                paired_items_all[5],
+                paired_items_all[7],
+                paired_items_all[9],
+                paired_items_all[11],
+                paired_items_all[13],
+                paired_items_all[15]
+                ];
+
+
+        console.log(paired_one);
+        console.log(paired_two);
 
         ////////////////////////// MEDIA PRELOADING /////////////////////////////
         
@@ -240,8 +309,14 @@
 
         // Data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
+
+        const TODO = "TODO";
         
         let subject_id = jsPsych.randomization.randomID(8);
+        let browser_info = TODO;
+        let screen_resolution_info_start = TODO;
+        let recording_checked_externally = TODO;
+
 
         jsPsych.data.addProperties({
             subject: subject_id
@@ -327,7 +402,7 @@
                 var gridright = gridleft.replaceAll("./video/03_right",
                         jsPsych.timelineVariable('image_fn_right'));
 
-                console.log(gridright);
+                //console.log(gridright);
                 return gridright;
             },
             response_ends_trial: false,
@@ -341,6 +416,7 @@
                 target_image_b: jsPsych.timelineVariable('image_fn_right')
             }
         };
+
 
         let left_or_right_screen = {
             type: 'audio-button-response',
@@ -377,6 +453,40 @@
             }
         };
 
+        let left_or_right_screen_two = {
+            type: 'audio-button-response',
+            on_start: set_html_to_grey,
+            stimulus: jsPsych.timelineVariable('sound_fn'),
+            prompt: function() {
+                
+                var side = jsPsych.timelineVariable('side', true);
+                
+                console.log('side: ' + side);
+
+                var grid = GRID_HTML_LEFT_RIGHT;
+                if ( side === 0 ){
+                    var newgrid = grid.replaceAll("./video/01_left",
+                        jsPsych.timelineVariable('image_fn'));
+                } else if (side === 1 ) {
+                    var newgrid = grid.replaceAll("./video/03_right",
+                        jsPsych.timelineVariable('image_fn'));
+                    //console.log("OR screen gridright: ", newgrid)
+                } else {
+                    console.error("Stimulus side is unknown or undefined...");
+                    var newgrid = 'error';
+                }
+                return newgrid;
+            },
+            response_ends_trial: false,
+            trial_ends_after_audio: false,
+            trial_duration: 1950,
+            choices: [],
+            on_finish: set_html_to_white,
+            data: {
+                target_audio: jsPsych.timelineVariable('sound_fn'),
+                target_image: jsPsych.timelineVariable('image_fn'),
+            }
+        };
 
         let center_screen = {
             type: 'audio-button-response',
@@ -388,8 +498,6 @@
                     var grida = grid.replaceAll("./video/02_center",
                         jsPsych.timelineVariable('image_fn')
                         );
-
-                    console.log("CENTER a: ", grida);
                     var newgrid = grida;
                 return newgrid;
             },
@@ -488,7 +596,7 @@
                 left_or_right_screen
                 ],
             timeline_variables: baseline_items,
-            randomize_order: false,
+            randomize_order: false
         };
 
         let grabber_procedure_one = {
@@ -496,25 +604,139 @@
                 center_screen
                 ],
             timeline_variables: grabber_items_one,
-            randomize_order: false,
+            randomize_order: false
         };
+
+        let grabber_one = {
+            type: 'audio-button-response',
+            on_start: set_html_to_grey,
+            stimulus: "./sounds/AT3-audio.mp3",
+            prompt: function() {
+
+                var grid = GRID_HTML_CENTER;
+                    var grida = grid.replaceAll("./video/02_center",
+                        "./video/clock-grabber"
+                        );
+                    var newgrid = grida;
+                return newgrid;
+            },
+            response_ends_trial: false,
+            trial_ends_after_audio: false,
+            trial_duration: 2450,
+            choices: [],
+            on_finish: set_html_to_white,
+        };
+
 
         let grabber_procedure_two = {
             timeline:[
                 center_screen
                 ],
             timeline_variables: grabber_items_two,
-            randomize_order: false,
+            randomize_order: false
         };
 
-        let paired_procedure = {
-            timeline:[
-                grabber_procedure_one,
-                left_or_right_screen
+        // Zipping two arrays into an object, better performance than map
+
+        // let labels = ['a', 'b', 'c']
+        // let values = [1, 2, 3]
+        // let out = {}
+        // for (var i = 0; i < labels.length; i++) {
+        //     out = { ...out, [labels[i]]: values[i] }
+        //  }
+        // console.debug(out);
+        // { a: 1, b: 2, c: 3 }
+
+
+        let paired_procedure_a = {
+            timeline: [
+                left_or_right_screen,
                 ],
-            timeline_variables: paired_items_all,
-            randomize_order: false,
-        }; 
+            timeline_variables: [
+                paired_one[0], 
+                paired_two[0]
+                ],
+            randomize_order: false
+        };
+
+        let paired_procedure_b = {
+            timeline: [
+                left_or_right_screen,
+                ],
+            timeline_variables: [
+                paired_one[1],
+                paired_two[1]
+                ],
+            randomize_order: false
+        };
+
+        let paired_procedure_c = {
+            timeline: [
+                left_or_right_screen,
+                ],
+            timeline_variables: [
+                paired_one[2], 
+                paired_two[2]
+                ],
+            randomize_order: false
+        };
+
+        let paired_procedure_d = {
+            timeline: [
+                left_or_right_screen,
+                ],
+            timeline_variables: [
+                paired_one[3],
+                paired_two[3]
+                ],
+            randomize_order: false
+        };
+
+        let paired_procedure_e = {
+            timeline: [
+                left_or_right_screen,
+                ],
+            timeline_variables: [
+                paired_one[4],
+                paired_two[4]
+                ],
+            randomize_order: false
+        };
+
+        let paired_procedure_f = {
+            timeline: [
+                left_or_right_screen,
+                ],
+            timeline_variables: [
+                paired_one[5],
+                paired_two[5]
+                ],
+            randomize_order: false
+        };
+
+        let paired_procedure_g = {
+            timeline: [
+                left_or_right_screen,
+                ],
+            timeline_variables: [
+                paired_one[6],
+                paired_two[6]
+                ],
+            randomize_order: false
+        };
+
+        let paired_procedure_h = {
+            timeline: [
+                left_or_right_screen,
+                ],
+            timeline_variables: [
+                paired_one[7],
+                paired_two[7]
+                ],
+            randomize_order: false
+        };
+
+        ///////// pref
 
         let pref_procedure = {
             timeline:[
@@ -569,7 +791,7 @@
         //test/set audio level (soundtest.js)
         timeline.push(test_audio_looped);
         
-        //timeline.push(instruction_screen_layout);
+        timeline.push(instruction_screen_layout);
 
         timeline.push(check_screen_layout);
 
@@ -581,7 +803,35 @@
         timeline.push(sync_screen);
 
         // PAIREWISE /////////////////////////////////////
-        timeline.push(paired_procedure);
+        // timeline.push(paired_procedure);
+        // this is horrible coding/lusing timelines, but it might just be the best way to
+        // commnit a working example of the right kinds.
+        // the sixteen items are spolit in halves and each of these form tuple-timeline procedures of the 'pairs'
+
+        timeline.push(grabber_one);
+        timeline.push(paired_procedure_a);
+
+        timeline.push(grabber_one);
+        timeline.push(paired_procedure_b);
+
+        timeline.push(grabber_procedure_one);
+        timeline.push(paired_procedure_c);
+
+        timeline.push(grabber_one);
+        timeline.push(paired_procedure_d);
+        
+        timeline.push(grabber_one);
+        timeline.push(paired_procedure_e);
+
+        timeline.push(grabber_one);
+        timeline.push(paired_procedure_f);
+
+        timeline.push(grabber_one);
+        timeline.push(paired_procedure_g);
+
+        timeline.push(grabber_one);
+        timeline.push(paired_procedure_h);
+
         timeline.push(sync_screen_orange)
 
         // PREFERENTIAL LOOKING //////////////////////////

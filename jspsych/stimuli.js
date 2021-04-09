@@ -169,6 +169,7 @@ const PAIRED_ALL = [
     }
 ];
 
+
 const PREF_ALL = [
     {
         id: 1, 
@@ -244,7 +245,7 @@ const GRABBER_2 = [
         id: 1, 
         item_type: GRABBER, 
         sound_fn: "./sounds/AT3-audio.mp3",
-        image_fn: "./video/egg-grabber"//grabber image todo
+        image_fn: "./video/green-grabber"//grabber image todo
     }
 ];
 
@@ -343,19 +344,6 @@ GRID_HTML_CENTER = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
     <div id="jspsych-vsl-grid-scene-table-cell-2-4" style="width: 200px; height: 200px;">
     </div></td></tr></table></div>`
 
-// const PAIRED_ITEMS = [
-//     {list_name: LISTS[0], table: PAIRED_1},
-//     {list_name: LISTS[1], table: PAIRED_2}
-// ];
-
-// const VIDEO_HTML = `
-//     <video autoplay="true" width="195">
-
-//          <source src="./video/flower.mp4"
-//             type="video/mp4">
-
-//         Sorry, your browser doesn't support embedded videos.
-//     </video>`;
 
 function getBaselineItems() {
     return {list_name : "baseline one", table : BASELINE_1};
