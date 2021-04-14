@@ -7,19 +7,27 @@
 
 
 // GENERIC TESTS/CHECKS
+
+//screen 1
 const GENERIC_CHECK = `
-    <h3>In order to participate, please make sure that you:</h3>
+    <h3>Om te kunnen deelnemen aan het onderzoek is het volgende belangrijk:</h3>
     <br>
-    <ul>
-    <li>Run this on a Laptop or Desktop computer, <b>not</b> on a phone or a tablet!</li>
-    <li>Have a <b>real keyboard</b> working.</li><li>Have a <b>mouse</b> and/or 
-    <b>trackpad</b> that works.</li>
-    <li>Have a webcam (internal or external/USB) connected to your PC/laptop. You will need to give permission to access the camera + audio when prompted.</li>
-    <li>Have your browser's audio enabled and your volume on.</li>
-    </ul>
-    <h3>Please <i>maximize</i> your browser window before you continue!</h3>
+    <li>Voer het onderzoek uit op en laptop of desktop computer, <i>niet</i> op een telefoon of tablet.</li>
+    <li>Zorg ervoor dat uw toetsenbord werkt.</li>
+    <li>Zorg ervoor dat u een werkende muis of touchpad heeft.</li>
+    <li>Zorg ervoor dat het geluid in uw browser werkt en dat uw volume aan staat.</li>
     <br>
-    <p>Click below if you are ready to proceed</p>
+    <br>
+    <strong>Maximaliseer uw browserscherm voordat u verder gaat!</strong>
+    <br>
+    <br>
+    <p>U krijgt eerst verschillende instructies. Pas als alles correct staat ingesteld, hoeft u uw kind 
+    te betrekken bij het onderzoek. Er wordt u verteld wanneer u uw kind actief moet gaan betrekken bij 
+    het onderzoek.
+    <br>
+    <br>
+    Klik op ‘volgende’ als u aan de bovenstaande punten voldoet, en verder wilt gaan naar de 
+    toestemmingsverklaring.</p>
     `;
 
 const PRE_LAYOUT_MESSAGE =`
