@@ -22,11 +22,12 @@ const CONSENT_HTML_STYLE_UU = `<style>
             background: rgb(246, 246, 246);
             font-family: "Open Sans","Frutiger",Helvetica,Arial,sans-serif;
             color: rgb(33, 37, 41);
-            text-align: left;
+            text-align: left !important;
         }
 
         p {
             line-height: 1.4; /* Override paragraph for better readability */
+            text-align: left !important;
         }
 
         label {
@@ -35,10 +36,16 @@ const CONSENT_HTML_STYLE_UU = `<style>
 
         h1, h2{
             font-size: 2rem;
+            text-align: left !important;
         }
 
         h6 {
             font-size: 1.1rem;
+            text-align: left !important;
+        }
+
+        li {
+            text-align: left !important;
         }
 
         /* Input styles */
@@ -139,26 +146,44 @@ const CONSENT_HTML_STYLE_UU = `<style>
 
         </style>
         `
+
 const CONSENT_HTML = `
-    <p>Insert your information letter here; for more information, 
-    see the <a href="https://fetc-gw.wp.hum.uu.nl/en/" target="_blank">FEtC-H website</a></p>
-    `;
+    <h1><strong>TOESTEMMINGSVERKLARING</strong> voor deelname aan: <i>"Online onderzoek naar het kijkgedrag van baby's"</i></h2>
+    <br>
+    <br>
+    <h6>Ik, ouder of voogd van het hieronder genoemde kind, bevestig:</h6> 
+    <li>dat ik via de informatiebrief, die ik heb ontvangen in de mail, naar tevredenheid over het onderzoek ben ingelicht;</li>
+    <li>dat ik in de gelegenheid ben gesteld om vragen over het onderzoek te stellen en dat mijn eventuele vragen naar tevredenheid zijn beantwoord;</li>
+    <li>dat ik gelegenheid heb gehad om grondig over deelname aan het onderzoek na te denken;</li>
+    <li>dat ik uit vrije wil samen met mijn kind deelneem.</li>
+    <h6>Ik stem er mee in dat:</h6> 
+    <li>de verzamelde gegevens voor wetenschappelijke doelen worden verkregen en bewaard zoals in de informatiebrief vermeld staat;</li>
+    <li>de verzamelde, gecodeerde, onderzoeksgegevens door wetenschappers kunnen worden gedeeld en/of worden hergebruikt om eventueel andere onderzoeksvragen mee te beantwoorden;</li>
+    <li>er voor wetenschappelijke doeleinden beeld- en geluidsopnamen worden gemaakt.</li>
+    <h6>Ik begrijp dat:</h6> 
+    <li>ik het recht heb om mijn toestemming voor het gebruik van de data van mijn kind in te trekken zoals vermeld staat in de informatiebrief.</li>
+`;
     
 const DEBRIEF_MESSAGE_NO_CONSENT = `
-    <h1>End of the experiment</h1><BR><BR>
-    <h2>Thank you for <i>not</i> participating!</h2>
+    <h1>Einde experiment</h1>
+    <br>
+    <br>
+    <h2>U heeft <i>geen</i> toestemming gegeven voor het gebruik van uw data.</h2>
     `;
-const DEBRIEF_MESSAGE_NO_CONSENT_DURATION = 3000;
+
+const DEBRIEF_MESSAGE_NO_CONSENT_DURATION = 3300;
 
 const CONSENT_STATEMENT = `
-    Yes, I consent to the use of my answers for scientific research.
+    Door dit hokje aan te vinken verklaart u bovenstaande te hebben gelezen en begrepen, en stemt u in met deelname aan het onderzoek.
     `;
 
-const PROCEED_BUTTON_TEXT = "Continue";
+const PROCEED_BUTTON_TEXT = "Volgende";
+
 const CONSENT_REFERENCE_NAME = 'consent';
+
 const IF_REQUIRED_FEEDBACK_MESSAGE = `
-        You must check the box next to '${CONSENT_STATEMENT}' in order to proceed to the experiment.
-        `
+        U <strong>moet</strong> het vinkje naast '${CONSENT_STATEMENT}' aanvinken om verder te gaan met het experiment.
+        `;
 
 let consent_block = {
     type: 'survey-multi-select',
