@@ -82,7 +82,7 @@ let personal_code_multi_html_block = {
 };
 
 const CAREGIVER_INSTRUCTION_PRE_IMAGE_MESSAGE = `
-    <p>Idealiter ziet de opstelling van uw laptop of computer er uit zoals op de afbeeldingen.</p>
+    <h3>Idealiter ziet de opstelling van uw laptop of computer er uit zoals op deze afbeeldingen.</h3>
     `
 
 const CAREGIVER_INSTRUCTION_POST_IMAGE_MESSAGE = `
@@ -113,6 +113,21 @@ const CAREGIVER_INSTRUCTION_POST_IMAGE_MESSAGE = `
     </li>
     </ul>
 `
+const CAREGIVER_INSTRUCTION_SOOTHING = `<h2>Wanneer te stoppen?</h2>
+    Als uw kind erg afgeleid is kunt u uw kind geruststellen. Let wel op dat u niet met uw kind praat over of wijst naar 
+    het scherm. Als uw kind niet gerust te stellen is op een dergelijke wijze, dan kunt u het onderzoek stoppen.
+    `
+
+const CAREGIVER_VALIDATE_SETUP_STATEMENT = `
+    <strong>Ik heb de aanwijzingen over de opstelling zo goed mogelijk opgevolgd en begrijp wat er van mij verwacht wordt
+     tijdens het onderzoek.</strong>
+     `
+
+const SETUP_REFERENCE_NAME = "setup";
+
+const IF_REQUIRED_FEEDBACK_MESSAGE_SETUP = `
+    Vink het vakje naast ' ${ CAREGIVER_VALIDATE_SETUP_STATEMENT } ' aan om door te gaan.
+    `;
 
 const PRE_LAYOUT_MESSAGE =`
     <h3> Screen layout</h3>

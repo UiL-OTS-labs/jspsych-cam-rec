@@ -344,19 +344,51 @@
             response_ends_trial: true
         };
 
-        let setup_image_screen = {
+        let setup_screen_one = {
             type: 'html-button-response',
             stimulus: function(){
                 return "<div class='instruction' >" +
                        "<p>" + CAREGIVER_INSTRUCTION_PRE_IMAGE_MESSAGE + "</p>" +
-                       "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' +
+                       "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' + 
+                       "<strong> ◄ OF ► </strong>" + 
                        '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
                        CAREGIVER_INSTRUCTION_POST_IMAGE_MESSAGE + "</div>";
             },
-            choices: [OK_BUTTON_TEXT],
+            choices: [NEXT_BUTTON_TEXT],
             response_ends_trial: true
         };
-            CAREGIVER_INSTRUCTION_PRE_IMAGE_MESSAGE
+
+        let setup_screen_two = {
+            type: 'html-button-response',
+            stimulus: function(){
+                return "<div class='instruction' >" +
+                       CAREGIVER_INSTRUCTION_SOOTHING + "<br><br>" + 
+                       "</div>";
+            },
+            choices: [NEXT_BUTTON_TEXT],
+            response_ends_trial: true
+        };
+
+        let setup_validate_checkbox = {
+            type: 'survey-multi-select',
+            preamble: "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + "<h2>Opstelling gereed</h2>" +
+                '<img src="./images/mockup1.png" style="width: 400px; height: 400"></img>',
+            required_message: IF_REQUIRED_FEEDBACK_MESSAGE_SETUP,
+            questions: [
+                {
+                    prompt: "", 
+                    options: [CAREGIVER_VALIDATE_SETUP_STATEMENT], 
+                    horizontal: true,
+                    required: true,
+                    button_label: NEXT_BUTTON_TEXT,
+                    name: SETUP_REFERENCE_NAME
+                }
+            ],
+            on_finish: function(data){
+                let setup_validated_choice = data.responses;   
+                data.setup_validated = setup_validated_choice;
+            }
+        };
 
         let instruction_screen_layout = {
             type: 'html-button-response',
@@ -812,8 +844,13 @@
         // personal code
         //timeline.push(personal_code_multi_html_block);
         
-        // setup part 1
-        timeline.push(setup_image_screen);
+        // setup part 1 = tech
+        // setup part 2 = ethical
+        // setup part 3 = validation
+        timeline.push(setup_screen_one);
+        timeline.push(setup_screen_two);
+        timeline.push(setup_validate_checkbox);
+        
         // survey
         //timeline.push(survey_procedure);
 
