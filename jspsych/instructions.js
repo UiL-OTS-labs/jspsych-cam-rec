@@ -195,8 +195,8 @@ const PRE_REC_MESSAGE_CHECKBOX = `
     <h3> Thank you for having your child participating in this study!</h3>
     <br>
     <br>
-    <p> Please click <a href="../../webrtc/index.html" target="_blank"> this link</a> in a new tab 
-        and follow the instructions there. When you are done, please switch back to this tab. 
+    <p> Please click <a href="../webrtc/index.html" target="_blank"> this link</a>
+        and follow the instructions there. When you are done, please switch back to <i>this tab</i>. 
     </p>
     `;
 
