@@ -47,9 +47,9 @@
     <script src="stimuli.js"></script>
     <script src="globals.js"></script>
     <script src="consent.js"></script>
+    <script src="survey.js"></script>
     <script src="instructions.js"></script>
     <script src="soundtest.js"></script>
-    <script src="survey.js"></script>
 
     <style>
 
@@ -117,6 +117,16 @@
     input:valid+span::after {
         content: '✓';
     }
+
+    /* and some style for un-ordered list bullets */
+    .bullet-close {
+         list-style-type: disc;
+    }
+    
+    .bullet-open {
+         list-style-type: circle;
+         margin-left: 1em;
+     }
 
     </style>
     </head>
@@ -333,6 +343,20 @@
             choices: [OK_BUTTON_TEXT],
             response_ends_trial: true
         };
+
+        let setup_image_screen = {
+            type: 'html-button-response',
+            stimulus: function(){
+                return "<div class='instruction' >" +
+                       "<p>" + CAREGIVER_INSTRUCTION_PRE_IMAGE_MESSAGE + "</p>" +
+                       "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' +
+                       '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
+                       CAREGIVER_INSTRUCTION_POST_IMAGE_MESSAGE + "</div>";
+            },
+            choices: [OK_BUTTON_TEXT],
+            response_ends_trial: true
+        };
+            CAREGIVER_INSTRUCTION_PRE_IMAGE_MESSAGE
 
         let instruction_screen_layout = {
             type: 'html-button-response',
@@ -783,11 +807,13 @@
         //timeline.push(binary_screen);
 
         // Informed consent (consent.js)
-        timeline.push(consent_procedure);
+        //timeline.push(consent_procedure);
 
         // personal code
-        timeline.push(personal_code_multi_html_block);
+        //timeline.push(personal_code_multi_html_block);
         
+        // setup part 1
+        timeline.push(setup_image_screen);
         // survey
         //timeline.push(survey_procedure);
 

@@ -73,12 +73,46 @@ const PERSONAL_CODE_POST_TEXT = `
 let personal_code_multi_html_block = {
     type: 'survey-html-form',
     preamble: CONSENT_HTML_STYLE_UU + PERSONAL_CODE_PRE_TEXT,
+    button_label: NEXT_BUTTON_TEXT,
     html: PERSONAL_CODE_CHOICE_HTML,
     on_finish: function(data){
         var personal_code_html_responses = data.responses;
         data.personal_code_response = personal_code_html_responses;
     }
 };
+
+const CAREGIVER_INSTRUCTION_PRE_IMAGE_MESSAGE = `
+    <p>Idealiter ziet de opstelling van uw laptop of computer er uit zoals op de afbeeldingen.</p>
+    `
+
+const CAREGIVER_INSTRUCTION_POST_IMAGE_MESSAGE = `
+    <ul class="bullet-closed">
+    <li>De kinderstoel staat op ongeveer een (volwassen) armlengte afstand van het scherm, zodat er
+        ongeveer <strong>60 centimeter</strong> tussen uw kind en het scherm zit.</li> 
+    <li>De <i>webcam</i> is <strong>bovenin, in het midden van het scherm</strong> geplaatst.</li>
+    <li>De webcam is gericht op <strong>hoofdhoogte</strong> van uw kind. Indien uw kind hoger zit, plaats dan 
+        bijvoorbeeld enkele boeken onder de laptop, zodat de laptop op hoofdhoogte van uw kind staat.</li> 
+    <li>Er is <strong>voldoende (dag)licht</strong> in de omgeving zodat de ogen van uw kind goed zichtbaar zijn.
+    <ul class"bullet-open">
+        <li>Indien dit <i>niet</i> het geval is, plaatst u een <strong>lamp hoog achter het scherm</strong>, zodat 
+        er <strong>geen schaduw</strong> van uw scherm op het gezicht van uw kind valt.</li>
+    </ul>
+    </li>
+    <li>Zorg ervoor dat er niet te veel licht <i>achter</i> uw kind vandaan komt, om <strong>tegenlicht te voorkomen</strong>. 
+        Zet de kinderstoel dus idealiter niet voor een raam.</li>
+    <li>Zorg voor zo <strong>min mogelijk afleiding</strong>.</li>
+    <li>Zet <i>telefoon, tv, radio</i>, en <strong>alle andere apparatuur die kan storen</strong> <i>uit of op stil</i>, zodat
+        er gedurende het onderzoek <i>zo min mogelijk</i> auditieve of visuele <i>afleiding</i> is in de omgeving.</li> 
+    <li>Blijf <strong>achter uw kind</strong> staan of zitten en <i>kijk naar beneden</i> gedurende het onderzoek.
+    <ul class="bullet-open">
+        <li>Om het kijkgedrag van uw kind niet te beïnvloeden is het van belang dat u achter uw kind 
+            blijft, zodat uw kind maximale aandacht heeft voor het scherm en niet wordt afgeleid.</li>
+        <li>Tevens vragen wij van u om naar beneden te kijken (zodat u niet naar het scherm kijkt), 
+            <i>niet te praten over het scherm of wat u hoort, en niet te wijzen</i> naar het scherm.</li>
+    </ul>
+    </li>
+    </ul>
+`
 
 const PRE_LAYOUT_MESSAGE =`
     <h3> Screen layout</h3>
@@ -95,7 +129,7 @@ const PRE_LAYOUT_MESSAGE =`
     Click okay to proceed!</p>
     `
     
-GRID_HTML_LAYOUT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
+const GRID_HTML_LAYOUT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
     <table id="jspsych-vsl-grid-scene table" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
     <tr id="jspsych-vsl-grid-scene-table-row-0" css="height: 200px;">
     <td id="jspsych-vsl-grid-scene-table-0-0" style="padding: 20px 20px; border: 4px solid #555;">

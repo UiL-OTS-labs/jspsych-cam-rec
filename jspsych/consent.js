@@ -192,6 +192,7 @@ const IF_REQUIRED_FEEDBACK_MESSAGE = `
 let consent_block = {
     type: 'survey-multi-select',
     preamble: CONSENT_HTML_STYLE_UU + CONSENT_HTML,
+    button_label: NEXT_BUTTON_TEXT,
     required_message: IF_REQUIRED_FEEDBACK_MESSAGE,
     questions: [
         {
