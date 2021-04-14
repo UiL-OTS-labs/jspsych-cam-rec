@@ -174,7 +174,11 @@ const DEBRIEF_MESSAGE_NO_CONSENT = `
 const DEBRIEF_MESSAGE_NO_CONSENT_DURATION = 3300;
 
 const CONSENT_STATEMENT = `
-    Door dit hokje aan te vinken verklaart u bovenstaande te hebben gelezen en begrepen, en stemt u in met deelname aan het onderzoek.
+    <strong>Door dit hokje aan te vinken verklaart u bovenstaande te hebben gelezen en begrepen, en stemt 
+    u in met deelname aan het onderzoek.</strong>
+    <br>
+    <br>
+    Klik op ‘volgende’ als u toestemming heeft gegeven, en verder wilt gaan naar de persoonlijke code.
     `;
 
 const PROCEED_BUTTON_TEXT = "Volgende";
@@ -195,7 +199,7 @@ let consent_block = {
             options: [CONSENT_STATEMENT], 
             horizontal: true,
             required: false,
-            button_label: PROCEED_BUTTON_TEXT,
+            button_label: NEXT_BUTTON_TEXT,
             name: CONSENT_REFERENCE_NAME
         }
     ],

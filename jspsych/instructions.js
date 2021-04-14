@@ -30,6 +30,56 @@ const GENERIC_CHECK = `
     toestemmingsverklaring.</p>
     `;
 
+const PERSONAL_CODE_PRE_TEXT = `
+    <h2>Persoonlijke code</h2>
+    <p>Voer hier uw persoonlijke code in die u heeft ontvangen in de mail.
+    <br>
+    <br>
+    Het is belangrijk dat u dit correct invoert, zodat u ook achteraf kunt beslissen om toch niet mee te willen 
+    doen aan het onderzoek, en uw webcam-opname verwijderd kan worden.</p>
+    `;
+
+const PERSONAL_CODE_TEXT = `
+    <strong>Persoonlijke code:</strong> 
+    `;
+
+// const PERSONAL_CODE_CHOICE_HTML =`
+//     <div class="survey">
+
+//     <label for="personal_code">Persoonlijke code: </label>
+//     <input type="text" id="personal_code" name="personal_code"
+//         pattern="\p{L}+{1,314}$" placeholder="Dutch" required><span class="validity"></span>
+//     <br>
+//     <br>
+//     </div>
+//     `
+
+const PERSONAL_CODE_CHOICE_HTML =`
+    <div class="survey">
+
+    <label for="personal_code">Persoonlijke code: </label>
+    <input type="text" id="personal_code" name="personal_code"
+        pattern="[a-zA-Z0-9]{8,8}" placeholder="a2c4e6g8" required><span class="validity"></span>
+    <br>
+    <br>
+    </div>
+    `
+
+const PERSONAL_CODE_POST_TEXT = `
+    Klik op ‘volgende’ als u aan de persoonlijke code correct heeft ingevuld, en verder wilt gaan naar de opstelling instructies.
+    `;
+
+// HTML plugin survey block: questions are in the HTML constant
+let personal_code_multi_html_block = {
+    type: 'survey-html-form',
+    preamble: CONSENT_HTML_STYLE_UU + PERSONAL_CODE_PRE_TEXT,
+    html: PERSONAL_CODE_CHOICE_HTML,
+    on_finish: function(data){
+        var personal_code_html_responses = data.responses;
+        data.personal_code_response = personal_code_html_responses;
+    }
+};
+
 const PRE_LAYOUT_MESSAGE =`
     <h3> Screen layout</h3>
     <br>
