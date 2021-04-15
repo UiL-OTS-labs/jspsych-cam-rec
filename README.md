@@ -36,12 +36,12 @@ Otherwise, you'll get an error from  navigator.mediaDevices when using the strea
 
 A proof of concept webcam video uploader is included in `/WebRTC/`. It communicates with `gw-c-lab-web-binary-data-tst.im.hum.uu.nl` to retrieve experiment tokens and upload binary data. Experiment tokens are semi-secret keys embedded in the experiment which serve two purposes:
 
-1. They act as a security measure to prevent anyone from dumping massive filen on the binary data store.
+1. They act as a security measure to prevent anyone from dumping massive files on the binary data store.
 2. They categorize the data allowing researchers to find recordings of participants from a certain study and condition.
 
 A token has to be created manually and should be both descriptive and hard to guess. For example: 2021-Phonemes-control-ue5Ubi, which tells us which experiment and condition we're dealing with without making it trivial to figure out. They shouldn't need to ever be typed by hand, so random strings are fine.
 
-By default, there is a input field to paste a token into during testing. But the input field can be changed to a hidden field easily by experimenters when running a finalized experiment to make everything easier on participants.
+By default, there is a input field to paste a token into during testing. But when running a finalized experiment, the input field can be changed to a hidden field easily by experimenters to eliminate this step.
 
 Tokens can be made by J. van Elst and M. Villeneuve at the UiL-OTS labs, contact one of them if you would like to run a pilot.
 
