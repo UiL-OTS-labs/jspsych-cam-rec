@@ -39,9 +39,9 @@ A proof of concept webcam video uploader is included in `/WebRTC/`. It communica
 1. They act as a security measure to prevent anyone from dumping massive files on the binary data store.
 2. They categorize the data allowing researchers to find recordings of participants from a certain study and condition.
 
-A token has to be created manually and should be both descriptive and hard to guess. For example: 2021-Phonemes-control-ue5Ubi, which tells us which experiment and condition we're dealing with without making it trivial to figure out. They shouldn't need to ever be typed by hand, so random strings are fine.
+A token has to be created manually and should be both descriptive and hard to guess. For example: `2021-Phonemes-control-ue5Ubi`, which tells us which experiment and condition we're dealing with without making it trivial to figure out. They shouldn't have to ever be typed by hand, so random strings are fine.
 
-By default, there is a input field to paste a token into during testing. But when running a finalized experiment, the input field can be changed to a hidden field easily by experimenters to eliminate this step.
+By default, there is a input field to paste a token into during testing. But when running a finalized experiment, the input field can be changed to a hidden field easily by experimenters to eliminate this step. See for `index_hidden_input.html` for such a template (remember to change the token manually).
 
 Tokens can be made by J. van Elst and M. Villeneuve at the UiL-OTS labs, contact one of them if you would like to run a pilot.
 
