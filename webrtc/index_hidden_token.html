@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+ Adapted from WebRTC project as minimal example of recording a video stream.
+-->
+<html>
+<head>
+
+<script src="jquery-3.6.0.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="description" content="WebRTC code samples">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+    <meta id="theme-color" name="theme-color" content="#ffffff">
+
+    <base target="_blank">
+
+    <title>Simple MediaStream Recording</title>
+
+</head>
+
+<body>
+
+<div id="container">
+	<p>One very simple way to go, is to let the parent start a recording (with audio?) and let them download the video to their own local PC, then send the video to the researcher for analysis/scoring. Storage on the data store is going to be problematic, at least in the short term...</p>
+
+    <video id="gum" playsinline autoplay muted></video>
+    <video id="recorded" playsinline loop></video>
+
+    <div>
+        <button id="start">Start camera</button>
+        <button id="record" disabled>Start Recording</button>
+        <button id="play" disabled>Play</button>
+        <button id="download" disabled>Download</button>
+        <button id="upload">Upload</button>
+        <input id="upload_token" type="hidden" value="change_token_here"/>
+    </div>
+
+
+    <div>
+        <span id="errorMsg"></span>
+    </div>
+</div>
+
+<!-- include adapter for srcObject shim -->
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+<script src="camflow.js" async></script>
+
+<!-- include uploading script -->
+<script src="upload.js" async></script>
+
+</body>
+</html>

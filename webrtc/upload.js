@@ -1,7 +1,7 @@
 const uploadButton = document.querySelector('button#upload');
 
 // Django streamupload app URL goes here
-const upload_url = 'http://localhost:8000/ingest/file/'
+const upload_url = 'https://gw-c-lab-web-binary-data-tst.im.hum.uu.nl/ingest/file/'
 
 
 // this function does not work yet, it's been a while since I did raw JS
