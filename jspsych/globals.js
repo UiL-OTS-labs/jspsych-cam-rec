@@ -13,6 +13,7 @@ const NO_BUTTON_TEXT = "Nee";
 const TRUE_BUTTON_TEXT = "Waar";
 const FALSE_BUTTON_TEXT = "Onwaar";
 const PLAY_AGAIN_BUTTON_TEXT = "Speel opnieuw af";
+
 const START_REAL_TASK_BUTTON_TEXT = "Start onderzoek";
 
 // Default restrictions of minimal browser dimensions

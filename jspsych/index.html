@@ -330,6 +330,8 @@
         //uil.setAccessKey(ACCESS_KEY);
         console.log("HA, ACCESS KEY");
         console.log(ACCESS_KEY);
+        console.log("hatelijke button label");
+        console.log(START_REAL_TASK_BUTTON_TEXT);
         //uil.stopIfExperimentClosed();
 
 
@@ -374,7 +376,7 @@
                        CAREGIVER_INSTRUCTION_SOOTHING + "<br><br>" + 
                        "</div>";
             },
-            choices: [NEXT_BUTTON_TEXT],
+            choices: [ NEXT_BUTTON_TEXT ],
             response_ends_trial: true
         };
 
@@ -385,19 +387,19 @@
                 return "<div class='instruction' >" +
                        "<p>" + text + "</p></div>";
             },
-            choices: [OK_BUTTON_TEXT],
+            choices: [ OK_BUTTON_TEXT ],
             response_ends_trial: true,
         };
 
         let setup_validate_checkbox = {
-            type: 'survey-multi-select',
+            type: 'survey-multi-select', //used to be survey-multi-select
             preamble: "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + "<h2>Opstelling gereed</h2>" +
                 '<img src="./images/mockup1.png" style="width: 400px; height: 400"></img>',
             required_message: IF_REQUIRED_FEEDBACK_MESSAGE_SETUP,
             questions: [
                 {
                     prompt: "", 
-                    options: [CAREGIVER_VALIDATE_SETUP_STATEMENT], 
+                    options: [ CAREGIVER_VALIDATE_SETUP_STATEMENT ], 
                     horizontal: true,
                     required: true,
                     button_label: NEXT_BUTTON_TEXT,
@@ -412,17 +414,17 @@
 
         // globals for this are in instruction.js
         let instruction_screen_rec_checkbox = {
-            type: 'survey-multi-select',
+            type: 'survey-multi-select', //used to be survey-multi-select
             preamble: "<div class= 'instruction' >" + "<h2>" + CONSENT_HTML_STYLE_UU + "</h2>" +
                 PRE_REC_MESSAGE_CHECKBOX,
             required_message: IF_REQUIRED_FEEDBACK_MESSAGE_REC,
             questions: [
                 {
-                    prompt: "", 
+                    prompt: "Programmer wished he could have button label 'Start Onderzoek'", 
                     options: [REC_STARTED_STATEMENT], 
                     horizontal: true,
                     required: true,
-                    button_label: START_REAL_TASK_BUTTON_TEXT,
+                    button_label: START_REAL_TASK_BUTTON_TEXT, //wtf TODO fix this non-listening misbehavior!!!!
                     name: REC_REFERENCE_NAME
                 }
             ],
@@ -572,7 +574,7 @@
                 './video/qrcodes/qrspeed.webm',
                 './video/qrcodes/qrspeed.mp4'
                 ],
-            prompt: "todo (sync method)",
+            prompt: "Showcasing (QR sync method)",
             response_ends_trial: false,
             trial_ends_after_video: false,
             controls: true,
@@ -592,7 +594,7 @@
                 './video/bincodes/256-bincodes.webm',
                 './video/bincodes/256-bincodes.mp4'
                 ],
-            prompt: "Todo: sync binary image...",
+            prompt: "Sync binary image...",
             response_ends_trial: false,
             trial_ends_after_video: false,
             controls: true,
@@ -627,7 +629,6 @@
             choices: jsPsych.NO_KEYS,
             on_finish: set_html_to_white
         };
-
 
         let sync_screen_green = {
             type: 'audio-keyboard-response',
@@ -678,7 +679,6 @@
             choices: [],
             on_finish: set_html_to_white,
         };
-
 
         let grabber_procedure_two = {
             timeline:[
@@ -896,7 +896,7 @@
         timeline.push(pref_procedure);
         timeline.push(sync_screen_green)
 
-        timeline.push(well_done_screen);
+        //timeline.push(well_done_screen);
         
         timeline.push(end_screen);
 

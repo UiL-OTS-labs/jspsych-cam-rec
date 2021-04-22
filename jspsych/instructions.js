@@ -225,13 +225,13 @@ const PRE_REC_MESSAGE = `
     `;
 
 const PRE_REC_MESSAGE_CHECKBOX = `
-    <p>Om de webcam-opname te starten klikt u op de onderstaand link. Er wordt vervolgens een nieuw tabblad geopend, waarop u uw webcam kan activeren. 
+    Om de webcam-opname te starten klikt u op de onderstaand link. Er wordt vervolgens een nieuw tabblad geopend, waarop u uw webcam kan activeren. 
     <br>
     <br>
     <strong>Belangrijk</strong>: 
     <ul>
     <li>Test hier of uw webcam werkt en of er voldoende licht is.</li>
-    <li>Klik op "<strong>Start Camera</strong> om het beeld weer te geven.
+    <li>Klik eerst op "<strong>Start Camera</strong>" om het beeld weer te geven.
     <li>Maak aanpassingen indien nodig.</li>
     <li>Zet vervolgens uw kind in de kinderstoel, richt de webcam of het scherm zo dat het gezicht van uw kind zichtbaar is.</li>
     </ul>
@@ -241,12 +241,11 @@ const PRE_REC_MESSAGE_CHECKBOX = `
     Nadat u uw webcam-opname heeft gestart laat u het webcam-tabblad open staan en klikt u op het huidige tabblad, om terug 
     te komen op deze pagina (uw webcam-opname blijft dus op de achtergrond doorlopen, <strong>sluit geen van beide tabbladen!</strong>).</p>
 
-    <p> Klik <a href="../webrtc/index.html" target="_blank"> <strong>deze link</strong></a> voor de webcam-opname.
+    Klik <a href="../webrtc/index.html" target="_blank"> <strong>deze link</strong></a> voor de webcam-opname.
     <br>
     <br>
-    Klik op ‘Start het onderzoek’ als u bovenstaande stappen heeft uitgevoerd. Zodra u na de start van het onderzoek langer dan 15 
-    seconden geen geluid meer hoort is de taak voor uw kind afgerond.
-    </p>
+    Klik op "Start onderzoek" (blijft 'Continue' (nog fixen)) als u bovenstaande stappen heeft uitgevoerd. Zodra u na de start van
+    het onderzoek langer dan 15 seconden geen geluid meer hoort is de taak voor uw kind afgerond.
     `;
 
 const REC_STARTED_STATEMENT = `
@@ -259,7 +258,7 @@ const IF_REQUIRED_FEEDBACK_MESSAGE_REC = `
     You must check the box next to ' ${ REC_STARTED_STATEMENT } ' in order to proceed with the experiment.
     `;
 
-const POST_REC_MESSAGE = "Dank u wel voor uw deelname!"
+const POST_REC_MESSAGE = "Vergeet niet uw video (andere tab) nu te stoppen en de data te uploaden!"
 
 const DEBRIEF_MESSAGE = `
     <h1>End of the experiment</h1>
