@@ -1,11 +1,8 @@
 const uploadButton = document.querySelector('button#upload');
 
 // Django streamupload app URL goes here
-const upload_url = 'http://localhost:8000/ingest/file/'
+const upload_url = 'https://web-binary-data.tst.lab.hum.uu.nl/ingest/file/'
 
-
-// this function does not work yet, it's been a while since I did raw JS
-// - Michael
 uploadButton.addEventListener('click', () => {
     const blob = new Blob(recordedBlobs, {type: 'video/webm'});
     var tokenInput = document.querySelector('input#upload_token');
