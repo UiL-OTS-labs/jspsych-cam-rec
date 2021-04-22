@@ -226,16 +226,27 @@ const PRE_REC_MESSAGE = `
     `;
 
 const PRE_REC_MESSAGE_CHECKBOX = `
-    <h3> Thank you for having your child participating in this study!</h3>
+    Om de webcam-opname te starten klikt op onderstaand link. Er wordt vervolgens een nieuw tabblad geopend, waarop u uw webcam kan activeren. 
     <br>
     <br>
-    <p> Please click <a href="../webrtc/index.html" target="_blank"> this link</a>
-        and follow the instructions there. When you are done, please switch back to <i>this tab</i>. 
+    <strong>Belangrijk</strong>: 
+    <ul>
+    <li>Test hier of uw webcam werkt en of er voldoende licht is.</li> 
+    <li>Maak aanpassingen indien nodig.</li> 
+    <li>Zet vervolgens uw kind in de kinderstoel, richt de webcam of het scherm zo dat het gezicht van uw kind zichtbaar is.</li>
+    </ul>
+    Indien dit is gelukt kunt u de webcam-opname starten.
+    <br>
+    <br>
+    Nadat u uw webcam-opname heeft gestart laat u het webcam-tabblad open staan en klikt u op het huidige tabblad, om terug te komen op deze pagina (uw webcam-opname blijft dus op de achtergrond doorlopen, sluit geen van beide tabbladen!)
+
+    <p> Klik <a href="../webrtc/index.html" target="_blank"> deze link </a>
+        voor de nieuwe tab met de webcam-opname. 
     </p>
     `;
 
 const REC_STARTED_STATEMENT = `
-    Yes, I have started the recording in the other tab.
+        Ik heb de webcam-opname gestart.
     `;
 
 const REC_REFERENCE_NAME = "recording";
