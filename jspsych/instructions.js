@@ -81,6 +81,35 @@ let personal_code_multi_html_block = {
     }
 };
 
+//audio test
+
+let test_audio_looped = {
+    post_trial_gap: DEFAULT_ITI,
+    timeline:
+        [
+            {
+                type: 'audio-button-response',
+                stimulus: './sounds/testtune.mp3',
+                choices: [PLAY_AGAIN_BUTTON_TEXT, NEXT_BUTTON_TEXT],
+                prompt: function(){
+                    return "<div class='instruction' >" +
+                        '<p>' + AUDIO_CHECK_PROMPT_TEXT_LOOP + '</p></div>'
+                }
+            }
+        ],
+    loop_function: function(data){
+        if (data.values()[0].button_pressed == 0){
+            return true; // loop again!
+        } else {
+            return false; // continue
+        }
+    },
+    on_finish: function(data) {
+        data.audio_checked = true;
+    }
+};
+
+
 const CAREGIVER_INSTRUCTION_PRE_IMAGE_MESSAGE = `
     <h3>Idealiter ziet de opstelling van uw laptop of computer er uit zoals op deze afbeeldingen.</h3>
     `
@@ -121,7 +150,7 @@ const CAREGIVER_INSTRUCTION_SOOTHING = `<h2>Wanneer te stoppen?</h2>
 const CAREGIVER_VALIDATE_SETUP_STATEMENT = `
     <strong>Ik heb de aanwijzingen over de opstelling zo goed mogelijk opgevolgd en begrijp wat er van mij verwacht wordt
      tijdens het onderzoek.</strong>
-     `
+     `;
 
 const SETUP_REFERENCE_NAME = "setup";
 
@@ -129,20 +158,30 @@ const IF_REQUIRED_FEEDBACK_MESSAGE_SETUP = `
     Vink het vakje naast ' ${ CAREGIVER_VALIDATE_SETUP_STATEMENT } ' aan om door te gaan.
     `;
 
+const AUDIO_CHECK_PROMPT_TEXT_LOOP = `
+    Pas het test-geluid aan naar een volume die voor u en uw kind prettig is. U kunt het test-geluid opnieuw afspelen indien gewenst.
+    <br>
+    <br>
+    Klik op ‘Volgende’ als uw geluid op een prettig volume staat, en u verder wilt gaan naar de lay-out van het scherm.
+    `;
+
 const PRE_LAYOUT_MESSAGE =`
-    <h3> Screen layout</h3>
+    <h3> Scherm layout</h3>
     <br>
     <br>
-    <p> Next, we'll check if the entire layout for the experiment will fit on your screen. 
-    After clicking OK, you'll see a (3 rows by 5 column) table. 
-    This table should be entirely visible in your browser window without scrolling. 
-    If this is not possible, please visit this experiment using a different device (with a larger screen). 
-    Note that in most browsers, you can use the key combinations <kbd>CTRL</kbd> + <kbd>-</kbd> and/or <kbd>CTRL</kbd>+
-    <kbd>+</kbd> to make elements smaller (-) or larger(+), so don't give up too fast!</p>
+    <p> Het is belangrijk dat het hele onderzoek vanaf nu op uw scherm past. Daarom ziet u nadat u op ‘Oké’ klikt een tabel van 
+    <i>drie (3) rijen</i> en <i>vijf (5) kolommen</i>. De hele tabel moet zichtbaar zijn in uw browser scherm zonder dat u hoeft 
+    te scrollen. Indien dit <i>niet mogelijk is</i>, zoom dan voldoende uit totdat de tabel scherm-vullend zichtbaar is. Dit kunt 
+    u doen door de <kbd>CTRL</kbd> toets ingedrukt te houden (Mac gebruikers gebruiken de <kbd>CMD</kbd> toets!) en vervolgens op 
+    de plus (<kbd>+</kbd>) of min (<kbd>-</kbd>) toets te drukken op uw toetsenbord, <i>óf</i> door de <kbd>CTRL</kbd>/<kbd>CMD</kbd>
+    toets ingedrukt te houden en te scrollen met uw muis. 
     <br>
     <br>
-    Click okay to proceed!</p>
-    `
+    Mocht dit niet mogelijk zijn, gebruik dan een ander apparaat met een groter scherm.
+    <br>
+    <br> 
+    Klik op ‘Oké’ om de tabel te tonen.</p>
+    `;
     
 const GRID_HTML_LAYOUT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
     <table id="jspsych-vsl-grid-scene table" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
