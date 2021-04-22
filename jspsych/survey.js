@@ -66,7 +66,7 @@ const HAND_OPTIONS = ["Left", "Right"];
 // The multi-choice survey plugin DOES have built-in validation, which is nice
 let survey_multi_choice_block = {
     type: 'survey-multi-choice',
-    button_label = NEXT_BUTTON_TEXT,
+    button_label: NEXT_BUTTON_TEXT,
     data: {
         survey_data_flag: true
     },

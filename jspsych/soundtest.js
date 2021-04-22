@@ -2,14 +2,6 @@
 // soundtest
 //////////// 
 
-const AUDIO_PATH = './sounds/'; //currently not used!
-
-const AUDIO_CHECK_PROMPT_TEXT_LOOP = `
-    You can play the test sound again 
-    (and adjust the audio level for your headpones). 
-    If you're comfortable, click 'continue'...
-    `
-
 // audio test procedure
 
 let test_audio_looped = {
@@ -19,7 +11,7 @@ let test_audio_looped = {
             {
                 type: 'audio-button-response',
                 stimulus: './sounds/testtune.mp3',
-                choices: ['Play Again', 'Continue'],
+                choices: [PLAY_AGAIN_BUTTON_TEXT, NEXT_BUTTON_TEXT],
                 prompt: function(){
                     return "<div class='instruction' >" +
                         '<p>' + AUDIO_CHECK_PROMPT_TEXT_LOOP + '</p></div>'

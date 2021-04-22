@@ -215,8 +215,8 @@
                 ];
 
 
-        console.log(paired_one);
-        console.log(paired_two);
+        //console.log(paired_one);
+        //console.log(paired_two);
 
         ////////////////////////// MEDIA PRELOADING /////////////////////////////
         
@@ -303,8 +303,10 @@
             document.body.style.color = 'black'
         }
 
-        // TEST SOUND
+        // TEST SOUNDS
         var check_audio = ['./sounds/testtune.mp3'];
+
+        // TEST VIDEOS
         var check_qrvideo = ['./video/qrcodes/qrspeed.mp4','./video/qrcodes/qrspeed.webm'];
         var bgvideo = [
             './video/01_left.mp4',
@@ -314,8 +316,6 @@
             './video/03_right.mp4',
             './video/03_right.webm'
         ];
-        //console.log(bgvideo);
-
 
         // Data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
@@ -327,12 +327,22 @@
         let screen_resolution_info_start = TODO;
         let recording_checked_externally = TODO;
 
+        // UTILS, setting ACCES KEY and stopIfExperimentClosed()
+        //uil.setAccessKey(ACCESS_KEY);
+        console.log("HA, ACCESS KEY");
+        console.log(ACCESS_KEY);
+        //uil.stopIfExperimentClosed();
+
 
         jsPsych.data.addProperties({
-            subject: subject_id
+            subject: subject_id,
+            browser_info: browser_info,
+            screen_resolution_info_start: screen_resolution_info_start
         });
 
-        // screens/(sub-)(trial-)phases...////////////////////////////////////////////////////
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+        //// screens/(sub-)(trial-)phases...////////////////////////////////////////////////////
 
         let start_screen = {
             type: 'html-button-response',
@@ -433,17 +443,6 @@
             response_ends_trial: true,
         };
 
-        let instruction_screen_rec = {
-            type: 'html-button-response',
-            stimulus: function(){
-                let text = PRE_REC_MESSAGE;
-                return "<div class='instruction' >" +
-                       "<p>" + text + "</p></div>";
-            },
-            choices: [OK_BUTTON_TEXT],
-            response_ends_trial: true,
-        };
-
         let left_and_right_screen = {
             type: 'audio-button-response',
             on_start: set_html_to_grey,
@@ -458,7 +457,6 @@
                 var gridright = gridleft.replaceAll("./video/03_right",
                         jsPsych.timelineVariable('image_fn_right'));
 
-                //console.log(gridright);
                 return gridright;
             },
             response_ends_trial: false,
@@ -526,7 +524,6 @@
                 } else if (side === 1 ) {
                     var newgrid = grid.replaceAll("./video/03_right",
                         jsPsych.timelineVariable('image_fn'));
-                    //console.log("OR screen gridright: ", newgrid)
                 } else {
                     console.error("Stimulus side is unknown or undefined...");
                     var newgrid = 'error';
@@ -805,7 +802,6 @@
 
         /////////////////////////////////////////////
 
-
         let well_done_screen = {
             type: 'html-button-response',
             stimulus: function(){
@@ -836,7 +832,7 @@
         
         timeline.push(qr_screen);
         
-        //timeline.push(binary_screen);
+        timeline.push(binary_screen);
 
         // Informed consent (consent.js)
         timeline.push(consent_procedure);
