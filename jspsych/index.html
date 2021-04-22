@@ -49,7 +49,6 @@
     <script src="consent.js"></script>
     <script src="survey.js"></script>
     <script src="instructions.js"></script>
-    <script src="soundtest.js"></script>
 
     <style>
 
@@ -439,7 +438,7 @@
                 let table = GRID_HTML_LAYOUT;
                 return table;
             },
-            choices: ["Continue"],
+            choices: [ NEXT_BUTTON_TEXT ],
             response_ends_trial: true,
         };
 
@@ -700,7 +699,6 @@
         // console.debug(out);
         // { a: 1, b: 2, c: 3 }
 
-
         let paired_procedure_a = {
             timeline: [
                 left_or_right_screen,
@@ -820,9 +818,6 @@
             trial_duration: DEBRIEF_MESSAGE_DURATION
         };
 
-        // (timeline) procedures //////////////////////////////////////////////////////////        
-
-
         //////////////// timeline /////////////////////////////////
 
         let timeline = [];
@@ -866,9 +861,10 @@
 
         // PAIREWISE /////////////////////////////////////
         // timeline.push(paired_procedure);
+
         // this is horrible coding/lusing timelines, but it might just be the best way to
         // commnit a working example of the right kinds.
-        // the sixteen items are spolit in halves and each of these form tuple-timeline procedures of the 'pairs'
+        // the sixteen items are split in halves and each of these form tuple-timeline procedures of the 'pairs'
 
         timeline.push(grabber_one);
         timeline.push(paired_procedure_a);

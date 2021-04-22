@@ -43,17 +43,6 @@ const PERSONAL_CODE_TEXT = `
     <strong>Persoonlijke code:</strong> 
     `;
 
-// const PERSONAL_CODE_CHOICE_HTML =`
-//     <div class="survey">
-
-//     <label for="personal_code">Persoonlijke code: </label>
-//     <input type="text" id="personal_code" name="personal_code"
-//         pattern="\p{L}+{1,314}$" placeholder="Dutch" required><span class="validity"></span>
-//     <br>
-//     <br>
-//     </div>
-//     `
-
 const PERSONAL_CODE_CHOICE_HTML =`
     <div class="survey">
 
@@ -92,8 +81,9 @@ let test_audio_looped = {
                 stimulus: './sounds/testtune.mp3',
                 choices: [PLAY_AGAIN_BUTTON_TEXT, NEXT_BUTTON_TEXT],
                 prompt: function(){
-                    return "<div class='instruction' >" +
-                        '<p>' + AUDIO_CHECK_PROMPT_TEXT_LOOP + '</p></div>'
+                    return "<div class='instruction' >" + 
+                    '<img src="./images/speakersound.png" style="width: 100px; height: 100"></img>' +
+                    '<p>' + AUDIO_CHECK_PROMPT_TEXT_LOOP + '</p></div>'
                 }
             }
         ],
@@ -108,7 +98,6 @@ let test_audio_looped = {
         data.audio_checked = true;
     }
 };
-
 
 const CAREGIVER_INSTRUCTION_PRE_IMAGE_MESSAGE = `
     <h3>Idealiter ziet de opstelling van uw laptop of computer er uit zoals op deze afbeeldingen.</h3>
@@ -141,11 +130,12 @@ const CAREGIVER_INSTRUCTION_POST_IMAGE_MESSAGE = `
     </ul>
     </li>
     </ul>
-`
+`;
+
 const CAREGIVER_INSTRUCTION_SOOTHING = `<h2>Wanneer te stoppen?</h2>
     Als uw kind erg afgeleid is kunt u uw kind geruststellen. Let wel op dat u niet met uw kind praat over of wijst naar 
     het scherm. Als uw kind niet gerust te stellen is op een dergelijke wijze, dan kunt u het onderzoek stoppen.
-    `
+    `;
 
 const CAREGIVER_VALIDATE_SETUP_STATEMENT = `
     <strong>Ik heb de aanwijzingen over de opstelling zo goed mogelijk opgevolgd en begrijp wat er van mij verwacht wordt
@@ -169,15 +159,19 @@ const PRE_LAYOUT_MESSAGE =`
     <h3> Scherm layout</h3>
     <br>
     <br>
-    <p> Het is belangrijk dat het hele onderzoek vanaf nu op uw scherm past. Daarom ziet u nadat u op ‘Oké’ klikt een tabel van 
-    <i>drie (3) rijen</i> en <i>vijf (5) kolommen</i>. De hele tabel moet zichtbaar zijn in uw browser scherm zonder dat u hoeft 
-    te scrollen. Indien dit <i>niet mogelijk is</i>, zoom dan voldoende uit totdat de tabel scherm-vullend zichtbaar is. Dit kunt 
-    u doen door de <kbd>CTRL</kbd> toets ingedrukt te houden (Mac gebruikers gebruiken de <kbd>CMD</kbd> toets!) en vervolgens op 
-    de plus (<kbd>+</kbd>) of min (<kbd>-</kbd>) toets te drukken op uw toetsenbord, <i>óf</i> door de <kbd>CTRL</kbd>/<kbd>CMD</kbd>
-    toets ingedrukt te houden en te scrollen met uw muis. 
+    <p> Het is belangrijk dat het <i>hele onderzoek vanaf nu op uw scherm past</i>. Daarom ziet u nadat u op ‘Oké’ klikt een tabel van 
+    <i>drie (3) rijen</i> en <i>vijf (5) kolommen</i>. 
+    <ul>
+    <li>De hele tabel moet -- liefst <i> zo groot mogelijk passend</i> --zichtbaar zijn in uw browser scherm zonder dat u hoeft 
+    te scrollen.</li>
+    <li>Indien dit niet mogelijk is, zoom dan voldoende uit totdat de tabel scherm-vullend zichtbaar is.</li> 
+    <li>Dit 'zoomen' kunt u doen door de <kbd>CTRL</kbd> toets ingedrukt te houden <sub>(Mac OSX gebruikers gebruiken de <kbd>CMD</kbd> 
+    toets!)</sub> en vervolgens op de plus (<kbd>+</kbd>) of min (<kbd>-</kbd>) toets te drukken op uw toetsenbord, óf door de 
+    <kbd>CTRL</kbd>/<kbd>CMD</kbd> toets ingedrukt te houden en te scrollen met uw muis.</li>
+    </ul> 
     <br>
     <br>
-    Mocht dit niet mogelijk zijn, gebruik dan een ander apparaat met een groter scherm.
+    Mocht het toch <i>niet mogelijk</i> zijn, gebruik dan een ander apparaat met een groter scherm.
     <br>
     <br> 
     Klik op ‘Oké’ om de tabel te tonen.</p>
@@ -219,7 +213,8 @@ const GRID_HTML_LAYOUT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: n
     <div id="jspsych-vsl-grid-scene-table-cell-2-3" style="width: 200px; height: 200px;"></div></td>
     <td id="jspsych-vsl-grid-scene-table-2-4" style="padding: 20px 20px; border: 4px solid #555;">
     <div id="jspsych-vsl-grid-scene-table-cell-2-4" style="width: 200px; height: 200px;">
-    </div></td></tr></table></div>`
+    </div></td></tr></table></div>
+    `;
   
 const PRE_REC_MESSAGE = `
     <h3> Thank you for having your child participating in this study!</h3>
@@ -249,7 +244,7 @@ const IF_REQUIRED_FEEDBACK_MESSAGE_REC = `
     You must check the box next to ' ${ REC_STARTED_STATEMENT } ' in order to proceed with the experiment.
     `;
 
-const POST_REC_MESSAGE = "Thank you!"
+const POST_REC_MESSAGE = "Dank u wel voor uw deelname!"
 
 const DEBRIEF_MESSAGE = `
     <h1>End of the experiment</h1>

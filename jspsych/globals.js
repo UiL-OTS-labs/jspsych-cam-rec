@@ -25,8 +25,3 @@ const BAIL_OUT_MOBILE_TEXT = "Dit experiment mag alleen worden uitgevoerd op een
 // Default ITI
 const DEFAULT_ITI = 500;
 
-// Task specific meat Presentation Time (PT) Mean
-// const BASELINE_MU_PT = 1950;
-// const PAIRED_MU_PT = 9950;
-// const GRABBER_MU_PT = 2450;
-
