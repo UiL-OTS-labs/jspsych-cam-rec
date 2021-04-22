@@ -422,13 +422,13 @@
                     options: [REC_STARTED_STATEMENT], 
                     horizontal: true,
                     required: true,
-                    button_label: NEXT_BUTTON_TEXT,
+                    button_label: START_REAL_TASK_BUTTON_TEXT,
                     name: REC_REFERENCE_NAME
                 }
             ],
             on_finish: function(data){
                 let rec_started_choice = data.responses;   
-                data.rec__started_choice_response = rec_started_choice;
+                data.rec_started_choice_response = rec_started_choice;
             }
         };
 

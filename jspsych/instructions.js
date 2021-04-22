@@ -71,7 +71,6 @@ let personal_code_multi_html_block = {
 };
 
 //audio test
-
 let test_audio_looped = {
     post_trial_gap: DEFAULT_ITI,
     timeline:
@@ -226,22 +225,27 @@ const PRE_REC_MESSAGE = `
     `;
 
 const PRE_REC_MESSAGE_CHECKBOX = `
-    Om de webcam-opname te starten klikt op onderstaand link. Er wordt vervolgens een nieuw tabblad geopend, waarop u uw webcam kan activeren. 
+    <p>Om de webcam-opname te starten klikt u op de onderstaand link. Er wordt vervolgens een nieuw tabblad geopend, waarop u uw webcam kan activeren. 
     <br>
     <br>
     <strong>Belangrijk</strong>: 
     <ul>
-    <li>Test hier of uw webcam werkt en of er voldoende licht is.</li> 
-    <li>Maak aanpassingen indien nodig.</li> 
+    <li>Test hier of uw webcam werkt en of er voldoende licht is.</li>
+    <li>Klik op "<strong>Start Camera</strong> om het beeld weer te geven.
+    <li>Maak aanpassingen indien nodig.</li>
     <li>Zet vervolgens uw kind in de kinderstoel, richt de webcam of het scherm zo dat het gezicht van uw kind zichtbaar is.</li>
     </ul>
-    Indien dit is gelukt kunt u de webcam-opname starten.
+    Indien dit is gelukt kunt u de webcam-<strong>opname</strong> starten: dit gebeurt na een klik op "<strong>Start Recording</strong>".
     <br>
     <br>
-    Nadat u uw webcam-opname heeft gestart laat u het webcam-tabblad open staan en klikt u op het huidige tabblad, om terug te komen op deze pagina (uw webcam-opname blijft dus op de achtergrond doorlopen, sluit geen van beide tabbladen!)
+    Nadat u uw webcam-opname heeft gestart laat u het webcam-tabblad open staan en klikt u op het huidige tabblad, om terug 
+    te komen op deze pagina (uw webcam-opname blijft dus op de achtergrond doorlopen, <strong>sluit geen van beide tabbladen!</strong>).</p>
 
-    <p> Klik <a href="../webrtc/index.html" target="_blank"> deze link </a>
-        voor de nieuwe tab met de webcam-opname. 
+    <p> Klik <a href="../webrtc/index.html" target="_blank"> <strong>deze link</strong></a> voor de webcam-opname.
+    <br>
+    <br>
+    Klik op ‘Start het onderzoek’ als u bovenstaande stappen heeft uitgevoerd. Zodra u na de start van het onderzoek langer dan 15 
+    seconden geen geluid meer hoort is de taak voor uw kind afgerond.
     </p>
     `;
 
