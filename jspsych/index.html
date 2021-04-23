@@ -278,7 +278,21 @@
             grabber_video_two.push(grabber_items_two[i].image_fn + ".webm");
         };
      
-        // REGULAR FUNCTIONS
+        // TEST SOUNDS
+        var check_audio = ['./sounds/testtune.mp3'];
+
+        // TEST VIDEOS
+        var check_qrvideo = ['./video/qrcodes/qrspeed.mp4','./video/qrcodes/qrspeed.webm'];
+        var bgvideo = [
+            './video/01_left.mp4',
+            './video/01_left.webm',
+            './video/02_center.mp4',
+            './video/02_center.webm',
+            './video/03_right.mp4',
+            './video/03_right.webm'
+        ];
+
+        // REGULAR JS FUNCTIONS
 
         // to change background styles
 
@@ -302,19 +316,6 @@
             document.body.style.color = 'black'
         }
 
-        // TEST SOUNDS
-        var check_audio = ['./sounds/testtune.mp3'];
-
-        // TEST VIDEOS
-        var check_qrvideo = ['./video/qrcodes/qrspeed.mp4','./video/qrcodes/qrspeed.webm'];
-        var bgvideo = [
-            './video/01_left.mp4',
-            './video/01_left.webm',
-            './video/02_center.mp4',
-            './video/02_center.webm',
-            './video/03_right.mp4',
-            './video/03_right.webm'
-        ];
 
         // Data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
@@ -330,7 +331,7 @@
         //uil.setAccessKey(ACCESS_KEY);
         console.log("HA, ACCESS KEY");
         console.log(ACCESS_KEY);
-        console.log("hatelijke button label");
+        console.log("button label");
         console.log(START_REAL_TASK_BUTTON_TEXT);
         //uil.stopIfExperimentClosed();
 
@@ -351,7 +352,7 @@
                 return "<div class='instruction' >" +
                        "<p>" + GENERIC_CHECK + "</p></div>";
             },
-            choices: [OK_BUTTON_TEXT],
+            choices: [NEXT_BUTTON_TEXT],
             response_ends_trial: true
         };
 
@@ -396,13 +397,13 @@
             preamble: "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + "<h2>Opstelling gereed</h2>" +
                 '<img src="./images/mockup1.png" style="width: 400px; height: 400"></img>',
             required_message: IF_REQUIRED_FEEDBACK_MESSAGE_SETUP,
+            button_label: NEXT_BUTTON_TEXT,
             questions: [
                 {
                     prompt: "", 
                     options: [ CAREGIVER_VALIDATE_SETUP_STATEMENT ], 
                     horizontal: true,
                     required: true,
-                    button_label: NEXT_BUTTON_TEXT,
                     name: SETUP_REFERENCE_NAME
                 }
             ],
@@ -418,13 +419,13 @@
             preamble: "<div class= 'instruction' >" + "<h2>" + CONSENT_HTML_STYLE_UU + "</h2>" +
                 PRE_REC_MESSAGE_CHECKBOX,
             required_message: IF_REQUIRED_FEEDBACK_MESSAGE_REC,
+            button_label: START_REAL_TASK_BUTTON_TEXT,
             questions: [
                 {
                     prompt: "Programmer wished he could have button label 'Start Onderzoek'", 
                     options: [REC_STARTED_STATEMENT], 
                     horizontal: true,
                     required: true,
-                    button_label: START_REAL_TASK_BUTTON_TEXT, //wtf TODO fix this non-listening misbehavior!!!!
                     name: REC_REFERENCE_NAME
                 }
             ],
