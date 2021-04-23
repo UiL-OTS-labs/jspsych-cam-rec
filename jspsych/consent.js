@@ -163,6 +163,29 @@ const CONSENT_HTML = `
     <h6>Ik begrijp dat:</h6> 
     <li>ik het recht heb om mijn toestemming voor het gebruik van de data van mijn kind in te trekken zoals vermeld staat in de informatiebrief.</li>
 `;
+
+const CONSENT_PAGE_1 = `    
+    <h1><strong>TOESTEMMINGSVERKLARING</strong> voor deelname aan: <i>"Online onderzoek naar het kijkgedrag van baby's"</i>(1/2)</h2>
+    <br>
+    <br>
+    <h6>Ik, ouder of voogd van het hieronder genoemde kind, bevestig:</h6> 
+    <li>dat ik via de informatiebrief, die ik heb ontvangen in de mail, naar tevredenheid over het onderzoek ben ingelicht;</li>
+    <li>dat ik in de gelegenheid ben gesteld om vragen over het onderzoek te stellen en dat mijn eventuele vragen naar tevredenheid zijn beantwoord;</li>
+    <li>dat ik gelegenheid heb gehad om grondig over deelname aan het onderzoek na te denken;</li>
+    <li>dat ik uit vrije wil samen met mijn kind deelneem.</li>
+    `;
+
+const CONSENT_PAGE_2 = `
+    <h1><strong>TOESTEMMINGSVERKLARING</strong> voor deelname aan: <i>"Online onderzoek naar het kijkgedrag van baby's"</i>(2/2)</h2>
+    <br>
+    <br>
+    <h6>Ik, ouder of voogd van het hieronder genoemde kind,stem er mee in dat:</h6> 
+    <li>de verzamelde gegevens voor wetenschappelijke doelen worden verkregen en bewaard zoals in de informatiebrief vermeld staat;</li>
+    <li>de verzamelde, gecodeerde, onderzoeksgegevens door wetenschappers kunnen worden gedeeld en/of worden hergebruikt om eventueel andere onderzoeksvragen mee te beantwoorden;</li>
+    <li>er voor wetenschappelijke doeleinden beeld- en geluidsopnamen worden gemaakt.</li>
+    <h6>Ik begrijp dat:</h6> 
+    <li>ik het recht heb om mijn toestemming voor het gebruik van de data van mijn kind in te trekken zoals vermeld staat in de informatiebrief.</li>
+`;
     
 const DEBRIEF_MESSAGE_NO_CONSENT = `
     <h1>Einde experiment</h1>
@@ -210,6 +233,16 @@ let consent_block = {
     }
 };
 
+let consent_block_multi = {
+    type: 'instructions',
+    pages: [
+        CONSENT_HTML_STYLE_UU + CONSENT_PAGE_1,
+        CONSENT_HTML_STYLE_UU + CONSENT_PAGE_2
+        ],
+        show_clickable_nav: true
+    }
+
+
 let no_consent_end_screen = {
     type: 'html-button-response',
     stimulus: DEBRIEF_MESSAGE_NO_CONSENT,
@@ -233,5 +266,5 @@ let if_node_consent = {
 }
 
 let consent_procedure = {
-    timeline: [consent_block, if_node_consent]
+    timeline: [consent_block_multi, consent_block, if_node_consent]
 }
