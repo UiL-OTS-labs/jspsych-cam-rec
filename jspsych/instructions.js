@@ -98,11 +98,11 @@ let test_audio_looped = {
     }
 };
 
-const CAREGIVER_INSTRUCTION_PRE_IMAGE_MESSAGE = `
+const CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT = `
     <h3>Idealiter ziet de opstelling van uw laptop of computer er uit zoals op deze afbeeldingen.</h3>
     `
 
-const CAREGIVER_INSTRUCTION_POST_IMAGE_MESSAGE = `
+const CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_1 = `
     <ul class="bullet-closed">
     <li>De kinderstoel staat op ongeveer een (volwassen) armlengte afstand van het scherm, zodat er
         ongeveer <strong>60 centimeter</strong> tussen uw kind en het scherm zit.</li> 
@@ -115,6 +115,10 @@ const CAREGIVER_INSTRUCTION_POST_IMAGE_MESSAGE = `
         er <strong>geen schaduw</strong> van uw scherm op het gezicht van uw kind valt.</li>
     </ul>
     </li>
+    `;
+
+const CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_2 = `  
+    <ul class="bullet-closed">
     <li>Zorg ervoor dat er niet te veel licht <i>achter</i> uw kind vandaan komt, om <strong>tegenlicht te voorkomen</strong>. 
         Zet de kinderstoel dus idealiter niet voor een raam.</li>
     <li>Zorg voor zo <strong>min mogelijk afleiding</strong>.</li>
@@ -215,15 +219,6 @@ const GRID_HTML_LAYOUT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: n
     </div></td></tr></table></div>
     `;
   
-const PRE_REC_MESSAGE = `
-    <h3> Thank you for having your child participating in this study!</h3>
-    <br>
-    <br>
-    <p> Please click <a href="../../webrtc/index.html" target="_blank"> this link</a> in a new tab 
-        and follow the instructions there. When you are done, please switch back to this tab and
-        click okay to proceed!</p>
-    `;
-
 const PRE_REC_MESSAGE_CHECKBOX = `
     Om de webcam-opname te starten klikt u op de onderstaand link. Er wordt vervolgens een nieuw tabblad geopend, waarop u uw webcam kan activeren. 
     <br>
@@ -244,21 +239,21 @@ const PRE_REC_MESSAGE_CHECKBOX = `
     Klik <a href="../webrtc/index.html" target="_blank"> <strong>deze link</strong></a> voor de webcam-opname.
     <br>
     <br>
-    Klik op "Start onderzoek" (blijft 'Continue' (nog fixen)) als u bovenstaande stappen heeft uitgevoerd. Zodra u na de start van
+    Klik op "Start onderzoek" als u bovenstaande stappen heeft uitgevoerd. Zodra u na de start van
     het onderzoek langer dan 15 seconden geen geluid meer hoort is de taak voor uw kind afgerond.
     `;
 
 const REC_STARTED_STATEMENT = `
-        Ik heb de webcam-opname gestart.
+               Ik heb de webcam-opname gestart.
     `;
 
 const REC_REFERENCE_NAME = "recording";
 
 const IF_REQUIRED_FEEDBACK_MESSAGE_REC = `
-    You must check the box next to ' ${ REC_STARTED_STATEMENT } ' in order to proceed with the experiment.
+    U moet ' ${ REC_STARTED_STATEMENT } ' aanvinken om door te gaan naar het experiment.
     `;
 
-const POST_REC_MESSAGE = "Vergeet niet uw video (andere tab) nu te stoppen en de data te uploaden!"
+const POST_REC_MESSAGE = "Bijna klaar! Vergeet niet uw video (in de andere tab) nu te stoppen en de data te uploaden!"
 
 const DEBRIEF_MESSAGE = `
     <h1>End of the experiment</h1>

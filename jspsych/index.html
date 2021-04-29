@@ -57,6 +57,10 @@
         margin: 5% 10% 5% 10%;
     }
 
+    .instruction_small {
+        font-size: 0.6em;
+        text-align: left !important;
+    }
 
     kbd {
         border-radius: 2px;
@@ -316,6 +320,10 @@
             document.body.style.color = 'black'
         }
 
+        // function set_paragraph_text_to_small() {
+        //     document.body.style.fontSize = "0.5em"
+        // }
+
 
         // Data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
@@ -331,8 +339,6 @@
         //uil.setAccessKey(ACCESS_KEY);
         console.log("HA, ACCESS KEY");
         console.log(ACCESS_KEY);
-        console.log("button label");
-        console.log(START_REAL_TASK_BUTTON_TEXT);
         //uil.stopIfExperimentClosed();
 
 
@@ -356,30 +362,55 @@
             response_ends_trial: true
         };
 
-        let setup_screen_one = {
-            type: 'html-button-response',
-            stimulus: function(){
-                return "<div class='instruction' >" +
-                       "<p>" + CAREGIVER_INSTRUCTION_PRE_IMAGE_MESSAGE + "</p>" +
-                       "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' + 
+        // let setup_screen_one = {
+        //     type: 'html-button-response',
+        //     stimulus: function(){
+        //         return "<div class='instruction' >" +
+        //                "<p>" + CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + "</p>" +
+        //                "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' + 
+        //                "<strong> ◄ OF ► </strong>" + 
+        //                '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
+        //                CAREGIVER_INSTRUCTION_POST_IMAGE_MESSAGE + "</div>";
+        //     },
+        //     choices: [ NEXT_BUTTON_TEXT ],
+        //     response_ends_trial: true
+        // };
+
+        let setup_screens_multi = {
+            type: 'instructions',
+            button_label_next: "Volgende",
+            button_label_previous: "Vorige",
+            allow_backward: true,
+            pages: [
+                CONSENT_HTML_STYLE_UU + CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + 
+                    "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' + 
+                    "<strong> ◄ OF ► </strong>" + 
+                    '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
+                    CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_1,
+                CONSENT_HTML_STYLE_UU + CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + 
+                    "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' + 
+                    "<strong> ◄ OF ► </strong>" + 
+                    '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
+                    CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_2,
+                CONSENT_HTML_STYLE_UU + CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + 
+                    "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' + 
                        "<strong> ◄ OF ► </strong>" + 
                        '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
-                       CAREGIVER_INSTRUCTION_POST_IMAGE_MESSAGE + "</div>";
-            },
-            choices: [ NEXT_BUTTON_TEXT ],
-            response_ends_trial: true
-        };
+                       CAREGIVER_INSTRUCTION_SOOTHING,
+                ],
+            show_clickable_nav: true
+        }
 
-        let setup_screen_two = {
-            type: 'html-button-response',
-            stimulus: function(){
-                return "<div class='instruction' >" +
-                       CAREGIVER_INSTRUCTION_SOOTHING + "<br><br>" + 
-                       "</div>";
-            },
-            choices: [ NEXT_BUTTON_TEXT ],
-            response_ends_trial: true
-        };
+        // let setup_screen_two = {
+        //     type: 'html-button-response',
+        //     stimulus: function(){
+        //         return "<div class='instruction' >" +
+        //                CAREGIVER_INSTRUCTION_SOOTHING + "<br><br>" + 
+        //                "</div>";
+        //     },
+        //     choices: [ NEXT_BUTTON_TEXT ],
+        //     response_ends_trial: true
+        // };
 
         let instruction_screen_layout = {
             type: 'html-button-response',
@@ -839,8 +870,9 @@
         // setup part 1 = tech
         // setup part 2 = ethical
         // setup part 3 = validation
-        timeline.push(setup_screen_one);
-        timeline.push(setup_screen_two);
+        // timeline.push(setup_screen_one);
+        // timeline.push(setup_screen_two);
+        timeline.push(setup_screens_multi);
         timeline.push(setup_validate_checkbox);
         
         // survey
@@ -897,7 +929,7 @@
         timeline.push(pref_procedure);
         timeline.push(sync_screen_green)
 
-        //timeline.push(well_done_screen);
+        timeline.push(well_done_screen);
         
         timeline.push(end_screen);
 
@@ -905,6 +937,8 @@
         if (! uil.isMobileOrTablet()) {
             jsPsych.init({
                 timeline: timeline,
+                show_progress_bar: true,
+                message_progress_bar: 'Voortgang ',
                 preload_audio: [
                     check_audio,
                     baseline_audio,
