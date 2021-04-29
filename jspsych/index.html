@@ -40,8 +40,15 @@
     <!-- VSL-grid plugin (copied a version with white table layout for testing)-->
 <!--     <script src="plugin/jspsych-vsl-grid-scene-white.js"></script>
  -->    
+
     <!-- Uil OTS libraries -->
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/jspsych-uil-utils.js"></script>
+<!--     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/jspsych-uil-utils.js"></script>
+ --><!--     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
+ -->
+    <script src="_utils_browserinfo/jspsych-uil-utils-feature-browser-info/jspsych-uil-utils.js" type="text/javascript"></script>
+
+
+
 
      <!-- Uil OTS organised  -->
     <script src="stimuli.js"></script>
@@ -140,18 +147,20 @@
     // contents of this method
     window.addEventListener('load', function() {
 
-
         // load stimuli
         let baseline_items = getBaselineItems().table;
         
         let paired_items_all = getAllPairedItems().table;
-        console.log(paired_items_all)
+        //console.log(paired_items_all)
 
         let grabber_items_one = getGrabberOneItems().table;
 
         let grabber_items_two = getGrabberTwoItems().table;
 
         let pref_items = getAllPrefItems().table;
+
+        // buy a bit of time to get browser info
+        // setTimeout(() => {  console.log("WAIT"); }, 1000);
 
         // cutting the original paired timeline in pairs...ugly, but as of yet
         // unsure of what's best otherwise
@@ -297,7 +306,6 @@
         ];
 
         // REGULAR JS FUNCTIONS
-
         // to change background styles
 
         function set_html_to_grey() {
@@ -320,20 +328,26 @@
             document.body.style.color = 'black'
         }
 
-        // function set_paragraph_text_to_small() {
-        //     document.body.style.fontSize = "0.5em"
-        // }
+        function set_paragraph_text_to_small() {
+            document.body.style.fontSize = "0.5em"
+        }
 
 
         // Data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
-
-        const TODO = "TODO";
         
         let subject_id = jsPsych.randomization.randomID(8);
-        let browser_info = TODO;
-        let screen_resolution_info_start = TODO;
-        let recording_checked_externally = TODO;
+        let browser_info = uil.browser.getBrowserInfo();
+        let screen_resolution_info_start = uil.browser.getResolutionInfo();
+
+        // buy a bit of time to get browser infos
+        setTimeout(() => {  console.log("wait a bit..."); }, 1000);
+
+        console.log('browser info (undefined?)');
+        console.log(browser_info);
+
+        console.log('screen res (start');
+        console.log(screen_resolution_info_start);
 
         // UTILS, setting ACCES KEY and stopIfExperimentClosed()
         //uil.setAccessKey(ACCESS_KEY);
@@ -362,20 +376,6 @@
             response_ends_trial: true
         };
 
-        // let setup_screen_one = {
-        //     type: 'html-button-response',
-        //     stimulus: function(){
-        //         return "<div class='instruction' >" +
-        //                "<p>" + CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + "</p>" +
-        //                "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' + 
-        //                "<strong> ◄ OF ► </strong>" + 
-        //                '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
-        //                CAREGIVER_INSTRUCTION_POST_IMAGE_MESSAGE + "</div>";
-        //     },
-        //     choices: [ NEXT_BUTTON_TEXT ],
-        //     response_ends_trial: true
-        // };
-
         let setup_screens_multi = {
             type: 'instructions',
             button_label_next: "Volgende",
@@ -387,30 +387,17 @@
                     "<strong> ◄ OF ► </strong>" + 
                     '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
                     CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_1,
-                CONSENT_HTML_STYLE_UU + CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + 
+                CONSENT_HTML_STYLE_UU +  
                     "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' + 
                     "<strong> ◄ OF ► </strong>" + 
                     '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
                     CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_2,
-                CONSENT_HTML_STYLE_UU + CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + 
-                    "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' + 
-                       "<strong> ◄ OF ► </strong>" + 
-                       '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
+                CONSENT_HTML_STYLE_UU + 
+                    "<br><br>" + '<img src="./images/crybaby.jpg" style="width: 300px; height: 300"></img>' + 
                        CAREGIVER_INSTRUCTION_SOOTHING,
                 ],
-            show_clickable_nav: true
+            show_clickable_nav: true,
         }
-
-        // let setup_screen_two = {
-        //     type: 'html-button-response',
-        //     stimulus: function(){
-        //         return "<div class='instruction' >" +
-        //                CAREGIVER_INSTRUCTION_SOOTHING + "<br><br>" + 
-        //                "</div>";
-        //     },
-        //     choices: [ NEXT_BUTTON_TEXT ],
-        //     response_ends_trial: true
-        // };
 
         let instruction_screen_layout = {
             type: 'html-button-response',
@@ -840,7 +827,11 @@
             },
             choices: [OK_BUTTON_TEXT],
             response_ends_trial: true,
-            data: { useful_data_flag: false }
+            // BrowserInfo might not be available on the very first trial, so we add it here.
+            data: {
+                browser: uil.browser.getBrowserInfo(),
+                resolution: uil.browser.getResolutionInfo(),
+            }
         };
 
         let end_screen = {
