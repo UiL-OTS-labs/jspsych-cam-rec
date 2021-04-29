@@ -3,7 +3,7 @@
     <head>
     <meta charset="UTF-8">
     
-    <title>Babies Online (not in the basement) </title>
+    <title>Many Babies @Home </title>
 
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
@@ -47,9 +47,6 @@
  -->
     <script src="_utils_browserinfo/jspsych-uil-utils-feature-browser-info/jspsych-uil-utils.js" type="text/javascript"></script>
 
-
-
-
      <!-- Uil OTS organised  -->
     <script src="stimuli.js"></script>
     <script src="globals.js"></script>
@@ -62,11 +59,6 @@
     .instruction {
         text-align: left !important;
         margin: 5% 10% 5% 10%;
-    }
-
-    .instruction_small {
-        font-size: 0.6em;
-        text-align: left !important;
     }
 
     kbd {
@@ -158,9 +150,6 @@
         let grabber_items_two = getGrabberTwoItems().table;
 
         let pref_items = getAllPrefItems().table;
-
-        // buy a bit of time to get browser info
-        // setTimeout(() => {  console.log("WAIT"); }, 1000);
 
         // cutting the original paired timeline in pairs...ugly, but as of yet
         // unsure of what's best otherwise
@@ -411,7 +400,7 @@
         };
 
         let setup_validate_checkbox = {
-            type: 'survey-multi-select', //used to be survey-multi-select
+            type: 'survey-multi-select',
             preamble: "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + "<h2>Opstelling gereed</h2>" +
                 '<img src="./images/mockup1.png" style="width: 400px; height: 400"></img>',
             required_message: IF_REQUIRED_FEEDBACK_MESSAGE_SETUP,
@@ -661,6 +650,28 @@
             on_finish: set_html_to_white
         };
 
+        let exp_done_screen = {
+            type: 'html-button-response',
+            stimulus: function(){
+                return "<div class='instruction' >" +
+                    '<p>' + POST_REC_MESSAGE + '</p></div>';
+            },
+            choices: [OK_BUTTON_TEXT],
+            response_ends_trial: true,
+            // BrowserInfo might not be available on the very first trial, so we add it here.
+            data: {
+                browser: uil.browser.getBrowserInfo(),
+                resolution: uil.browser.getResolutionInfo(),
+            }
+        };
+
+        let end_screen = {
+            type: 'html-button-response',
+            stimulus: DEBRIEF_MESSAGE,
+            choices: [],
+            trial_duration: DEBRIEF_MESSAGE_DURATION
+        };
+
         // PROCEDURES ////////////////////////////////
 
         let baseline_procedure = {
@@ -806,8 +817,6 @@
             randomize_order: false
         };
 
-        ///////// pref
-
         let pref_procedure = {
             timeline:[
                 grabber_procedure_two,
@@ -819,27 +828,7 @@
 
         /////////////////////////////////////////////
 
-        let well_done_screen = {
-            type: 'html-button-response',
-            stimulus: function(){
-                return "<div class='instruction' >" +
-                    '<p>' + POST_REC_MESSAGE + '</p></div>';
-            },
-            choices: [OK_BUTTON_TEXT],
-            response_ends_trial: true,
-            // BrowserInfo might not be available on the very first trial, so we add it here.
-            data: {
-                browser: uil.browser.getBrowserInfo(),
-                resolution: uil.browser.getResolutionInfo(),
-            }
-        };
 
-        let end_screen = {
-            type: 'html-button-response',
-            stimulus: DEBRIEF_MESSAGE,
-            choices: [],
-            trial_duration: DEBRIEF_MESSAGE_DURATION
-        };
 
         //////////////// timeline /////////////////////////////////
 
@@ -920,7 +909,7 @@
         timeline.push(pref_procedure);
         timeline.push(sync_screen_green)
 
-        timeline.push(well_done_screen);
+        timeline.push(exp_done_screen);
         
         timeline.push(end_screen);
 

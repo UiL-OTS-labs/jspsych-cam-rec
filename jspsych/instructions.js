@@ -253,7 +253,20 @@ const IF_REQUIRED_FEEDBACK_MESSAGE_REC = `
     U moet ' ${ REC_STARTED_STATEMENT } ' aanvinken om door te gaan naar het experiment.
     `;
 
-const POST_REC_MESSAGE = "Bijna klaar! Vergeet niet uw video (in de andere tab) nu te stoppen en de data te uploaden!"
+const POST_REC_MESSAGE = `
+    <h2>De taak is afgelopen</h2>
+    <p>Klik nu op het tabblad met uw webcam-opname.
+    <li>Klik eerst op "stop recording".</li> 
+    <li>Vul dan bij token uw upload-code in.<sub>(@Maaike, deze moet met pilotten even handmatig!)</sub></li>
+    <li>Klik dan op "upload".</li>
+    <br>
+    <br>
+    Pas nadat u op uploaden heeft geklikt wordt uw webcam-opname verstuurd naar de beveiligde server van Universiteit Utrecht. 
+    Nadat u op uploaden heeft geklikt (en er een melding is dat de upload is gelukt...WorkInProgress) is uw deelname aan het onderzoek gelukt.
+    <br>
+    <br>
+    Klik op ‘volgende’ als u uw webcam-opname heeft geüpload en u het onderzoek wilt afronden.</p>
+    `;
 
 const DEBRIEF_MESSAGE = `
     <h1>End of the experiment</h1>
