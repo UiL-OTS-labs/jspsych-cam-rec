@@ -243,9 +243,7 @@ const PRE_REC_MESSAGE_CHECKBOX = `
     het onderzoek langer dan 15 seconden geen geluid meer hoort is de taak voor uw kind afgerond.
     `;
 
-const REC_STARTED_STATEMENT = `
-               Ik heb de webcam-opname gestart.
-    `;
+const REC_STARTED_STATEMENT = `Ik heb de webcam-opname gestart.`;
 
 const REC_REFERENCE_NAME = "recording";
 
@@ -254,7 +252,7 @@ const IF_REQUIRED_FEEDBACK_MESSAGE_REC = `
     `;
 
 const POST_REC_MESSAGE = `
-    <h2>De taak is afgelopen</h2>
+    <h2>De taak voor uw kind is afgelopen, maar <i>u</i> bent nog niet helemaal klaar!</h2>
     <p>Klik nu op het tabblad met uw webcam-opname.
     <li>Klik eerst op "stop recording".</li> 
     <li>Vul dan bij token uw upload-code in.<sub>(@Maaike, deze moet met pilotten even handmatig!)</sub></li>
@@ -268,11 +266,25 @@ const POST_REC_MESSAGE = `
     Klik op ‘volgende’ als u uw webcam-opname heeft geüpload en u het onderzoek wilt afronden.</p>
     `;
 
-const DEBRIEF_MESSAGE = `
-    <h1>End of the experiment</h1>
+const GIFT_MESSAGE = `
+    <h2>Bedankt voor uw deelname!</h2> 
+    Als dank voor uw deelname willen wij uw kind graag een cadeautje sturen. Hier hebben wij echter uw adresgegevens voor nodig. 
     <br>
     <br>
-    <h2>Thank you for participating!</h2>
+    Indien u een cadeautje wilt ontvangen, mail dan uw: <strong>straat, huisnummer, postcode, plaats, én uw unieke code naar:
+    <br>
+    <br>
+    <strong>m.h.i.jansen@uu.nl</strong>
+    <br>
+    <br>
+    Klik op volgende als u dit heeft gedaan, of als u geen cadeautje wilt ontvangen.
     `;
 
-const DEBRIEF_MESSAGE_DURATION = 3000;
+const DEBRIEF_MESSAGE = `
+    <h1>Einde</h1>
+    <br>
+    <br>
+    <h2>Bedankt voor jullie deelname! U kunt nu het scherm afsluiten</h2>
+    `;
+
+const DEBRIEF_MESSAGE_DURATION = 3500;

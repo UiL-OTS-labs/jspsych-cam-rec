@@ -36,11 +36,7 @@
 
     <!-- UU fonts -->
     <link href=https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/fonts.css rel="stylesheet" type="text/css"/>
-
-    <!-- VSL-grid plugin (copied a version with white table layout for testing)-->
-<!--     <script src="plugin/jspsych-vsl-grid-scene-white.js"></script>
- -->    
-
+  
     <!-- Uil OTS libraries -->
 <!--     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/jspsych-uil-utils.js"></script>
  --><!--     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
@@ -347,8 +343,7 @@
 
         jsPsych.data.addProperties({
             subject: subject_id,
-            browser_info: browser_info,
-            screen_resolution_info_start: screen_resolution_info_start
+            browserinfo: browser_info,
         });
 
 
@@ -362,7 +357,8 @@
                        "<p>" + GENERIC_CHECK + "</p></div>";
             },
             choices: [NEXT_BUTTON_TEXT],
-            response_ends_trial: true
+            response_ends_trial: true,
+            data: { resolution: uil.browser.getResolutionInfo()}
         };
 
         let setup_screens_multi = {
@@ -414,6 +410,7 @@
                     name: SETUP_REFERENCE_NAME
                 }
             ],
+            data: { resolution: uil.browser.getResolutionInfo()},
             on_finish: function(data){
                 let setup_validated_choice = data.responses;   
                 data.setup_validated = setup_validated_choice;
@@ -450,6 +447,7 @@
             },
             choices: [ NEXT_BUTTON_TEXT ],
             response_ends_trial: true,
+            data: { resolution: uil.browser.getResolutionInfo() }
         };
 
         let left_and_right_screen = {
@@ -476,7 +474,8 @@
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image_a: jsPsych.timelineVariable('image_fn_left'),
-                target_image_b: jsPsych.timelineVariable('image_fn_right')
+                target_image_b: jsPsych.timelineVariable('image_fn_right'),
+                resolution: uil.browser.getResolutionInfo()
             }
         };
 
@@ -513,6 +512,7 @@
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image: jsPsych.timelineVariable('image_fn'),
+                resolution: uil.browser.getResolutionInfo()
             }
         };
 
@@ -547,6 +547,7 @@
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image: jsPsych.timelineVariable('image_fn'),
+                resolution: uil.browser.getResolutionInfo()
             }
         };
 
@@ -571,6 +572,7 @@
             data: {
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image_a: jsPsych.timelineVariable('image_fn'),
+                resolution: uil.browser.getResolutionInfo()
             }
         };
 
@@ -656,13 +658,20 @@
                 return "<div class='instruction' >" +
                     '<p>' + POST_REC_MESSAGE + '</p></div>';
             },
-            choices: [OK_BUTTON_TEXT],
+            choices: [NEXT_BUTTON_TEXT],
             response_ends_trial: true,
-            // BrowserInfo might not be available on the very first trial, so we add it here.
-            data: {
-                browser: uil.browser.getBrowserInfo(),
-                resolution: uil.browser.getResolutionInfo(),
-            }
+            data: { resolution: uil.browser.getResolutionInfo() }
+        };
+
+        let gift_screen = {
+            type: 'html-button-response',
+            stimulus: function(){
+                return "<div class='instruction' >" +
+                    '<p>' + GIFT_MESSAGE + '</p></div>';
+            },
+            choices: [NEXT_BUTTON_TEXT],
+            response_ends_trial: true,
+            data: { resolution: uil.browser.getResolutionInfo() }
         };
 
         let end_screen = {
@@ -828,7 +837,7 @@
 
         /////////////////////////////////////////////
 
-
+        // THE 'BIG STUFF' HAPPENS HERE
 
         //////////////// timeline /////////////////////////////////
 
@@ -910,6 +919,8 @@
         timeline.push(sync_screen_green)
 
         timeline.push(exp_done_screen);
+
+        timeline.push(gift_screen);
         
         timeline.push(end_screen);
 
