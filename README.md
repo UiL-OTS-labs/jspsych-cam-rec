@@ -39,7 +39,7 @@ A token has to be created manually and should be both descriptive and hard to gu
 
 In the default `/WebRTC/index.html`, there is a input field to paste a token into during testing. But when running a finalized experiment, the input field can be changed to a hidden field easily by experimenters to eliminate this step. See `index_hidden_input.html` for such a template (remember to change the token manually: `change_token_here`).
 
-Tokens can be made by J.C. van Elst and M. Villeneuve at the UiL-OTS labs, contact one of them if you would like to run a pilot. We recommend using one token per experimental condition, but using one token per participant or per experiment as a whole is also possible.
+Tokens can be made by only some people of the UiL-OTS lab staff. Get in touch using the UiL OTS lab website if you would like to run a pilot. We recommend using one token per experimental condition, but using one token per participant or per experiment as a whole is also possible.
 
 # Links (future directions)
 
