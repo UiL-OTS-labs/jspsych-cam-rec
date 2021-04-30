@@ -21,7 +21,7 @@ https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/record/
   - Some custom jsPsych-tools (like the [UiL Utililty library](https://github.com/UiL-OTS-labs/jspsych-uil-utils)) are developed and versioned/updated at shared location(s) in our data store. So, there's quite a lot of interdependency and possible source of error. Please be _very aware_ of this!
  
 ## Mimimal case for adapting/testing integrated functionality: Python development webserver (local development) 
-While piloting and adapting things from this current combination of experiment and video streaming example, you will need some sort of local web-server to test things. This [python http server](https://pythonbasics.org/webserver/) example may be of help. You will have to know or learn some other things, like how to use the terminal. Note that, by default, the python http server binds to `http://0.0.0.0:8000`, but some browsers don't allow http (vs https), unless it is served from 'localhost' (127.0.0.1), so for developers, while testing locaslly, use this command to serve the experiment:
+While piloting and adapting things from this current combination of experiment and video streaming example, you will need some sort of local web-server to test things. This [python http server](https://pythonbasics.org/webserver/) example may be of help. You will have to know or learn some other things, like how to use the terminal. Note that, by default, the python http server binds to `http://0.0.0.0:8000`, but some browsers don't allow http (vs https), unless it is served from 'localhost' (127.0.0.1), so for developers, while testing locally, use this command to serve the experiment:
 ```
 python3 -m http.server -b localhost 
 ```
