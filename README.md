@@ -2,7 +2,7 @@
 Baby observation experiment development
 
 # Goals
-The ManyBabiesOnline project aims to bring baby behavior observation (and scoring) to the web.  
+This project aims to bring baby behavior observation (and scoring) to the web.  
 This project contains several folders and many files:
 
 - Folder 'jspsych' contains a [jsPsych](https://www.jspsych.org) web experiment.
