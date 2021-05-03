@@ -37,7 +37,7 @@ A proof of concept webcam video uploader is included in `/WebRTC/`. It communica
 
 A token has to be created manually and should be both descriptive and hard to guess. For example: `2021-Phonemes-control-ue5Ubi`, which tells us which experiment and condition we're dealing with without making it trivial to figure out. They shouldn't have to ever be typed by hand, so random strings are fine.
 
-In the default `/WebRTC/index.html`, there is a input field to paste a token into during testing. But when running a finalized experiment, the input field can be changed to a hidden field easily by experimenters to eliminate this step. See `index_hidden_input.html` for such a template (remember to change the token manually: `change_token_here`).
+In the default `/WebRTC/index.html`, there is a input field to paste a token into during testing. But when running a finalized experiment, the input field can be changed to a hidden field easily by experimenters to eliminate this step. See `index_hidden_token.html` for such a template (remember to change the token manually: `change_token_here`).
 
 Tokens can be made by only some people of the UiL-OTS lab staff. Get in touch using the UiL OTS lab website if you would like to run a pilot. We recommend using one token per experimental condition, but using one token per participant or per experiment as a whole is also possible.
 
