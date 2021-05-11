@@ -2,7 +2,7 @@
 Baby observation experiment development
 
 # Goals
-The ManyBabiesOnline project aims to bring baby behavior observation (and scoring) to the web.  
+This project aims to bring baby behavior observation (and scoring) to the web.  
 This project contains several folders and many files:
 
 - Folder 'jspsych' contains a [jsPsych](https://www.jspsych.org) web experiment.
@@ -21,7 +21,7 @@ https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/record/
   - Some custom jsPsych-tools (like the [UiL Utililty library](https://github.com/UiL-OTS-labs/jspsych-uil-utils)) are developed and versioned/updated at shared location(s) in our data store. So, there's quite a lot of interdependency and possible source of error. Please be _very aware_ of this!
  
 ## Mimimal case for adapting/testing integrated functionality: Python development webserver (local development) 
-While piloting and adapting things from this current combination of experiment and video streaming example, you will need some sort of local web-server to test things. This [python http server](https://pythonbasics.org/webserver/) example may be of help. You will have to know or learn some other things, like how to use the terminal. Note that, by default, the python http server binds to `http://0.0.0.0:8000`, but some browsers don't allow http (vs https), unless it is served from 'localhost' (127.0.0.1), so for developers, while testing locaslly, use this command to serve the experiment:
+While piloting and adapting things from this current combination of experiment and video streaming example, you will need some sort of local web-server to test things. This [python http server](https://pythonbasics.org/webserver/) example may be of help. You will have to know or learn some other things, like how to use the terminal. Note that, by default, the python http server binds to `http://0.0.0.0:8000`, but some browsers don't allow http (vs https), unless it is served from 'localhost' (127.0.0.1), so for developers, while testing locally, use this command to serve the experiment:
 ```
 python3 -m http.server -b localhost 
 ```
@@ -37,9 +37,9 @@ A proof of concept webcam video uploader is included in `/WebRTC/`. It communica
 
 A token has to be created manually and should be both descriptive and hard to guess. For example: `2021-Phonemes-control-ue5Ubi`, which tells us which experiment and condition we're dealing with without making it trivial to figure out. They shouldn't have to ever be typed by hand, so random strings are fine.
 
-In the default `/WebRTC/index.html`, there is a input field to paste a token into during testing. But when running a finalized experiment, the input field can be changed to a hidden field easily by experimenters to eliminate this step. See `index_hidden_input.html` for such a template (remember to change the token manually: `change_token_here`).
+In the default `/WebRTC/index.html`, there is a input field to paste a token into during testing. But when running a finalized experiment, the input field can be changed to a hidden field easily by experimenters to eliminate this step. See `index_hidden_token.html` for such a template (remember to change the token manually: `change_token_here`).
 
-Tokens can be made by J.C. van Elst and M. Villeneuve at the UiL-OTS labs, contact one of them if you would like to run a pilot. We recommend using one token per experimental condition, but using one token per participant or per experiment as a whole is also possible.
+Tokens can be made by only some people of the UiL-OTS lab staff. Get in touch using the UiL OTS lab website if you would like to run a pilot. We recommend using one token per experimental condition, but using one token per participant or per experiment as a whole is also possible.
 
 # Links (future directions)
 
