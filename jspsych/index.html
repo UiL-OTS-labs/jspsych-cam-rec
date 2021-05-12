@@ -308,9 +308,14 @@
             document.body.style.color = 'black'
         }
 
-        function set_paragraph_text_to_small() {
-            document.body.style.fontSize = "0.5em"
-        }
+        // function set_paragraph_text_to_small() {
+        //     document.body.style.fontSize = "0.5em"
+        // }
+
+        // function hideProgressBar() {
+        //     document.body.style.backgroundColor = 'white'
+        //     document.body.style.color = 'black'
+        // }
 
 
         // Data one would like to add to __all__ trials, according to:
@@ -344,7 +349,8 @@
 
         ////////////////////////////////////////////////////////////////////////////////////////
         //// screens/(sub-)(trial-)phases...////////////////////////////////////////////////////
-
+        
+        //0.1
         let start_screen = {
             type: 'html-button-response',
             stimulus: function(){
@@ -353,9 +359,91 @@
             },
             choices: [NEXT_BUTTON_TEXT],
             response_ends_trial: true,
-            data: { resolution: uil.browser.getResolutionInfo()}
+            data: { resolution: uil.browser.getResolutionInfo()},
+            on_finish: function(){
+                jsPsych.setProgressBar(0.1);
+            }
+        };
+        
+        //0.2
+        let consent_block_multi = {
+            type: 'instructions',
+            button_label_next: "Volgende",
+            button_label_previous: "Vorige",
+            allow_backward: true,
+            pages: [
+                CONSENT_HTML_STYLE_UU + CONSENT_PAGE_1,
+                CONSENT_HTML_STYLE_UU + CONSENT_PAGE_2
+                ],
+            show_clickable_nav: true,
+            on_finish: function(){
+                jsPsych.setProgressBar(0.2);
+            }
+        };
+        
+        //0.3
+        let consent_block_choice = {
+            type: 'survey-multi-select',
+            preamble: CONSENT_HTML_STYLE_UU_SMALL_PARAGRAPH_TEXT + CONSENT_HTML_SHORT,
+            button_label: NEXT_BUTTON_TEXT,
+            required_message: IF_REQUIRED_FEEDBACK_MESSAGE,
+            questions: [
+                {
+                    prompt: "", 
+                    options: [ CONSENT_STATEMENT ], 
+                    horizontal: true,
+                    required: false,
+                    button_label: NEXT_BUTTON_TEXT,
+                    name: CONSENT_REFERENCE_NAME
+                }
+            ],
+            on_finish: function(data){
+                let consent_choice = data.responses;   
+                data.consent_choice_response = consent_choice;
+                jsPsych.setProgressBar(0.3);
+
+            }
         };
 
+        // no progress
+        let no_consent_end_screen = {
+            type: 'html-button-response',
+            stimulus: DEBRIEF_MESSAGE_NO_CONSENT,
+            choices: [],
+            trial_duration: DEBRIEF_MESSAGE_NO_CONSENT_DURATION,
+            on_finish: function (data){
+                jsPsych.endExperiment()
+            }
+        };
+        
+        // no progress
+        let if_node_consent = {
+            timeline: [no_consent_end_screen],
+            conditional_function: function(data){
+                let mydata = getConsentData();
+                if (mydata == CONSENT_STATEMENT){
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+
+        // HTML plugin survey block: questions are in the HTML constant
+        //0.4
+        let personal_code_multi_html_block = {
+            type: 'survey-html-form',
+            preamble: CONSENT_HTML_STYLE_UU + PERSONAL_CODE_PRE_TEXT,
+            button_label: NEXT_BUTTON_TEXT,
+            html: PERSONAL_CODE_CHOICE_HTML,
+            on_finish: function(data){
+                var personal_code_html_responses = data.responses;
+                data.personal_code_response = personal_code_html_responses;
+                jsPsych.setProgressBar(0.4);
+            }
+        };
+
+        //0.5
         let setup_screens_multi = {
             type: 'instructions',
             button_label_next: "Volgende",
@@ -377,19 +465,12 @@
                        CAREGIVER_INSTRUCTION_SOOTHING,
                 ],
             show_clickable_nav: true,
+            on_finish: function(){
+                jsPsych.setProgressBar(0.5);
+            }
         }
-
-        let instruction_screen_layout = {
-            type: 'html-button-response',
-            stimulus: function(){
-                let text = PRE_LAYOUT_MESSAGE;
-                return "<div class='instruction' >" +
-                       "<p>" + text + "</p></div>";
-            },
-            choices: [ OK_BUTTON_TEXT ],
-            response_ends_trial: true,
-        };
-
+        
+        //0.6
         let setup_validate_checkbox = {
             type: 'survey-multi-select',
             preamble: "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + "<h2>Opstelling gereed</h2>" +
@@ -409,9 +490,70 @@
             on_finish: function(data){
                 let setup_validated_choice = data.responses;   
                 data.setup_validated = setup_validated_choice;
+                jsPsych.setProgressBar(0.6);
             }
         };
 
+        //0.65
+        let test_audio_looped = {
+            post_trial_gap: DEFAULT_ITI,
+            timeline:
+                [
+                    {
+                        type: 'audio-button-response',
+                        stimulus: './sounds/testtune.mp3',
+                        choices: [PLAY_AGAIN_BUTTON_TEXT, NEXT_BUTTON_TEXT],
+                        prompt: function(){
+                            return "<div class='instruction' >" + 
+                            '<img src="./images/speakersound.png" style="width: 100px; height: 100"></img>' +
+                            '<p>' + AUDIO_CHECK_PROMPT_TEXT_LOOP + '</p></div>'
+                        }
+                    }
+                ],
+            loop_function: function(data){
+                if (data.values()[0].button_pressed == 0){
+                    return true; // loop again!
+                } else {
+                    return false; // continue
+                }
+            },
+            on_finish: function(data) {
+                data.audio_checked = true;
+                jsPsych.setProgressBar(0.65);
+            }
+        };
+        
+        //0.67
+        let instruction_screen_layout = {
+            type: 'html-button-response',
+            stimulus: function(){
+                let text = PRE_LAYOUT_MESSAGE;
+                return "<div class='instruction' >" +
+                       "<p>" + text + "</p></div>";
+            },
+            choices: [ OK_BUTTON_TEXT ],
+            response_ends_trial: true,
+            on_finish: function(){
+                jsPsych.setProgressBar(0.67);
+            }
+        };
+        
+        //0.73
+        let check_screen_layout = {
+            type: 'html-button-response',
+            stimulus: function(){
+                let table = GRID_HTML_LAYOUT;
+                return table;
+            },
+            choices: [ NEXT_BUTTON_TEXT ],
+            response_ends_trial: true,
+            data: { resolution: uil.browser.getResolutionInfo() },
+            on_finish: function(){
+                jsPsych.setProgressBar(0.73);
+            }
+        };
+
+        //0.75
         // globals for this are in instruction.js
         let instruction_screen_rec_checkbox = {
             type: 'survey-multi-select', //used to be survey-multi-select
@@ -431,20 +573,11 @@
             on_finish: function(data){
                 let rec_started_choice = data.responses;   
                 data.rec_started_choice_response = rec_started_choice;
+                jsPsych.setProgressBar(0.75);
             }
         };
-
-        let check_screen_layout = {
-            type: 'html-button-response',
-            stimulus: function(){
-                let table = GRID_HTML_LAYOUT;
-                return table;
-            },
-            choices: [ NEXT_BUTTON_TEXT ],
-            response_ends_trial: true,
-            data: { resolution: uil.browser.getResolutionInfo() }
-        };
-
+        
+        //0.8
         let left_and_right_screen = {
             type: 'audio-button-response',
             on_start: set_html_to_grey,
@@ -471,10 +604,13 @@
                 target_image_a: jsPsych.timelineVariable('image_fn_left'),
                 target_image_b: jsPsych.timelineVariable('image_fn_right'),
                 resolution: uil.browser.getResolutionInfo()
+            },
+            on_finish: function(){
+                jsPsych.setProgressBar(0.8);
             }
         };
 
-
+        //0.8
         let left_or_right_screen = {
             type: 'audio-button-response',
             on_start: set_html_to_grey,
@@ -508,41 +644,10 @@
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image: jsPsych.timelineVariable('image_fn'),
                 resolution: uil.browser.getResolutionInfo()
-            }
-        };
-
-        let left_or_right_screen_two = {
-            type: 'audio-button-response',
-            on_start: set_html_to_grey,
-            stimulus: jsPsych.timelineVariable('sound_fn'),
-            prompt: function() {
-                
-                var side = jsPsych.timelineVariable('side', true);
-                
-                console.log('side: ' + side);
-
-                var grid = GRID_HTML_LEFT_RIGHT;
-                if ( side === 0 ){
-                    var newgrid = grid.replaceAll("./video/01_left",
-                        jsPsych.timelineVariable('image_fn'));
-                } else if (side === 1 ) {
-                    var newgrid = grid.replaceAll("./video/03_right",
-                        jsPsych.timelineVariable('image_fn'));
-                } else {
-                    console.error("Stimulus side is unknown or undefined...");
-                    var newgrid = 'error';
-                }
-                return newgrid;
             },
-            response_ends_trial: false,
-            trial_ends_after_audio: false,
-            trial_duration: 1950,
-            choices: [],
-            on_finish: set_html_to_white,
-            data: {
-                target_audio: jsPsych.timelineVariable('sound_fn'),
-                target_image: jsPsych.timelineVariable('image_fn'),
-                resolution: uil.browser.getResolutionInfo()
+            on_finish: function(){
+                jsPsych.setProgressBar(0.8);
+                set_html_to_white
             }
         };
 
@@ -568,48 +673,52 @@
                 target_audio: jsPsych.timelineVariable('sound_fn'),
                 target_image_a: jsPsych.timelineVariable('image_fn'),
                 resolution: uil.browser.getResolutionInfo()
+            },
+            on_finish: function(){
+                jsPsych.setProgressBar(0.8);
+                set_html_to_white
             }
         };
 
-        let qr_screen = {
-            type: 'video-keyboard-response',
-            on_start: set_html_to_white,
-            stimulus: './video/qrcodes/qrspeed.webm',
-            sources: [
-                './video/qrcodes/qrspeed.webm',
-                './video/qrcodes/qrspeed.mp4'
-                ],
-            prompt: "Showcasing (QR sync method)",
-            response_ends_trial: false,
-            trial_ends_after_video: false,
-            controls: true,
-            rate: 1,
-            trial_duration: 2450,
-            choices: jsPsych.ALL_KEYS,
-            on_finish: set_html_to_white,
-            response_allowed_while_playing: true,
-            autoplay: true
-        };
+        // let qr_screen = {
+        //     type: 'video-keyboard-response',
+        //     on_start: set_html_to_white,
+        //     stimulus: './video/qrcodes/qrspeed.webm',
+        //     sources: [
+        //         './video/qrcodes/qrspeed.webm',
+        //         './video/qrcodes/qrspeed.mp4'
+        //         ],
+        //     prompt: "Showcasing (QR sync method)",
+        //     response_ends_trial: false,
+        //     trial_ends_after_video: false,
+        //     controls: true,
+        //     rate: 1,
+        //     trial_duration: 2450,
+        //     choices: jsPsych.ALL_KEYS,
+        //     on_finish: set_html_to_white,
+        //     response_allowed_while_playing: true,
+        //     autoplay: true
+        // };
 
-        let binary_screen = {
-            type: 'video-keyboard-response',
-            on_start: set_html_to_grey,
-            stimulus: './video/bincodes/256-bincodes.webm',
-            sources: [
-                './video/bincodes/256-bincodes.webm',
-                './video/bincodes/256-bincodes.mp4'
-                ],
-            prompt: "Sync binary image...",
-            response_ends_trial: false,
-            trial_ends_after_video: false,
-            controls: true,
-            rate: 1,
-            trial_duration: 2450,
-            choices: jsPsych.ALL_KEYS,
-            on_finish: set_html_to_white,
-            response_allowed_while_playing: true,
-            autoplay: true
-        };
+        // let binary_screen = {
+        //     type: 'video-keyboard-response',
+        //     on_start: set_html_to_grey,
+        //     stimulus: './video/bincodes/256-bincodes.webm',
+        //     sources: [
+        //         './video/bincodes/256-bincodes.webm',
+        //         './video/bincodes/256-bincodes.mp4'
+        //         ],
+        //     prompt: "Sync binary image...",
+        //     response_ends_trial: false,
+        //     trial_ends_after_video: false,
+        //     controls: true,
+        //     rate: 1,
+        //     trial_duration: 2450,
+        //     choices: jsPsych.ALL_KEYS,
+        //     on_finish: set_html_to_white,
+        //     response_allowed_while_playing: true,
+        //     autoplay: true
+        // };
 
         let sync_screen = {
             type: 'audio-keyboard-response',
@@ -620,63 +729,86 @@
             trial_ends_after_audio: false,
             trial_duration: 450,
             choices: jsPsych.NO_KEYS,
-            on_finish: set_html_to_white
+            on_finish: set_html_to_white,
         };
 
-        let sync_screen_orange = {
-            type: 'audio-keyboard-response',
-            on_start: set_html_to_orange,
-            stimulus: "./sounds/beep.mp3",
-            prompt: "orange!",
-            response_ends_trial: false,
-            trial_ends_after_audio: false,
-            trial_duration: 450,
-            choices: jsPsych.NO_KEYS,
-            on_finish: set_html_to_white
-        };
+        // let sync_screen_orange = {
+        //     type: 'audio-keyboard-response',
+        //     on_start: set_html_to_orange,
+        //     stimulus: "./sounds/beep.mp3",
+        //     prompt: "orange!",
+        //     response_ends_trial: false,
+        //     trial_ends_after_audio: false,
+        //     trial_duration: 450,
+        //     choices: jsPsych.NO_KEYS,
+        //     on_finish: set_html_to_white
+        // };
 
-        let sync_screen_green = {
-            type: 'audio-keyboard-response',
-            on_start: set_html_to_green,
-            stimulus: "./sounds/beep.mp3",
-            prompt: "green!",
-            response_ends_trial: false,
-            trial_ends_after_audio: false,
-            trial_duration: 450,
-            choices: jsPsych.NO_KEYS,
-            on_finish: set_html_to_white
-        };
+        // let sync_screen_green = {
+        //     type: 'audio-keyboard-response',
+        //     on_start: set_html_to_green,
+        //     stimulus: "./sounds/beep.mp3",
+        //     prompt: "green!",
+        //     response_ends_trial: false,
+        //     trial_ends_after_audio: false,
+        //     trial_duration: 450,
+        //     choices: jsPsych.NO_KEYS,
+        //     on_finish: set_html_to_white
+        // };
 
+
+        //0.85
         let exp_done_screen = {
             type: 'html-button-response',
             stimulus: function(){
                 return "<div class='instruction' >" +
                     '<p>' + POST_REC_MESSAGE + '</p></div>';
             },
+            on_start: set_html_to_white,
             choices: [NEXT_BUTTON_TEXT],
             response_ends_trial: true,
-            data: { resolution: uil.browser.getResolutionInfo() }
+            data: { resolution: uil.browser.getResolutionInfo() },
+            on_finish: function(){
+                jsPsych.setProgressBar(0.85);
+            }
         };
 
+        //0.95
         let gift_screen = {
             type: 'html-button-response',
             stimulus: function(){
                 return "<div class='instruction' >" +
                     '<p>' + GIFT_MESSAGE + '</p></div>';
             },
+            on_start: set_html_to_white,
             choices: [NEXT_BUTTON_TEXT],
             response_ends_trial: true,
-            data: { resolution: uil.browser.getResolutionInfo() }
+            data: { resolution: uil.browser.getResolutionInfo() },
+            on_finish: function(){
+                jsPsych.setProgressBar(0.9);
+            }
         };
 
+        //1.0
         let end_screen = {
             type: 'html-button-response',
             stimulus: DEBRIEF_MESSAGE,
             choices: [],
-            trial_duration: DEBRIEF_MESSAGE_DURATION
+            trial_duration: DEBRIEF_MESSAGE_DURATION,
+            on_finish: function(){
+                jsPsych.setProgressBar(1);
+            }
         };
 
         // PROCEDURES ////////////////////////////////
+
+        let consent_procedure = {
+            timeline: [
+                consent_block_multi, 
+                consent_block_choice, 
+                if_node_consent
+                ]
+        }
 
         let baseline_procedure = {
             timeline:[
@@ -839,48 +971,45 @@
         let timeline = [];
 
         // it's best practice to have *mouse click* user I/O first
-        timeline.push(start_screen);
+        timeline.push(start_screen); //0.1
         
         //timeline.push(qr_screen);
         
         //timeline.push(binary_screen);
 
         // Informed consent (consent.js)
-        timeline.push(consent_procedure);
+        timeline.push(consent_procedure); //0.2-0.3
 
-        // personal code
-        timeline.push(personal_code_multi_html_block);
+        // personal code 
+        timeline.push(personal_code_multi_html_block); //0.4
         
         // setup part 1 = tech
         // setup part 2 = ethical
         // setup part 3 = validation
         // timeline.push(setup_screen_one);
         // timeline.push(setup_screen_two);
-        timeline.push(setup_screens_multi);
-        timeline.push(setup_validate_checkbox);
-        
-        // survey
-        //timeline.push(survey_procedure);
 
+        timeline.push(setup_screens_multi);//0.5
+        timeline.push(setup_validate_checkbox);//0.6
+        
         //test/set audio level (soundtest.js)
-        timeline.push(test_audio_looped);
+        timeline.push(test_audio_looped);//0.65
         
-        timeline.push(instruction_screen_layout);
+        timeline.push(instruction_screen_layout); //0.67
 
-        timeline.push(check_screen_layout);
+        timeline.push(check_screen_layout); //0.73
 
         // task instruction (instructions.js)
-        timeline.push(instruction_screen_rec_checkbox);
+        timeline.push(instruction_screen_rec_checkbox); //0.78
 
         // BASELINE //////////////////////////////////////
-        timeline.push(baseline_procedure);
-        timeline.push(sync_screen);
+        timeline.push(baseline_procedure); //0.8 fixed, so not attention grabbing. or mebby use a "hideProgressBar"
+        //timeline.push(sync_screen);
 
         // PAIREWISE /////////////////////////////////////
-        // timeline.push(paired_procedure);
 
         // this is horrible coding/lusing timelines, but it might just be the best way to
-        // commnit a working example of the right kinds.
+        // commit a working example of the right kinds.
         // the sixteen items are split in halves and each of these form tuple-timeline procedures of the 'pairs'
 
         timeline.push(grabber_one);
@@ -907,23 +1036,25 @@
         timeline.push(grabber_one);
         timeline.push(paired_procedure_h);
 
-        timeline.push(sync_screen_orange)
+        // timeline.push(sync_screen_orange)
 
         // PREFERENTIAL LOOKING //////////////////////////
         timeline.push(pref_procedure);
-        timeline.push(sync_screen_green)
-
-        timeline.push(exp_done_screen);
-
-        timeline.push(gift_screen);
         
-        timeline.push(end_screen);
+        // timeline.push(sync_screen_green)
+
+        timeline.push(exp_done_screen);//0.85
+
+        timeline.push(gift_screen);//0.95
+        
+        timeline.push(end_screen);//1.0
 
         // Start jsPsych when running on a Desktop or Laptop style pc.
-        if (! uil.isMobileOrTablet()) {
+        if (! uil.browser.isMobileOrTablet()) {
             jsPsych.init({
                 timeline: timeline,
                 show_progress_bar: true,
+                auto_update_progress_bar: false,
                 message_progress_bar: 'Voortgang ',
                 preload_audio: [
                     check_audio,
