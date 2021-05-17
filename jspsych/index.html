@@ -36,13 +36,10 @@
     <!-- Uil OTS libraries -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/0.0/jspsych-uil-utils.js" type="text/javascript"></script>
 
-<!--     <script src="_utils_browserinfo/jspsych-uil-utils-feature-browser-info/jspsych-uil-utils.js" type="text/javascript"></script> -->
-
-     <!-- Uil OTS organised  -->
+    <!-- Uil OTS organised  -->
     <script src="stimuli.js"></script>
     <script src="globals.js"></script>
     <script src="consent.js"></script>
-    <script src="survey.js"></script>
     <script src="instructions.js"></script>
 
     <style>
@@ -286,7 +283,7 @@
         ];
 
         // REGULAR JS FUNCTIONS
-        // to change background styles
+        // to change background styles, and a countdown function
 
         function set_html_to_grey() {
             document.body.style.backgroundColor = GREY_HEX; // background color RGBA-mode
@@ -307,6 +304,20 @@
             document.body.style.backgroundColor = 'green'
             document.body.style.color = 'black'
         }
+
+        // function countDownFrom(seconds) {
+        //     var timeleft = seconds;
+        //     var countdownTimer = setInterval(function(){
+        //         if(timeleft <= 0){
+        //             clearInterval(countdownTimer);
+        //             document.getElementById("countdown").innerHTML = "Start!";
+        //         } else {
+        //             document.getElementById("countdown").innerHTML = "Nog " + timeleft + " seconden";
+        //         }
+        //         timeleft -= 1;
+        //     }, 1000);
+        //     return '<div id="countdown"></div>';
+        // }
 
         // function set_paragraph_text_to_small() {
         //     document.body.style.fontSize = "0.5em"
@@ -355,7 +366,7 @@
             type: 'html-button-response',
             stimulus: function(){
                 return "<div class='instruction' >" +
-                       "<p>" + GENERIC_CHECK + "</p></div>";
+                       "<p>" + SCREEN_1 + "</p></div>";
             },
             choices: [NEXT_BUTTON_TEXT],
             response_ends_trial: true,
@@ -372,8 +383,8 @@
             button_label_previous: "Vorige",
             allow_backward: true,
             pages: [
-                CONSENT_HTML_STYLE_UU + CONSENT_PAGE_1,
-                CONSENT_HTML_STYLE_UU + CONSENT_PAGE_2
+                CONSENT_HTML_STYLE_UU + SCREEN_2,
+                CONSENT_HTML_STYLE_UU + SCREEN_3
                 ],
             show_clickable_nav: true,
             on_finish: function(){
@@ -384,7 +395,7 @@
         //0.3
         let consent_block_choice = {
             type: 'survey-multi-select',
-            preamble: CONSENT_HTML_STYLE_UU_SMALL_PARAGRAPH_TEXT + CONSENT_HTML_SHORT,
+            preamble: CONSENT_HTML_STYLE_UU_SMALL_PARAGRAPH_TEXT + CONSENT_HTML_CHOICE,
             button_label: NEXT_BUTTON_TEXT,
             required_message: IF_REQUIRED_FEEDBACK_MESSAGE,
             questions: [
@@ -435,7 +446,7 @@
             type: 'survey-html-form',
             preamble: CONSENT_HTML_STYLE_UU + PERSONAL_CODE_PRE_TEXT,
             button_label: NEXT_BUTTON_TEXT,
-            html: PERSONAL_CODE_CHOICE_HTML,
+            html: PERSONAL_CODE_CHOICE_HTML + PERSONAL_CODE_POST_TEXT,
             on_finish: function(data){
                 var personal_code_html_responses = data.responses;
                 data.personal_code_response = personal_code_html_responses;
@@ -450,19 +461,12 @@
             button_label_previous: "Vorige",
             allow_backward: true,
             pages: [
-                CONSENT_HTML_STYLE_UU + CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + 
-                    "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' + 
-                    "<strong> ◄ OF ► </strong>" + 
-                    '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
-                    CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_1,
-                CONSENT_HTML_STYLE_UU +  
-                    "<br><br>" + '<img src="./images/mockup1.png" style="width: 300px; height: 300"></img>' + 
-                    "<strong> ◄ OF ► </strong>" + 
-                    '<img src="./images/mockup2.png" style="width: 300px; height: 300"></img>' + 
-                    CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_2,
-                CONSENT_HTML_STYLE_UU + 
-                    "<br><br>" + '<img src="./images/crybaby.jpg" style="width: 300px; height: 300"></img>' + 
-                       CAREGIVER_INSTRUCTION_SOOTHING,
+                "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + 
+                    CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_1 + "</div>",
+                "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU +  
+                    CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_2 + "</div>",
+                "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU +  
+                    CAREGIVER_INSTRUCTION_SOOTHING + "</div>",
                 ],
             show_clickable_nav: true,
             on_finish: function(){
@@ -473,14 +477,17 @@
         //0.6
         let setup_validate_checkbox = {
             type: 'survey-multi-select',
-            preamble: "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + "<h2>Opstelling gereed</h2>" +
-                '<img src="./images/mockup1.png" style="width: 400px; height: 400"></img>',
+            preamble: CONSENT_HTML_STYLE_UU + 
+                "<h2>Opstelling gereed</h2>",
             required_message: IF_REQUIRED_FEEDBACK_MESSAGE_SETUP,
             button_label: NEXT_BUTTON_TEXT,
             questions: [
                 {
                     prompt: "", 
-                    options: [ CAREGIVER_VALIDATE_SETUP_STATEMENT ], 
+                    options: [ 
+                        "<strong>" + CAREGIVER_VALIDATE_SETUP_STATEMENT + 
+                        "</strong>" + "</div>"
+                        ], 
                     horizontal: true,
                     required: true,
                     name: SETUP_REFERENCE_NAME
@@ -577,7 +584,7 @@
             }
         };
         
-        //0.8
+        //0.0
         let left_and_right_screen = {
             type: 'audio-button-response',
             on_start: set_html_to_grey,
@@ -606,11 +613,11 @@
                 resolution: uil.browser.getResolutionInfo()
             },
             on_finish: function(){
-                jsPsych.setProgressBar(0.8);
+                jsPsych.setProgressBar(0.0);
             }
         };
 
-        //0.8
+        //0.0
         let left_or_right_screen = {
             type: 'audio-button-response',
             on_start: set_html_to_grey,
@@ -646,7 +653,7 @@
                 resolution: uil.browser.getResolutionInfo()
             },
             on_finish: function(){
-                jsPsych.setProgressBar(0.8);
+                jsPsych.setProgressBar(0.0);
                 set_html_to_white
             }
         };
@@ -675,7 +682,7 @@
                 resolution: uil.browser.getResolutionInfo()
             },
             on_finish: function(){
-                jsPsych.setProgressBar(0.8);
+                jsPsych.setProgressBar(0.0);
                 set_html_to_white
             }
         };
@@ -731,6 +738,36 @@
             choices: jsPsych.NO_KEYS,
             on_finish: set_html_to_white,
         };
+
+        let countdown_simple = {
+            type: 'html-keyboard-response',
+            stimulus: function(countDownFromTen){
+                var timeleft = 9;
+                var countdownTimer = setInterval(function(){
+                    if(timeleft <= 0){
+                        clearInterval(countdownTimer);
+                        document.getElementById("countdown").innerHTML = "Start!";
+                    } else {
+                        document.getElementById("countdown").innerHTML = "Nog " + timeleft + " seconden";
+                    }
+                    timeleft -= 1;
+                }, 1000);
+                return '<div id="countdown"></div>'
+            },
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 10000,
+            trial_ends_after_response: false,
+            post_trial_gap: 0,
+        };
+
+        // let countdown_from = {
+        //     type: 'html-keyboard-response',
+        //     stimulus: countDownFrom(10),
+        //     choices: jsPsych.NO_KEYS,
+        //     trial_duration: 11000,
+        //     trial_ends_after_response: false,
+        //     post_trial_gap: 0,
+        // };
 
         // let sync_screen_orange = {
         //     type: 'audio-keyboard-response',
@@ -801,7 +838,6 @@
         };
 
         // PROCEDURES ////////////////////////////////
-
         let consent_procedure = {
             timeline: [
                 consent_block_multi, 
@@ -964,7 +1000,8 @@
 
         /////////////////////////////////////////////
 
-        // THE 'BIG STUFF' HAPPENS HERE
+        // THE 'BIG STUFF' HAPPENS HERE 
+        // aka, all screens, procedures in their actual order (from top to bottom)
 
         //////////////// timeline /////////////////////////////////
 
@@ -972,16 +1009,19 @@
 
         // it's best practice to have *mouse click* user I/O first
         timeline.push(start_screen); //0.1
+
+        //timeline.push(countdown_simple);
+        //timeline.push(countdown_from);
         
         //timeline.push(qr_screen);
         
         //timeline.push(binary_screen);
 
         // Informed consent (consent.js)
-        timeline.push(consent_procedure); //0.2-0.3
+        //timeline.push(consent_procedure); //0.2-0.3
 
         // personal code 
-        timeline.push(personal_code_multi_html_block); //0.4
+        //timeline.push(personal_code_multi_html_block); //0.4
         
         // setup part 1 = tech
         // setup part 2 = ethical
