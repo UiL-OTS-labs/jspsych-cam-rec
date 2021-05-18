@@ -21,6 +21,7 @@ recordButton.addEventListener('click', () => {
     recordButton.textContent = 'Begin opname';
     playButton.disabled = false;
     downloadButton.disabled = false;
+    uploadButton.disabled = false;
   }
 });
 
