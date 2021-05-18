@@ -30,9 +30,9 @@ uploadButton.addEventListener('click', () => {
     request.onload = async function(e) {
         console.log(e);
         if (e.target.response.includes('Invalid token')) {
-            text = 'Het uploaden is niet gelukt door een ongeldige token. Druk op "Opslaan" om een eigen kopie van de opname te bewaren, als u dat nog niet gedaan hebt.';
+            text = 'Het uploaden is <strong>mislukt</strong> door een ongeldige token. Druk op "Opslaan" om een eigen kopie van de opname te bewaren, en geef deze aan de onderzoeker.';
         } else if (e.target.status != 200) {
-            text = 'Het uploaden is niet gelukt. Druk op "Opslaan" om een eigen kopie van de opname te bewaren, als u dat nog niet gedaan hebt.'  ;          
+            text = '<strong>Het uploaden is niet gelukt.</strong> Druk op "Opslaan" om een eigen kopie van de opname te bewaren, en geef deze aan de onderzoeker.'  ;          
         } else {
             text = 'Het uploaden is voltooid. Het wordt op prijs gesteld als u alsnog op "Opslaan" drukt om een eigen kopie van de opname te bewaren, als u dat nog niet gedaan hebt.';
         }
