@@ -6,9 +6,7 @@
  */
 
 
-// GENERIC TESTS/CHECKS
-
-//screen 1
+// screen 1
 const GENERIC_CHECK = `
     <h3>Om te kunnen deelnemen aan het onderzoek is het volgende belangrijk:</h3>
 
@@ -27,6 +25,7 @@ const GENERIC_CHECK = `
     Klik op 'volgende' als u aan de bovenstaande punten voldoet, en verder wilt gaan naar de toestemmingsverklaring.
     `;
 
+//screen 5
 const PERSONAL_CODE_PRE_TEXT = `
     <h2>Persoonlijke code</h2>
     <p>Voer hier uw persoonlijke code in die u heeft ontvangen in de mail.
@@ -60,6 +59,7 @@ const PERSONAL_CODE_POST_TEXT = `
     <br>
     `;
 
+// screen 6 & 7 & 8
 const CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT = `
     <h1> Instructies opstelling (1/2) </h1>
     <h6>Idealiter ziet de opstelling van uw laptop of computer er uit zoals op deze afbeeldingen:</h6>
@@ -112,6 +112,7 @@ const CAREGIVER_INSTRUCTION_SOOTHING = `
     </p> 
 `;
 
+//screen 9
 const CAREGIVER_VALIDATE_SETUP_STATEMENT = `
     Ik heb de aanwijzingen over de opstelling zo goed mogelijk opgevolgd en begrijp wat er van mij verwacht wordt tijdens het onderzoek.
      `;
@@ -122,6 +123,7 @@ const IF_REQUIRED_FEEDBACK_MESSAGE_SETUP = `
     Vink het vakje naast ' ${ CAREGIVER_VALIDATE_SETUP_STATEMENT } ' aan om door te gaan.
     `;
 
+//screen 10
 const AUDIO_CHECK_PROMPT_TEXT_LOOP = `
     Pas het test-geluid aan naar een volume die voor u en uw kind prettig is. U kunt het test-geluid opnieuw afspelen indien gewenst.
     <br>
@@ -132,6 +134,7 @@ const AUDIO_CHECK_PROMPT_TEXT_LOOP = `
     Klik op ‘Volgende’ als uw geluid op een prettig volume staat, en u verder wilt gaan naar de lay-out van het scherm.
     `;
 
+//screen 11
 const PRE_LAYOUT_MESSAGE =`
     <h3> Scherm layout</h3>
     <p> Het is belangrijk dat het <i>hele onderzoek vanaf nu op uw scherm past</i>. Daarom ziet u nadat u op ‘Oké’ klikt een tabel van 
@@ -146,11 +149,10 @@ const PRE_LAYOUT_MESSAGE =`
     toets!)</sub> en vervolgens op de plus (<kbd>+</kbd>) of min (<kbd>-</kbd>) toets te drukken op uw toetsenbord, óf door de 
     <kbd>CTRL</kbd>/<kbd>CMD</kbd> toets ingedrukt te houden en te scrollen met uw muis.</li>
     </ul> 
-    <br>
-    <br>
     Klik op ‘Oké’ om de tabel te tonen.</p>
     `;
     
+
 const GRID_HTML_LAYOUT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
     <table id="jspsych-vsl-grid-scene table" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
     <tr id="jspsych-vsl-grid-scene-table-row-0" css="height: 200px;">
@@ -172,6 +174,44 @@ const GRID_HTML_LAYOUT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: n
     <td id="jspsych-vsl-grid-scene-table-1-2" style="padding: 20px 20px; border: 4px solid #555;">
     <div id="jspsych-vsl-grid-scene-table-cell-1-2" style="width: 200px; height: 200px;">
     <img src="./images/center.png" style="width: 200px; height: 200"></img></div></td>
+    <td id="jspsych-vsl-grid-scene-table-1-3" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-3" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-1-4" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-4" style="width: 200px; height: 200px;"></div></td></tr>
+    <tr id="jspsych-vsl-grid-scene-table-row-2" css="height: 200px;">
+    <td id="jspsych-vsl-grid-scene-table-2-0" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-0" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-2-1" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-1" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-2-2" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-2" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-2-3" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-3" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-2-4" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-4" style="width: 200px; height: 200px;">
+    </div></td></tr></table></div>
+    `;
+
+const GRID_HTML_LAYOUT_BARE = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
+    <table id="jspsych-vsl-grid-scene table" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
+    <tr id="jspsych-vsl-grid-scene-table-row-0" css="height: 200px;">
+    <td id="jspsych-vsl-grid-scene-table-0-0" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-0" style="width: 200px; height: 200px;">
+    </div></td><td id="jspsych-vsl-grid-scene-table-0-1" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-1" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-0-2" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-2" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-0-3" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-3" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-0-4" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-4" style="width: 200px; height: 200px;"></div></td></tr>
+    <tr id="jspsych-vsl-grid-scene-table-row-1" css="height: 200px;">
+    <td id="jspsych-vsl-grid-scene-table-1-0" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-0" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-1-1" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-1" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-1-2" style="padding: 20px 20px; border: 4px solid #555;">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-2" style="width: 200px; height: 200px;"></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-3" style="padding: 20px 20px; border: 4px solid #555;">
     <div id="jspsych-vsl-grid-scene-table-cell-1-3" style="width: 200px; height: 200px;"></div></td>
     <td id="jspsych-vsl-grid-scene-table-1-4" style="padding: 20px 20px; border: 4px solid #555;">
@@ -230,7 +270,6 @@ const PRE_REC_MESSAGE_TABS = `
     Nadat u uw webcam-opname heeft gestart laat u het webcam-tabblad open staan en klikt u op het huidige tabblad, om terug te komen op deze pagina (uw webcam-opname blijft dus op de achtergrond doorlopen, <strong>sluit geen van beide tabbladen!</strong>).
 `;
 
-
 const PRE_REC_MESSAGE_CHECKBOX = `
     Klik <a href="../webrtc/index.html" target="_blank"> <strong>deze link</strong></a> om de webcam-opname te starten.
     <br>
@@ -250,18 +289,26 @@ const IF_REQUIRED_FEEDBACK_MESSAGE_REC = `
     `;
 
 const POST_REC_MESSAGE = `
-    <h2>De taak voor uw kind is afgelopen, maar <i>u</i> bent nog niet helemaal klaar!</h2>
-    <p>Klik nu op het tabblad met uw webcam-opname.
-    <li>Klik eerst op "stop recording".</li> 
-    <li>Vul dan bij token uw upload-code in.<sub>(@Maaike, deze moet met pilotten even handmatig!)</sub></li>
-    <li>Klik dan op "upload".</li>
+    <h2>De taak voor uw kind is afgelopen, maar <u>u</u> bent <u>nog niet</u> helemaal klaar!</h2>
+    <strong>Belangrijk</strong>: Volg de volgende stappen op om het onderzoek succesvol af te ronden.
     <br>
     <br>
-    Pas nadat u op uploaden heeft geklikt wordt uw webcam-opname verstuurd naar de beveiligde server van Universiteit Utrecht. 
-    Nadat u op uploaden heeft geklikt (en er een melding is dat de upload is gelukt...WorkInProgress) is uw deelname aan het onderzoek gelukt.
+    Nadat u straks op het tabblad met uw <strong>webcam-opname</strong> klikt:
+    <ol type="1">
+        <li>Klikt u op "<strong>stop recording</strong>".</li>
+        <li>Vult u bij “token” uw <strong>persoonlijke code</strong> in.</li>
+        <li>Klikt u vervolgens op "<strong>upload</strong>".</li>
+    </ol>
+    Nadat u op uploaden heeft geklikt wordt uw <strong>webcam-opname verstuurd</strong> naar de beveiligde server van Universiteit Utrecht.
     <br>
     <br>
-    Klik op ‘volgende’ als u uw webcam-opname heeft geüpload en u het onderzoek wilt afronden.</p>
+    U ziet een <strong>melding</strong> op het scherm zodra de <strong>upload</strong> is <strong>gelukt</strong>.
+    <br>
+    <br>
+    Klik nu op het <strong>tabblad</strong> met uw <strong>webcam-opname</strong> en voer de stappen uit.
+    <br>
+    <br>
+    Klik op ‘volgende’ als u uw webcam-opname heeft <strong>geüpload<strong>.
     `;
 
 const GIFT_MESSAGE = `
@@ -269,10 +316,17 @@ const GIFT_MESSAGE = `
     Als dank voor uw deelname willen wij uw kind graag een cadeautje sturen. Hier hebben wij echter uw adresgegevens voor nodig. 
     <br>
     <br>
-    Indien u een cadeautje wilt ontvangen, mail dan uw: <strong>straat, huisnummer, postcode, plaats, én uw unieke code naar:
+    Indien u een cadeautje wilt ontvangen, mail dan uw: <strong>straat, huisnummer, postcode, plaats, én uw unieke code</strong> naar:
     <br>
     <br>
     <strong>m.h.i.jansen@uu.nl</strong>
+    <br>
+    <br>
+    Als u uw PC's standaard-email programma gebruikt, kunt u ook <a href="mailto:m.h.i.jansen@uu.nl?subject=Deelname%20Onderzoek&body=Mijn-adresgegevens-en-persoonlijke code:"><strong>deze E-mail-link</strong></a> gebruiken.
+    <br>
+    <br>
+    Als u liever met uw telefoon de e-mail wilt versturen, kunt u deze QR code scannen:<br>
+    <img src="./images/mailmaaike.png" style="width: 200px">    
     <br>
     <br>
     Klik op volgende als u dit heeft gedaan, of als u geen cadeautje wilt ontvangen.

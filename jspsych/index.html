@@ -554,7 +554,7 @@
         let check_screen_layout = {
             type: 'html-button-response',
             stimulus: function(){
-                let table = GRID_HTML_LAYOUT;
+                let table = GRID_HTML_LAYOUT_BARE;
                 return CONSENT_HTML_STYLE_UU + table;
             },
             choices: [ NEXT_BUTTON_TEXT ],
@@ -1081,14 +1081,10 @@
         timeline.push(setup_screens_multi);//0.5
         timeline.push(setup_validate_checkbox);//0.6
         
-        //test/set audio level (soundtest.js)
         timeline.push(test_audio_looped);//0.65
-        
         timeline.push(instruction_screen_layout); //0.67
-
         timeline.push(check_screen_layout); //0.73
 
-        // task instruction (instructions.js)
         timeline.push(instruction_screen_tabs);
         timeline.push(instruction_screen_rec_checkbox); //0.78
 
@@ -1097,6 +1093,7 @@
 
         // BASELINE //////////////////////////////////////
         timeline.push(baseline_procedure); //0.8 fixed, so not attention grabbing. or mebby use a "hideProgressBar"
+        
         //timeline.push(sync_screen);
 
         // PAIREWISE /////////////////////////////////////
