@@ -288,68 +288,23 @@ const CONSENT_HTML_STYLE_UU_SMALL_PARAGRAPH_TEXT = `
     </style>
     `;
 
-const CONSENT_HTML = `
-    <h1><strong>TOESTEMMINGSVERKLARING</strong> deelname <i>"Online onderzoek naar het kijkgedrag van baby's"</i>(bevestiging)</h1>
-    <h6>Ik, ouder of voogd van het hieronder genoemde kind, bevestig:</h6> 
-    <li> dat ik via de informatiebrief, die ik heb ontvangen in de mail, naar tevredenheid over het onderzoek ben ingelicht;</li>
-    <li> dat ik in de gelegenheid ben gesteld om vragen over het onderzoek te stellen en dat mijn eventuele vragen naar tevredenheid zijn beantwoord;</li>
-    <li> dat ik gelegenheid heb gehad om grondig over deelname aan het onderzoek na te denken;</li>
-    <li> dat ik uit vrije wil samen met mijn kind deelneem.</li>
-    <h6>Ik stem er mee in dat:</h6> 
-    <li> de verzamelde gegevens voor wetenschappelijke doelen worden verkregen en bewaard zoals in de informatiebrief vermeld staat;</li>
-    <li> de verzamelde, gecodeerde, onderzoeksgegevens door wetenschappers kunnen worden gedeeld en/of worden hergebruikt om eventueel andere onderzoeksvragen mee te beantwoorden;</li>
-    <li> er voor wetenschappelijke doeleinden beeld- en geluidsopnamen worden gemaakt.</li>
-    <h6>Ik begrijp dat:</h6> 
-    <li> ik het recht heb om mijn toestemming voor het gebruik van de data van mijn kind in te trekken zoals vermeld staat in de informatiebrief.</li>
-`;
 
-const CONSENT_HTML_SHORT = `
-    <h1><strong>TOESTEMMINGSVERKLARING</strong> voor deelname aan: <i>"Online onderzoek naar het kijkgedrag van baby's"</i></h2>
-    <br>
-    <br>
-    `;
 
-const CONSENT_HTML_CHOICE = `
-    <h1>Toestemmingsverklaring voor deelname aan:</h1>
-    <h2>“Online onderzoek naar het kijkgedrag van baby’s” (3/3)</h2>`
 
-const CONSENT_PAGE_1 = `    
-    <h1><strong>TOESTEMMINGSVERKLARING</strong> voor deelname aan: <i>"Online onderzoek naar het kijkgedrag van baby's"</i>(1/2)</h2>
-    <br>
-    <br>
-    <h6>Ik, ouder of voogd van het hieronder genoemde kind, bevestig:</h6> 
-    <li> dat ik via de informatiebrief, die ik heb ontvangen in de mail, naar tevredenheid over het onderzoek ben ingelicht;</li>
-    <li> dat ik in de gelegenheid ben gesteld om vragen over het onderzoek te stellen en dat mijn eventuele vragen naar tevredenheid zijn beantwoord;</li>
-    <li> dat ik gelegenheid heb gehad om grondig over deelname aan het onderzoek na te denken;</li>
-    <li> dat ik uit vrije wil samen met mijn kind deelneem.</li>
-    `;
 
-const SCREEN_2 = `
+const CONSENT_PAGE_1 = `
     <h1>Toestemmingsverklaring voor deelname aan:</h1>
     <h2>“Online onderzoek naar het kijkgedrag van baby’s” (1/3)</h2>
     <h6>Ik, ouder of voogd van het kind dat deelneemt aan dit onderzoek, bevestig:</h6> 
     <ol type="1">
-        <li> dat ik via de informatiebrief naar tevredenheid over het onderzoek ben ingelicht; </li>
-        <li> dat ik in de gelegenheid ben gesteld om vragen over het onderzoek te stellen en dat mijn eventuele vragen naar tevredenheid zijn beantwoord;</li>
-        <li> dat ik gelegenheid heb gehad om grondig na te denken over deelname van mijn kind aan het onderzoek;</li>
-        <li> dat ik uit vrije wil samen met mijn kind deelneem.</li>
+        <li> dat ik via de <strong>informatiebrief</strong> naar tevredenheid over het onderzoek ben ingelicht; </li>
+        <li> dat ik in de gelegenheid ben gesteld om <strong>vragen</strong> over het onderzoek te stellen en dat mijn eventuele vragen naar tevredenheid zijn beantwoord;</li>
+        <li> dat ik gelegenheid heb gehad om grondig <strong>na te denken</strong> over deelname van mijn kind aan het onderzoek;</li>
+        <li> dat ik uit <strong>vrije wil</strong> samen met mijn kind deelneem.</li>
     </ol>
     `;
 
 const CONSENT_PAGE_2 = `
-    <h1><strong>TOESTEMMINGSVERKLARING</strong> voor deelname aan: <i>"Online onderzoek naar het kijkgedrag van baby's"</i>(2/2)</h2>
-    <br>
-    <br>
-    <h6>Ik, ouder of voogd van het hieronder genoemde kind,stem er mee in dat:</h6> 
-    <li>de verzamelde gegevens voor wetenschappelijke doelen worden verkregen en bewaard zoals in de informatiebrief vermeld staat;</li>
-    <li>de verzamelde, gecodeerde, onderzoeksgegevens door wetenschappers kunnen worden gedeeld en/of worden hergebruikt om eventueel andere onderzoeksvragen mee te beantwoorden;</li>
-    <li>er voor wetenschappelijke doeleinden beeld- en geluidsopnamen worden gemaakt.</li>
-    <h6>Ik begrijp dat:</h6> 
-    <li>ik het recht heb om mijn toestemming voor het gebruik van de data van mijn kind in te trekken zoals vermeld staat in de informatiebrief.</li>
-    `;
-
-
-const SCREEN_3 = `
     <h1>Toestemmingsverklaring voor deelname aan:</h1>
     <h2>“Online onderzoek naar het kijkgedrag van baby’s” (2/3)</h2>
     <h6>Ik, ouder of voogd van het kind dat deelneemt aan dit onderzoek, stem er mee in dat: </h6> 
@@ -357,7 +312,7 @@ const SCREEN_3 = `
     <ol type="1">
         <li> de verzamelde gegevens voor wetenschappelijke doelen worden verkregen en bewaard zoals in de informatiebrief vermeld staat; </li>
         <li> de verzamelde, gecodeerde/geanonimiseerde, onderzoeksgegevens door wetenschappers kunnen worden gedeeld en/of worden hergebruikt om eventueel andere onderzoeksvragen mee te beantwoorden; </li>
-        <li> er voor wetenschappelijke doeleinden beeld- en geluidsopnamen worden gemaakt. Deze opnamen zullen niet met andere onderzoekers worden gedeeld dan diegenen die direct betrokken zijn bij dit onderzoek; tenzij u hier uitdrukkelijk toestemming voor geeft aan het einde van het onderzoek. </li>
+        <li> er voor wetenschappelijke doeleinden <strong>beeld- en geluidsopnamen</strong> worden gemaakt. Deze opnamen zullen <u>niet</u> met andere onderzoekers worden gedeeld dan diegenen die direct betrokken zijn bij dit onderzoek; tenzij u hier uitdrukkelijk toestemming voor geeft aan het einde van het onderzoek. </li>
     </ol>
 
     <h6>Ik begrijp dat: </h6>
@@ -365,6 +320,11 @@ const SCREEN_3 = `
         <li> ik het recht heb om mijn toestemming voor het gebruik van de data van mijn kind in te trekken zoals vermeld staat in de informatiebrief.</li>
     </ol>
     `;
+
+const CONSENT_HTML_CHOICE = `
+    <h1>Toestemmingsverklaring voor deelname aan:</h1>
+    <h2>“Online onderzoek naar het kijkgedrag van baby’s” (3/3)</h2>
+    `
     
 const DEBRIEF_MESSAGE_NO_CONSENT = `
     <h1>Einde experiment</h1>
@@ -376,12 +336,14 @@ const DEBRIEF_MESSAGE_NO_CONSENT = `
 const DEBRIEF_MESSAGE_NO_CONSENT_DURATION = 3300;
 
 const CONSENT_STATEMENT = `
-    <strong> Door dit hokje aan te vinken verklaart u de toestemmingsverklaring grondig te hebben gelezen en begrepen, en stemt u in met de deelname van uw kind aan het onderzoek. </strong> 
+    Door dit hokje aan te vinken verklaart u de toestemmingsverklaring grondig te hebben gelezen en begrepen, en stemt u in met de deelname van uw kind aan het onderzoek.
     <br>
     <br>
     <h2>Indien u geen toestemming geeft wordt het onderzoek beëindigd.</h2>
-    <h6>Klik op ‘volgende’ als u toestemming heeft gegeven, en verder wilt gaan naar de persoonlijke code.
-    </h6>`;
+    <br>
+    <br>
+    <h6>Klik op ‘volgende’ als u toestemming heeft gegeven, en verder wilt gaan naar de persoonlijke code.</h6>
+    `;
 
 const CONSENT_REFERENCE_NAME = 'consent';
 

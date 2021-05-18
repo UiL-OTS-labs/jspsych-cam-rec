@@ -11,27 +11,6 @@
 //screen 1
 const GENERIC_CHECK = `
     <h3>Om te kunnen deelnemen aan het onderzoek is het volgende belangrijk:</h3>
-    <br>
-    <li>Voer het onderzoek uit op en laptop of desktop computer, <i>niet</i> op een telefoon of tablet.</li>
-    <li>Zorg ervoor dat uw toetsenbord werkt.</li>
-    <li>Zorg ervoor dat u een werkende muis of touchpad heeft.</li>
-    <li>Zorg ervoor dat het geluid in uw browser werkt en dat uw volume aan staat.</li>
-    <br>
-    <br>
-    <strong>Maximaliseer uw browserscherm voordat u verder gaat!</strong>
-    <br>
-    <br>
-    <p>U krijgt eerst verschillende instructies. Pas als alles correct staat ingesteld, hoeft u uw kind 
-    te betrekken bij het onderzoek. Er wordt u verteld wanneer u uw kind actief moet gaan betrekken bij 
-    het onderzoek.
-    <br>
-    <br>
-    Klik op ‘volgende’ als u aan de bovenstaande punten voldoet, en verder wilt gaan naar de 
-    toestemmingsverklaring.</p>
-    `;
-
-const SCREEN_1 = `
-    <h3>Om te kunnen deelnemen aan het onderzoek is het volgende belangrijk:</h3>
 
     <ol type="1">
         <li>Voer het onderzoek uit op een <strong>laptop</strong> of <strong>desktop computer</strong>, <i>niet</i> op een telefoon of tablet.</li>
@@ -42,13 +21,11 @@ const SCREEN_1 = `
     </ol>
 
     <h3>Maximaliseer uw browserscherm voordat u verder gaat!</h3>
-    U krijgt eerst instructies hoe één en ander klaargezet moet en ingesteld moet worden. Pas als alles klaar staat krijgt u het verzoek om uw kind voor het scherm te plaatsen. 
+    U krijgt eerst <strong>instructies</strong> hoe één en ander klaargezet moet en ingesteld moet worden. Pas <stronng>als alles klaar staat</strong> krijgt u het <strong>verzoek</strong> om uw <strong>kind voor het scherm te plaatsen</strong>. 
     <br>
     <br>
     Klik op 'volgende' als u aan de bovenstaande punten voldoet, en verder wilt gaan naar de toestemmingsverklaring.
     `;
-
-// const SCREEN_2 etc. can be found in `consent.js`
 
 const PERSONAL_CODE_PRE_TEXT = `
     <h2>Persoonlijke code</h2>
@@ -157,12 +134,12 @@ const AUDIO_CHECK_PROMPT_TEXT_LOOP = `
 
 const PRE_LAYOUT_MESSAGE =`
     <h3> Scherm layout</h3>
-    <br>
-    <br>
     <p> Het is belangrijk dat het <i>hele onderzoek vanaf nu op uw scherm past</i>. Daarom ziet u nadat u op ‘Oké’ klikt een tabel van 
     <i>drie (3) rijen</i> en <i>vijf (5) kolommen</i>. 
+    <figure>
+        <img src="./images/layout-three.png" style="width: 800px"><figcaption><i>Met links ('goed') de best passende tabel layout.</i></figcaption></figure>' 
     <ul>
-    <li>De hele tabel moet -- liefst <i> zo groot mogelijk passend</i> --zichtbaar zijn in uw browser scherm zonder dat u hoeft 
+    <li>De hele tabel moet — liefst <strong>zo groot mogelijk passend</strong> — zichtbaar zijn in uw browser scherm zonder dat u hoeft 
     te scrollen.</li>
     <li>Indien dit niet mogelijk is, zoom dan voldoende uit totdat de tabel scherm-vullend zichtbaar is.</li> 
     <li>Dit 'zoomen' kunt u doen door de <kbd>CTRL</kbd> toets ingedrukt te houden <sub>(Mac OSX gebruikers gebruiken de <kbd>CMD</kbd> 
@@ -171,9 +148,6 @@ const PRE_LAYOUT_MESSAGE =`
     </ul> 
     <br>
     <br>
-    Mocht het toch <i>niet mogelijk</i> zijn, gebruik dan een ander apparaat met een groter scherm.
-    <br>
-    <br> 
     Klik op ‘Oké’ om de tabel te tonen.</p>
     `;
     
@@ -216,7 +190,7 @@ const GRID_HTML_LAYOUT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: n
     </div></td></tr></table></div>
     `;
   
-const PRE_REC_MESSAGE_CHECKBOX = `
+const PRE_REC_MESSAGE_CHECKBOX_OLD = `
     Om de webcam-opname te starten klikt u op de onderstaand link. Er wordt vervolgens een nieuw tabblad geopend, waarop u uw webcam kan activeren. 
     <br>
     <br>
@@ -239,6 +213,33 @@ const PRE_REC_MESSAGE_CHECKBOX = `
     Klik op "Start onderzoek" als u bovenstaande stappen heeft uitgevoerd. Zodra u na de start van
     het onderzoek langer dan 15 seconden geen geluid meer hoort is de taak voor uw kind afgerond.
     `;
+
+const PRE_REC_MESSAGE_TABS = `
+    <h1>Belangrijk:</h1>
+    Straks zult u naar een nieuw tabblad worden geleid, waar u uw webcam aan kunt zetten en de webcam-opname kunt starten.
+    <ol type="1">
+        <li> Klik op <strong>"Start Camera"</strong> om het beeld weer te geven;</li>
+        <li> Test of uw webcam werkt en of er <strong>voldoende licht</strong> is;</li>
+        <li> Maak aanpassingen indien nodig;</li>
+        <li> Zet <strong>vervolgens uw kind in de kinderstoel</strong>, richt de webcam of het scherm zo dat het <strong>gezicht</strong> van uw kind <strong>zichtbaar</strong> is;</li>
+        <li> Indien stap 1 tot 4 gelukt zijn start u de webcam-opname door op <strong>"Start Recording"</strong> te klikken.</li>
+    </ol>
+    <img src="./images/tabs.png" style="width: 600px;"></img>
+    <br>
+    <br>
+    Nadat u uw webcam-opname heeft gestart laat u het webcam-tabblad open staan en klikt u op het huidige tabblad, om terug te komen op deze pagina (uw webcam-opname blijft dus op de achtergrond doorlopen, <strong>sluit geen van beide tabbladen!</strong>).
+`;
+
+
+const PRE_REC_MESSAGE_CHECKBOX = `
+    Klik <a href="../webrtc/index.html" target="_blank"> <strong>deze link</strong></a> om de webcam-opname te starten.
+    <br>
+    <br>
+    Klik op "Volgende"  nadat u de webcam-opname heeft gestart, om het taakje voor uw kind te starten. 
+    <br>
+    <br>
+    Zodra u na de start van het onderzoek langer dan 15 seconden geen geluid meer hoort is de taak voor uw kind afgerond.
+     `;
 
 const REC_STARTED_STATEMENT = `Ik heb de webcam-opname gestart.`;
 

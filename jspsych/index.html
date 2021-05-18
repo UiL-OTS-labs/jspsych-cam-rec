@@ -279,7 +279,11 @@
             './video/02_center.mp4',
             './video/02_center.webm',
             './video/03_right.mp4',
-            './video/03_right.webm'
+            './video/03_right.webm',
+            './video/countdownmovie.mp4',
+            './video/countdownmovie.webm',            
+            './video/countdown-birds.mp4',
+            './video/countdown-birds.webm',    
         ];
 
         // REGULAR JS FUNCTIONS
@@ -304,6 +308,8 @@
             document.body.style.backgroundColor = 'green'
             document.body.style.color = 'black'
         }
+
+
 
         // function countDownFrom(seconds) {
         //     var timeleft = seconds;
@@ -366,7 +372,7 @@
             type: 'html-button-response',
             stimulus: function(){
                 return "<div class='instruction' >" +
-                       "<p>" + SCREEN_1 + "</p></div>";
+                       "<p>" + CONSENT_HTML_STYLE_UU + GENERIC_CHECK + "</p></div>";
             },
             choices: [NEXT_BUTTON_TEXT],
             response_ends_trial: true,
@@ -383,8 +389,8 @@
             button_label_previous: "Vorige",
             allow_backward: true,
             pages: [
-                CONSENT_HTML_STYLE_UU + SCREEN_2,
-                CONSENT_HTML_STYLE_UU + SCREEN_3
+                "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + CONSENT_PAGE_1 + "</div>",
+                "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + CONSENT_PAGE_2 + "</div>"
                 ],
             show_clickable_nav: true,
             on_finish: function(){
@@ -395,7 +401,7 @@
         //0.3
         let consent_block_choice = {
             type: 'survey-multi-select',
-            preamble: CONSENT_HTML_STYLE_UU_SMALL_PARAGRAPH_TEXT + CONSENT_HTML_CHOICE,
+            preamble: CONSENT_HTML_STYLE_UU + CONSENT_HTML_CHOICE,
             button_label: NEXT_BUTTON_TEXT,
             required_message: IF_REQUIRED_FEEDBACK_MESSAGE,
             questions: [
@@ -461,7 +467,8 @@
             button_label_previous: "Vorige",
             allow_backward: true,
             pages: [
-                "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + 
+                "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + 
+                    CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + 
                     CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_1 + "</div>",
                 "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU +  
                     CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_2 + "</div>",
@@ -477,16 +484,14 @@
         //0.6
         let setup_validate_checkbox = {
             type: 'survey-multi-select',
-            preamble: CONSENT_HTML_STYLE_UU + 
-                "<h2>Opstelling gereed</h2>",
+            preamble: CONSENT_HTML_STYLE_UU + "<h2>Opstelling gereed</h2>",
             required_message: IF_REQUIRED_FEEDBACK_MESSAGE_SETUP,
             button_label: NEXT_BUTTON_TEXT,
             questions: [
                 {
                     prompt: "", 
                     options: [ 
-                        "<strong>" + CAREGIVER_VALIDATE_SETUP_STATEMENT + 
-                        "</strong>" + "</div>"
+                        CAREGIVER_VALIDATE_SETUP_STATEMENT + "</div>"
                         ], 
                     horizontal: true,
                     required: true,
@@ -511,7 +516,7 @@
                         stimulus: './sounds/testtune.mp3',
                         choices: [PLAY_AGAIN_BUTTON_TEXT, NEXT_BUTTON_TEXT],
                         prompt: function(){
-                            return "<div class='instruction' >" + 
+                            return "<div class='instruction' >" + CONSENT_HTML_STYLE_UU +
                             '<img src="./images/speakersound.png" style="width: 100px; height: 100"></img>' +
                             '<p>' + AUDIO_CHECK_PROMPT_TEXT_LOOP + '</p></div>'
                         }
@@ -535,7 +540,7 @@
             type: 'html-button-response',
             stimulus: function(){
                 let text = PRE_LAYOUT_MESSAGE;
-                return "<div class='instruction' >" +
+                return "<div class='instruction' >" + CONSENT_HTML_STYLE_UU +
                        "<p>" + text + "</p></div>";
             },
             choices: [ OK_BUTTON_TEXT ],
@@ -545,33 +550,51 @@
             }
         };
         
-        //0.73
+        //0.71
         let check_screen_layout = {
             type: 'html-button-response',
             stimulus: function(){
                 let table = GRID_HTML_LAYOUT;
-                return table;
+                return CONSENT_HTML_STYLE_UU + table;
             },
             choices: [ NEXT_BUTTON_TEXT ],
             response_ends_trial: true,
             data: { resolution: uil.browser.getResolutionInfo() },
             on_finish: function(){
-                jsPsych.setProgressBar(0.73);
+                jsPsych.setProgressBar(0.71);
             }
         };
 
-        //0.75
+
+
+        //0.74
+        let instruction_screen_tabs = {
+            type: 'html-button-response',
+            stimulus: function(){
+                let text = PRE_REC_MESSAGE_TABS;
+                return "<div class='instruction' >" + CONSENT_HTML_STYLE_UU + 
+                    "<h1>Instructie webcam opname (1/2)<h2>" +
+                       "<p>" + text + "</p></div>";
+            },
+            choices: [ NEXT_BUTTON_TEXT ],
+            response_ends_trial: true,
+            on_finish: function(){
+                jsPsych.setProgressBar(0.74);
+            }
+        };
+
+        //0.76
         // globals for this are in instruction.js
         let instruction_screen_rec_checkbox = {
             type: 'survey-multi-select', //used to be survey-multi-select
-            preamble: "<div class= 'instruction' >" + "<h2>" + CONSENT_HTML_STYLE_UU + "</h2>" +
-                PRE_REC_MESSAGE_CHECKBOX,
+            preamble: CONSENT_HTML_STYLE_UU + "<h1>Instructie webcam opname (2/2)</h1>" + 
+                "<div class='instruction' >" + PRE_REC_MESSAGE_CHECKBOX + "</div>",
             required_message: IF_REQUIRED_FEEDBACK_MESSAGE_REC,
             button_label: START_REAL_TASK_BUTTON_TEXT,
             questions: [
                 {
                     prompt: "", 
-                    options: [REC_STARTED_STATEMENT], 
+                    options: [ REC_STARTED_STATEMENT ], 
                     horizontal: true,
                     required: true,
                     name: REC_REFERENCE_NAME
@@ -580,10 +603,34 @@
             on_finish: function(data){
                 let rec_started_choice = data.responses;   
                 data.rec_started_choice_response = rec_started_choice;
-                jsPsych.setProgressBar(0.75);
+                jsPsych.setProgressBar(0.76);
             }
         };
         
+        //0.0
+        let countdown_video_pause = {
+            type: 'video-keyboard-response',
+            on_start: set_html_to_white,
+            stimulus: './video/countdown-birds.webm',
+            sources: [
+                './video/countdown-birds.webm',
+                './video/countdown-birds.mp4'
+                ],
+            prompt: "Ga vast achter uw kind staan. Zet uw muis uit beeld in een hoek van het scherm. Kijk naar beneden...",
+            response_ends_trial: false,
+            trial_ends_after_video: false,
+            controls: false,
+            rate: 1,
+            trial_duration: 11000,
+            choices: jsPsych.ALL_KEYS,
+            on_finish: set_html_to_white,
+            response_allowed_while_playing: false,
+            autoplay: true,
+            on_finish: function(){
+                jsPsych.setProgressBar(0.0);
+            }
+        };
+
         //0.0
         let left_and_right_screen = {
             type: 'audio-button-response',
@@ -742,7 +789,7 @@
         let countdown_simple = {
             type: 'html-keyboard-response',
             stimulus: function(countDownFromTen){
-                var timeleft = 9;
+                var timeleft = 10;
                 var countdownTimer = setInterval(function(){
                     if(timeleft <= 0){
                         clearInterval(countdownTimer);
@@ -755,10 +802,12 @@
                 return '<div id="countdown"></div>'
             },
             choices: jsPsych.NO_KEYS,
-            trial_duration: 10000,
+            trial_duration: 11000,
             trial_ends_after_response: false,
             post_trial_gap: 0,
         };
+
+
 
         // let countdown_from = {
         //     type: 'html-keyboard-response',
@@ -794,11 +843,11 @@
         // };
 
 
-        //0.85
+        //0.87
         let exp_done_screen = {
             type: 'html-button-response',
             stimulus: function(){
-                return "<div class='instruction' >" +
+                return "<div class='instruction' >" + CONSENT_HTML_STYLE_UU +
                     '<p>' + POST_REC_MESSAGE + '</p></div>';
             },
             on_start: set_html_to_white,
@@ -814,7 +863,7 @@
         let gift_screen = {
             type: 'html-button-response',
             stimulus: function(){
-                return "<div class='instruction' >" +
+                return "<div class='instruction' >" + CONSENT_HTML_STYLE_UU +
                     '<p>' + GIFT_MESSAGE + '</p></div>';
             },
             on_start: set_html_to_white,
@@ -1018,16 +1067,16 @@
         //timeline.push(binary_screen);
 
         // Informed consent (consent.js)
-        //timeline.push(consent_procedure); //0.2-0.3
+        timeline.push(consent_procedure); //0.2-0.3
 
         // personal code 
-        //timeline.push(personal_code_multi_html_block); //0.4
+        timeline.push(personal_code_multi_html_block); //0.4
         
         // setup part 1 = tech
         // setup part 2 = ethical
         // setup part 3 = validation
-        // timeline.push(setup_screen_one);
-        // timeline.push(setup_screen_two);
+        //timeline.push(setup_screen_one);
+        //timeline.push(setup_screen_two);
 
         timeline.push(setup_screens_multi);//0.5
         timeline.push(setup_validate_checkbox);//0.6
@@ -1040,7 +1089,11 @@
         timeline.push(check_screen_layout); //0.73
 
         // task instruction (instructions.js)
+        timeline.push(instruction_screen_tabs);
         timeline.push(instruction_screen_rec_checkbox); //0.78
+
+        //timeline.push(countdown_simple);
+        timeline.push(countdown_video_pause);
 
         // BASELINE //////////////////////////////////////
         timeline.push(baseline_procedure); //0.8 fixed, so not attention grabbing. or mebby use a "hideProgressBar"
