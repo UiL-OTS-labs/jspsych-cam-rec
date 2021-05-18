@@ -3,74 +3,364 @@
 ///////////////
 
 // Item types
-const NON_WORD = "NON_WORD";
-const REAL_WORD = "REAL_WORD";
-const PRACTICE = "PRACTICE";
+const GRABBER = "GRABBER";
 
-// name for lists, in this case one list, one item in the list
-const LISTS = ["my_one_and_only_list"];
+const BASELINE = "BASELINE";
+const PAIRED_SUCCESION = "PAIRED_SUCCESION";
+const PREFERENTIAL_LOOK = "PREFERENTIAL_LOOK";
 
-// In case of more complex design, the above could be, for example:
+// Subtypes Image /Sound
+const SIMPLER = "SIMPLER";
+const COMPLEX = "COMPLEX";
 
-// const LISTS = [
-//     "my_first_list",
-//     "my_second_list"
-// ];
+const SOUND_1 = "SOUND_1";
+const SOUND_2 = "SOUND_2";
 
-const PRACTICE_ITEMS = [
-    { id: 1, item_type: PRACTICE, word: "palve", filename: "./sounds/palve.wav", correct: 0 },
-    { id: 2, item_type: PRACTICE, word: "hot", filename: "./sounds/hot.wav", correct: 1 }
+const GREY_HEX = "#a09c99";
+const GREY_RGB = "rgba(160,156,153,255)"
+
+// Baseline items 1
+
+const BASELINE_1 = [
+    {
+        id: 1, 
+        item_type: BASELINE, 
+        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        image_fn: "./video/circle_complex_static_small", 
+        side: 1
+    },
+    {
+        id: 2, 
+        item_type: BASELINE, 
+        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        image_fn: "./video/circle_simple_static_small",
+        side: 0
+    },
+    {
+        id: 3, 
+        item_type: BASELINE, 
+        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        image_fn: "./video/circle_simple_static_small", 
+        side: 1
+    },
+    {
+        id: 4, 
+        item_type: BASELINE, 
+        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        image_fn: "./video/circle_complex_static_small",
+        side: 0
+    },
+
 ];
 
-const LIST_1 = [
-    { id: 1, item_type: NON_WORD, word: "slirque", filename: "./sounds/slirque.wav", correct: 0 },
-    { id: 2, item_type: NON_WORD, word: "crawse", filename: "./sounds/crawse.wav", correct: 0 },
-    { id: 3, item_type: NON_WORD, word: "thwurp", filename: "./sounds/thwurp.wav", correct: 0 },
-    { id: 4, item_type: NON_WORD, word: "clem", filename: "./sounds/clem.wav", correct: 0 },
-    { id: 5, item_type: REAL_WORD, word: "white", filename: "./sounds/white.wav", correct: 1 },
-    { id: 6, item_type: REAL_WORD, word: "travel", filename: "./sounds/travel.wav", correct: 1 },
-    { id: 7, item_type: REAL_WORD, word: "letter", filename: "./sounds/letter.wav", correct: 1 },
-    { id: 8, item_type: REAL_WORD, word: "clown", filename: "./sounds/clown.wav", correct: 1  }
+
+const PAIRED_ALL = [
+    {
+        id: 1, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_simple_static_small",
+        side: 1 
+    },
+    {
+        id: 2, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_simple_move",
+        side: 0
+    },
+    {
+        id: 3, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_simple_move",
+        side: 1 
+    },
+    {
+        id: 4, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_simple_static_small",
+        side: 0
+    },
+    {
+        id: 5, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_complex_static_small",
+        side: 1 
+    },
+    {
+        id: 6, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_complex_move",
+        side: 0
+    },
+    {
+        id: 7, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_complex_move",
+        side: 1 
+    },
+    {
+        id: 8, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_complex_static_small",
+        side: 0
+    },
+    {
+        id: 9, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_simple_static_small",
+        side: 1 
+    },
+    {
+        id: 10, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_simple_move",
+        side: 0
+    },
+    {
+        id: 11, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_complex_move",
+        side: 1 
+    },
+    {
+        id: 12, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_complex_static_small",
+        side: 0
+    },
+    {
+        id: 13, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_simple_static_small",
+        side: 1 
+    },
+    {
+        id: 14, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_complex_move",
+        side: 0
+    },
+    {
+        id: 15, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_complex_move",
+        side: 1 
+    },
+    {
+        id: 16, 
+        item_type: PAIRED_SUCCESION, 
+        sound_fn: "./sounds/testtune.mp3",
+        image_fn: "./video/circle_complex_static_small",
+        side: 0
+    }
 ];
 
-const TEST_ITEMS = [
-    {list_name: LISTS[0], table: LIST_1}
-    ];
-   
-// If there were two lists to choose from:
 
-// const TEST_ITEMS = [
-//     {list_name: LISTS[0], table: LIST_1},
-//     {list_name: LISTS[1], table: LIST_2}
-// ];
+const PREF_ALL = [
+    {
+        id: 1, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_simple_static_small",
+        image_fn_right: "./video/circle_simple_move"
+    },
+    {
+        id: 2, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_simple_move",
+        image_fn_right: "./video/circle_simple_static_small"
+    },
+    {
+        id: 3, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_complex_static_small",
+        image_fn_right: "./video/circle_complex_move"
+    },
+    {
+        id: 4, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_complex_move",
+        image_fn_right: "./video/circle_complex_static_small"
+    },
+    {
+        id: 5, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_simple_move",
+        image_fn_right: "./video/circle_simple_static_small"
+    },
+    {
+        id: 6, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_complex_static_small",
+        image_fn_right: "./video/circle_complex_move"
+    },
+    {
+        id: 7, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_complex_move",
+        image_fn_right: "./video/circle_complex_static_small"
+    },
+    {
+        id: 8, 
+        item_type: PREFERENTIAL_LOOK, 
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        image_fn_left: "./video/circle_simple_static_small",
+        image_fn_right: "./video/circle_simple_move"
+    }
+];
 
-/**
- * Get the list of practice items
- *
- * Returns an object with a list and a table, the list will always indicate
- * "practice" since it are the practice items
- *
- * @returns {object} object with list and table fields
- */
-function getPracticeItems() {
-    return {list_name : "practice", table : PRACTICE_ITEMS};
+
+// center HTML (images)
+const GRABBER_1 = [
+    {
+        id: 1, 
+        item_type: GRABBER, 
+        sound_fn: "./sounds/AT3-audio.mp3",
+        image_fn: "./video/clock-grabber"//grabber todo
+    }
+];
+
+const GRABBER_2 = [
+    {
+        id: 1, 
+        item_type: GRABBER, 
+        sound_fn: "./sounds/AT3-audio.mp3",
+        image_fn: "./video/green-grabber"//grabber image todo
+    }
+];
+
+// table layout
+GRID_HTML_LEFT_RIGHT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
+    <table id="jspsych-vsl-grid-scene table" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
+    <tr id="jspsych-vsl-grid-scene-table-row-0" css="height: 200px;">
+    <td id="jspsych-vsl-grid-scene-table-0-0" style="padding: 20px 20px; border: 0px solid "#a0l;">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-0" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-0-1" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-1" style="width: 200px; height: 200px;"></div>
+    </td><td id="jspsych-vsl-grid-scene-table-0-2" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-2" style="width: 200px; height: 200px;">
+    </div></td><td id="jspsych-vsl-grid-scene-table-0-3" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-3" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-0-4" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-4" style="width: 200px; height: 200px;"></div></td>
+    </tr><tr id="jspsych-vsl-grid-scene-table-row-1" css="height: 200px;">
+    <td id="jspsych-vsl-grid-scene-table-1-0" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-0" style="width: 200px; height: 200px;">
+    <video autoplay="true" loop="true" width="200">
+        <source src="./video/01_left.mp4" type="video/mp4">
+        <source src="./video/01_left.webm" type="video/webm">
+    
+    ERROR!
+    </video></div>
+    </td><td id="jspsych-vsl-grid-scene-table-1-1" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-1" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-1-2" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-2" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-1-3" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-3" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-1-4" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-4" style="width: 200px; height: 200px;">
+    <video autoplay="true" loop="true" width="200">
+        <source src="./video/03_right.mp4" type="video/mp4">
+        <source src="./video/03_right.webm" type="video/webm">
+    
+    ERROR!
+    </video></div></div>
+    </td></tr><tr id="jspsych-vsl-grid-scene-table-row-2" css="height: 200px;">
+    <td id="jspsych-vsl-grid-scene-table-2-0" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-0" style="width: 200px; height: 200px;"></div>
+    </td><td id="jspsych-vsl-grid-scene-table-2-1" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-1" style="width: 200px; height: 200px;"></div>
+    </td><td id="jspsych-vsl-grid-scene-table-2-2" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-2" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-2-3" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-3" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-2-4" style="padding: 20px 20px; border: 0px solid "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-4" style="width: 200px; height: 200px;"></div>
+    </td></tr></table></div>`
+
+
+GRID_HTML_CENTER = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
+    <table id="jspsych-vsl-grid-scene table" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
+    <tr id="jspsych-vsl-grid-scene-table-row-0" css="height: 200px;">
+    <td id="jspsych-vsl-grid-scene-table-0-0" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-0" style="width: 200px; height: 200px;">
+    </div></td><td id="jspsych-vsl-grid-scene-table-0-1" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-1" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-0-2" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-2" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-0-3" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-3" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-0-4" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-0-4" style="width: 200px; height: 200px;"></div></td></tr>
+    <tr id="jspsych-vsl-grid-scene-table-row-1" css="height: 200px;">
+    <td id="jspsych-vsl-grid-scene-table-1-0" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-0" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-1-1" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-1" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-1-2" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-2" style="width: 200px; height: 200px;">
+        <video autoplay="true" loop="true" width="200">
+        <source src="./video/02_center.mp4" type="video/mp4">
+        <source src="./video/02_center.webm" type="video/webm">
+
+
+    Sorry, your browser doesn't support embedded videos.
+    </video></div></td>
+    <td id="jspsych-vsl-grid-scene-table-1-3" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-3" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-1-4" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-1-4" style="width: 200px; height: 200px;"></div></td></tr>
+    <tr id="jspsych-vsl-grid-scene-table-row-2" css="height: 200px;">
+    <td id="jspsych-vsl-grid-scene-table-2-0" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-0" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-2-1" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-1" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-2-2" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-2" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-2-3" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-3" style="width: 200px; height: 200px;"></div></td>
+    <td id="jspsych-vsl-grid-scene-table-2-4" style="padding: 20px 20px; border: 0px "#a09c99";">
+    <div id="jspsych-vsl-grid-scene-table-cell-2-4" style="width: 200px; height: 200px;">
+    </div></td></tr></table></div>`
+
+
+function getBaselineItems() {
+    return {list_name : "baseline one", table : BASELINE_1};
 }
 
-/**
- * This function will pick a random list from the TEST_ITEMS array.
- * @returns {object} object with one or more "lists" and table fields
- */
-function pickRandomList() {
-    let range = function (n) {
-        let empty_array = [];
-        let i;
-        for (i = 0; i < n; i++) {
-            empty_array.push(i);
-        }
-        return empty_array;
-    }
-    let num_lists = TEST_ITEMS.length;
-    var shuffled_range = jsPsych.randomization.repeat(range(num_lists), 1);
-    var retlist = TEST_ITEMS[shuffled_range[0]];
-    return retlist;
+function getAllPairedItems() {
+    return {list_name : "paired one", table : PAIRED_ALL};
+}
+
+function getAllPrefItems() {
+    return {list_name : "pref one", table : PREF_ALL};
+}
+
+function getGrabberOneItems() {
+    return {list_name : "grabber one", table : GRABBER_1};
+}
+
+function getGrabberTwoItems() {
+    return {list_name : "grabber two", table : GRABBER_2};
 }
