@@ -14,30 +14,33 @@
 
     <base target="_blank">
 
-    <title>Simple MediaStream Recording</title>
+    <title>Webcam opname voor experiment</title>
 
 </head>
 
 <body>
 
 <div id="container">
-	<p>One very simple way to go, is to let the parent start a recording (with audio?) and let them download the video to their own local PC, then send the video to the researcher for analysis/scoring. Storage on the data store is going to be problematic, at least in the short term...</p>
+	<p>Bedankt voor uw deelname. Gebruik deze pagina om een opname van het experiment te maken en deze vervolgens beveiligd op te sturen</p>
+	
 
     <video id="gum" playsinline autoplay muted></video>
     <video id="recorded" playsinline loop></video>
 
     <div>
-        <button id="start">Start camera</button>
-        <button id="record" disabled>Start Recording</button>
-        <button id="play" disabled>Play</button>
-        <button id="download" disabled>Download</button>
-        <button id="upload">Upload</button>
+        <button id="start">Zet camera aan</button>
+        <button id="record" disabled>Begin opname</button>
+        <button id="play" disabled>Speel af</button>
+        <button id="download" disabled>Opslaan</button>
+        <button id="upload">Uploaden</button>
         <input id="upload_token" type="text" value="token"/>
     </div>
 
 
     <div>
         <span id="errorMsg"></span>
+        
+        <p id="status_paragraph">&nbsp</p>
     </div>
 </div>
 
