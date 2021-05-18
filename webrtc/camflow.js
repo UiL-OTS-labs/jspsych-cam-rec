@@ -13,13 +13,15 @@ const recordedVideo = document.querySelector('video#recorded');
 const recordButton = document.querySelector('button#record');
 
 recordButton.addEventListener('click', () => {
-  if (recordButton.textContent === 'Start Recording') {
+  if (recordButton.textContent === 'Begin opname') {
     startRecording();
+    updateStatus('Opname is begonnen.');
   } else {
     stopRecording();
-    recordButton.textContent = 'Start Recording';
+    recordButton.textContent = 'Begin opname';
     playButton.disabled = false;
     downloadButton.disabled = false;
+    uploadButton.disabled = false;
   }
 });
 
@@ -42,7 +44,7 @@ downloadButton.addEventListener('click', () => {
   const a = document.createElement('a');
   a.style.display = 'none';
   a.href = url;
-  a.download = 'test.webm';
+  a.download = 'opname_web_experiment.webm';
   document.body.appendChild(a);
   a.click();
   setTimeout(() => {
@@ -83,7 +85,7 @@ function startRecording() {
   }
 
   console.log('Created MediaRecorder', mediaRecorder, 'with options', options);
-  recordButton.textContent = 'Stop Recording';
+  recordButton.textContent = 'Stop opname';
   playButton.disabled = true;
   downloadButton.disabled = true;
   mediaRecorder.onstop = (event) => {
@@ -95,8 +97,12 @@ function startRecording() {
   console.log('MediaRecorder started', mediaRecorder);
 }
 
-function stopRecording() {
+async function stopRecording() {
+  recordButton.disabled = true;
   mediaRecorder.stop();
+  updateStatus('Het opnemen is gestopt. De opname kunt u nu uploaden,  downloaden, en afspelen. <strong>Als u een nieuwe opname begint gaat de oude verloren.</strong>');
+  await new Promise(r => setTimeout(r, 3000));
+  recordButton.disabled = false;
 }
 
 function handleSuccess(stream) {
