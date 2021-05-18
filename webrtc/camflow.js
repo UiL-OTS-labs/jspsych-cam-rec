@@ -15,9 +15,11 @@ const recordButton = document.querySelector('button#record');
 recordButton.addEventListener('click', () => {
   if (recordButton.textContent === 'Begin opname') {
     startRecording();
+    updateStatus('Opname is begonnen.');
   } else {
     stopRecording();
     recordButton.textContent = 'Stop opname';
+    recordButton.disabled = true
     playButton.disabled = false;
     downloadButton.disabled = false;
   }
@@ -97,6 +99,7 @@ function startRecording() {
 
 function stopRecording() {
   mediaRecorder.stop();
+  updateStatus('Het opnemen is gestopt.')
 }
 
 function handleSuccess(stream) {

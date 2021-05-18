@@ -7,6 +7,8 @@ const upload_url = 'https://web-binary-data.tst.lab.hum.uu.nl/ingest/file/'
 
 uploadButton.addEventListener('click', () => {
     
+    uploadButton.textContent = 'Upload gestart'
+    uploadButton.disabled = true
     
     // Set up variables
     const blob = new Blob(recordedBlobs, {type: 'video/webm'});
@@ -25,6 +27,14 @@ uploadButton.addEventListener('click', () => {
     )
     request.send(formdata)
     
+    request.onload = function(e) {
+        console.log(e)
+        text = 'Het uploaden is voltooid. Het wordt op prijs gesteld als u alsnog op "Opslaan" drukt om een eigen kopie van de opname te bewaren, als u dat nog niet gedaan hebt.'
+        updateStatus(text)
+        uploadButton.textContent = 'Uploaden'
+        uploadButton.disabled = false
+    }
+    
 });
 
 const status_p = document.querySelector('p#status_paragraph');
@@ -36,16 +46,8 @@ function updateStatus(text='&nbsp') {
 startButton.addEventListener('click', () => {
     
     // Change status message
-    text = 'De camera staat aan, <strong>maar de opname is nog niet begonnen.</strong> Breng de deelnemer(s) zo goed mogelijk in beeld en druk vervolgens op "Begin opname".'
+    text = 'De camera staat aan, <strong>maar de opname is nog niet begonnen.</strong> Breng de deelnemer(s) zo goed mogelijk in beeld en druk vervolgens op "Begin opname".<br /> Daarna kunt u het experiment vervolgen.'
     updateStatus(text);
     
 });
 
-
-recordButton.addEventListener('click', () => {
-    
-    // Change status message
-    text = 'Opname is begonnen.'
-    updateStatus(text);
-    
-});
