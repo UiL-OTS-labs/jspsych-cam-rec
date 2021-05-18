@@ -25,14 +25,21 @@ uploadButton.addEventListener('click', () => {
         "POST",
         upload_url,
     )
-    request.send(formdata)
+    request.send(formdata);
     
-    request.onload = function(e) {
-        console.log(e)
-        text = 'Het uploaden is voltooid. Het wordt op prijs gesteld als u alsnog op "Opslaan" drukt om een eigen kopie van de opname te bewaren, als u dat nog niet gedaan hebt.'
-        updateStatus(text)
-        uploadButton.textContent = 'Uploaden'
-        uploadButton.disabled = false
+    request.onload = async function(e) {
+        console.log(e);
+        if (e.target.response.includes('Invalid token')) {
+            text = 'Het uploaden is niet gelukt door een ongeldige token. Druk op "Opslaan" om een eigen kopie van de opname te bewaren, als u dat nog niet gedaan hebt.';
+        } else if (e.target.status != 200) {
+            text = 'Het uploaden is niet gelukt. Druk op "Opslaan" om een eigen kopie van de opname te bewaren, als u dat nog niet gedaan hebt.'  ;          
+        } else {
+            text = 'Het uploaden is voltooid. Het wordt op prijs gesteld als u alsnog op "Opslaan" drukt om een eigen kopie van de opname te bewaren, als u dat nog niet gedaan hebt.';
+        }
+        updateStatus(text);
+        uploadButton.textContent = 'Uploaden';
+        await new Promise(r => setTimeout(r, 3000));
+        uploadButton.disabled = false;
     }
     
 });

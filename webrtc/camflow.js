@@ -18,8 +18,7 @@ recordButton.addEventListener('click', () => {
     updateStatus('Opname is begonnen.');
   } else {
     stopRecording();
-    recordButton.textContent = 'Stop opname';
-    recordButton.disabled = true
+    recordButton.textContent = 'Begin opname';
     playButton.disabled = false;
     downloadButton.disabled = false;
   }
@@ -97,9 +96,12 @@ function startRecording() {
   console.log('MediaRecorder started', mediaRecorder);
 }
 
-function stopRecording() {
+async function stopRecording() {
+  recordButton.disabled = true;
   mediaRecorder.stop();
-  updateStatus('Het opnemen is gestopt.')
+  updateStatus('Het opnemen is gestopt. De opname kunt u nu uploaden,  downloaden, en afspelen. <strong>Als u een nieuwe opname begint gaat de oude verloren.</strong>');
+  await new Promise(r => setTimeout(r, 3000));
+  recordButton.disabled = false;
 }
 
 function handleSuccess(stream) {
