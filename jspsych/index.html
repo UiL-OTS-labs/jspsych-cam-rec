@@ -98,6 +98,14 @@
         text-align: left !important;
     }
 
+    .borderlist {
+        ol{
+            display:inline-block;
+            border:1px solid #000;
+            padding:20px;
+        }
+    }
+
     /* valid input feedback (survey) */ 
 
     input:invalid + span::after {
@@ -621,7 +629,7 @@
             trial_ends_after_video: false,
             controls: false,
             rate: 1,
-            trial_duration: 11000,
+            trial_duration: 10000,
             choices: jsPsych.ALL_KEYS,
             on_finish: set_html_to_white,
             response_allowed_while_playing: false,
@@ -859,6 +867,42 @@
             }
         };
 
+        //0.90
+        // globals for this are in instruction.js
+        let additional_consent_checkbox = {
+            type: 'survey-multi-choice',
+            preamble: CONSENT_HTML_STYLE_UU + 
+                "<h1>Verklaring omtrent hergebruik van gegevens</h1>" + 
+                EXTRA_CONSENT_PRE, 
+            required_message: "Wilt u s.v.p. een keuze maken?",
+            button_label: START_REAL_TASK_BUTTON_TEXT,
+            questions: [
+                {
+                    prompt: EXTRA_CONSENT_Q1, 
+                    options: [ 
+                        EXTRA_CONSENT_AGREE,
+                        EXTRA_CONSENT_DISAGREE 
+                        ], 
+                    horizontal: true,
+                    required: true
+                },
+                {
+                    prompt: EXTRA_CONSENT_Q2, 
+                    options: [ 
+                        EXTRA_CONSENT_AGREE,
+                        EXTRA_CONSENT_DISAGREE 
+                        ], 
+                    horizontal: true,
+                    required: true
+                }
+            ],
+            on_finish: function(data){
+                let extra_consent_choice = data.responses;   
+                data.extra_consent_choice_response = extra_consent_choice;
+                jsPsych.setProgressBar(0.90);
+            }
+        };
+
         //0.95
         let gift_screen = {
             type: 'html-button-response',
@@ -1066,17 +1110,16 @@
         
         //timeline.push(binary_screen);
 
+        //timeline.push(additional_consent_checkbox);
+
         // Informed consent (consent.js)
         timeline.push(consent_procedure); //0.2-0.3
 
         // personal code 
         timeline.push(personal_code_multi_html_block); //0.4
         
-        // setup part 1 = tech
-        // setup part 2 = ethical
-        // setup part 3 = validation
-        //timeline.push(setup_screen_one);
-        //timeline.push(setup_screen_two);
+        // setup multipage &
+        // setup 'part 3' = validation
 
         timeline.push(setup_screens_multi);//0.5
         timeline.push(setup_validate_checkbox);//0.6
@@ -1094,7 +1137,7 @@
         // BASELINE //////////////////////////////////////
         timeline.push(baseline_procedure); //0.8 fixed, so not attention grabbing. or mebby use a "hideProgressBar"
         
-        //timeline.push(sync_screen);
+        //timeline.push(countdown_video_pause);
 
         // PAIREWISE /////////////////////////////////////
 
@@ -1127,6 +1170,7 @@
         timeline.push(paired_procedure_h);
 
         // timeline.push(sync_screen_orange)
+        timeline.push(countdown_video_pause);
 
         // PREFERENTIAL LOOKING //////////////////////////
         timeline.push(pref_procedure);
@@ -1134,6 +1178,8 @@
         // timeline.push(sync_screen_green)
 
         timeline.push(exp_done_screen);//0.85
+
+        timeline.push(additional_consent_checkbox);//0.90
 
         timeline.push(gift_screen);//0.95
         

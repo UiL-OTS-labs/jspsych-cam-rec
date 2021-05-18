@@ -5,6 +5,15 @@
  * utf8 text encoding.
  */
 
+const BORDER_LIST_STYLE = `
+    <style>
+    ul{
+        display:inline-block;
+        border:1px solid #000;
+        padding:20px;
+    }
+    </style>
+    `;
 
 // screen 1
 const GENERIC_CHECK = `
@@ -31,10 +40,10 @@ const PERSONAL_CODE_PRE_TEXT = `
     <p>Voer hier uw persoonlijke code in die u heeft ontvangen in de mail.
     <br>
     <br>
-    Het is belangrijk dat u de persoonlijke code correct invoert, zodat u ook achteraf kunt beslissen om toch niet mee te doen aan het onderzoek.
+    Het is belangrijk dat u de persoonlijke code <strong>correct</strong> invoert, zodat u ook achteraf kunt beslissen om toch niet mee te doen aan het onderzoek.
     <br>
     <br>
-    Alleen met een correcte persoonlijke code kunnen wij uw webcam-opname op uw verzoek verwijderen. Bewaar uw persoonlijke code dus goed <strong>*</strong>.
+    Alleen met een correcte persoonlijke code kunnen wij uw webcam-opname op uw verzoek verwijderen. <strong>Bewaar</strong> uw persoonlijke code dus goed <strong>*</strong>.
     </p>
     `;
 
@@ -152,7 +161,6 @@ const PRE_LAYOUT_MESSAGE =`
     Klik op ‘Oké’ om de tabel te tonen.</p>
     `;
     
-
 const GRID_HTML_LAYOUT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
     <table id="jspsych-vsl-grid-scene table" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
     <tr id="jspsych-vsl-grid-scene-table-row-0" css="height: 200px;">
@@ -270,11 +278,22 @@ const PRE_REC_MESSAGE_TABS = `
     Nadat u uw webcam-opname heeft gestart laat u het webcam-tabblad open staan en klikt u op het huidige tabblad, om terug te komen op deze pagina (uw webcam-opname blijft dus op de achtergrond doorlopen, <strong>sluit geen van beide tabbladen!</strong>).
 `;
 
-const PRE_REC_MESSAGE_CHECKBOX = `
-    Klik <a href="../webrtc/index.html" target="_blank"> <strong>deze link</strong></a> om de webcam-opname te starten.
+const PRE_REC_MESSAGE_CHECKBOX = BORDER_LIST_STYLE + `
+    Klik <a href="../webrtc/index.html"  style="color: tomato" target="_blank"> <strong>deze link</strong> </a> om de webcam-opname te starten.
     <br>
     <br>
-    Klik op "Volgende"  nadat u de webcam-opname heeft gestart, om het taakje voor uw kind te starten. 
+    Dit zijn de <strong>stappen</strong> nog eens:
+    <br>
+    <ul>
+        <i><sub><li> Klik op <strong>"Start Camera"</strong> om het beeld weer te geven;</li>
+        <li> Test of uw webcam werkt en of er <strong>voldoende licht</strong> is;</li>
+        <li> Maak aanpassingen indien nodig;</li>
+        <li> Zet <strong>vervolgens uw kind in de kinderstoel</strong>, richt de webcam of het scherm zo dat het <strong>gezicht</strong> van uw kind <strong>zichtbaar</strong> is;</li>
+        <li> Indien stap 1 tot 4 gelukt zijn start u de webcam-opname door op <strong>"Start Recording"</strong> te klikken.</li></sub></i>
+    </ul>
+    <br>
+    <br>
+    Klik op "Volgende"  nadat u de webcam-opname heeft gestart, om het taakje voor uw kind te starten. U heeft dan nog <strong>10 seconden</strong> om positie in te nemen en de <strong>muis</strong> in een <strong>hoek van het scherm</strong> te plaatsen. 
     <br>
     <br>
     Zodra u na de start van het onderzoek langer dan 15 seconden geen geluid meer hoort is de taak voor uw kind afgerond.
@@ -309,6 +328,22 @@ const POST_REC_MESSAGE = `
     <br>
     <br>
     Klik op ‘volgende’ als u uw webcam-opname heeft <strong>geüpload<strong>.
+    `;
+
+const EXTRA_CONSENT_PRE = `
+    Uw keuze over onderstaande punten heeft <u>geen</u> enkele <u>invloed</u> op uw deelname aan het huidige onderzoek.
+    `;
+
+const EXTRA_CONSENT_AGREE = 'Ja, daar ga ik mee akkoord';
+const EXTRA_CONSENT_DISAGREE = 'Nee, niet akkoord';
+
+const EXTRA_CONSENT_Q1 = `
+    <strong>1.</strong> Gaat u er mee akkoord dat het verzamelde <strong>audio- en videomateriaal</strong>, 
+    <u>dit is dus niet anoniem</u>, van (u en) uw kind, gedeeld wordt met andere onderzoekers voor onderzoeksdoeleinden?
+    `;
+
+const EXTRA_CONSENT_Q2 = `
+    <strong>2.</strong> Soms worden beeld- en/of geluidsopnames ook getoond in <strong>wetenschappelijke</strong> lezingen of <strong>lessen</strong>. Gaat u ermee akkoord dat het gemaakte audio- en/of videomateriaal gebruikt wordt voor deze doeleinden? 
     `;
 
 const GIFT_MESSAGE = `
