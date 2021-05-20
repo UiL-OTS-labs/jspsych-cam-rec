@@ -30,7 +30,7 @@ uploadButton.addEventListener('click', () => {
     request.onload = async function(e) {
         console.log(e);
         if (e.target.response.includes('Invalid token')) {
-            text = 'Het uploaden is <strong>mislukt</strong> door een ongeldige persoonlijke code. Controleer deze en probeer het opnieuw. Houdt het probleem aan? Druk dan op "Opslaan" om een eigen kopie van de opname te bewaren, en geef deze aan de onderzoeker.';
+            text = 'Het uploaden is <strong>mislukt</strong> door een ongeldige persoonlijke code. Controleer de code en probeer het opnieuw. Houdt het probleem aan? Druk dan op "Opslaan" om een eigen kopie van de opname te bewaren, en geef deze aan de onderzoeker.';
         } else if (e.target.status != 200) {
             text = '<strong>Het uploaden is niet gelukt.</strong> Druk op "Opslaan" om een eigen kopie van de opname te bewaren, en geef deze aan de onderzoeker.';          
         } else {
