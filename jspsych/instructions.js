@@ -347,7 +347,7 @@ const EXTRA_CONSENT_Q2 = `
     `;
 
 const GIFT_MESSAGE = `
-    <h2>Sluit uw venter nog niet!</h2> 
+    <h2>Sluit dit venster nog niet!</h2> 
     Als dank voor uw deelname willen wij uw kind graag een cadeautje sturen. Hier hebben wij echter uw adresgegevens voor nodig. 
     <br>
     <br>
