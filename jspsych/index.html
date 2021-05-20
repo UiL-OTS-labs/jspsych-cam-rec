@@ -231,16 +231,13 @@
         var check_audio = ['./sounds/testtune.mp3'];
 
         // TEST VIDEOS
-        var check_qrvideo = ['./video/qrcodes/qrspeed.mp4','./video/qrcodes/qrspeed.webm'];
         var bgvideo = [
             './video/01_left.mp4',
             './video/01_left.webm',
             './video/02_center.mp4',
             './video/02_center.webm',
             './video/03_right.mp4',
-            './video/03_right.webm',
-            './video/countdownmovie.mp4',
-            './video/countdownmovie.webm',            
+            './video/03_right.webm',      
             './video/countdown-birds.mp4',
             './video/countdown-birds.webm',    
         ];
@@ -606,11 +603,7 @@
             on_start: set_html_to_grey,
             stimulus: jsPsych.timelineVariable('sound_fn'),
             prompt: function() {
-                
                 var side = jsPsych.timelineVariable('side', true);
-                
-                console.log('side: ' + side);
-
                 var grid = GRID_HTML_LEFT_RIGHT;
                 if ( side === 0 ){
                     var newgrid = grid.replaceAll("./video/01_left",
@@ -670,46 +663,6 @@
             }
         };
 
-        // let qr_screen = {
-        //     type: 'video-keyboard-response',
-        //     on_start: set_html_to_white,
-        //     stimulus: './video/qrcodes/qrspeed.webm',
-        //     sources: [
-        //         './video/qrcodes/qrspeed.webm',
-        //         './video/qrcodes/qrspeed.mp4'
-        //         ],
-        //     prompt: "Showcasing (QR sync method)",
-        //     response_ends_trial: false,
-        //     trial_ends_after_video: false,
-        //     controls: true,
-        //     rate: 1,
-        //     trial_duration: 2450,
-        //     choices: jsPsych.ALL_KEYS,
-        //     on_finish: set_html_to_white,
-        //     response_allowed_while_playing: true,
-        //     autoplay: true
-        // };
-
-        // let binary_screen = {
-        //     type: 'video-keyboard-response',
-        //     on_start: set_html_to_grey,
-        //     stimulus: './video/bincodes/256-bincodes.webm',
-        //     sources: [
-        //         './video/bincodes/256-bincodes.webm',
-        //         './video/bincodes/256-bincodes.mp4'
-        //         ],
-        //     prompt: "Sync binary image...",
-        //     response_ends_trial: false,
-        //     trial_ends_after_video: false,
-        //     controls: true,
-        //     rate: 1,
-        //     trial_duration: 2450,
-        //     choices: jsPsych.ALL_KEYS,
-        //     on_finish: set_html_to_white,
-        //     response_allowed_while_playing: true,
-        //     autoplay: true
-        // };
-
         let sync_screen = {
             type: 'audio-keyboard-response',
             on_start: set_html_to_white,
@@ -742,42 +695,6 @@
             trial_ends_after_response: false,
             post_trial_gap: 0,
         };
-
-
-
-        // let countdown_from = {
-        //     type: 'html-keyboard-response',
-        //     stimulus: countDownFrom(10),
-        //     choices: jsPsych.NO_KEYS,
-        //     trial_duration: 11000,
-        //     trial_ends_after_response: false,
-        //     post_trial_gap: 0,
-        // };
-
-        // let sync_screen_orange = {
-        //     type: 'audio-keyboard-response',
-        //     on_start: set_html_to_orange,
-        //     stimulus: "./sounds/beep.mp3",
-        //     prompt: "orange!",
-        //     response_ends_trial: false,
-        //     trial_ends_after_audio: false,
-        //     trial_duration: 450,
-        //     choices: jsPsych.NO_KEYS,
-        //     on_finish: set_html_to_white
-        // };
-
-        // let sync_screen_green = {
-        //     type: 'audio-keyboard-response',
-        //     on_start: set_html_to_green,
-        //     stimulus: "./sounds/beep.mp3",
-        //     prompt: "green!",
-        //     response_ends_trial: false,
-        //     trial_ends_after_audio: false,
-        //     trial_duration: 450,
-        //     choices: jsPsych.NO_KEYS,
-        //     on_finish: set_html_to_white
-        // };
-
 
         //0.87
         let exp_done_screen = {
@@ -910,17 +827,6 @@
             timeline_variables: grabber_items_two,
             randomize_order: false
         };
-
-        // Zipping two arrays into an object, better performance than map
-
-        // let labels = ['a', 'b', 'c']
-        // let values = [1, 2, 3]
-        // let out = {}
-        // for (var i = 0; i < labels.length; i++) {
-        //     out = { ...out, [labels[i]]: values[i] }
-        //  }
-        // console.debug(out);
-        // { a: 1, b: 2, c: 3 }
 
         let paired_procedure_a = {
             timeline: [
@@ -1119,7 +1025,6 @@
                     grabber_audio_two
                     ],
                 preload_video: [
-                    check_qrvideo,
                     bgvideo,
                     baseline_videos,
                     paired_videos,
