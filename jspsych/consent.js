@@ -288,10 +288,6 @@ const CONSENT_HTML_STYLE_UU_SMALL_PARAGRAPH_TEXT = `
     </style>
     `;
 
-
-
-
-
 const CONSENT_PAGE_1 = `
     <h1>Toestemmingsverklaring voor deelname aan:</h1>
     <h2>“Online onderzoek naar het kijkgedrag van baby’s” (1/3)</h2>
@@ -321,9 +317,15 @@ const CONSENT_PAGE_2 = `
     </ol>
     `;
 
-const CONSENT_HTML_CHOICE = `
+const CONSENT_PAGE_3 = `
     <h1>Toestemmingsverklaring voor deelname aan:</h1>
     <h2>“Online onderzoek naar het kijkgedrag van baby’s” (3/3)</h2>
+    U kunt de informatie <i>nu nog herlezen</i> (gebruik "vorige"), maar als u hierna op 'volgende' klikt, kan dat niet meer.
+    `;
+
+const CONSENT_HTML_CHOICE = `
+    <h1>Toestemmingsverklaring voor deelname aan:</h1>
+    <h2>“Online onderzoek naar het kijkgedrag van baby’s”</h2>
     `
     
 const DEBRIEF_MESSAGE_NO_CONSENT = `

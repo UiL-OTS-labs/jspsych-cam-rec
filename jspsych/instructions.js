@@ -7,7 +7,7 @@
 
 const BORDER_LIST_STYLE = `
     <style>
-    ul{
+    ol{
         display:inline-block;
         border:1px solid #000;
         padding:20px;
@@ -63,18 +63,22 @@ const PERSONAL_CODE_CHOICE_HTML =`
     `
 
 const PERSONAL_CODE_POST_TEXT = `
-    *) <sub>Zie informatiebrief voor meer informatie.</sub>
+    * <sub>Zie informatiebrief voor meer informatie.</sub>
     <br>
     <br>
     `;
 
 // screen 6 & 7 & 8
-const CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT = `
-    <h1> Instructies opstelling (1/2) </h1>
-    <h6>Idealiter ziet de opstelling van uw laptop of computer er uit zoals op deze afbeeldingen:</h6>
+const CAREGIVER_INSTRUCTION_1 = `
+    <h1> Instructies opstelling (1/3) </h1>
+    <h6>Idealiter ziet uw opstelling er uit zoals in de <strong>groene</strong> voorbeelden van deze afbeeldingen:</h6>
+    <img src="./images/setup-ok-1.png" style="width: 300px"></img>
+    <img src="./images/setup-ok-2.png" style="width: 300px"></img>
+    <img src="./images/setup-nok-3.png" style="width: 300px"></img>
     `
 
-const CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_1 = `
+const CAREGIVER_INSTRUCTION_2 = `
+    <h1> Instructies opstelling (2/3) </h1>
     <ol type="1">
         <li> De kinderstoel staat op ongeveer een (volwassen) armlengte afstand van het scherm, zodat er ongeveer <strong>60 centimeter</strong> tussen uw kind en het scherm zit.</li>
         <li> De webcam is <strong>bovenin, in het midden</strong> van het scherm geplaatst.</li>
@@ -90,8 +94,9 @@ const CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_1 = `
     </div>
     `;
 
-const CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_2 = `  
-    <h1> Instructies opstelling (2/2) </h1>
+
+const CAREGIVER_INSTRUCTION_3 = `  
+    <h1> Instructies opstelling (2/3) </h1>
     <ol type="1">
         <li> Zorg voor zo <strong>min mogelijk afleiding</strong>. </li> 
             <div>
@@ -109,7 +114,7 @@ const CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_2 = `
     </ol>
 `;
 
-const CAREGIVER_INSTRUCTION_SOOTHING = `
+const CAREGIVER_INSTRUCTION_4 = `
     <h1>Wanneer te stoppen?</h1>
     <p>Als uw kind erg onrustig is kunt u uw kind <strong>geruststellen</strong>. Let wel op dat u <strong>niet</strong> met uw kind <strong>praat</strong> over of <strong>wijst</strong> naar het <strong>scherm</strong>.
     <br>
@@ -238,39 +243,15 @@ const GRID_HTML_LAYOUT_BARE = `<div id="jspsych-vsl-grid-scene-dummy" css="displ
     </div></td></tr></table></div>
     `;
   
-const PRE_REC_MESSAGE_CHECKBOX_OLD = `
-    Om de webcam-opname te starten klikt u op de onderstaand link. Er wordt vervolgens een nieuw tabblad geopend, waarop u uw webcam kan activeren. 
-    <br>
-    <br>
-    <strong>Belangrijk</strong>: 
-    <ul>
-    <li>Test hier of uw webcam werkt en of er voldoende licht is.</li>
-    <li>Klik eerst op "<strong>Start Camera</strong>" om het beeld weer te geven.
-    <li>Maak aanpassingen indien nodig.</li>
-    <li>Zet vervolgens uw kind in de kinderstoel, richt de webcam of het scherm zo dat het gezicht van uw kind zichtbaar is.</li>
-    </ul>
-    Indien dit is gelukt kunt u de webcam-<strong>opname</strong> starten: dit gebeurt na een klik op "<strong>Start Recording</strong>".
-    <br>
-    <br>
-    Nadat u uw webcam-opname heeft gestart laat u het webcam-tabblad open staan en klikt u op het huidige tabblad, om terug 
-    te komen op deze pagina (uw webcam-opname blijft dus op de achtergrond doorlopen, <strong>sluit geen van beide tabbladen!</strong>).</p>
-
-    Klik <a href="../webrtc/index.html" target="_blank"> <strong>deze link</strong></a> voor de webcam-opname.
-    <br>
-    <br>
-    Klik op "Start onderzoek" als u bovenstaande stappen heeft uitgevoerd. Zodra u na de start van
-    het onderzoek langer dan 15 seconden geen geluid meer hoort is de taak voor uw kind afgerond.
-    `;
-
 const PRE_REC_MESSAGE_TABS = `
     <h1>Belangrijk:</h1>
     Straks zult u naar een nieuw tabblad worden geleid, waar u uw webcam aan kunt zetten en de webcam-opname kunt starten.
     <ol type="1">
-        <li> Klik op <strong>"Start Camera"</strong> om het beeld weer te geven;</li>
+        <li> Klik op <strong>"Zet camera aan"</strong> om het beeld weer te geven;</li>
         <li> Test of uw webcam werkt en of er <strong>voldoende licht</strong> is;</li>
         <li> Maak aanpassingen indien nodig;</li>
         <li> Zet <strong>vervolgens uw kind in de kinderstoel</strong>, richt de webcam of het scherm zo dat het <strong>gezicht</strong> van uw kind <strong>zichtbaar</strong> is;</li>
-        <li> Indien stap 1 tot 4 gelukt zijn start u de webcam-opname door op <strong>"Start Recording"</strong> te klikken.</li>
+        <li> Indien stap 1 tot 4 gelukt zijn start u de webcam-opname door op <strong>"Begin opname"</strong> te klikken.</li>
     </ol>
     <img src="./images/tabs.png" style="width: 600px;"></img>
     <br>
@@ -282,15 +263,15 @@ const PRE_REC_MESSAGE_CHECKBOX = BORDER_LIST_STYLE + `
     Klik <a href="../webrtc/index.html"  style="color: tomato" target="_blank"> <strong>deze link</strong> </a> om de webcam-opname te starten.
     <br>
     <br>
-    Dit zijn de <strong>stappen</strong> nog eens:
+    Herhaling stappen:
     <br>
-    <ul>
-        <i><sub><li> Klik op <strong>"Start Camera"</strong> om het beeld weer te geven;</li>
+    <ol>
+        <i><sub><li> Klik op <strong>"Zet camera aan"</strong> om het beeld weer te geven;</li>
         <li> Test of uw webcam werkt en of er <strong>voldoende licht</strong> is;</li>
         <li> Maak aanpassingen indien nodig;</li>
         <li> Zet <strong>vervolgens uw kind in de kinderstoel</strong>, richt de webcam of het scherm zo dat het <strong>gezicht</strong> van uw kind <strong>zichtbaar</strong> is;</li>
-        <li> Indien stap 1 tot 4 gelukt zijn start u de webcam-opname door op <strong>"Start Recording"</strong> te klikken.</li></sub></i>
-    </ul>
+        <li> Indien stap 1 tot 4 gelukt zijn start u de webcam-opname door op <strong>"Begin opname"</strong> te klikken.</li></sub></i>
+    </ol>
     <br>
     <br>
     Klik op "Volgende"  nadat u de webcam-opname heeft gestart, om het taakje voor uw kind te starten. U heeft dan nog <strong>10 seconden</strong> om positie in te nemen en de <strong>muis</strong> in een <strong>hoek van het scherm</strong> te plaatsen. 
@@ -314,14 +295,14 @@ const POST_REC_MESSAGE = `
     <br>
     Nadat u straks op het tabblad met uw <strong>webcam-opname</strong> klikt:
     <ol type="1">
-        <li>Klikt u op "<strong>stop recording</strong>".</li>
+        <li>Klikt u op "<strong>Stop opname</strong>".</li>
         <li>Vult u bij “token” uw <strong>persoonlijke code</strong> in.</li>
-        <li>Klikt u vervolgens op "<strong>upload</strong>".</li>
+        <li>Klikt u vervolgens op "<strong>Uploaden</strong>".</li>
     </ol>
     Nadat u op uploaden heeft geklikt wordt uw <strong>webcam-opname verstuurd</strong> naar de beveiligde server van Universiteit Utrecht.
     <br>
     <br>
-    U ziet een <strong>melding</strong> op het scherm zodra de <strong>upload</strong> is <strong>gelukt</strong>.
+    U ziet een <strong>melding</strong> op het scherm zodra het <strong>uploaden</strong> is <strong>gelukt</strong>.
     <br>
     <br>
     Klik nu op het <strong>tabblad</strong> met uw <strong>webcam-opname</strong> en voer de stappen uit.
@@ -332,6 +313,9 @@ const POST_REC_MESSAGE = `
 
 const EXTRA_CONSENT_PRE = `
     Uw keuze over onderstaande punten heeft <u>geen</u> enkele <u>invloed</u> op uw deelname aan het huidige onderzoek.
+    <br>
+    <br>
+    <sub>(Velden met een <strong>*</strong> zijn verplicht.)<sub>
     `;
 
 const EXTRA_CONSENT_AGREE = 'Ja, daar ga ik mee akkoord';
@@ -347,7 +331,7 @@ const EXTRA_CONSENT_Q2 = `
     `;
 
 const GIFT_MESSAGE = `
-    <h2>Sluit dit venster nog niet!</h2> 
+    <h2>Klik op <i>'Einde'</i> om het onderzoek af te ronden</h2> 
     Als dank voor uw deelname willen wij uw kind graag een cadeautje sturen. Hier hebben wij echter uw adresgegevens voor nodig. 
     <br>
     <br>
@@ -364,7 +348,7 @@ const GIFT_MESSAGE = `
     <img src="./images/mailmaaike.png" style="width: 200px">    
     <br>
     <br>
-    Klik op volgende als u dit heeft gedaan, of als u geen cadeautje wilt ontvangen.
+    Klik op 'Einde' als u dit heeft gedaan, of als u geen cadeautje wilt ontvangen.
     `;
 
 // don't mention closing the window in this frame, it may just leave you without data.

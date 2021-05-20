@@ -53,7 +53,6 @@ const BASELINE_1 = [
 
 ];
 
-
 const BASELINE_2 = [
     {
         id: 1, 
@@ -85,10 +84,18 @@ const BASELINE_2 = [
     },
 ];
 
-const BASELINE_LISTS = [ BASELINE_1, BASELINE_2 ];
+const BASELINE_LISTS = [
+    "BASELINE_1", 
+    "BASELINE_2"
+    ];
+
+const BASELINE_ITEMS = [
+    { list_name:BASELINE_LISTS[0], table: BASELINE_1 }, 
+    { list_name:BASELINE_LISTS[1], table: BASELINE_2 }
+    ];
 
 
-const PAIRED_ALL = [
+const PAIRED_1 = [
     {
         id: 1, 
         item_type: PAIRED_SUCCESION, 
@@ -318,8 +325,19 @@ const PAIRED_2 = [
     }
 ];
 
+const PAIRED_LISTS = [
+    "PAIRED_1", 
+    "PAIRED_2"
+    ];
 
-const PREF_ALL = [
+const PAIRED_ITEMS = [
+    { list_name:PAIRED_LISTS[0], table: PAIRED_1 }, 
+    { list_name:PAIRED_LISTS[1], table: PAIRED_2 }
+    ];
+
+
+
+const PREF_1 = [
     {
         id: 1, 
         item_type: PREFERENTIAL_LOOK, 
@@ -437,6 +455,15 @@ const PREF_2 = [
     }
 ];
 
+const PREF_LISTS = [
+    "PREF_1", 
+    "PREF_2"
+    ];
+
+const PREF_ITEMS = [
+    { list_name:PREF_LISTS[0], table: PREF_1 }, 
+    { list_name:PREF_LISTS[1], table: PREF_2 }
+    ];
 
 // center HTML (images)
 const GRABBER_1 = [
@@ -572,3 +599,13 @@ function getGrabberOneItems() {
 function getGrabberTwoItems() {
     return {list_name : "grabber two", table : GRABBER_2};
 }
+
+function pickRandomIndexFromTwo() {
+    let binary = [0,1];
+    result = jsPsych.randomization.shuffle(binary)[0];
+    console.log("Picking 0 or 1: ", result);
+    return result;
+}
+
+
+

@@ -46,7 +46,7 @@
 
     .instruction {
         text-align: left !important;
-        margin: 5% 10% 5% 10%;
+        margin: 5% 5% 5% 5%;
     }
 
     kbd {
@@ -98,14 +98,6 @@
         text-align: left !important;
     }
 
-    .borderlist {
-        ol{
-            display:inline-block;
-            border:1px solid #000;
-            padding:20px;
-        }
-    }
-
     /* valid input feedback (survey) */ 
 
     input:invalid + span::after {
@@ -135,85 +127,49 @@
     // contents of this method
     window.addEventListener('load', function() {
 
-        // load stimuli
-        let baseline_items = getBaselineItems().table;
-        
-        let paired_items_all = getAllPairedItems().table;
-        //console.log(paired_items_all)
+        ////////////////////////// STIMULI ETC /////////////////////////////
 
+        //determine which index of the lists we'll use by random shuffle of 0/1
+        let dice = pickRandomIndexFromTwo();
+
+        let baseline_items = BASELINE_ITEMS[dice].table;
+        let baseline_list_chosen = BASELINE_LISTS[dice];
+        console.log(baseline_list_chosen);
+
+        let paired_items= PAIRED_ITEMS[dice].table;
+        let paired_list_chosen = PAIRED_LISTS[dice];
+        console.log(paired_list_chosen);
+
+        let pref_items = PREF_ITEMS[dice].table;
+        let pref_list_chosen = PREF_LISTS[dice];
+        console.log(pref_list_chosen);
+
+        // and some fixed grabbers
         let grabber_items_one = getGrabberOneItems().table;
-
         let grabber_items_two = getGrabberTwoItems().table;
 
-        let pref_items = getAllPrefItems().table;
-
-        // cutting the original paired timeline in pairs...ugly, but as of yet
-        // unsure of what's best otherwise
-        let paired_a = [
-            paired_items_all[0],
-            paired_items_all[1]
-            ];
-
-        let paired_b = [
-            paired_items_all[2],
-            paired_items_all[3]
-            ];
-
-        let paired_c = [
-            paired_items_all[4],
-            paired_items_all[5]
-            ];
-
-        let paired_d = [
-            paired_items_all[6],
-            paired_items_all[7]
-            ];
-        
-        let paired_e = [
-            paired_items_all[8],
-            paired_items_all[9]
-            ];
-
-        let paired_f = [
-            paired_items_all[10],
-            paired_items_all[11]
-            ];
-
-        let paired_g = [
-            paired_items_all[12],
-            paired_items_all[13]
-            ];
-
-        let paired_h = [
-            paired_items_all[14],
-            paired_items_all[15]
-            ];
-
+        // now cutting the original paired timeline in pairs...
         let paired_one = [
-                paired_items_all[0],
-                paired_items_all[2],        
-                paired_items_all[4],
-                paired_items_all[6],
-                paired_items_all[8],
-                paired_items_all[10],
-                paired_items_all[12],
-                paired_items_all[14]
+                paired_items[0],
+                paired_items[2],        
+                paired_items[4],
+                paired_items[6],
+                paired_items[8],
+                paired_items[10],
+                paired_items[12],
+                paired_items[14]
                 ];
 
         let paired_two = [
-                paired_items_all[1],
-                paired_items_all[3],        
-                paired_items_all[5],
-                paired_items_all[7],
-                paired_items_all[9],
-                paired_items_all[11],
-                paired_items_all[13],
-                paired_items_all[15]
+                paired_items[1],
+                paired_items[3],        
+                paired_items[5],
+                paired_items[7],
+                paired_items[9],
+                paired_items[11],
+                paired_items[13],
+                paired_items[15]
                 ];
-
-
-        //console.log(paired_one);
-        //console.log(paired_two);
 
         ////////////////////////// MEDIA PRELOADING /////////////////////////////
         
@@ -231,14 +187,14 @@
                 
         // PAIRED
         var paired_audio = [];
-        for (var i=0; i< paired_items_all.length; i++) {
-            paired_audio.push(paired_items_all[i].sound_fn);
+        for (var i=0; i< paired_items.length; i++) {
+            paired_audio.push(paired_items[i].sound_fn);
         };
 
         var paired_videos = [];
-        for (var i=0; i< paired_items_all.length; i++) {
-            paired_videos.push(paired_items_all[i].image_fn + ".mp4");
-            paired_videos.push(paired_items_all[i].image_fn + ".webm");
+        for (var i=0; i< paired_items.length; i++) {
+            paired_videos.push(paired_items[i].image_fn + ".mp4");
+            paired_videos.push(paired_items[i].image_fn + ".webm");
         };
 
         // PREFERENTIAL //////////////////////////////////////////////////////////
@@ -317,32 +273,6 @@
             document.body.style.color = 'black'
         }
 
-
-
-        // function countDownFrom(seconds) {
-        //     var timeleft = seconds;
-        //     var countdownTimer = setInterval(function(){
-        //         if(timeleft <= 0){
-        //             clearInterval(countdownTimer);
-        //             document.getElementById("countdown").innerHTML = "Start!";
-        //         } else {
-        //             document.getElementById("countdown").innerHTML = "Nog " + timeleft + " seconden";
-        //         }
-        //         timeleft -= 1;
-        //     }, 1000);
-        //     return '<div id="countdown"></div>';
-        // }
-
-        // function set_paragraph_text_to_small() {
-        //     document.body.style.fontSize = "0.5em"
-        // }
-
-        // function hideProgressBar() {
-        //     document.body.style.backgroundColor = 'white'
-        //     document.body.style.color = 'black'
-        // }
-
-
         // Data one would like to add to __all__ trials, according to:
         // https://www.jspsych.org/overview/data/
         
@@ -369,6 +299,9 @@
         jsPsych.data.addProperties({
             subject: subject_id,
             browserinfo: browser_info,
+            baselinelist: baseline_list_chosen,
+            pairedlist: paired_list_chosen,
+            preflist: pref_list_chosen,
         });
 
 
@@ -398,7 +331,9 @@
             allow_backward: true,
             pages: [
                 "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + CONSENT_PAGE_1 + "</div>",
-                "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + CONSENT_PAGE_2 + "</div>"
+                "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + CONSENT_PAGE_2 + "</div>",
+                "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + CONSENT_PAGE_3 + "</div>"                
+
                 ],
             show_clickable_nav: true,
             on_finish: function(){
@@ -476,12 +411,13 @@
             allow_backward: true,
             pages: [
                 "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU + 
-                    CAREGIVER_INSTRUCTION_PRE_IMAGE_TEXT + 
-                    CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_1 + "</div>",
+                    CAREGIVER_INSTRUCTION_1 + "</div>",
                 "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU +  
-                    CAREGIVER_INSTRUCTION_POST_IMAGE_TEXT_2 + "</div>",
+                    CAREGIVER_INSTRUCTION_2 + "</div>",
                 "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU +  
-                    CAREGIVER_INSTRUCTION_SOOTHING + "</div>",
+                    CAREGIVER_INSTRUCTION_3 + "</div>",
+                 "<div class= 'instruction' >" + CONSENT_HTML_STYLE_UU +  
+                    CAREGIVER_INSTRUCTION_4 + "</div>",
                 ],
             show_clickable_nav: true,
             on_finish: function(){
@@ -873,8 +809,8 @@
             type: 'survey-multi-choice',
             preamble: CONSENT_HTML_STYLE_UU + 
                 "<h1>Verklaring omtrent hergebruik van gegevens</h1>" + 
-                EXTRA_CONSENT_PRE, 
-            required_message: "Wilt u s.v.p. een keuze maken?",
+                "<div class='instruction' >" + EXTRA_CONSENT_PRE + "</div>", 
+            required_message: "U moet hier een keuze maken!",
             button_label: START_REAL_TASK_BUTTON_TEXT,
             questions: [
                 {
@@ -911,7 +847,7 @@
                     '<p>' + GIFT_MESSAGE + '</p></div>';
             },
             on_start: set_html_to_white,
-            choices: [NEXT_BUTTON_TEXT],
+            choices: [ "Einde" ],
             response_ends_trial: true,
             data: { resolution: uil.browser.getResolutionInfo() },
             on_finish: function(){
@@ -1103,15 +1039,6 @@
         // it's best practice to have *mouse click* user I/O first
         timeline.push(start_screen); //0.1
 
-        //timeline.push(countdown_simple);
-        //timeline.push(countdown_from);
-        
-        //timeline.push(qr_screen);
-        
-        //timeline.push(binary_screen);
-
-        //timeline.push(additional_consent_checkbox);
-
         // Informed consent (consent.js)
         timeline.push(consent_procedure); //0.2-0.3
 
@@ -1174,8 +1101,7 @@
 
         // PREFERENTIAL LOOKING //////////////////////////
         timeline.push(pref_procedure);
-        
-        // timeline.push(sync_screen_green)
+    
 
         timeline.push(exp_done_screen);//0.85
 
