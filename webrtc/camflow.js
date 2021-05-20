@@ -15,7 +15,7 @@ const recordButton = document.querySelector('button#record');
 recordButton.addEventListener('click', () => {
   if (recordButton.textContent === 'Begin opname') {
     startRecording();
-    updateStatus('Opname is begonnen.');
+    updateStatus('De opname is gestart. U kunt nu in het andere tabblad het experiment vervolgen.');
   } else {
     stopRecording();
     recordButton.textContent = 'Begin opname';
@@ -100,7 +100,7 @@ function startRecording() {
 async function stopRecording() {
   recordButton.disabled = true;
   mediaRecorder.stop();
-  updateStatus('Het opnemen is gestopt. De opname kunt u nu uploaden,  downloaden, en afspelen. <strong>Als u een nieuwe opname begint gaat de oude verloren.</strong>');
+  updateStatus('Het opnemen is gestopt. De opname kunt u nu uploaden,  downloaden, en afspelen. <strong>Als u een nieuwe opname begint gaat de oude verloren.</strong><br />Vergeet niet uw persoonlijke code in te vullen voordat u op "Uploaden" drukt.');
   await new Promise(r => setTimeout(r, 3000));
   recordButton.disabled = false;
 }
