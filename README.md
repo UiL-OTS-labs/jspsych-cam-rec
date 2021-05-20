@@ -7,7 +7,7 @@ This project contains several folders and many files:
 
 - Folder `jspsych` contains a [jsPsych](https://www.jspsych.org) web experiment with sparse stimuli.
 - Folder `webrtc` contains basic code for streaming video.
-- Folder 'osweb' contains preliminary (R&D )exports for the experiment, as made with OpenSesame.
+- Folder `osweb` contains preliminary (R&D )exports for the experiment, as made with OpenSesame.
 
 ## webRTC (video)
 In fact, the code in the folder started out as just a copy from this example:
