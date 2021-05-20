@@ -15,17 +15,12 @@
 
     <!-- Video -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-video-keyboard-response.js"></script>
-    <!-- External HTML for Maaike's (osweb) file -->
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-external-html.js"></script>
-    
+
     <!-- Generic check/ask libraries (instructions & surveys) -->
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-select.js"></script>
-    
-    <!--this was originally used (with a hack to get white table) borders (now in GRID_HTML) -->
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-vsl-grid-scene.js"></script>
 
     <!-- Generic jspsych style sheet -->
     <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
@@ -134,15 +129,15 @@
 
         let baseline_items = BASELINE_ITEMS[dice].table;
         let baseline_list_chosen = BASELINE_LISTS[dice];
-        console.log(baseline_list_chosen);
+        // console.log(baseline_list_chosen);
 
         let paired_items= PAIRED_ITEMS[dice].table;
         let paired_list_chosen = PAIRED_LISTS[dice];
-        console.log(paired_list_chosen);
+        // console.log(paired_list_chosen);
 
         let pref_items = PREF_ITEMS[dice].table;
         let pref_list_chosen = PREF_LISTS[dice];
-        console.log(pref_list_chosen);
+        // console.log(pref_list_chosen);
 
         // and some fixed grabbers
         let grabber_items_one = getGrabberOneItems().table;
@@ -283,18 +278,17 @@
         // buy a bit of time to get browser infos
         setTimeout(() => {  console.log("wait a bit..."); }, 1000);
 
-        console.log('browser info (undefined?)');
-        console.log(browser_info);
+        // console.log('browser info (undefined?)');
+        // console.log(browser_info);
 
-        console.log('screen res (start');
-        console.log(screen_resolution_info_start);
+        // console.log('screen res (start');
+        // console.log(screen_resolution_info_start);
 
-        // UTILS, setting ACCES KEY and stopIfExperimentClosed()
-        //uil.setAccessKey(ACCESS_KEY);
-        console.log("HA, ACCESS KEY");
-        console.log(ACCESS_KEY);
-        //uil.stopIfExperimentClosed();
-
+        //UTILS, setting ACCES KEY and stopIfExperimentClosed()
+        uil.setAccessKey(ACCESS_KEY);
+        // console.log("HA, ACCESS KEY");
+        // console.log(ACCESS_KEY);
+        uil.stopIfExperimentClosed();
 
         jsPsych.data.addProperties({
             subject: subject_id,
@@ -509,8 +503,6 @@
             }
         };
 
-
-
         //0.74
         let instruction_screen_tabs = {
             type: 'html-button-response',
@@ -560,7 +552,7 @@
                 './video/countdown-birds.webm',
                 './video/countdown-birds.mp4'
                 ],
-            prompt: "Ga vast achter uw kind staan. Zet uw muis uit beeld in een hoek van het scherm. Kijk naar beneden...",
+            prompt: "Zet uw muis uit het beeld. Steek uw <strong>rechterhand</strong> op tijdens de countdown, zodra u achter uw kind staat. Zorg dat uw hand <strong>zichtbaar</strong> zichtbaar is voor de camera. Kijk naar beneden.",
             response_ends_trial: false,
             trial_ends_after_video: false,
             controls: false,

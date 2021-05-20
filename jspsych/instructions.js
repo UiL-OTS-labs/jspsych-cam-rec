@@ -96,7 +96,7 @@ const CAREGIVER_INSTRUCTION_2 = `
 
 
 const CAREGIVER_INSTRUCTION_3 = `  
-    <h1> Instructies opstelling (2/3) </h1>
+    <h1> Instructies opstelling (3/3) </h1>
     <ol type="1">
         <li> Zorg voor zo <strong>min mogelijk afleiding</strong>. </li> 
             <div>
