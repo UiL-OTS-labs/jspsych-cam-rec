@@ -1,12 +1,12 @@
 # jspsych-cam-rec
-Baby observation experiment development
+Online Baby Observation Experiment using [jsPysch](httpL//www.jspsych.org and customised [WebRTC]https://webrtc.org/) video tools
 
 # Goals
 This project aims to bring baby behavior observation (and scoring) to the web.  
 This project contains several folders and many files:
 
-- Folder 'jspsych' contains a [jsPsych](https://www.jspsych.org) web experiment.
-- Folder 'webRTC' contains basic code for streaming video.
+- Folder `jspsych` contains a [jsPsych](https://www.jspsych.org) web experiment with sparse stimuli.
+- Folder `webrtc` contains basic code for streaming video.
 - Folder 'osweb' contains preliminary (R&D )exports for the experiment, as made with OpenSesame.
 
 ## webRTC (video)
@@ -16,7 +16,7 @@ https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/record/
 # Development status, relations and scope
 - [This how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/) describes the basic flow for creating a web experiment with jsPsych, given UiL OTS affiliation and the use of our custom jsPsych experiment _Data Store_.
 - The following [general template/boilerplate documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) may also be of help to get a sense of how UiL OTS developers have chosen to organise code/functionality in a _modular_ way. 
-  - Note that at this time, we do not (as of yet) have a standard 'template' or 'boilerplate' for the experimental task. In fact, this codebase's folder 'jspsych' may eventually evolve to become a 'baby-experiment' template experiment for presenting (sparse, moving/static) stimuli, and the related [stream recorder](https://github.com/UiL-OTS-labs/streamupload/) will probably evolve as a robust complementary application to be able to score (infant) behavior.
+  - Note that at this time, we do not (as of yet) have a standard 'template' or 'boilerplate' for the experimental task. In fact, this codebase's folder 'jspsych' may evolve to become a 'template' experiment for presenting (sparse, moving/static) stimuli, and the related [stream recorder](https://github.com/UiL-OTS-labs/streamupload/) will probably evolve as a robust complementary application to be able to score (infant) behavior.
   - Due to this heavy development and the additional complexity, the above mentioned 'UiL OTS how-to' for conducting web experiments will _not_ be identical for this repository. For instance: simply running the experiment locally by double-clicking the index.html file will probably not work, due to how many browsers deal with allowing to load and serve files from your PC/laptop without a web server and/or mixing http/https protocols. In short: you either need help from our technicial staff (or maybe a web-development-savvy friend can help you out to some extent), or you will need to invest quite a bit of time in things like using a local web server, general web-development & programming practices and learning to the 'terminal' (command line).
   - Some custom jsPsych-tools (like the [UiL Utililty library](https://github.com/UiL-OTS-labs/jspsych-uil-utils)) are developed and versioned/updated at shared location(s) in our data store. So, there's quite a lot of interdependency and possible source of error. Please be _very aware_ of this!
  
@@ -41,15 +41,10 @@ In the default `/WebRTC/index.html`, there is a input field to paste a token int
 
 Tokens can be made by only some people of the UiL-OTS lab staff. Get in touch using the UiL OTS lab website if you would like to run a pilot. We recommend using one token per experimental condition, but using one token per participant or per experiment as a whole is also possible.
 
-# Links (future directions)
-
-## Front/rear camera (mobiles)
-https://www.digitalocean.com/community/tutorials/front-and-rear-camera-access-with-javascripts-getusermedia
+# Links
 
 ## Media API
 https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
 
-## https & Media Devices
-https://stackoverflow.com/questions/60957829/navigator-mediadevices-is-undefined
-
+## Sound library
 https://www.luftrum.com/free-field-recordings/
