@@ -30,15 +30,15 @@ uploadButton.addEventListener('click', () => {
     request.onload = async function(e) {
         console.log(e);
         if (e.target.response.includes('Invalid token')) {
-            text = 'Het uploaden is <strong>mislukt</strong> door een ongeldige token. Druk op "Opslaan" om een eigen kopie van de opname te bewaren, en geef deze aan de onderzoeker.';
+            text = 'Het uploaden is <strong>mislukt</strong> door een ongeldige persoonlijke code. Controleer deze en probeer het opnieuw. Houdt het probleem aan? Druk dan op "Opslaan" om een eigen kopie van de opname te bewaren, en geef deze aan de onderzoeker.';
         } else if (e.target.status != 200) {
-            text = '<strong>Het uploaden is niet gelukt.</strong> Druk op "Opslaan" om een eigen kopie van de opname te bewaren, en geef deze aan de onderzoeker.'  ;          
+            text = '<strong>Het uploaden is niet gelukt.</strong> Druk op "Opslaan" om een eigen kopie van de opname te bewaren, en geef deze aan de onderzoeker.';          
         } else {
             text = 'Het uploaden is voltooid. Het wordt op prijs gesteld als u alsnog op "Opslaan" drukt om een eigen kopie van de opname te bewaren, als u dat nog niet gedaan hebt.';
         }
         updateStatus(text);
         uploadButton.textContent = 'Uploaden';
-        await new Promise(r => setTimeout(r, 3000));
+        await new Promise(r => setTimeout(r, 2000));
         uploadButton.disabled = false;
     }
     
@@ -53,7 +53,7 @@ function updateStatus(text='&nbsp') {
 startButton.addEventListener('click', () => {
     
     // Change status message
-    text = 'De camera staat aan, <strong>maar de opname is nog niet begonnen.</strong> Breng de deelnemer(s) zo goed mogelijk in beeld en druk vervolgens op "Begin opname".<br /> Daarna kunt u het experiment vervolgen.'
+    text = 'De camera staat aan, <strong>maar de opname is nog niet begonnen.</strong> Breng uw kind zo goed mogelijk in beeld en druk vervolgens op "Begin opname".<br /> Daarna kunt u het experiment vervolgen.'
     updateStatus(text);
     
 });
