@@ -33,7 +33,7 @@
 
     <!-- Uil OTS organised  -->
     <script src="stimuli.js"></script>
-    <script src="globals.js"></script>
+    <script src="globals_developing.js"></script>
     <script src="consent.js"></script>
     <script src="instructions.js"></script>
 
@@ -282,10 +282,10 @@
         // console.log(screen_resolution_info_start);
 
         //UTILS, setting ACCES KEY and stopIfExperimentClosed()
-        uil.setAccessKey(ACCESS_KEY);
-        // console.log("HA, ACCESS KEY");
-        // console.log(ACCESS_KEY);
-        uil.stopIfExperimentClosed();
+        //uil.setAccessKey(ACCESS_KEY);
+        console.log("HA, ACCESS KEY");
+        console.log(ACCESS_KEY);
+        //uil.stopIfExperimentClosed();
 
         jsPsych.data.addProperties({
             subject: subject_id,
