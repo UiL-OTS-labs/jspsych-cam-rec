@@ -15,6 +15,28 @@ const BORDER_LIST_STYLE = `
     </style>
     `;
 
+const COUNTDOWN_BACKGROUND = `
+    <style>
+    body {
+        background: linear-gradient(65deg, #ffd260, #e73c7e, #23a6d5, #c1f785);
+        background-size: 300% 300%;
+        animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    </style>
+    `;
+
 // screen 1
 const GENERIC_CHECK = `
     <h3>Om te kunnen deelnemen aan het onderzoek is het volgende belangrijk:</h3>

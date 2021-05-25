@@ -37,6 +37,9 @@
     <script src="consent.js"></script>
     <script src="instructions.js"></script>
 
+    <!-- experimental -->
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script> -->
+
     <style>
 
     .instruction {
@@ -228,7 +231,11 @@
         };
      
         // TEST SOUNDS
-        var check_audio = ['./sounds/testtune.mp3'];
+        var check_audio = [
+            './sounds/testtune.mp3', 
+            './sounds/countdown-birds.mp3',
+            './sounds/forestsurroundings.wav'
+        ];
 
         // TEST VIDEOS
         var bgvideo = [
@@ -562,6 +569,40 @@
             on_finish: function(){
                 jsPsych.setProgressBar(0.0);
             }
+        };
+
+
+        // 0.0 a html + sound countdown screen, since on Safari, certain(transparency in) .webm movies won't show...
+
+        let countdown_sound = {
+            type: 'audio-keyboard-response',
+            stimulus: './sounds/forestsurroundings.wav', //file is a few minutes...
+            prompt: function(countDownFrom){
+                var timeleft = 29; //<---- let this number end with a 9! so: 10 second cd? -> 9, 20 second cd? -->19, 30 --> 29...
+                var countdownTimer = setInterval(function(){
+                    if(timeleft <= 1){
+                        clearInterval(countdownTimer);
+                        document.getElementById("countdown").innerHTML = "<h1>Start!</strong></h1>";
+                    } else {
+                        document.getElementById("countdown").innerHTML = "<h2>Nog " + 
+                            '<strong>' + timeleft + '</strong>' + " seconden.</h2>";
+                    }
+                    timeleft -= 1;
+                }, 1000);
+                return COUNTDOWN_BACKGROUND + `
+                    <ul>
+                        <li> Zet uw <strong>muis</strong> uit het beeld en ga achter uw kind staan.</li>
+                        <li> Steek uw <strong>rechterhand</strong> op zodra u achter uw kind staat.</li> 
+                        <li> Zorg dat uw rechterhand <strong>zichtbaar</strong> is achter het hoofd van uw kind.</li>
+                        <li> <strong>Kijk naar beneden</strong> zodra de taak begint.</li>
+                    </ul>
+                    <div id="countdown"></div>
+                    `;
+            },
+            choices: jsPsych.NO_KEYS,
+            trial_duration: 30000,//<----------(adjust to 10, 20, 30 seconds (but then in ms!)
+            trial_ends_after_response: false,
+            post_trial_gap: 0,
         };
 
         //0.0
@@ -938,27 +979,27 @@
         timeline.push(start_screen); //0.1
 
         // Informed consent (consent.js)
-        timeline.push(consent_procedure); //0.2-0.3
+        // timeline.push(consent_procedure); //0.2-0.3
 
         // personal code 
-        timeline.push(personal_code_multi_html_block); //0.4
+        // timeline.push(personal_code_multi_html_block); //0.4
         
         // setup multipage &
         // setup 'part 3' = validation
 
-        timeline.push(setup_screens_multi);//0.5
-        timeline.push(setup_validate_checkbox);//0.6
+        // timeline.push(setup_screens_multi);//0.5
+        // timeline.push(setup_validate_checkbox);//0.6
         
-        timeline.push(test_audio_looped);//0.65
-        timeline.push(instruction_screen_layout); //0.67
-        timeline.push(check_screen_layout); //0.73
+        // timeline.push(test_audio_looped);//0.65
+        // timeline.push(instruction_screen_layout); //0.67
+        // timeline.push(check_screen_layout); //0.73
 
-        timeline.push(instruction_screen_tabs);
-        timeline.push(instruction_screen_rec_checkbox); //0.78
+        // timeline.push(instruction_screen_tabs);
+        // timeline.push(instruction_screen_rec_checkbox); //0.78
 
         //timeline.push(countdown_simple);
-        timeline.push(countdown_video_pause);
-
+        //timeline.push(countdown_video_pause);
+        timeline.push(countdown_sound);
         // BASELINE //////////////////////////////////////
         timeline.push(baseline_procedure); //0.8 fixed, so not attention grabbing. or mebby use a "hideProgressBar"
         
