@@ -37,9 +37,6 @@
     <script src="consent.js"></script>
     <script src="instructions.js"></script>
 
-    <!-- experimental -->
-<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script> -->
-
     <style>
 
     .instruction {
@@ -146,7 +143,7 @@
         let grabber_items_one = getGrabberOneItems().table;
         let grabber_items_two = getGrabberTwoItems().table;
 
-        // now cutting the original paired timeline in pairs...
+        // now 'cutting' the original paired timeline in pairs...
         let paired_one = [
                 paired_items[0],
                 paired_items[2],        
@@ -171,7 +168,8 @@
 
         ////////////////////////// MEDIA PRELOADING /////////////////////////////
         
-        // BASELINE /////////////////////////////////////////////////////////////
+        // BASELINE
+        
         var baseline_audio = [];
         for (var i=0; i< baseline_items.length; i++) {
             baseline_audio.push(baseline_items[i].sound_fn);
@@ -195,7 +193,7 @@
             paired_videos.push(paired_items[i].image_fn + ".webm");
         };
 
-        // PREFERENTIAL //////////////////////////////////////////////////////////
+        // PREFERENTIAL
         var pref_audio = [];
         for (var i=0; i< pref_items.length; i++) {
             pref_audio.push(pref_items[i].sound_fn);
@@ -207,7 +205,7 @@
             pref_videos.push(pref_items[i].image_fn + ".webm");
         };
         
-        // GRABBER ////////////////////////////////////////////////////////////////
+        // GRABBER
         var grabber_audio_one = [];
         for (var i=0; i< grabber_items_one.length; i++) {
             grabber_audio_one.push(grabber_items_one[i].sound_fn);
@@ -230,7 +228,7 @@
             grabber_video_two.push(grabber_items_two[i].image_fn + ".webm");
         };
      
-        // TEST SOUNDS
+        // TEST/FIXED SOUNDS
         var check_audio = [
             './sounds/testtune.mp3', 
             './sounds/countdown-birds.mp3',
@@ -250,7 +248,6 @@
         ];
 
         // REGULAR JS FUNCTIONS
-        // to change background styles, and a countdown function
 
         function set_html_to_grey() {
             document.body.style.backgroundColor = GREY_HEX; // background color RGBA-mode
@@ -279,7 +276,7 @@
         let browser_info = uil.browser.getBrowserInfo();
         let screen_resolution_info_start = uil.browser.getResolutionInfo();
 
-        // buy a bit of time to get browser infos
+        // buy a bit of time to get browser infos...
         setTimeout(() => {  console.log("wait a bit..."); }, 1000);
 
         // console.log('browser info (undefined?)');
@@ -304,9 +301,9 @@
 
 
         ////////////////////////////////////////////////////////////////////////////////////////
-        //// screens/(sub-)(trial-)phases...////////////////////////////////////////////////////
+        //SCREENS for (sub-)(trial-) phases...
         
-        //0.1
+        // 0.1 progress
         let start_screen = {
             type: 'html-button-response',
             stimulus: function(){
@@ -321,7 +318,7 @@
             }
         };
         
-        //0.2
+        // 0.2 progress
         let consent_block_multi = {
             type: 'instructions',
             button_label_next: "Volgende",
@@ -339,7 +336,7 @@
             }
         };
         
-        //0.3
+        // 0.3 progress
         let consent_block_choice = {
             type: 'survey-multi-select',
             preamble: CONSENT_HTML_STYLE_UU + CONSENT_HTML_CHOICE,
@@ -387,8 +384,10 @@
             }
         }
 
-        // HTML plugin survey block: questions are in the HTML constant
-        //0.4
+        ////////////////////////////////////////////////////////////////////////////////////////
+        // HTML plugin survey blocks: questions are HTML constants, defined in instructions.js
+
+        // 0.4 progress
         let personal_code_multi_html_block = {
             type: 'survey-html-form',
             preamble: CONSENT_HTML_STYLE_UU + PERSONAL_CODE_PRE_TEXT,
@@ -401,7 +400,7 @@
             }
         };
 
-        //0.5
+        // 0.5 progress
         let setup_screens_multi = {
             type: 'instructions',
             button_label_next: "Volgende",
@@ -423,7 +422,7 @@
             }
         }
         
-        //0.6
+        // 0.6 progress
         let setup_validate_checkbox = {
             type: 'survey-multi-select',
             preamble: CONSENT_HTML_STYLE_UU + "<h2>Opstelling gereed</h2>",
@@ -448,7 +447,7 @@
             }
         };
 
-        //0.65
+        // 0.65 progress
         let test_audio_looped = {
             post_trial_gap: DEFAULT_ITI,
             timeline:
@@ -477,7 +476,7 @@
             }
         };
         
-        //0.67
+        // 0.67 progress
         let instruction_screen_layout = {
             type: 'html-button-response',
             stimulus: function(){
@@ -492,7 +491,7 @@
             }
         };
         
-        //0.71
+        // 0.71 progress
         let check_screen_layout = {
             type: 'html-button-response',
             stimulus: function(){
@@ -507,7 +506,7 @@
             }
         };
 
-        //0.74
+        // 0.74 progress
         let instruction_screen_tabs = {
             type: 'html-button-response',
             stimulus: function(){
@@ -523,8 +522,7 @@
             }
         };
 
-        //0.76
-        // globals for this are in instruction.js
+        // 0.76 progress
         let instruction_screen_rec_checkbox = {
             type: 'survey-multi-select', //used to be survey-multi-select
             preamble: CONSENT_HTML_STYLE_UU + "<h1>Instructie webcam opname (2/2)</h1>" + 
@@ -547,7 +545,7 @@
             }
         };
         
-        //0.0
+        // 0.0 progress, not to be used due to webm video in safari/apple-webkit
         let countdown_video_pause = {
             type: 'video-keyboard-response',
             on_start: set_html_to_white,
@@ -572,8 +570,7 @@
         };
 
 
-        // 0.0 a html + sound countdown screen, since on Safari, certain(transparency in) .webm movies won't show...
-
+        // 0.0 progress a html + sound countdown screen, since on Safari, certain(transparency in) .webm movies won't show...
         let countdown_sound = {
             type: 'audio-keyboard-response',
             stimulus: './sounds/forestsurroundings.wav', //file is a few minutes...
@@ -605,7 +602,7 @@
             post_trial_gap: 0,
         };
 
-        //0.0
+        // 0.0 (task/experimental phase, no progressbar updates, set to 0.0)
         let left_and_right_screen = {
             type: 'audio-button-response',
             on_start: set_html_to_grey,
@@ -638,7 +635,6 @@
             }
         };
 
-        //0.0
         let left_or_right_screen = {
             type: 'audio-button-response',
             on_start: set_html_to_grey,
@@ -716,27 +712,6 @@
             on_finish: set_html_to_white,
         };
 
-        let countdown_simple = {
-            type: 'html-keyboard-response',
-            stimulus: function(countDownFromTen){
-                var timeleft = 10;
-                var countdownTimer = setInterval(function(){
-                    if(timeleft <= 0){
-                        clearInterval(countdownTimer);
-                        document.getElementById("countdown").innerHTML = "Start!";
-                    } else {
-                        document.getElementById("countdown").innerHTML = "Nog " + timeleft + " seconden";
-                    }
-                    timeleft -= 1;
-                }, 1000);
-                return '<div id="countdown"></div>'
-            },
-            choices: jsPsych.NO_KEYS,
-            trial_duration: 11000,
-            trial_ends_after_response: false,
-            post_trial_gap: 0,
-        };
-
         //0.87
         let exp_done_screen = {
             type: 'html-button-response',
@@ -753,8 +728,7 @@
             }
         };
 
-        //0.90
-        // globals for this are in instruction.js
+        // 0.90
         let additional_consent_checkbox = {
             type: 'survey-multi-choice',
             preamble: CONSENT_HTML_STYLE_UU + 
@@ -816,14 +790,15 @@
             }
         };
 
-        // PROCEDURES ////////////////////////////////
+        // PROCEDURES (combinations of screens/(sub)trial-phases and timelineVariables) ///////////////////////////////
+
         let consent_procedure = {
             timeline: [
                 consent_block_multi, 
                 consent_block_choice, 
                 if_node_consent
                 ]
-        }
+        };
 
         let baseline_procedure = {
             timeline:[
@@ -975,42 +950,39 @@
 
         let timeline = [];
 
-        // it's best practice to have *mouse click* user I/O first
+        // it's best practice to always use a plugin with *mouse click* user I/O first
         timeline.push(start_screen); //0.1
 
         // Informed consent (consent.js)
-        // timeline.push(consent_procedure); //0.2-0.3
+        timeline.push(consent_procedure); //0.2-0.3
 
         // personal code 
-        // timeline.push(personal_code_multi_html_block); //0.4
+        timeline.push(personal_code_multi_html_block); //0.4
         
-        // setup multipage &
-        // setup 'part 3' = validation
-
-        // timeline.push(setup_screens_multi);//0.5
-        // timeline.push(setup_validate_checkbox);//0.6
+        // prepare setup
+        timeline.push(setup_screens_multi);//0.5
+        timeline.push(setup_validate_checkbox);//0.6
         
-        // timeline.push(test_audio_looped);//0.65
-        // timeline.push(instruction_screen_layout); //0.67
-        // timeline.push(check_screen_layout); //0.73
+        // test audio
+        timeline.push(test_audio_looped);//0.65
+        
+        // instruct/validate screen layout
+        timeline.push(instruction_screen_layout); //0.67
+        timeline.push(check_screen_layout); //0.73
 
-        // timeline.push(instruction_screen_tabs);
-        // timeline.push(instruction_screen_rec_checkbox); //0.78
+        // instruct/validate video recording application
+        timeline.push(instruction_screen_tabs);
+        timeline.push(instruction_screen_rec_checkbox); //0.78
 
-        //timeline.push(countdown_simple);
-        //timeline.push(countdown_video_pause);
+        //prepare a countdown with some last instuctions to start the task..
         timeline.push(countdown_sound);
-        // BASELINE //////////////////////////////////////
-        timeline.push(baseline_procedure); //0.8 fixed, so not attention grabbing. or mebby use a "hideProgressBar"
+
+        // START TASK FOR INFANT //////////////////////////////////////
+
+        // BASELINE 
+        timeline.push(baseline_procedure); //0.0 (fixed, so not attention grabbing.)
         
-        //timeline.push(countdown_video_pause);
-
-        // PAIREWISE /////////////////////////////////////
-
-        // this is horrible coding/lusing timelines, but it might just be the best way to
-        // commit a working example of the right kinds.
-        // the sixteen items are split in halves and each of these form tuple-timeline procedures of the 'pairs'
-
+        // PAIREWISE
         timeline.push(grabber_one);
         timeline.push(paired_procedure_a);
 
@@ -1035,12 +1007,10 @@
         timeline.push(grabber_one);
         timeline.push(paired_procedure_h);
 
-        // timeline.push(sync_screen_orange)
-        //timeline.push(countdown_video_pause);
-
-        // PREFERENTIAL LOOKING //////////////////////////
+        // PREFERENTIAL LOOKING
         timeline.push(pref_procedure);
-    
+
+        // END TASK FOR INFANT //////////////////////////////////////
 
         timeline.push(exp_done_screen);//0.85
 
