@@ -575,7 +575,7 @@
             type: 'audio-keyboard-response',
             stimulus: '', //'./sounds/forestsurroundings.wav', //file is a few minutes...
             prompt: function(countDownFrom){
-                var timeleft = 29; //<---- let this number end with a 9! so: 10 second cd? -> 9, 20 second cd? -->19, 30 --> 29...
+                var timeleft = 9; //<---- let this number end with a 9! so: 10 second cd? -> 9, 20 second cd? -->19, 30 --> 29...
                 var countdownTimer = setInterval(function(){
                     if(timeleft <= 1){
                         clearInterval(countdownTimer);
@@ -621,7 +621,7 @@
             },
             response_ends_trial: false,
             trial_ends_after_audio: false,
-            trial_duration: 2950,
+            trial_duration: 25000,
             choices: [],
             on_finish: set_html_to_white,
             data: {
@@ -657,7 +657,43 @@
             },
             response_ends_trial: false,
             trial_ends_after_audio: false,
-            trial_duration: 1950,
+            trial_duration: 20000,
+            choices: [],
+            on_finish: set_html_to_white,
+            data: {
+                target_audio: jsPsych.timelineVariable('sound_fn'),
+                target_image: jsPsych.timelineVariable('image_fn'),
+                resolution: uil.browser.getResolutionInfo()
+            },
+            on_finish: function(){
+                jsPsych.setProgressBar(0.0);
+                set_html_to_white
+            }
+        };
+
+        let short_left_or_right_screen = {
+            type: 'audio-button-response',
+            on_start: set_html_to_grey,
+            stimulus: jsPsych.timelineVariable('sound_fn'),
+            prompt: function() {
+                var side = jsPsych.timelineVariable('side', true);
+                var grid = GRID_HTML_LEFT_RIGHT;
+                if ( side === 0 ){
+                    var newgrid = grid.replaceAll("./video/01_left",
+                        jsPsych.timelineVariable('image_fn'));
+                } else if (side === 1 ) {
+                    var newgrid = grid.replaceAll("./video/03_right",
+                        jsPsych.timelineVariable('image_fn'));
+                    //console.log("OR screen gridright: ", newgrid)
+                } else {
+                    console.error("Stimulus side is unknown or undefined...");
+                    var newgrid = 'error';
+                }
+                return newgrid;
+            },
+            response_ends_trial: false,
+            trial_ends_after_audio: false,
+            trial_duration: 2450, // 50ms shorter to avoid audio cutoff
             choices: [],
             on_finish: set_html_to_white,
             data: {
@@ -802,7 +838,7 @@
 
         let baseline_procedure = {
             timeline:[
-                left_or_right_screen
+                short_left_or_right_screen
                 ],
             timeline_variables: baseline_items,
             randomize_order: false
