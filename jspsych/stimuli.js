@@ -99,112 +99,112 @@ const PAIRED_1 = [
     {
         id: 1, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_static_small",
         side: 1 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_move",
         side: 0
     },
     {
         id: 3, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_move",
         side: 1 
     },
     {
         id: 4, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_static_small",
         side: 0
     },
     {
         id: 5, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_static_small",
         side: 1 
     },
     {
         id: 6, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_move",
         side: 0
     },
     {
         id: 7, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_move",
         side: 1 
     },
     {
         id: 8, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_static_small",
         side: 0
     },
     {
         id: 9, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_static_small",
         side: 1 
     },
     {
         id: 10, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_move",
         side: 0
     },
     {
         id: 11, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_move",
         side: 1 
     },
     {
         id: 12, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_static_small",
         side: 0
     },
     {
         id: 13, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_static_small",
         side: 1 
     },
     {
         id: 14, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_move",
         side: 0
     },
     {
         id: 15, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_move",
         side: 1 
     },
     {
         id: 16, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_static_small",
         side: 0
     }
@@ -214,112 +214,112 @@ const PAIRED_2 = [
     {
         id: 1, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_static_small",
         side: 1 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_move",
         side: 0
     },
     {
         id: 3, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_move",
         side: 1 
     },
     {
         id: 4, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_static_small",
         side: 0
     },
     {
         id: 5, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_static_small",
         side: 1 
     },
     {
         id: 6, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_move",
         side: 0
     },
     {
         id: 7, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_move",
         side: 1 
     },
     {
         id: 8, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_static_small",
         side: 0
     },
     {
         id: 9, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_static_small",
         side: 1 
     },
     {
         id: 10, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_move",
         side: 0
     },
     {
         id: 11, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_move",
         side: 1 
     },
     {
         id: 12, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_static_small",
         side: 0
     },
     {
         id: 13, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_static_small",
         side: 1 
     },
     {
         id: 14, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_complex_move",
         side: 0
     },
     {
         id: 15, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_move",
         side: 1 
     },
     {
         id: 16, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "../sounds/jspsych_sounds_geluid_stim_20sec.mp3",
         image_fn: "./video/circle_simple_static_small",
         side: 0
     }
@@ -341,56 +341,56 @@ const PREF_1 = [
     {
         id: 1, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_simple_static_small",
         image_fn_right: "./video/circle_simple_move"
     },
     {
         id: 2, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_simple_move",
         image_fn_right: "./video/circle_simple_static_small"
     },
     {
         id: 3, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_complex_static_small",
         image_fn_right: "./video/circle_complex_move"
     },
     {
         id: 4, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_complex_move",
         image_fn_right: "./video/circle_complex_static_small"
     },
     {
         id: 5, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_simple_move",
         image_fn_right: "./video/circle_simple_static_small"
     },
     {
         id: 6, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_complex_static_small",
         image_fn_right: "./video/circle_complex_move"
     },
     {
         id: 7, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_complex_move",
         image_fn_right: "./video/circle_complex_static_small"
     },
     {
         id: 8, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_simple_static_small",
         image_fn_right: "./video/circle_simple_move"
     }
@@ -400,56 +400,56 @@ const PREF_2 = [
     {
         id: 1, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_complex_static_small",
         image_fn_right: "./video/circle_complex_move"
     },
     {
         id: 2, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_complex_move",
         image_fn_right: "./video/circle_complex_static_small"
     },
     {
         id: 3, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_simple_static_small",
         image_fn_right: "./video/circle_simple_move"
     },
     {
         id: 4, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_simple_move",
         image_fn_right: "./video/circle_simple_static_small"
     },
     {
         id: 5, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_complex_move",
         image_fn_right: "./video/circle_complex_static_small"
     },
     {
         id: 6, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_simple_static_small",
         image_fn_right: "./video/circle_simple_move"
     },
     {
         id: 7, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_simple_move",
         image_fn_right: "./video/circle_simple_static_small"
     },
     {
         id: 8, 
         item_type: PREFERENTIAL_LOOK, 
-        sound_fn: "./sounds/geluid_stim_15sec.wav",
+        sound_fn: "./sounds/jspsych_sounds_geluid_stim_25sec.mp3",
         image_fn_left: "./video/circle_complex_static_small",
         image_fn_right: "./video/circle_complex_move"
     }
