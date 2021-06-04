@@ -25,28 +25,28 @@ const BASELINE_1 = [
     {
         id: 1, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        sound_fn: "./sounds/testtune.mp3",
         image_fn: "./video/circle_complex_static_small", 
         side: 1
     },
     {
         id: 2, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        sound_fn: "./sounds/testtune.mp3",
         image_fn: "./video/circle_simple_static_small",
         side: 0
     },
     {
         id: 3, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        sound_fn: "./sounds/testtune.mp3",
         image_fn: "./video/circle_simple_static_small", 
         side: 1
     },
     {
         id: 4, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        sound_fn: "./sounds/testtune.mp3",
         image_fn: "./video/circle_complex_static_small",
         side: 0
     },
@@ -57,28 +57,28 @@ const BASELINE_2 = [
     {
         id: 1, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        sound_fn: "./sounds/testtune.mp3",
         image_fn: "./video/circle_simple_static_small", 
         side: 1
     },
     {
         id: 2, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        sound_fn: "./sounds/testtune.mp3",
         image_fn: "./video/circle_complex_static_small",
         side: 0
     },
     {
         id: 3, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        sound_fn: "./sounds/testtune.mp3",
         image_fn: "./video/circle_complex_static_small", 
         side: 1
     },
     {
         id: 4, 
         item_type: BASELINE, 
-        sound_fn: "./sounds/Geluid_stim_10sec_correct.wav",
+        sound_fn: "./sounds/testtune.mp3",
         image_fn: "./video/circle_simple_static_small",
         side: 0
     },
@@ -99,112 +99,112 @@ const PAIRED_1 = [
     {
         id: 1, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_static_small",
         side: 1 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_move",
         side: 0
     },
     {
         id: 3, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_move",
         side: 1 
     },
     {
         id: 4, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_static_small",
         side: 0
     },
     {
         id: 5, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_static_small",
         side: 1 
     },
     {
         id: 6, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_move",
         side: 0
     },
     {
         id: 7, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_move",
         side: 1 
     },
     {
         id: 8, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_static_small",
         side: 0
     },
     {
         id: 9, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_static_small",
         side: 1 
     },
     {
         id: 10, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_move",
         side: 0
     },
     {
         id: 11, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_move",
         side: 1 
     },
     {
         id: 12, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_static_small",
         side: 0
     },
     {
         id: 13, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_static_small",
         side: 1 
     },
     {
         id: 14, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_move",
         side: 0
     },
     {
         id: 15, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_move",
         side: 1 
     },
     {
         id: 16, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_static_small",
         side: 0
     }
@@ -214,112 +214,112 @@ const PAIRED_2 = [
     {
         id: 1, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_static_small",
         side: 1 
     },
     {
         id: 2, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_move",
         side: 0
     },
     {
         id: 3, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_move",
         side: 1 
     },
     {
         id: 4, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_static_small",
         side: 0
     },
     {
         id: 5, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_static_small",
         side: 1 
     },
     {
         id: 6, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_move",
         side: 0
     },
     {
         id: 7, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_move",
         side: 1 
     },
     {
         id: 8, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_static_small",
         side: 0
     },
     {
         id: 9, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_static_small",
         side: 1 
     },
     {
         id: 10, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_move",
         side: 0
     },
     {
         id: 11, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_move",
         side: 1 
     },
     {
         id: 12, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_static_small",
         side: 0
     },
     {
         id: 13, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_static_small",
         side: 1 
     },
     {
         id: 14, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_complex_move",
         side: 0
     },
     {
         id: 15, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_move",
         side: 1 
     },
     {
         id: 16, 
         item_type: PAIRED_SUCCESION, 
-        sound_fn: "./sounds/testtune.mp3",
+        sound_fn: "./sounds/geluid_stim_15sec.wav",
         image_fn: "./video/circle_simple_static_small",
         side: 0
     }
