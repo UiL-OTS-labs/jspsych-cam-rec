@@ -308,7 +308,7 @@ const CONSENT_PAGE_2 = `
     <ol type="1">
         <li> de verzamelde gegevens voor wetenschappelijke doelen worden verkregen en bewaard zoals in de informatiebrief vermeld staat; </li>
         <li> de verzamelde, gecodeerde/geanonimiseerde, onderzoeksgegevens door wetenschappers kunnen worden gedeeld en/of worden hergebruikt om eventueel andere onderzoeksvragen mee te beantwoorden; </li>
-        <li> er voor wetenschappelijke doeleinden <strong>beeld- en geluidsopnamen</strong> worden gemaakt. Deze opnamen zullen <u>niet</u> met andere onderzoekers worden gedeeld dan diegenen die direct betrokken zijn bij dit onderzoek; tenzij u hier uitdrukkelijk toestemming voor geeft aan het einde van het onderzoek. </li>
+        <li> er voor wetenschappelijke doeleinden <strong>beeld- en geluidsopnamen</strong> worden gemaakt. Deze opnamen zullen <u>niet</u> met andere onderzoekers worden gedeeld dan diegenen die direct betrokken zijn bij dit onderzoek, tenzij u hier uitdrukkelijk toestemming voor geeft aan het einde van het onderzoek. </li>
     </ol>
 
     <h6>Ik begrijp dat: </h6>
@@ -320,7 +320,7 @@ const CONSENT_PAGE_2 = `
 const CONSENT_PAGE_3 = `
     <h1>Toestemmingsverklaring voor deelname aan:</h1>
     <h2>“Online onderzoek naar het kijkgedrag van baby’s” (3/3)</h2>
-    U kunt de informatie <i>nu nog herlezen</i> (gebruik "vorige"), maar als u hierna op 'volgende' klikt, kan dat niet meer.
+    U kunt de informatie <i>nu nog herlezen</i> (gebruik "vorige"), maar als u hierna op 'volgende' klikt, dan kan dat niet meer.
     `;
 
 const CONSENT_HTML_CHOICE = `

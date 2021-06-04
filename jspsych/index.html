@@ -573,7 +573,7 @@
         // 0.0 progress a html + sound countdown screen, since on Safari, certain(transparency in) .webm movies won't show...
         let countdown_sound = {
             type: 'audio-keyboard-response',
-            stimulus: './sounds/forestsurroundings.wav', //file is a few minutes...
+            stimulus: '', //'./sounds/forestsurroundings.wav', //file is a few minutes...
             prompt: function(countDownFrom){
                 var timeleft = 29; //<---- let this number end with a 9! so: 10 second cd? -> 9, 20 second cd? -->19, 30 --> 29...
                 var countdownTimer = setInterval(function(){
@@ -597,7 +597,7 @@
                     `;
             },
             choices: jsPsych.NO_KEYS,
-            trial_duration: 30000,//<----------(adjust to 10, 20, 30 seconds (but then in ms!)
+            trial_duration: 10000,//<----------(adjust to 10, 20, 30 seconds (but then in ms!)
             trial_ends_after_response: false,
             post_trial_gap: 0,
         };

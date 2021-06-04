@@ -62,7 +62,7 @@ const PERSONAL_CODE_PRE_TEXT = `
     <p>Voer hier uw persoonlijke code in die u heeft ontvangen in de mail.
     <br>
     <br>
-    Het is belangrijk dat u de persoonlijke code <strong>correct</strong> invoert, zodat u ook achteraf kunt beslissen om toch niet mee te doen aan het onderzoek.
+    Het is belangrijk dat u de persoonlijke code <strong>correct</strong> invoert; wij hebben deze code nodig als u achteraf beslist om toch niet mee te doen.
     <br>
     <br>
     Alleen met een correcte persoonlijke code kunnen wij uw webcam-opname op uw verzoek verwijderen. <strong>Bewaar</strong> uw persoonlijke code dus goed <strong>*</strong>.
@@ -130,7 +130,7 @@ const CAREGIVER_INSTRUCTION_3 = `
             <div>
                 <ul class="bullet-open">
                     <li>Om het kijkgedrag van uw kind niet te beïnvloeden is het van belang dat u <strong>achter</strong> uw kind blijft, zodat uw kind maximale aandacht heeft voor het scherm en niet wordt afgeleid.</li>
-                    <li>Verder vragen wij u om naar <strong>beneden</strong> te kijken (zodat u niet naar het scherm kijkt), <strong>niet</strong> te <strong>praten</strong> over het scherm of wat u hoort, en <strong>niet</strong> te <strong>wijzen</strong> naar het scherm.</li>
+                    <li>Verder vragen wij u om naar <strong>beneden</strong> te kijken (zodat u niet naar het scherm kijkt), <strong>niet</strong> te <strong>praten</strong> over het scherm of over wat u hoort, en <strong>niet</strong> te <strong>wijzen</strong> naar het scherm.</li>
                 </ul>
             </div>
     </ol>
@@ -278,7 +278,7 @@ const PRE_REC_MESSAGE_TABS = `
     <img src="./images/tabs.png" style="width: 600px;"></img>
     <br>
     <br>
-    Nadat u uw webcam-opname heeft gestart laat u het webcam-tabblad open staan en klikt u op het huidige tabblad, om terug te komen op deze pagina (uw webcam-opname blijft dus op de achtergrond doorlopen, <strong>sluit geen van beide tabbladen!</strong>).
+    Nadat u uw webcam-opname heeft gestart laat u het webcam-tabblad open staan en klikt u op het huidige tabblad, om terug te komen op dit tabblad (uw webcam-opname blijft dus op de achtergrond doorlopen, <strong>sluit geen van beide tabbladen!</strong>).
 `;
 
 const PRE_REC_MESSAGE_CHECKBOX = BORDER_LIST_STYLE + `
