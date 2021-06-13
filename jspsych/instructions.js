@@ -78,7 +78,7 @@ const PERSONAL_CODE_CHOICE_HTML =`
 
     <label for="personal_code">Persoonlijke code: </label>
     <input type="text" id="personal_code" name="personal_code"
-        pattern="[a-zA-Z0-9]{8,8}" placeholder="a2c4e6g8" required><span class="validity"></span>
+        pattern="[a-zA-Z0-9]{0,8}" placeholder="k39d9" required><span class="validity"></span>
     <br>
     <br>
     </div>
