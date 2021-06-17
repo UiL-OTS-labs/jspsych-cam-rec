@@ -318,7 +318,7 @@ const POST_REC_MESSAGE = `
     Nadat u straks op het tabblad met uw <strong>webcam-opname</strong> klikt:
     <ol type="1">
         <li>Klikt u op "<strong>Stop opname</strong>".</li>
-        <li>Vult u bij “token” uw <strong>persoonlijke code</strong> in.</li>
+        <li>Vult u in het tekstvak uw <strong>persoonlijke code</strong> in.</li>
         <li>Klikt u vervolgens op "<strong>Uploaden</strong>".</li>
     </ol>
     Nadat u op uploaden heeft geklikt wordt uw <strong>webcam-opname verstuurd</strong> naar de beveiligde server van Universiteit Utrecht.
@@ -360,14 +360,14 @@ const GIFT_MESSAGE = `
     Indien u een cadeautje wilt ontvangen, mail dan uw: <strong>straat, huisnummer, postcode, plaats, én uw unieke code</strong> naar:
     <br>
     <br>
-    <strong>m.h.i.jansen@uu.nl</strong>
+    <strong>babylabutrecht@uu.nl</strong>
     <br>
     <br>
-    Als u uw PC's standaard-email programma gebruikt, kunt u ook <a href="mailto:m.h.i.jansen@uu.nl?subject=Deelname%20Onderzoek&body=Mijn-adresgegevens-en-persoonlijke code:"><strong>deze E-mail-link</strong></a> gebruiken.
+    Als u uw PC's standaard-email programma gebruikt, kunt u ook <a href="mailto:babylabutrecht@uu.nl?subject=Deelname%20Onderzoek&body=Mijn adresgegevens en persoonlijke code:"><strong>deze E-mail-link</strong></a> gebruiken.
     <br>
     <br>
     Als u liever met uw telefoon de e-mail wilt versturen, kunt u deze QR code scannen:<br>
-    <img src="./images/mailmaaike.png" style="width: 200px">    
+    <img src="./images/mailbabylab.png" style="width: 200px">    
     <br>
     <br>
     Klik op 'Einde' als u dit heeft gedaan, of als u geen cadeautje wilt ontvangen.
