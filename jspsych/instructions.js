@@ -363,7 +363,7 @@ const GIFT_MESSAGE = `
     <strong>babylabutrecht@uu.nl</strong>
     <br>
     <br>
-    Als u uw PC's standaard-email programma gebruikt, kunt u ook <a href="mailto:babylabutrecht@uu.nl?subject=Deelname%20Onderzoek&body=Mijn adresgegevens en persoonlijke code:"><strong>deze E-mail-link</strong></a> gebruiken.
+    Als u uw PC's standaard-email programma gebruikt, kunt u ook <a href="mailto:babylabutrecht@uu.nl?subject=Deelname%20Onderzoek&body=Mijn adresgegevens en persoonlijke code:" target="_blank"><strong>deze E-mail-link</strong></a> gebruiken.
     <br>
     <br>
     Als u liever met uw telefoon de e-mail wilt versturen, kunt u deze QR code scannen:<br>
