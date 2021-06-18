@@ -131,7 +131,7 @@ const CAREGIVER_INSTRUCTION_3 = `
                 <ul class="bullet-open">
                     <li>Om het kijkgedrag van uw kind niet te beïnvloeden is het van belang dat u <strong>achter</strong> uw kind blijft, zodat uw kind maximale aandacht heeft voor het scherm en niet wordt afgeleid.</li>
                     <li>Verder vragen wij u om naar <strong>beneden</strong> te kijken (zodat u niet naar het scherm kijkt), <strong>niet</strong> te <strong>praten</strong> over het scherm of over wat u hoort, en <strong>niet</strong> te <strong>wijzen</strong> naar het scherm.</li>
-                    <li>Houd het hand van uw kind vast, of leg uw hand op zijn of haar schouder om aan te geven dat u er nog bent</li>
+                    <li>Houd het handje van uw kind vast of leg uw hand op de schouder van uw kind, zodat uw kind weet dat u nog aanwezig bent zonder achterom te hoeven kijken.</li>
                 </ul>
             </div>
     </ol>
@@ -297,7 +297,7 @@ const PRE_REC_MESSAGE_CHECKBOX = BORDER_LIST_STYLE + `
     </ol>
     <br>
     <br>
-    Klik op "Volgende"  nadat u de webcam-opname heeft gestart, om het taakje voor uw kind te starten. U heeft dan nog <strong>10 seconden</strong> om positie in te nemen en de <strong>muis</strong> in een <strong>hoek van het scherm</strong> te plaatsen. 
+    Klik op "Volgende"  nadat u de webcam-opname heeft gestart, om het taakje voor uw kind te starten. U heeft dan nog <strong>10 seconden</strong> om uw positie in te nemen en de <strong>muis</strong> in een <strong>hoek van het scherm</strong> te plaatsen en het handje van uw kind vast te pakken. 
     <br>
     <br>
     Zodra u na de start van het onderzoek langer dan 15 seconden geen geluid meer hoort is de taak voor uw kind afgerond.
