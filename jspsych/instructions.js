@@ -131,6 +131,7 @@ const CAREGIVER_INSTRUCTION_3 = `
                 <ul class="bullet-open">
                     <li>Om het kijkgedrag van uw kind niet te beïnvloeden is het van belang dat u <strong>achter</strong> uw kind blijft, zodat uw kind maximale aandacht heeft voor het scherm en niet wordt afgeleid.</li>
                     <li>Verder vragen wij u om naar <strong>beneden</strong> te kijken (zodat u niet naar het scherm kijkt), <strong>niet</strong> te <strong>praten</strong> over het scherm of over wat u hoort, en <strong>niet</strong> te <strong>wijzen</strong> naar het scherm.</li>
+                    <li>Houd het hand van uw kind vast, of leg uw hand op zijn of haar schouder om aan te geven dat u er nog bent</li>
                 </ul>
             </div>
     </ol>
