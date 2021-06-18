@@ -139,13 +139,11 @@ const CAREGIVER_INSTRUCTION_3 = `
 
 const CAREGIVER_INSTRUCTION_4 = `
     <h1>Wanneer te stoppen?</h1>
-    <p>Als uw kind erg onrustig is kunt u uw kind <strong>geruststellen</strong>. Let wel op dat u <strong>niet</strong> met uw kind <strong>praat</strong> over of <strong>wijst</strong> naar het <strong>scherm</strong>.
-    <br>
-    <br> 
-    <strong>Als uw kind niet gerust te stellen is, kunt u uw kind uit de kinderstoel halen.</strong>
-    <br>
-    <br>
-    <strong>Let op</strong>:  Wij vragen u de webcamopname te stoppen maar de opname <strong>wel</strong> te <strong>uploaden</strong>. Alle kleine beetjes helpen. Ook is het belangrijk om na het taakje op ‘volgende’ te blijven klikken en het <strong>onderzoek volledig af te ronden</strong>.
+    
+    <p>Als uw kind erg onrustig is kunt u uw kind <strong>geruststellen</strong>. Let wel op dat u <strong>niet</strong> met uw kind <strong>praat</strong> over of <strong>wijst</strong> naar het <strong>scherm</strong>.</p>
+    <p>Houd tevens gedurende het onderzoek het handje van uw kind vast of leg uw hand op de schouder van uw kind. Zodoende hoeft uw kind niet achterom te kijken om te weten dat u er nog bent.</p>
+    <p><strong>Als uw kind niet gerust te stellen is, kunt u uw kind uit de kinderstoel halen.</strong></p>
+    <p><strong>Let op</strong>:  Wij vragen u de webcamopname te stoppen maar de opname in dit geval <strong>wel</strong> te <strong>uploaden</strong>. Alle kleine beetjes helpen. Ook is het belangrijk om na het taakje op ‘volgende’ te blijven klikken en het <strong>onderzoek volledig af te ronden</strong>.
     </p> 
 `;
 
@@ -380,6 +378,7 @@ const DEBRIEF_MESSAGE = `
     <br>
     <br>
     <h2>Bedankt voor jullie deelname!</h2>
+    <p>U kunt nu dit tabblad sluiten.</p>
     `;
 
 const DEBRIEF_MESSAGE_DURATION = 1000;
