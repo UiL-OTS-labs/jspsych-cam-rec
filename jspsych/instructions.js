@@ -43,6 +43,7 @@ const GENERIC_CHECK = `
 
     <ol type="1">
         <li>Voer het onderzoek uit op een <strong>laptop</strong> of <strong>desktop computer</strong>, <i>niet</i> op een telefoon of tablet.</li>
+        <li>Het experiment ondersteunt alle moderne browsers behalve <strong>Safari</strong> en <strong>Internet Explorer</strong> (Edge werkt wel).</li>
         <li>Zorg ervoor dat uw <strong>toetsenbord</strong> werkt.</li>
         <li>Zorg ervoor dat u een werkende <strong>muis</strong> of touchpad heeft.</li>
         <li>Zorg ervoor dat het <strong>geluid</strong> in uw browser werkt en dat uw volume aan staat.</li>
@@ -50,7 +51,7 @@ const GENERIC_CHECK = `
     </ol>
 
     <h3>Maximaliseer uw browserscherm voordat u verder gaat!</h3>
-    U krijgt eerst <strong>instructies</strong> hoe één en ander klaargezet moet en ingesteld moet worden. Pas <stronng>als alles klaar staat</strong> krijgt u het <strong>verzoek</strong> om uw <strong>kind voor het scherm te plaatsen</strong>. 
+    U krijgt eerst <strong>instructies</strong> hoe één en ander klaargezet moet en ingesteld moet worden. Pas <stronng>als alles klaar staat</strong> krijgt u het <strong>verzoek</strong> om uw <strong>kind voor het scherm te plaatsen</strong>.
     <br>
     <br>
     Klik op 'volgende' als u aan de bovenstaande punten voldoet, en verder wilt gaan naar de toestemmingsverklaring.
@@ -70,7 +71,7 @@ const PERSONAL_CODE_PRE_TEXT = `
     `;
 
 const PERSONAL_CODE_TEXT = `
-    <strong>Persoonlijke code:</strong> 
+    <strong>Persoonlijke code:</strong>
     `;
 
 const PERSONAL_CODE_CHOICE_HTML =`
@@ -117,10 +118,10 @@ const CAREGIVER_INSTRUCTION_2 = `
     `;
 
 
-const CAREGIVER_INSTRUCTION_3 = `  
+const CAREGIVER_INSTRUCTION_3 = `
     <h1> Instructies opstelling (3/3) </h1>
     <ol type="1">
-        <li> Zorg voor zo <strong>min mogelijk afleiding</strong>. </li> 
+        <li> Zorg voor zo <strong>min mogelijk afleiding</strong>. </li>
             <div>
                 <ul class="bullet-open">
                     <li> Zet uw telefoon, tv, radio, en alle andere apparatuur die kan storen <strong>uit</strong> of op <strong>stil</strong>, zodat er gedurende het onderzoek zo min mogelijk geluiden of andere afleiding is in de omgeving.
@@ -139,12 +140,12 @@ const CAREGIVER_INSTRUCTION_3 = `
 
 const CAREGIVER_INSTRUCTION_4 = `
     <h1>Wanneer te stoppen?</h1>
-    
+
     <p>Als uw kind erg onrustig is kunt u uw kind <strong>geruststellen</strong>. Let wel op dat u <strong>niet</strong> met uw kind <strong>praat</strong> over of <strong>wijst</strong> naar het <strong>scherm</strong>.</p>
     <p>Houd tevens gedurende het onderzoek het handje van uw kind vast of leg uw hand op de schouder van uw kind. Zodoende hoeft uw kind niet achterom te kijken om te weten dat u er nog bent.</p>
     <p><strong>Als uw kind niet gerust te stellen is, kunt u uw kind uit de kinderstoel halen.</strong></p>
     <p><strong>Let op</strong>:  Wij vragen u de webcamopname te stoppen maar de opname in dit geval <strong>wel</strong> te <strong>uploaden</strong>. Alle kleine beetjes helpen. Ook is het belangrijk om na het taakje op ‘volgende’ te blijven klikken en het <strong>onderzoek volledig af te ronden</strong>.
-    </p> 
+    </p>
 `;
 
 //screen 9
@@ -172,21 +173,21 @@ const AUDIO_CHECK_PROMPT_TEXT_LOOP = `
 //screen 11
 const PRE_LAYOUT_MESSAGE =`
     <h3> Scherm layout</h3>
-    <p> Het is belangrijk dat het <i>hele onderzoek vanaf nu op uw scherm past</i>. Daarom ziet u nadat u op ‘Oké’ klikt een tabel van 
-    <i>drie (3) rijen</i> en <i>vijf (5) kolommen</i>. 
+    <p> Het is belangrijk dat het <i>hele onderzoek vanaf nu op uw scherm past</i>. Daarom ziet u nadat u op ‘Oké’ klikt een tabel van
+    <i>drie (3) rijen</i> en <i>vijf (5) kolommen</i>.
     <figure>
-        <img src="./images/layout-three.png" style="width: 800px"><figcaption><i>Met links ('goed') de best passende tabel layout.</i></figcaption></figure>' 
+        <img src="./images/layout-three.png" style="width: 800px"><figcaption><i>Met links ('goed') de best passende tabel layout.</i></figcaption></figure>'
     <ul>
-    <li>De hele tabel moet — liefst <strong>zo groot mogelijk passend</strong> — zichtbaar zijn in uw browser scherm zonder dat u hoeft 
+    <li>De hele tabel moet — liefst <strong>zo groot mogelijk passend</strong> — zichtbaar zijn in uw browser scherm zonder dat u hoeft
     te scrollen.</li>
-    <li>Indien dit niet mogelijk is, zoom dan voldoende uit totdat de tabel scherm-vullend zichtbaar is.</li> 
-    <li>Dit 'zoomen' kunt u doen door de <kbd>CTRL</kbd> toets ingedrukt te houden <sub>(Mac OSX gebruikers gebruiken de <kbd>CMD</kbd> 
-    toets!)</sub> en vervolgens op de plus (<kbd>+</kbd>) of min (<kbd>-</kbd>) toets te drukken op uw toetsenbord, óf door de 
+    <li>Indien dit niet mogelijk is, zoom dan voldoende uit totdat de tabel scherm-vullend zichtbaar is.</li>
+    <li>Dit 'zoomen' kunt u doen door de <kbd>CTRL</kbd> toets ingedrukt te houden <sub>(Mac OSX gebruikers gebruiken de <kbd>CMD</kbd>
+    toets!)</sub> en vervolgens op de plus (<kbd>+</kbd>) of min (<kbd>-</kbd>) toets te drukken op uw toetsenbord, óf door de
     <kbd>CTRL</kbd>/<kbd>CMD</kbd> toets ingedrukt te houden en te scrollen met uw muis.</li>
-    </ul> 
+    </ul>
     Klik op ‘Oké’ om de tabel te tonen.</p>
     `;
-    
+
 const GRID_HTML_LAYOUT = `<div id="jspsych-vsl-grid-scene-dummy" css="display: none;">
     <table id="jspsych-vsl-grid-scene table" style="border-collapse: collapse; margin-left: auto; margin-right: auto;">
     <tr id="jspsych-vsl-grid-scene-table-row-0" css="height: 200px;">
@@ -263,7 +264,7 @@ const GRID_HTML_LAYOUT_BARE = `<div id="jspsych-vsl-grid-scene-dummy" css="displ
     <div id="jspsych-vsl-grid-scene-table-cell-2-4" style="width: 200px; height: 200px;">
     </div></td></tr></table></div>
     `;
-  
+
 const PRE_REC_MESSAGE_TABS = `
     <h1>Belangrijk:</h1>
     Straks zult u naar een nieuw tabblad worden geleid, waar u uw webcam aan kunt zetten en de webcam-opname kunt starten.
@@ -295,7 +296,7 @@ const PRE_REC_MESSAGE_CHECKBOX = BORDER_LIST_STYLE + `
     </ol>
     <br>
     <br>
-    Klik op "Volgende"  nadat u de webcam-opname heeft gestart, om het taakje voor uw kind te starten. U heeft dan nog <strong>10 seconden</strong> om uw positie in te nemen en de <strong>muis</strong> in een <strong>hoek van het scherm</strong> te plaatsen en het handje van uw kind vast te pakken. 
+    Klik op "Volgende"  nadat u de webcam-opname heeft gestart, om het taakje voor uw kind te starten. U heeft dan nog <strong>10 seconden</strong> om uw positie in te nemen en de <strong>muis</strong> in een <strong>hoek van het scherm</strong> te plaatsen en het handje van uw kind vast te pakken.
     <br>
     <br>
     Zodra u na de start van het onderzoek langer dan 15 seconden geen geluid meer hoort is de taak voor uw kind afgerond.
@@ -343,17 +344,17 @@ const EXTRA_CONSENT_AGREE = 'Ja, daar ga ik mee akkoord';
 const EXTRA_CONSENT_DISAGREE = 'Nee, niet akkoord';
 
 const EXTRA_CONSENT_Q1 = `
-    <strong>1.</strong> Gaat u er mee akkoord dat het verzamelde <strong>audio- en videomateriaal</strong>, 
+    <strong>1.</strong> Gaat u er mee akkoord dat het verzamelde <strong>audio- en videomateriaal</strong>,
     <u>dit is dus niet anoniem</u>, van (u en) uw kind, gedeeld wordt met andere onderzoekers voor onderzoeksdoeleinden?
     `;
 
 const EXTRA_CONSENT_Q2 = `
-    <strong>2.</strong> Soms worden beeld- en/of geluidsopnames ook getoond in <strong>wetenschappelijke</strong> lezingen of <strong>lessen</strong>. Gaat u ermee akkoord dat het gemaakte audio- en/of videomateriaal gebruikt wordt voor deze doeleinden? 
+    <strong>2.</strong> Soms worden beeld- en/of geluidsopnames ook getoond in <strong>wetenschappelijke</strong> lezingen of <strong>lessen</strong>. Gaat u ermee akkoord dat het gemaakte audio- en/of videomateriaal gebruikt wordt voor deze doeleinden?
     `;
 
 const GIFT_MESSAGE = `
-    <h2>Klik op <i>'Einde'</i> om het onderzoek af te ronden</h2> 
-    Als dank voor uw deelname willen wij uw kind graag een cadeautje sturen. Hier hebben wij echter uw adresgegevens voor nodig. 
+    <h2>Klik op <i>'Einde'</i> om het onderzoek af te ronden</h2>
+    Als dank voor uw deelname willen wij uw kind graag een cadeautje sturen. Hier hebben wij echter uw adresgegevens voor nodig.
     <br>
     <br>
     Indien u een cadeautje wilt ontvangen, mail dan uw: <strong>straat, huisnummer, postcode, plaats, én uw unieke code</strong> naar:
@@ -366,7 +367,7 @@ const GIFT_MESSAGE = `
     <br>
     <br>
     Als u liever met uw telefoon de e-mail wilt versturen, kunt u deze QR code scannen:<br>
-    <img src="./images/mailbabylab.png" style="width: 200px">    
+    <img src="./images/mailbabylab.png" style="width: 200px">
     <br>
     <br>
     Klik op 'Einde' als u dit heeft gedaan, of als u geen cadeautje wilt ontvangen.
