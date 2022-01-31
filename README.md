@@ -12,7 +12,6 @@ This project contains several folders and many files:
 - Folder `jspsych` contains a [jsPsych](https://www.jspsych.org) web experiment.
 - Folder `webrtc` contains a basic application to record and upload a webcam stream.
 - File `csv_data_reader.ipynb` is a script to extract salient moments from output data.
-- Folder `osweb` contains preliminary (R&D)exports for the experiment, as made with OpenSesame. (unused)
 
 ## webRTC (video)
 In fact, the code in the folder started out as just a copy from this example:
