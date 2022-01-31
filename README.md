@@ -56,8 +56,8 @@ https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
 https://www.luftrum.com/free-field-recordings/
 
 
-## Licence
+## License
 
-Copyright (c) 2021 UiL OTS Labs, Faculty of Humanities, Utrecht University
+All original code is copyright (c) 2021 UiL OTS Labs, Faculty of Humanities, Utrecht University and licensed under the GPLv2. Please see `jspsych/LICENSE` for further license information.
 
-Please see jspsych/LICENSE for further licence information
+Sounds, images, and videos used or adapted for the experiment are used with permission but may be subject to different license terms and copyright.
