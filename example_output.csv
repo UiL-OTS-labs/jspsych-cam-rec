@@ -1,0 +1,963 @@
+rt,stimulus,button_pressed,resolution,trial_type,trial_index,time_elapsed,internal_node_id,subject,baselinelist,pairedlist,preflist,view_history,responses,question_order,consent_choice_response,personal_code_response,setup_validated,audio_checked,rec_started_choice_response,key_press,target_audio,target_image,target_image_a,target_image_b,extra_consent_choice_response
+538420.1999999881,"<div class='instruction' ><p>
+    <style>
+        body {
+            background: rgb(246, 246, 246);
+            font-family: ""Open Sans"",""Frutiger"",Helvetica,Arial,sans-serif;
+            color: rgb(33, 37, 41);
+            text-align: left !important;
+        }
+
+        p {
+            line-height: 1.4; /* Override paragraph for better readability */
+            text-align: left !important;
+        }
+
+        label {
+            margin-bottom: 0;
+        }
+
+        h1, h2{
+            font-size: 2rem;
+            text-align: left !important;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+            text-align: left !important;
+        }
+
+        li {
+            text-align: left !important;
+        }
+
+        /* Input styles */
+
+        form > table th {
+            padding-left: 10px;
+            vertical-align: middle;
+        }
+
+        input, textarea, select {
+            border-radius: 0;
+            border: 1px solid #d7d7d7;
+            padding: 5px 10px;
+            line-height: 20px;
+            font-size: 16px;
+        }
+
+        input[type=submit], input[type=button], button, .button, .jspsych-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 0 20px;
+            line-height: 42px;
+            width: auto;
+            min-width: auto;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 0;
+        }
+
+        input[type=""checkbox""], input[type=""radio""]
+        {
+            width: auto;
+        }
+
+        button[type=submit], input[type=submit], .button-colored {
+            background: #ffcd00;
+            color: #000000;
+        }
+
+        button[type=submit].button-black, input[type=submit].button-black {
+            background: #000;
+            color: #fff;
+        }
+
+        button a, .button a,
+        button a:hover, .button a:hover,
+        a.button, a.button:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .button-colored a,
+        .button-colored a:hover,
+        a.button-colored,
+        a.button-colored:hover {
+            color: #000;
+        }
+
+        /* Table styles */
+        table thead th {
+            border-bottom: 1px solid #ccc;
+        }
+
+        table tfoot th {
+            border-top: 1px solid #ccc;
+        }
+
+        table tbody tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+        table tbody tr:hover {
+            background: #ddd;
+        }
+
+        table tbody tr.no-background:hover, table tbody tr.no-background {
+            background: transparent;
+        }
+
+        table tbody td, table thead th, table tfoot th {
+            padding: 6px 5px;
+        }
+
+        /* Link styles */
+        a {
+            color: rgb(33, 37, 41);
+            text-decoration: underline;
+            transition: 0.2s ease color;
+        }
+
+        a:hover {
+            transition: 0.2s ease color;
+            color: rgb(85, 85, 95);
+        }
+
+    </style>
+
+    <h3>Om te kunnen deelnemen aan het onderzoek is het volgende belangrijk:</h3>
+
+    <ol type=""1"">
+        <li>Voer het onderzoek uit op een <strong>laptop</strong> of <strong>desktop computer</strong>, <i>niet</i> op een telefoon of tablet.</li>
+        <li>Het experiment ondersteunt alle moderne browsers behalve <strong>Safari</strong> en <strong>Internet Explorer</strong> (Edge werkt wel).</li>
+        <li>Zorg ervoor dat uw <strong>toetsenbord</strong> werkt.</li>
+        <li>Zorg ervoor dat u een werkende <strong>muis</strong> of touchpad heeft.</li>
+        <li>Zorg ervoor dat het <strong>geluid</strong> in uw browser werkt en dat uw volume aan staat.</li>
+        <li>Gebruik een beveiligd <strong>thuis</strong> (wifi) <strong>netwerk</strong>.</li>
+    </ol>
+
+    <h3>Maximaliseer uw browserscherm voordat u verder gaat!</h3>
+    U krijgt eerst <strong>instructies</strong> hoe één en ander klaargezet moet en ingesteld moet worden. Pas <stronng>als alles klaar staat</strong> krijgt u het <strong>verzoek</strong> om uw <strong>kind voor het scherm te plaatsen</strong>.
+    <br>
+    <br>
+    Klik op 'volgende' als u aan de bovenstaande punten voldoet, en verder wilt gaan naar de toestemmingsverklaring.
+    </p></div>",0,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",html-button-response,NA,538460,0.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+11920.799999952316,NA,NA,NA,instructions,1,550383,0.0-1.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,"[{""page_index"":0,""viewing_time"":889},{""page_index"":1,""viewing_time"":10072.099999964237},{""page_index"":2,""viewing_time"":955.9000000357628}]",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+2140.5,NA,NA,NA,survey-multi-select,2,552532,0.0-1.0-1.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,"{""consent"":[""\n    Door dit hokje aan te vinken verklaart u de toestemmingsverklaring grondig te hebben gelezen en begrepen, en stemt u in met de deelname van uw kind aan het onderzoek.\n    <br>\n    <br>\n    <h2>Indien u geen toestemming geeft wordt het onderzoek beëindigd.</h2>\n    <br>\n    <br>\n    <h6>Klik op ‘volgende’ als u toestemming heeft gegeven, en verder wilt gaan naar de persoonlijke code.</h6>\n    ""]}",[0],"{""consent"":[""\n    Door dit hokje aan te vinken verklaart u de toestemmingsverklaring grondig te hebben gelezen en begrepen, en stemt u in met de deelname van uw kind aan het onderzoek.\n    <br>\n    <br>\n    <h2>Indien u geen toestemming geeft wordt het onderzoek beëindigd.</h2>\n    <br>\n    <br>\n    <h6>Klik op ‘volgende’ als u toestemming heeft gegeven, en verder wilt gaan naar de persoonlijke code.</h6>\n    ""]}",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+3163,NA,NA,NA,survey-html-form,3,555700,0.0-2.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,"{""personal_code"":""redacted""}",NA,NA,"{""personal_code"":""redacted""}",NA,NA,NA,NA,NA,NA,NA,NA,NA
+4122.099999964237,NA,NA,NA,instructions,4,559824,0.0-3.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,"[{""page_index"":0,""viewing_time"":1967.800000011921},{""page_index"":1,""viewing_time"":917.7999999523163},{""page_index"":2,""viewing_time"":571.9000000357628},{""page_index"":3,""viewing_time"":664.1999999880791}]",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+2206.300000011921,NA,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",survey-multi-select,5,562034,0.0-4.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,"{""setup"":[""\n    Ik heb de aanwijzingen over de opstelling zo goed mogelijk opgevolgd en begrijp wat er van mij verwacht wordt tijdens het onderzoek.\n     </div>""]}",[0],NA,NA,"{""setup"":[""\n    Ik heb de aanwijzingen over de opstelling zo goed mogelijk opgevolgd en begrijp wat er van mij verwacht wordt tijdens het onderzoek.\n     </div>""]}",NA,NA,NA,NA,NA,NA,NA,NA
+1025.9000000357628,./sounds/testtune.mp3,1,NA,audio-button-response,6,563081,0.0-5.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,True,NA,NA,NA,NA,NA,NA,NA
+1605.800000011921,"<div class='instruction' >
+    <style>
+        body {
+            background: rgb(246, 246, 246);
+            font-family: ""Open Sans"",""Frutiger"",Helvetica,Arial,sans-serif;
+            color: rgb(33, 37, 41);
+            text-align: left !important;
+        }
+
+        p {
+            line-height: 1.4; /* Override paragraph for better readability */
+            text-align: left !important;
+        }
+
+        label {
+            margin-bottom: 0;
+        }
+
+        h1, h2{
+            font-size: 2rem;
+            text-align: left !important;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+            text-align: left !important;
+        }
+
+        li {
+            text-align: left !important;
+        }
+
+        /* Input styles */
+
+        form > table th {
+            padding-left: 10px;
+            vertical-align: middle;
+        }
+
+        input, textarea, select {
+            border-radius: 0;
+            border: 1px solid #d7d7d7;
+            padding: 5px 10px;
+            line-height: 20px;
+            font-size: 16px;
+        }
+
+        input[type=submit], input[type=button], button, .button, .jspsych-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 0 20px;
+            line-height: 42px;
+            width: auto;
+            min-width: auto;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 0;
+        }
+
+        input[type=""checkbox""], input[type=""radio""]
+        {
+            width: auto;
+        }
+
+        button[type=submit], input[type=submit], .button-colored {
+            background: #ffcd00;
+            color: #000000;
+        }
+
+        button[type=submit].button-black, input[type=submit].button-black {
+            background: #000;
+            color: #fff;
+        }
+
+        button a, .button a,
+        button a:hover, .button a:hover,
+        a.button, a.button:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .button-colored a,
+        .button-colored a:hover,
+        a.button-colored,
+        a.button-colored:hover {
+            color: #000;
+        }
+
+        /* Table styles */
+        table thead th {
+            border-bottom: 1px solid #ccc;
+        }
+
+        table tfoot th {
+            border-top: 1px solid #ccc;
+        }
+
+        table tbody tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+        table tbody tr:hover {
+            background: #ddd;
+        }
+
+        table tbody tr.no-background:hover, table tbody tr.no-background {
+            background: transparent;
+        }
+
+        table tbody td, table thead th, table tfoot th {
+            padding: 6px 5px;
+        }
+
+        /* Link styles */
+        a {
+            color: rgb(33, 37, 41);
+            text-decoration: underline;
+            transition: 0.2s ease color;
+        }
+
+        a:hover {
+            transition: 0.2s ease color;
+            color: rgb(85, 85, 95);
+        }
+
+    </style>
+    <p>
+    <h3> Scherm layout</h3>
+    <p> Het is belangrijk dat het <i>hele onderzoek vanaf nu op uw scherm past</i>. Daarom ziet u nadat u op ‘Oké’ klikt een tabel van
+    <i>drie (3) rijen</i> en <i>vijf (5) kolommen</i>.
+    <figure>
+        <img src=""./images/layout-three.png"" style=""width: 800px""><figcaption><i>Met links ('goed') de best passende tabel layout.</i></figcaption></figure>'
+    <ul>
+    <li>De hele tabel moet — liefst <strong>zo groot mogelijk passend</strong> — zichtbaar zijn in uw browser scherm zonder dat u hoeft
+    te scrollen.</li>
+    <li>Indien dit niet mogelijk is, zoom dan voldoende uit totdat de tabel scherm-vullend zichtbaar is.</li>
+    <li>Dit 'zoomen' kunt u doen door de <kbd>CTRL</kbd> toets ingedrukt te houden <sub>(Mac OSX gebruikers gebruiken de <kbd>CMD</kbd>
+    toets!)</sub> en vervolgens op de plus (<kbd>+</kbd>) of min (<kbd>-</kbd>) toets te drukken op uw toetsenbord, óf door de
+    <kbd>CTRL</kbd>/<kbd>CMD</kbd> toets ingedrukt te houden en te scrollen met uw muis.</li>
+    </ul>
+    Klik op ‘Oké’ om de tabel te tonen.</p>
+    </p></div>",0,NA,html-button-response,7,565190,0.0-6.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+902.6000000238419,"
+    <style>
+        body {
+            background: rgb(246, 246, 246);
+            font-family: ""Open Sans"",""Frutiger"",Helvetica,Arial,sans-serif;
+            color: rgb(33, 37, 41);
+            text-align: left !important;
+        }
+
+        p {
+            line-height: 1.4; /* Override paragraph for better readability */
+            text-align: left !important;
+        }
+
+        label {
+            margin-bottom: 0;
+        }
+
+        h1, h2{
+            font-size: 2rem;
+            text-align: left !important;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+            text-align: left !important;
+        }
+
+        li {
+            text-align: left !important;
+        }
+
+        /* Input styles */
+
+        form > table th {
+            padding-left: 10px;
+            vertical-align: middle;
+        }
+
+        input, textarea, select {
+            border-radius: 0;
+            border: 1px solid #d7d7d7;
+            padding: 5px 10px;
+            line-height: 20px;
+            font-size: 16px;
+        }
+
+        input[type=submit], input[type=button], button, .button, .jspsych-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 0 20px;
+            line-height: 42px;
+            width: auto;
+            min-width: auto;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 0;
+        }
+
+        input[type=""checkbox""], input[type=""radio""]
+        {
+            width: auto;
+        }
+
+        button[type=submit], input[type=submit], .button-colored {
+            background: #ffcd00;
+            color: #000000;
+        }
+
+        button[type=submit].button-black, input[type=submit].button-black {
+            background: #000;
+            color: #fff;
+        }
+
+        button a, .button a,
+        button a:hover, .button a:hover,
+        a.button, a.button:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .button-colored a,
+        .button-colored a:hover,
+        a.button-colored,
+        a.button-colored:hover {
+            color: #000;
+        }
+
+        /* Table styles */
+        table thead th {
+            border-bottom: 1px solid #ccc;
+        }
+
+        table tfoot th {
+            border-top: 1px solid #ccc;
+        }
+
+        table tbody tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+        table tbody tr:hover {
+            background: #ddd;
+        }
+
+        table tbody tr.no-background:hover, table tbody tr.no-background {
+            background: transparent;
+        }
+
+        table tbody td, table thead th, table tfoot th {
+            padding: 6px 5px;
+        }
+
+        /* Link styles */
+        a {
+            color: rgb(33, 37, 41);
+            text-decoration: underline;
+            transition: 0.2s ease color;
+        }
+
+        a:hover {
+            transition: 0.2s ease color;
+            color: rgb(85, 85, 95);
+        }
+
+    </style>
+    <div id=""jspsych-vsl-grid-scene-dummy"" css=""display: none;"">
+    <table id=""jspsych-vsl-grid-scene table"" style=""border-collapse: collapse; margin-left: auto; margin-right: auto;"">
+    <tr id=""jspsych-vsl-grid-scene-table-row-0"" css=""height: 200px;"">
+    <td id=""jspsych-vsl-grid-scene-table-0-0"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-0-0"" style=""width: 200px; height: 200px;"">
+    </div></td><td id=""jspsych-vsl-grid-scene-table-0-1"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-0-1"" style=""width: 200px; height: 200px;""></div></td>
+    <td id=""jspsych-vsl-grid-scene-table-0-2"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-0-2"" style=""width: 200px; height: 200px;""></div></td>
+    <td id=""jspsych-vsl-grid-scene-table-0-3"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-0-3"" style=""width: 200px; height: 200px;""></div></td>
+    <td id=""jspsych-vsl-grid-scene-table-0-4"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-0-4"" style=""width: 200px; height: 200px;""></div></td></tr>
+    <tr id=""jspsych-vsl-grid-scene-table-row-1"" css=""height: 200px;"">
+    <td id=""jspsych-vsl-grid-scene-table-1-0"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-1-0"" style=""width: 200px; height: 200px;""></div></td>
+    <td id=""jspsych-vsl-grid-scene-table-1-1"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-1-1"" style=""width: 200px; height: 200px;""></div></td>
+    <td id=""jspsych-vsl-grid-scene-table-1-2"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-1-2"" style=""width: 200px; height: 200px;""></div></td>
+    <td id=""jspsych-vsl-grid-scene-table-1-3"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-1-3"" style=""width: 200px; height: 200px;""></div></td>
+    <td id=""jspsych-vsl-grid-scene-table-1-4"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-1-4"" style=""width: 200px; height: 200px;""></div></td></tr>
+    <tr id=""jspsych-vsl-grid-scene-table-row-2"" css=""height: 200px;"">
+    <td id=""jspsych-vsl-grid-scene-table-2-0"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-2-0"" style=""width: 200px; height: 200px;""></div></td>
+    <td id=""jspsych-vsl-grid-scene-table-2-1"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-2-1"" style=""width: 200px; height: 200px;""></div></td>
+    <td id=""jspsych-vsl-grid-scene-table-2-2"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-2-2"" style=""width: 200px; height: 200px;""></div></td>
+    <td id=""jspsych-vsl-grid-scene-table-2-3"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-2-3"" style=""width: 200px; height: 200px;""></div></td>
+    <td id=""jspsych-vsl-grid-scene-table-2-4"" style=""padding: 20px 20px; border: 4px solid #555;"">
+    <div id=""jspsych-vsl-grid-scene-table-cell-2-4"" style=""width: 200px; height: 200px;"">
+    </div></td></tr></table></div>
+    ",0,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",html-button-response,8,566096,0.0-7.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+938.2999999523163,"<div class='instruction' >
+    <style>
+        body {
+            background: rgb(246, 246, 246);
+            font-family: ""Open Sans"",""Frutiger"",Helvetica,Arial,sans-serif;
+            color: rgb(33, 37, 41);
+            text-align: left !important;
+        }
+
+        p {
+            line-height: 1.4; /* Override paragraph for better readability */
+            text-align: left !important;
+        }
+
+        label {
+            margin-bottom: 0;
+        }
+
+        h1, h2{
+            font-size: 2rem;
+            text-align: left !important;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+            text-align: left !important;
+        }
+
+        li {
+            text-align: left !important;
+        }
+
+        /* Input styles */
+
+        form > table th {
+            padding-left: 10px;
+            vertical-align: middle;
+        }
+
+        input, textarea, select {
+            border-radius: 0;
+            border: 1px solid #d7d7d7;
+            padding: 5px 10px;
+            line-height: 20px;
+            font-size: 16px;
+        }
+
+        input[type=submit], input[type=button], button, .button, .jspsych-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 0 20px;
+            line-height: 42px;
+            width: auto;
+            min-width: auto;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 0;
+        }
+
+        input[type=""checkbox""], input[type=""radio""]
+        {
+            width: auto;
+        }
+
+        button[type=submit], input[type=submit], .button-colored {
+            background: #ffcd00;
+            color: #000000;
+        }
+
+        button[type=submit].button-black, input[type=submit].button-black {
+            background: #000;
+            color: #fff;
+        }
+
+        button a, .button a,
+        button a:hover, .button a:hover,
+        a.button, a.button:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .button-colored a,
+        .button-colored a:hover,
+        a.button-colored,
+        a.button-colored:hover {
+            color: #000;
+        }
+
+        /* Table styles */
+        table thead th {
+            border-bottom: 1px solid #ccc;
+        }
+
+        table tfoot th {
+            border-top: 1px solid #ccc;
+        }
+
+        table tbody tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+        table tbody tr:hover {
+            background: #ddd;
+        }
+
+        table tbody tr.no-background:hover, table tbody tr.no-background {
+            background: transparent;
+        }
+
+        table tbody td, table thead th, table tfoot th {
+            padding: 6px 5px;
+        }
+
+        /* Link styles */
+        a {
+            color: rgb(33, 37, 41);
+            text-decoration: underline;
+            transition: 0.2s ease color;
+        }
+
+        a:hover {
+            transition: 0.2s ease color;
+            color: rgb(85, 85, 95);
+        }
+
+    </style>
+    <h1>Instructie webcam opname (1/2)<h2><p>
+    <h1>Belangrijk:</h1>
+    Straks zult u naar een nieuw tabblad worden geleid, waar u uw webcam aan kunt zetten en de webcam-opname kunt starten.
+    <ol type=""1"">
+        <li> Klik op <strong>""Zet camera aan""</strong> om het beeld weer te geven;</li>
+        <li> Test of uw webcam werkt en of er <strong>voldoende licht</strong> is;</li>
+        <li> Maak aanpassingen indien nodig;</li>
+        <li> Zet <strong>vervolgens uw kind in de kinderstoel</strong>, richt de webcam of het scherm zo dat het <strong>gezicht</strong> van uw kind <strong>zichtbaar</strong> is;</li>
+        <li> Indien stap 1 tot 4 gelukt zijn start u de webcam-opname door op <strong>""Begin opname""</strong> te klikken.</li>
+    </ol>
+    <img src=""./images/tabs.png"" style=""width: 600px;""></img>
+    <br>
+    <br>
+    Nadat u uw webcam-opname heeft gestart laat u het webcam-tabblad open staan en klikt u op het huidige tabblad, om terug te komen op dit tabblad (uw webcam-opname blijft dus op de achtergrond doorlopen, <strong>sluit geen van beide tabbladen!</strong>).
+</p></div>",0,NA,html-button-response,9,567038,0.0-8.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+2791.599999964237,NA,NA,NA,survey-multi-select,10,569838,0.0-9.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,"{""recording"":[""Ik heb de webcam-opname gestart.""]}",[0],NA,NA,NA,NA,"{""recording"":[""Ik heb de webcam-opname gestart.""]}",NA,NA,NA,NA,NA,NA
+NA,NA,NA,NA,audio-keyboard-response,11,579846,0.0-10.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,./sounds/testtune.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,12,582312,0.0-11.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/testtune.mp3,./video/circle_simple_static_small,NA,NA,NA
+NA,./sounds/testtune.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,13,584770,0.0-11.0-0.1,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/testtune.mp3,./video/circle_complex_static_small,NA,NA,NA
+NA,./sounds/testtune.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,14,587239,0.0-11.0-0.2,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/testtune.mp3,./video/circle_complex_static_small,NA,NA,NA
+NA,./sounds/testtune.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,15,589700,0.0-11.0-0.3,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/testtune.mp3,./video/circle_simple_static_small,NA,NA,NA
+NA,./sounds/AT3-audio.wav,NA,NA,audio-button-response,16,592158,0.0-12.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,17,604168,0.0-13.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_complex_static_small,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,18,616177,0.0-13.0-0.1,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_complex_move,NA,NA,NA
+NA,./sounds/AT3-audio.wav,NA,NA,audio-button-response,19,618643,0.0-14.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,20,630653,0.0-15.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_complex_move,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,21,642663,0.0-15.0-0.1,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_complex_static_small,NA,NA,NA
+NA,./sounds/AT3-audio.wav,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,22,645118,0.0-16.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/AT3-audio.wav,NA,./video/clock-grabber,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,23,657123,0.0-17.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_simple_static_small,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,24,669129,0.0-17.0-0.1,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_simple_move,NA,NA,NA
+NA,./sounds/AT3-audio.wav,NA,NA,audio-button-response,25,671588,0.0-18.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,26,683597,0.0-19.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_simple_move,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,27,695605,0.0-19.0-0.1,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_simple_static_small,NA,NA,NA
+NA,./sounds/AT3-audio.wav,NA,NA,audio-button-response,28,698064,0.0-20.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,29,710072,0.0-21.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_complex_static_small,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,30,722082,0.0-21.0-0.1,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_complex_move,NA,NA,NA
+NA,./sounds/AT3-audio.wav,NA,NA,audio-button-response,31,724545,0.0-22.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,32,736553,0.0-23.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_simple_move,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,33,748564,0.0-23.0-0.1,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_simple_static_small,NA,NA,NA
+NA,./sounds/AT3-audio.wav,NA,NA,audio-button-response,34,751018,0.0-24.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,35,763026,0.0-25.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_complex_static_small,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,36,775031,0.0-25.0-0.1,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_complex_move,NA,NA,NA
+NA,./sounds/AT3-audio.wav,NA,NA,audio-button-response,37,777486,0.0-26.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,38,789491,0.0-27.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_simple_move,NA,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,39,801498,0.0-27.0-0.1,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,./video/circle_simple_static_small,NA,NA,NA
+NA,./sounds/AT3-audio.wav,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,40,803960,0.0-28.0-0.0-0.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/AT3-audio.wav,NA,./video/green-grabber,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,41,815966,0.0-28.0-1.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,NA,./video/circle_complex_static_small,./video/circle_complex_move,NA
+NA,./sounds/AT3-audio.wav,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,42,818421,0.0-28.0-0.1-0.1,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/AT3-audio.wav,NA,./video/green-grabber,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,43,830429,0.0-28.0-1.1,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,NA,./video/circle_complex_move,./video/circle_complex_static_small,NA
+NA,./sounds/AT3-audio.wav,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,44,832889,0.0-28.0-0.2-0.2,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/AT3-audio.wav,NA,./video/green-grabber,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,45,844895,0.0-28.0-1.2,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,NA,./video/circle_simple_static_small,./video/circle_simple_move,NA
+NA,./sounds/AT3-audio.wav,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,46,847354,0.0-28.0-0.3-0.3,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/AT3-audio.wav,NA,./video/green-grabber,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,47,859359,0.0-28.0-1.3,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,NA,./video/circle_simple_move,./video/circle_simple_static_small,NA
+NA,./sounds/AT3-audio.wav,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,48,861822,0.0-28.0-0.4-0.4,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/AT3-audio.wav,NA,./video/green-grabber,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,49,873832,0.0-28.0-1.4,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,NA,./video/circle_complex_move,./video/circle_complex_static_small,NA
+NA,./sounds/AT3-audio.wav,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,50,876293,0.0-28.0-0.5-0.5,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/AT3-audio.wav,NA,./video/green-grabber,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,51,888297,0.0-28.0-1.5,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,NA,./video/circle_simple_static_small,./video/circle_simple_move,NA
+NA,./sounds/AT3-audio.wav,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,52,890754,0.0-28.0-0.6-0.6,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/AT3-audio.wav,NA,./video/green-grabber,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,53,902758,0.0-28.0-1.6,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,NA,./video/circle_simple_move,./video/circle_simple_static_small,NA
+NA,./sounds/AT3-audio.wav,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,54,905215,0.0-28.0-0.7-0.7,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/AT3-audio.wav,NA,./video/green-grabber,NA,NA
+NA,./sounds/stim_12sec.mp3,NA,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",audio-button-response,55,917220,0.0-28.0-1.7,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,./sounds/stim_12sec.mp3,NA,./video/circle_complex_static_small,./video/circle_complex_move,NA
+14678.399999976158,"<div class='instruction' >
+    <style>
+        body {
+            background: rgb(246, 246, 246);
+            font-family: ""Open Sans"",""Frutiger"",Helvetica,Arial,sans-serif;
+            color: rgb(33, 37, 41);
+            text-align: left !important;
+        }
+
+        p {
+            line-height: 1.4; /* Override paragraph for better readability */
+            text-align: left !important;
+        }
+
+        label {
+            margin-bottom: 0;
+        }
+
+        h1, h2{
+            font-size: 2rem;
+            text-align: left !important;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+            text-align: left !important;
+        }
+
+        li {
+            text-align: left !important;
+        }
+
+        /* Input styles */
+
+        form > table th {
+            padding-left: 10px;
+            vertical-align: middle;
+        }
+
+        input, textarea, select {
+            border-radius: 0;
+            border: 1px solid #d7d7d7;
+            padding: 5px 10px;
+            line-height: 20px;
+            font-size: 16px;
+        }
+
+        input[type=submit], input[type=button], button, .button, .jspsych-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 0 20px;
+            line-height: 42px;
+            width: auto;
+            min-width: auto;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 0;
+        }
+
+        input[type=""checkbox""], input[type=""radio""]
+        {
+            width: auto;
+        }
+
+        button[type=submit], input[type=submit], .button-colored {
+            background: #ffcd00;
+            color: #000000;
+        }
+
+        button[type=submit].button-black, input[type=submit].button-black {
+            background: #000;
+            color: #fff;
+        }
+
+        button a, .button a,
+        button a:hover, .button a:hover,
+        a.button, a.button:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .button-colored a,
+        .button-colored a:hover,
+        a.button-colored,
+        a.button-colored:hover {
+            color: #000;
+        }
+
+        /* Table styles */
+        table thead th {
+            border-bottom: 1px solid #ccc;
+        }
+
+        table tfoot th {
+            border-top: 1px solid #ccc;
+        }
+
+        table tbody tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+        table tbody tr:hover {
+            background: #ddd;
+        }
+
+        table tbody tr.no-background:hover, table tbody tr.no-background {
+            background: transparent;
+        }
+
+        table tbody td, table thead th, table tfoot th {
+            padding: 6px 5px;
+        }
+
+        /* Link styles */
+        a {
+            color: rgb(33, 37, 41);
+            text-decoration: underline;
+            transition: 0.2s ease color;
+        }
+
+        a:hover {
+            transition: 0.2s ease color;
+            color: rgb(85, 85, 95);
+        }
+
+    </style>
+    <p>
+    <h2>De taak voor uw kind is afgelopen, maar <u>u</u> bent <u>nog niet</u> helemaal klaar!</h2>
+    <strong>Belangrijk</strong>: Volg de volgende stappen op om het onderzoek succesvol af te ronden.
+    <br>
+    <br>
+    Nadat u straks op het tabblad met uw <strong>webcam-opname</strong> klikt:
+    <ol type=""1"">
+        <li>Klikt u op ""<strong>Stop opname</strong>"".</li>
+        <li>Vult u in het tekstvak uw <strong>persoonlijke code</strong> in.</li>
+        <li>Klikt u vervolgens op ""<strong>Uploaden</strong>"".</li>
+    </ol>
+    Nadat u op uploaden heeft geklikt wordt uw <strong>webcam-opname verstuurd</strong> naar de beveiligde server van Universiteit Utrecht.
+    <br>
+    <br>
+    U ziet een <strong>melding</strong> op het scherm zodra het <strong>uploaden</strong> is <strong>gelukt</strong>.
+    <br>
+    <br>
+    Klik nu op het <strong>tabblad</strong> met uw <strong>webcam-opname</strong> en voer de stappen uit.
+    <br>
+    <br>
+    Klik op ‘volgende’ als u uw webcam-opname heeft <strong>geüpload<strong>.
+    </p></div>",0,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",html-button-response,56,931902,0.0-29.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+20372.19999998808,NA,NA,NA,survey-multi-choice,57,952281,0.0-30.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,"{""Q0"":""Nee, niet akkoord"",""Q1"":""Nee, niet akkoord""}","[0,1]",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"{""Q0"":""Nee, niet akkoord"",""Q1"":""Nee, niet akkoord""}"
+2222.900000035763,"<div class='instruction' >
+    <style>
+        body {
+            background: rgb(246, 246, 246);
+            font-family: ""Open Sans"",""Frutiger"",Helvetica,Arial,sans-serif;
+            color: rgb(33, 37, 41);
+            text-align: left !important;
+        }
+
+        p {
+            line-height: 1.4; /* Override paragraph for better readability */
+            text-align: left !important;
+        }
+
+        label {
+            margin-bottom: 0;
+        }
+
+        h1, h2{
+            font-size: 2rem;
+            text-align: left !important;
+        }
+
+        h6 {
+            font-size: 1.1rem;
+            text-align: left !important;
+        }
+
+        li {
+            text-align: left !important;
+        }
+
+        /* Input styles */
+
+        form > table th {
+            padding-left: 10px;
+            vertical-align: middle;
+        }
+
+        input, textarea, select {
+            border-radius: 0;
+            border: 1px solid #d7d7d7;
+            padding: 5px 10px;
+            line-height: 20px;
+            font-size: 16px;
+        }
+
+        input[type=submit], input[type=button], button, .button, .jspsych-btn {
+            background: #000;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            font-size: 15px;
+            padding: 0 20px;
+            line-height: 42px;
+            width: auto;
+            min-width: auto;
+            cursor: pointer;
+            display: inline-block;
+            border-radius: 0;
+        }
+
+        input[type=""checkbox""], input[type=""radio""]
+        {
+            width: auto;
+        }
+
+        button[type=submit], input[type=submit], .button-colored {
+            background: #ffcd00;
+            color: #000000;
+        }
+
+        button[type=submit].button-black, input[type=submit].button-black {
+            background: #000;
+            color: #fff;
+        }
+
+        button a, .button a,
+        button a:hover, .button a:hover,
+        a.button, a.button:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .button-colored a,
+        .button-colored a:hover,
+        a.button-colored,
+        a.button-colored:hover {
+            color: #000;
+        }
+
+        /* Table styles */
+        table thead th {
+            border-bottom: 1px solid #ccc;
+        }
+
+        table tfoot th {
+            border-top: 1px solid #ccc;
+        }
+
+        table tbody tr:nth-of-type(odd) {
+            background: #eee;
+        }
+
+        table tbody tr:hover {
+            background: #ddd;
+        }
+
+        table tbody tr.no-background:hover, table tbody tr.no-background {
+            background: transparent;
+        }
+
+        table tbody td, table thead th, table tfoot th {
+            padding: 6px 5px;
+        }
+
+        /* Link styles */
+        a {
+            color: rgb(33, 37, 41);
+            text-decoration: underline;
+            transition: 0.2s ease color;
+        }
+
+        a:hover {
+            transition: 0.2s ease color;
+            color: rgb(85, 85, 95);
+        }
+
+    </style>
+    <p>
+    <h2>Klik op <i>'Einde'</i> om het onderzoek af te ronden</h2>
+    Als dank voor uw deelname willen wij uw kind graag een cadeautje sturen. Hier hebben wij echter uw adresgegevens voor nodig.
+    <br>
+    <br>
+    Indien u een cadeautje wilt ontvangen, mail dan uw: <strong>straat, huisnummer, postcode, plaats, én uw unieke code</strong> naar:
+    <br>
+    <br>
+    <strong>babylabutrecht@uu.nl</strong>
+    <br>
+    <br>
+    Als u uw PC's standaard-email programma gebruikt, kunt u ook <a href=""mailto:babylabutrecht@uu.nl?subject=Deelname%20Onderzoek&body=Mijn adresgegevens en persoonlijke code:"" target=""_blank""><strong>deze E-mail-link</strong></a> gebruiken.
+    <br>
+    <br>
+    Als u liever met uw telefoon de e-mail wilt versturen, kunt u deze QR code scannen:<br>
+    <img src=""./images/mailbabylab.png"" style=""width: 200px"">
+    <br>
+    <br>
+    Klik op 'Einde' als u dit heeft gedaan, of als u geen cadeautje wilt ontvangen.
+    </p></div>",0,"{'actualWidth': 1536, 'actualHeight': 864, 'usableWidth': 1536, 'usableHeight': 824, 'usedWidth': 1707, 'usedHeight': 837, 'pixelRatio': 1.125}",html-button-response,58,954510,0.0-31.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NA,"
+    <h1>Einde</h1>
+    <br>
+    <br>
+    <h2>Bedankt voor jullie deelname!</h2>
+    <p>U kunt nu dit tabblad sluiten.</p>
+    ",NA,NA,html-button-response,59,955513,0.0-32.0,8ygghsng,BASELINE_2,PAIRED_2,PREF_2,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
