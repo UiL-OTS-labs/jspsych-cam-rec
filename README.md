@@ -5,7 +5,7 @@ Online Baby Observation Experiment using [jsPysch](http://www.jspsych.org) and c
 
 We are happy to anounce that the experiment has succesfully been implemented and our results are in. Big thanks to anyone who contributed or participated! This repository will remain online for posterity and Open Science purposes. Feel free to have a look around.
 
-# Contents
+## Contents
 This project aims to bring baby behavior observation (and scoring) to the web.
 This project contains several folders and many files:
 
@@ -19,7 +19,7 @@ https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/record/
 
 We added upload and token functionality to facilitate the uploading of participants' webcam recordings and have them labeled under a correct participant ID.
 
-# Development, relations, and scope
+## Development, relations, and scope
 - [This how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/) describes the basic flow for creating a web experiment with jsPsych, given UiL OTS affiliation and the use of our custom jsPsych experiment _Data Store_.
 - The following [general template/boilerplate documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) may also be of help to get a sense of how UiL OTS developers have chosen to organise code/functionality in a _modular_ way.
 - Note that at this time, we do not (as of yet) have a standard 'template' or 'boilerplate' for the experimental task. In fact, this codebase's folder 'jspsych' may evolve to become a 'template' experiment for presenting (sparse, moving/static) stimuli, and the related [stream recorder](https://github.com/UiL-OTS-labs/streamupload/) will probably evolve as a robust complementary application to be able to score (infant) behavior.
@@ -47,10 +47,11 @@ In the default `/WebRTC/index.html`, there is a input field to paste a token int
 
 Tokens can be made by only some people of the UiL-OTS lab staff. Get in touch using the UiL OTS lab website if you would like to run a pilot. We recommend using one token per experimental condition, but using one token per participant or per experiment as a whole is also possible. Or you can host your own Streamupload instance.
 
-# Links
+## Links
 
-## Media API
+- Media API
 https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
 
-## Sound library
+- Sound library
 https://www.luftrum.com/free-field-recordings/
+
