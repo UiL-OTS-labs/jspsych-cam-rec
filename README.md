@@ -55,3 +55,9 @@ https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
 - Sound library
 https://www.luftrum.com/free-field-recordings/
 
+
+## Licence
+
+Copyright (c) 2021 UiL OTS Labs, Faculty of Humanities, Utrecht University
+
+Please see jspsych/LICENSE for further licence information
