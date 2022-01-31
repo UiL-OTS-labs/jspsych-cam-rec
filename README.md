@@ -31,7 +31,7 @@ While piloting and adapting things from this current combination of experiment a
 ```
 python3 -m http.server -b localhost
 ```
-Otherwise, you'll get _at least_ an error from `navigator.mediaDevices` when using the stream recorder's fucntionality (in folder webRTC -- and referenced in the jsPsych experiment's pages that deal with the video recording).
+Otherwise, you'll get _at least_ an error from `navigator.mediaDevices` when using the stream recorder's fucntionality (in folder webRTC -- and referenced in the jsPsych experiment's pages that deal with the video recording). Additionally, rename the file `globals_developing.js` to simply `globals.js` if testing the experiment locally.
 
 ## Binary data upload application
 See related project: [streamupload](https://github.com/UiL-OTS-labs/streamupload/)
